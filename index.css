@@ -1,0 +1,174 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  line-height: 1;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  display: block;
+  width: 100%;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+/** start home */
+.home {
+  overflow-x: hidden;
+  position: relative;
+  height: 22.34rem;
+  background: #4a1a63 url("./images/body_bg.jpg") top center/100% no-repeat;
+}
+.title {
+  width: 6.1rem;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+.snow_flow {
+  width: 100%;
+  top: 1.11rem;
+  -webkit-animation: fadeIn 2s linear infinite alternate both;
+  animation: fadeIn 2s linear infinite alternate both;
+}
+.snow_luo {
+  width: 100%;
+  top: 1.11rem;
+  -webkit-animation: fadeInDown 2s linear infinite both;
+  animation: fadeInDown 2s linear infinite both;
+}
+.flash_light {
+  width: 7.33rem;
+  margin-left: 0.36rem;
+  top: 0.27rem;
+  -webkit-animation: fadeIn 0.2s linear infinite alternate both;
+  animation: fadeIn 0.2s linear infinite alternate both;
+}
+.lamp_2 {
+  top: 3.1rem;
+  right: -0.935rem;
+  width: 2.36rem;
+  opacity: 0.6;
+  -webkit-animation: tada 1s linear infinite alternate both;
+  animation: tada 1s linear infinite alternate both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.lamp_road {
+  top: 3.27rem;
+  left: 4.01rem;
+  width: 2.36rem;
+  opacity: 0.6;
+  -webkit-animation: swing 2s linear infinite alternate both;
+  animation: swing 2s linear infinite alternate both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.lamp_1 {
+  width: 1.36rem;
+  top: 5.89rem;
+  left: 1.83rem;
+  -webkit-animation: rotateIn 2s linear infinite alternate both;
+  animation: rotateIn 2s linear infinite alternate both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.lamp_1_1 {
+  width: 1.36rem;
+  top: 5.89rem;
+  left: 3.51rem;
+  -webkit-animation: rotateIn_left 2s linear infinite alternate both;
+  animation: rotateIn_left 2s linear infinite alternate both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.car-yellow {
+  width: 0.81rem;
+  top: 4.58rem;
+  left: 4.3rem;
+  -webkit-animation: fadeOutBottomLeft 3s linear infinite both;
+  animation: fadeOutBottomLeft 3s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.car-red {
+  width: 0.81rem;
+  top: 5.44rem;
+  left: 2.9rem;
+  -webkit-animation: fadeOutBottomRight 3s linear infinite both;
+  animation: fadeOutBottomRight 3s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.pic-icon {
+  width: 0.85rem;
+  top: 5.67rem;
+  left: 3.06rem;
+  -webkit-animation: bounce 3s linear infinite both;
+  animation: bounce 3s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bird {
+  width: 0.8rem;
+  top: 10.44rem;
+  left: 0.5rem;
+  -webkit-animation: shakeX 10s linear infinite both;
+  animation: shakeX 10s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.rule-btn {
+  width: 0.73rem;
+  top: 9.54rem;
+  left: 0.6rem;
+  -webkit-animation: pulse 1s linear infinite both;
+  animation: pulse 1s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.SantaClaus {
+  width: 0.83rem;
+  top: 9.46rem;
+  left: 1.49rem;
+  -webkit-animation: zoomInDown 2s linear infinite both;
+  animation: zoomInDown 2s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.bear-icon {
+  width: 0.66rem;
+  top: 10.43rem;
+  left: 6.1rem;
+  -webkit-animation: shakeX 8s linear infinite both;
+  animation: shakeX 8s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.prize-my {
+  width: 0.73rem;
+  top: 9.5rem;
+  left: 6.1rem;
+  -webkit-animation: pulse 1s linear infinite both;
+  animation: pulse 1s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+/** end home */
