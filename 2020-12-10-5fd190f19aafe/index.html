@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title> </title>
+	<script src="https://mat1.gtimg.com/www/asset/lib/jquery/jquery/jquery-1.11.1.min.js?__v=0"
+		charset="utf-8"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js?__v=0"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+	<script src="/a_res/js.ex/common.js.TXT?__v=0"></script>
+	<script src="/a_res_app/js/app.web.js.TXT?__v=1605"></script>
+	<link href="/a_res_app/css/app.css?__v=1800" rel="stylesheet" />
+
+	<!---->
+	<script src="{$WX_CONFIG_SRC}"></script>
+	<!---->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-weui/1.2.1/css/jquery-weui.min.css" />
+	<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css" />
+	<!---->
+	<link rel="stylesheet" type="text/css" href="a__item_file__index_css?{$V}" />
+	<script src="a__item_file__a_config?{$V}"></script>
+	<!--获取百度统计代码-->
+	{$code_bottom}
+	<script>
+		; (function (doc, win) {
+			var docEl = doc.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function () {
+					var clientWidth = docEl.clientWidth;
+					if (!clientWidth) return;
+					docEl.style.fontSize = 20 * (clientWidth / 375) + 'px';
+				};
+
+			if (!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+	<style>
+		.music_icon {
+			position: absolute;
+			right: 0.975rem;
+			top: 1.15rem;
+			width: 1.7rem;
+			height: 1.7rem;
+			background: url("http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/music_close.png") no-repeat center / cover;
+		}
+
+		.music_icon.active {
+			background-image: url("http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/music_active.png");
+			-webkit-animation: rotate 5s infinite linear;
+			animation: rotate 5s infinite linear;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 主人 -->
+	<div class="container" id="page_master" style="display:none">
+		<audio src="" id="audio"></audio>
+		<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_btn_rule.png" alt="" class="lazy btn_rule">
+		<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_boll.png" alt="" class="lazy a_boll">
+		<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_plan.png" alt="" class="lazy a_plan">
+		<div class="left_play_count">还剩<span></span>次游戏机会</div>
+		<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_btn_start.png" alt="" class="lazy a_btn_start">
+		<div class="has_join">已有 <span>6666</span> 人参加活动</div>
+
+
+		<!-- 擂台信息 -->
+		<div class="my_pk_info">
+
+			<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/logo_star.png" class="lazy logo_star logo_star1" alt="">
+			<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/logo_star.png" class="lazy logo_star logo_star2" alt="">
+
+			<img src="" class="user1" alt="">
+			<div class="pkValue info_item">
+				PK场数: <span></span> 场
+			</div>
+			
+			<!-- <span class="about_reward">查看奖励</span> -->
+			<div class="cupValue info_item">
+				胜利场数: <span></span> 场
+			</div>
+			<div class="goldValue info_item">
+					奖励: <span></span> 积分
+				</div>
+			<div class="bestRecord info_item">
+				最佳记录: <span></span> 分
+				<div class="share_best">获取</div>
+			</div>
+		</div>
+
+		<!-- 宝箱信息 -->
+		<div class="chest_box_wrap">
+				<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/logo_star.png" class="lazy logo_star logo_star3" alt="">
+				<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/logo_star.png" class="lazy logo_star logo_star4" alt="">
+			<div class="prize_box_area">
+				<div class="left_canOpenBox">
+					喜提宝箱x<span class="pri_box_count">4</span>
+				</div>
+				<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_pri_box.png" alt="" class="lazy a_pri_box">
+			</div>
+			<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_tips_arrow.png" class="lazy a_tips_arrow" alt="">
+			<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_btn_ling.png" class="lazy a_btn_ling" alt="">
+			<div class="box_tips_txt">胜利场数=宝箱个数</div>
+		</div>
+
+
+		<!-- pk信息 -->
+		<div class="a_pkRecord">
+			<div class="pk_name_wrap">
+				<div class="user_name1 name"></div>
+				<div class="player">Player</div>
+			</div>
+
+			<div class="player_list_wrap">
+				<div class="pkRecord_player_list">
+					 <!-- <div class="player_data">
+						<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_friHead.png" alt=""
+							class="lazy player_headPic">
+						<div class="player_info">
+							<div class="name_time">
+								<span>卡面来哒</span>
+							</div>
+							<div class="score_wrap">
+								<span>9000</span>分
+								<div class="player_pk_status">对手挑战成功</div>
+							</div>
+							<div class="box_status">
+								错失对手宝箱
+								<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_box_disable.png" class="lazy "
+									alt="">
+							</div>
+						</div>
+					</div> -->
+					<!--<div class="player_data">
+						<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_friHead.png" alt=""
+							class="lazy player_headPic">
+						<div class="player_info">
+							<div class="name_time">
+								<span>卡面来哒</span>
+							</div>
+							<div class="score_wrap">
+								<span>9000</span>分
+								<div class="player_pk_status">对手挑战成功</div>
+							</div>
+							<div class="box_status">
+								错失对手宝箱
+								<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_box_disable.png" class="lazy "
+									alt="">
+							</div>
+						</div>
+					</div>
+					<div class="player_data">
+						<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_friHead.png" alt=""
+							class="lazy player_headPic">
+						<div class="player_info">
+							<div class="name_time">
+								<span>卡面来哒</span>
+							</div>
+							<div class="score_wrap">
+								<span>9000</span>分
+								<div class="player_pk_status">对手挑战成功</div>
+							</div>
+							<div class="box_status">
+								错失对手宝箱
+								<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_box_disable.png" class="lazy "
+									alt="">
+							</div>
+						</div>
+					</div>
+					<div class="player_data">
+						<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_friHead.png" alt=""
+							class="lazy player_headPic">
+						<div class="player_info">
+							<div class="name_time">
+								<span>卡面来哒</span>
+							</div>
+							<div class="score_wrap">
+								<span>9000</span>分
+								<div class="player_pk_status">对手挑战失败</div>
+							</div>
+							<div class="box_status">
+								喜提对手宝箱
+								<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_pri_box.png" class="lazy " alt="">
+							</div>
+						</div>
+					</div>
+					<div class="player_data">
+						<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_friHead.png" alt=""
+							class="lazy player_headPic">
+						<div class="player_info">
+							<div class="name_time">
+								<span>卡面来哒</span>
+							</div>
+							<div class="score_wrap">
+								<span>9000</span>分
+								<div class="player_pk_status">对手挑战成功</div>
+							</div>
+							<div class="box_status">
+								错失对手宝箱
+								<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_box_disable.png" class="lazy "
+									alt="">
+							</div>
+						</div>
+					</div>
+	
+					<div class="player_data">
+						<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_friHead.png" alt=""
+							class="lazy player_headPic">
+						<div class="player_info">
+							<div class="name_time">
+								<span>卡面来哒</span>
+	
+							</div>
+							<div class="score">
+								<span>9000</span>分
+							</div>
+							<div class="player_pk_status">
+								<img class="lazy"  data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_pk_status_icon.png" alt="">
+								挑战成功
+							</div>
+						</div>
+					</div>
+	
+					<div class="player_data">
+						<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_friHead.png" alt=""
+							class="lazy player_headPic">
+						<div class="player_info">
+							<div class="name_time">
+								<span>卡面来哒</span>
+	
+							</div>
+							<div class="score">
+								<span>9000</span>分
+							</div>
+							<div class="player_pk_status">
+								<img class="lazy"  data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_pk_status_icon.png" alt="">
+								挑战成功
+							</div>
+						</div>
+					</div>
+	
+					<div class="player_data">
+						<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_friHead.png" alt=""
+							class="lazy player_headPic">
+						<div class="player_info">
+							<div class="name_time">
+								<span>卡面来哒</span>
+								<span>11/12 15:00</span>
+							</div>
+							<div class="score">
+								<span>9000</span>分
+							</div>
+							<div class="player_pk_status">
+								<img class="lazy"  data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_pk_status_icon.png" alt="">
+								挑战成功
+							</div>
+						</div>
+					</div>
+					<div class="player_data">
+						<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_friHead.png" alt=""
+							class="lazy player_headPic">
+						<div class="player_info">
+							<div class="name_time">
+								<span>卡面来哒</span>
+								<span>11/12 15:00</span>
+							</div>
+							<div class="score">
+								<span>9000</span>分
+							</div>
+							<div class="player_pk_status">
+								<img class="lazy"  data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_pk_status_icon.png" alt="">
+								挑战成功
+							</div>
+						</div>
+					</div>
+	
+					<div class="player_data">
+						<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_friHead.png" alt=""
+							class="lazy player_headPic">
+						<div class="player_info">
+							<div class="name_time">
+								<span>卡面来哒</span>
+								<span>11/12 15:00</span>
+							</div>
+							<div class="score">
+								<span>9000</span>分
+							</div>
+							<div class="player_pk_status">
+								<img class="lazy"  data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/a_pk_status_icon.png" alt="">
+								挑战成功
+							</div>
+						</div>
+					</div> -->
+				</div>
+				<div class="look_more">查看更多</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 好友 -->
+	<div id="page_friend" style="display:none">
+		<div class=" dare_mask">
+			<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/dare_title.png" alt="" class="lazy dare_title">
+			<div class="dare_box">
+				<div class="box_left">
+					<div class="avatar1 avatar_info">
+						<div class="avatar_wrap">
+							<img src="" class="avatar user1" alt="">
+						</div>
+						<div class="user_name user_name1">李准基</div>
+					</div>
+				</div>
+				<div class="box_right">
+					<div class="avatar2 avatar_info">
+						<div class="avatar_wrap">
+							<img src="" class="avatar user2" alt="">
+						</div>
+						<div class="user_name user_name2">李准基</div>
+					</div>
+				</div>
+				<!-- <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/dare_box_title.png" class="lazy dare_box_title"
+					alt=""> -->
+			</div>
+			<img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/btn_pk.png" class="lazy btn_pk" alt="">
+		</div>
+	</div>
+
+
+	<!--活动说明-->
+	<div class="rule_mask" style="display: none;">
+		<div class="rule_box">
+			<div class="rule_header">
+				活动说明
+			</div>
+			<div class="rule_content">
+				<ol></ol>
+			</div>
+			<div class="rule_close">
+				确定
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script src="a__item_file__index_js?{$V}"></script>
+
+</body>
+
+</html>

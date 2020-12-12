@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title> </title>
+
+    
+    <script src="https://mat1.gtimg.com/www/asset/lib/jquery/jquery/jquery-1.11.1.min.js?__v=0" charset="utf-8"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js?__v=0"></script>
+    <script src="http://img.wx.xiao-bo.com/a_res_app/js/app.all.js.TXT?__v=0"></script>
+    <script src="{$WX_CONFIG_SRC}"></script>
+
+    <link rel="stylesheet" type="text/css" href="a__item_file__s_index_css?{$V1}"/>
+    <!--获取百度统计代码-->
+    {$code_bottom}
+    <script>
+        ;(function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 20 * (clientWidth / 375) + 'px';
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <!-- <img data-original="{$APP_SUPER_IMG_ROOT}/btn_back.png" class="lazy btn_back" alt=""> -->
+    <div class="share_mask"></div>
+    <div id="main" style="">
+        <img src="{$APP_SUPER_IMG_ROOT}/s_gift_togther.png"  class="s_gift_togther" style="display: none;" alt="">
+        <img src="{$APP_SUPER_IMG_ROOT}/s_btn_shengcheng.png"  class="send" alt="" style="display: none;">
+        <div class="share_tips">长按保存，挑战好友</div>
+        <img src="" class="poster" alt="">
+    </div>
+
+</div>
+
+
+
+<script src="a__item_file__s_index_js?{$V}"></script>
+</body>
+</html>

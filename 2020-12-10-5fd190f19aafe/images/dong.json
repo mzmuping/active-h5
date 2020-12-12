@@ -1,0 +1,51 @@
+{
+
+"images": [
+    "dong.png"
+],
+
+"framerate": 20,
+"frames": [
+    [1, 1, 182, 180, 0, 0, 0],
+    [185, 1, 182, 180, 0, 0, 0],
+    [369, 1, 180, 180, 0, 0, 0],
+    [551, 1, 180, 180, 0, 0, 0],
+    [733, 1, 180, 180, 0, 0, 0],
+    [1, 183, 162, 160, 0, -1, 0],
+    [165, 183, 162, 160, 0, -1, 0],
+    [329, 183, 161, 160, 0, -1, 0],
+    [492, 183, 160, 160, 0, 0, 0],
+    [654, 183, 160, 160, 0, 0, 0],
+    [1, 345, 160, 160, 0, 0, 0],
+    [163, 345, 160, 160, 0, 0, 0],
+    [325, 345, 160, 160, 0, 0, 0],
+    [487, 345, 160, 160, 0, 0, 0],
+    [649, 345, 160, 160, 0, 0, 0],
+    [811, 345, 150, 150, 0, 0, 0]
+],
+
+"animations": {
+    "didi": { "frames": [0] },
+    "maidanglao": { "frames": [1] },
+    "huafei": { "frames": [2] },
+    "jiayou": { "frames": [3] },
+    "kfc": { "frames": [4] },
+    "elem": { "frames": [5] },
+    "hanbaowang (4)": { "frames": [6] },
+    "liang": { "frames": [7] },
+    "bishengke": { "frames": [8] },
+    "caocao": { "frames": [9] },
+    "coco": { "frames": [10] },
+    "gongfu": { "frames": [11] },
+    "hanbaowang (3)": { "frames": [12] },
+    "hanbaowang": { "frames": [13] },
+    "maoyan": { "frames": [14] },
+    "aiqiyi": { "frames": [15] }
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:527165b793b1abcbbb4313599d15dfde:abeb108c1e360641ccf348acb9b8db31:3eff757c3b35eabebffb297b4618b2a8$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}

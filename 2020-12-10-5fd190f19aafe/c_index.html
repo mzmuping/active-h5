@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title> </title>
+    <script src="https://mat1.gtimg.com/www/asset/lib/jquery/jquery/jquery-1.11.1.min.js?__v=0"
+        charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js?__v=0"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+    <script src="/a_res/js.ex/common.js.TXT?__v=0"></script>
+    <script src="/a_res_app/js/app.web.js.TXT?__v=1605"></script>
+    <link href="/a_res_app/css/app.css?__v=1800" rel="stylesheet" />
+
+    <!---->
+    <script src="{$WX_CONFIG_SRC}"></script>
+    <!---->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-weui/1.2.1/css/jquery-weui.min.css" />
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css" />
+    <!---->
+    <link rel="stylesheet" type="text/css" href="a__item_file__c_index_css?{$V}" />
+    <script src="a__item_file__a_config?{$V}"></script>
+    <!--获取百度统计代码-->
+    {$code_bottom}
+    <script>
+        ; (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 20 * (clientWidth / 375) + 'px';
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="prize_container">
+        <audio src="" id="audio"></audio>
+        <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/btn_back_home.png" class="lazy btn_back_home" alt="">
+        <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/float_prize.png" class="lazy float_prize" alt="">
+        <div class="prize_main">
+
+        </div>
+        <!--页码-->
+        <div class="pages_wrap">
+            <div class="page_tab">
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/prize_btn_prev.png" class="lazy prize_btn_prev"
+                    alt="">
+                <div class="switch_page">
+                    <!-- <span class="active">1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span> -->
+                </div>
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/prize_btn_next.png" class="lazy prize_btn_next"
+                    alt="">
+            </div>
+            <div class="total">共<span></span>页</div>
+        </div>
+    </div>
+    <div class="mask prize_mask" style="display:none ;">
+        <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/btn_close.png" class="lazy btn_close" alt="">
+        <div class="prize_content">
+            <!-- <div class="prize_info">
+                恭喜你战胜他<br>
+                喜提 <span class="prize_name">30</span> 积分
+            </div>-->
+            <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/my_prize.png" class="lazy my_prize" alt="">
+        </div>
+    </div>
+
+    <script src="a__item_file__c_index_js?{$V}"></script>
+
+</body>
+
+</html>

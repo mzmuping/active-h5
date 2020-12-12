@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body{
+	margin: 0;
+	padding: 0;
+	overflow-x:hidden;
+	min-height: 100vh;
+}
+img{width: 100%;display: block;}
+.share_mask{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,.85);
+}
+.share_img{
+	width: 100%;
+}
+.container{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+}
+.s_gift_togther {
+    position: absolute;
+    width: 12.825rem;
+    left: 0;
+    margin: auto;
+    z-index: 2;
+    right: 0;
+    top: 43%;
+    margin-top: -65vw;
+}
+
+.send{
+	position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    width: 9.85rem;
+    margin: auto;
+    margin-bottom: -65vw;
+}
+.poster {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 76vw;
+    margin: auto;
+}
+.share_tips{
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+    margin-bottom: -65vw;
+    color: #fff;
+    text-align: center;
+}

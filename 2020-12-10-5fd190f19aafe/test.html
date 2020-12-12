@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PreloadJS/1.0.1/preloadjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tweenjs/1.0.2/tweenjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SoundJS/1.0.2/soundjs.min.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      canvas {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+      }
+      #game_bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #a1e2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game" width="750"></canvas>
+    <script>
+      (function () {
+        const canvas = document.getElementById("game");
+        const clientWith = window.innerWidth * 2;
+        const clientHeiht = window.innerHeight * 2;
+        canvas.height = clientHeiht;
+
+        const cjs = createjs;
+        class Game {
+          constructor() {}
+          preload() {
+            this.queue = new cjs.LoadQueue(
+              false,
+              "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/"
+            );
+            this.queue.installPlugin(createjs.Sound);
+            const manifest = [
+              {
+                src: "house1.png",
+                id: "house1",
+              },
+              {
+                src: "house2.png",
+                id: "house2",
+              },
+              {
+                src: "house3.png",
+                id: "house3",
+              },
+              {
+                src: "house4.png",
+                id: "house4",
+              },
+              {
+                src: "house5.png",
+                id: "house5",
+              },
+              {
+                src: "house6.png",
+                id: "house6",
+              },
+              {
+                src: "house7.png",
+                id: "house7",
+              },
+              {
+                src: "house8.png",
+                id: "house8",
+              },
+              {
+                src: "house9.png",
+                id: "house9",
+              },
+              {
+                src: "house10.png",
+                id: "house10",
+              },
+              {
+                src: "house11.png",
+                id: "house11",
+              },
+              {
+                src: "house12.png",
+                id: "house12",
+              },
+              {
+                src: "house13.png",
+                id: "house13",
+              },
+              {
+                src: "house14.png",
+                id: "house14",
+              },
+              {
+                src: "house15.png",
+                id: "house15",
+              },
+              {
+                src: "house16.png",
+                id: "house16",
+              },
+              {
+                src: "house17.png",
+                id: "house17",
+              },
+              {
+                src: "house18.png",
+                id: "house18",
+              },
+              {
+                src: "house19.png",
+                id: "house19",
+              },
+              {
+                src: "house20.png",
+                id: "house20",
+              },
+              {
+                src: "house21.png",
+                id: "house21",
+              },
+              {
+                src: "house22.png",
+                id: "house22",
+              },
+              {
+                src: "house23.png",
+                id: "house23",
+              },
+              {
+                src: "house24.png",
+                id: "house24",
+              },
+              {
+                src: "house25.png",
+                id: "house25",
+              },
+              {
+                src: "pliers.png",
+                id: "pliers",
+              },
+              {
+                src: "gameBg.png",
+                id: "gameBg",
+              },
+              {
+                src: "hp.png",
+                id: "hp",
+              },
+              {
+                src: "machine_hand.png",
+                id: "machine_hand",
+              },
+              {
+                src: "logo.png",
+                id: "logo",
+              },
+              {
+                src: "chi.png",
+                id: "chi",
+              },
+              {
+                src: "cloud.png",
+                id: "cloud",
+              },
+              {
+                src: "plan.png",
+                id: "plan",
+              },
+              {
+                src: "balloon.png",
+                id: "balloon",
+              },
+              {
+                src: "fly_logo.png",
+                id: "fly_logo",
+              },
+            ];
+            this.queue.loadManifest(manifest);
+            this.queue.loadFile({id:'dong',src:"./images/dong.png"});
+            this.queue.on(
+              "complete",
+              () => {
+                this.init();
+              },
+              this
+            );
+            this.queue.on(
+              "error",
+              () => {
+                console.log("错误");
+              },
+              this
+            );
+          }
+
+          init() {
+            this.stage = new cjs.Stage("game");
+            cjs.Touch.enable(this.stage);
+            this.houseContainer = new cjs.Container();
+            cjs.Ticker.timingMode = cjs.Ticker.RAF;
+
+            //背景图
+            this.gameBg = new cjs.Container();
+            const bg = new cjs.Bitmap(this.queue.getResult("gameBg"));
+            this.bottomDir = canvas.height - bg.image.naturalHeight;
+            this.gameBg.y = this.bottomDir;
+            this.gameBg.addChild(bg);
+            this.stage.addChild(this.gameBg);
+            const data = {
+              images: [this.queue.getResult("logo")],
+              // "framerate": 0.01,
+              frames: [
+                [1, 1, 743, 201, 0, 0, 0],
+                [-35, 204, 745, 235, 0, 0, 0],
+                [1, 441, 643, 200, 0, 0, 0],
+              ],
+
+              animations: {
+                // "logo动图_0001_图层": { "frames": [0] },
+                // "logo动图_0002_图层": { "frames": [1] },
+                // "logo动图_0000_图层": { "frames": [2] }
+                run: {
+                  frames: [2, 0, 1],
+                  speed: 0.001,
+                },
+              },
+            };
+            const logoSheet = new createjs.SpriteSheet(data);
+            const logoSprite = new createjs.Sprite(logoSheet, "run");
+            console.log(canvas.height);
+            logoSprite.x = 5;
+            logoSprite.y = 660;
+            this.gameBg.addChild(logoSprite);
+
+            const logoData = {
+              images: [this.queue.getResult('dong')],
+              frames: [
+                [1, 1, 182, 180, 0, 0, 0],
+                [185, 1, 182, 180, 0, 0, 0],
+                [369, 1, 180, 180, 0, 0, 0],
+                [551, 1, 180, 180, 0, 0, 0],
+                [733, 1, 180, 180, 0, 0, 0],
+                [1, 183, 162, 160, 0, -1, 0],
+                [165, 183, 162, 160, 0, -1, 0],
+                [329, 183, 161, 160, 0, -1, 0],
+                [492, 183, 160, 160, 0, 0, 0],
+                [654, 183, 160, 160, 0, 0, 0],
+                [1, 345, 160, 160, 0, 0, 0],
+                [163, 345, 160, 160, 0, 0, 0],
+                [325, 345, 160, 160, 0, 0, 0],
+                [487, 345, 160, 160, 0, 0, 0],
+                [649, 345, 160, 160, 0, 0, 0],
+                [811, 345, 150, 150, 0, 0, 0],
+              ],
+              animations: {
+                didi: { frames: [0,1,2,3,4,5,6,7,8,9] ,speed: 0.08,},
+                maidanglao: { frames: [1] },
+                huafei: { frames: [2] },
+                jiayou: { frames: [3] },
+                kfc: { frames: [4] },
+                elem: { frames: [5] },
+                "hanbaowang (4)": { frames: [6] },
+                liang: { frames: [7] },
+                bishengke: { frames: [8] },
+                caocao: { frames: [9] },
+                coco: { frames: [10] },
+                gongfu: { frames: [11] },
+                "hanbaowang (3)": { frames: [12] },
+                hanbaowang: { frames: [13] },
+                maoyan: { frames: [14] },
+                aiqiyi: { frames: [15] },
+               
+              },
+            };
+
+            const logoSprite1 = new createjs.Sprite(new createjs.SpriteSheet(logoData), "didi");
+            this.gameBg.addChild(logoSprite1);
+
+            cjs.Ticker.addEventListener("tick", (e) => {
+              this.stage.update();
+            });
+          }
+        }
+        window.Game = Game;
+      })();
+
+      window.onload = function () {
+        const game = new Game();
+        game.preload();
+      };
+    </script>
+  </body>
+</html>

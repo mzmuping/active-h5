@@ -1,0 +1,459 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", Helvetica, STHeiTi, microsoft yahei, arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  line-height: 1;
+  user-select: none;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  display: block;
+  width: 100%;
+}
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 3000;
+}
+
+
+.tutorial_mask{
+  z-index: 4000;
+}
+canvas {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+}
+#game_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #a1e2f2;
+}
+/*游戏*/
+.ceng{
+  display: none;
+  position: absolute;
+  width: 2.975rem;
+  height: 4.25rem;
+  bottom: .5rem;
+  left: 1rem;
+  z-index: 2;
+  box-sizing: border-box;
+  padding-top: 2.8rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+}
+.tutorial{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  margin: auto;
+}
+.logo {
+  position: absolute;
+  bottom: 7.125rem;
+  left: 0;
+}
+.game-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+.avatar-wrap {
+  position: absolute;
+
+  width: 2.175rem;
+  height: 2.175rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-radius: 3rem;
+  overflow: hidden;
+  z-index: 2;
+}
+.avatar-wrap .avatar {
+  width: 100%;
+}
+.hp_wrap {
+  position: absolute;
+  left: 0.675rem;
+  top: 3.5rem;
+}
+.hp_wrap .hp {
+  display: inline-block;
+  width: 1.375rem;
+}
+#score,#pk_score {
+  position: absolute;
+
+  height: 1.45rem;
+  line-height: 1.45rem;
+  width: 3.475rem;
+
+  /* border-radius: 1.175rem; */
+  font-size: .8rem;
+  text-align: center;
+  color: #fff;
+  /* border: 0.1rem solid #fff; */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* font-weight: bold; */
+
+}
+.game-info .avatar-wrap{
+  left: 0.6rem;
+  top: 0.65rem;
+}
+.game-info1 .avatar-wrap{
+  right: 0.6rem;
+  top: 4.65rem;
+}
+#score{
+  left: 2.3rem;
+  top: 1.2rem;
+  background: #1ac1f1;
+}
+#pk_score{
+  right: 2.3rem;
+  top: 5.2rem;
+  background: #ed4059;
+}
+
+/* .music_icon {
+  position: absolute;
+  right: 0.975rem;
+  top: 1.15rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  background: url("../images/music_close.png") no-repeat center / cover;
+}
+.music_icon.active {
+  background-image: url("../images/music_active.png");
+  -webkit-animation: rotate 5s infinite linear;
+  animation: rotate 5s infinite linear;
+} */
+.time-wrap {
+  position: absolute;
+  left: 8.95rem;
+  top: 1.225rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  color: #fff;
+}
+.downTime-wrap {
+  margin-left: 0.2rem;
+}
+.clock {
+  /* position: absolute; */
+  width: 1.125rem;
+  height: 1.175rem;
+}
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+/*游戏*/
+.highlight {
+  position: absolute;
+  width: 18.425rem;
+  left: 0.175rem;
+  z-index: -1;
+}
+/*得分弹窗开始*/
+.result_mask {
+  min-height: 100vh;
+  /* background: #ffffe7 url("../images/result_bg.png") no-repeat left top / 100% auto; */
+}
+.result_mask .result_title {
+  width: 14.3rem;
+  margin: 2.6rem auto 0;
+}
+.result_mask .result_box {
+  position: relative;
+  width: 17.625rem;
+  height: 16.75rem;
+  margin: 1.2rem auto 0;
+  padding-top: 1rem;
+  padding-left: 0.25rem;
+  /* background: url("../images/result_box.png") no-repeat center / cover; */
+  box-sizing: border-box;
+}
+.result_mask .result_box .score {
+  font-size: 3.5rem;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 5px 5px 5px #1654ba;
+  font-style: italic;
+  text-align: center;
+}
+.result_mask .result_box .cup_fun {
+  width: 4.175rem;
+  margin: 0 auto;
+}
+.result_mask .result_box .layers_wrap {
+  font-size: 1.25rem;
+  color: #fff;
+  text-shadow: 2px 1px 1px #1654ba;
+  font-style: italic;
+  text-align: center;
+}
+.result_mask .result_box .optimum_score_wrap {
+  height: 2.1rem;
+  /* background: url("../images/result_bar.png") no-repeat left top / contain; */
+  font-size: 1.65rem;
+  font-style: italic;
+  color: #fff;
+  line-height: 2.1rem;
+  text-align: right;
+  padding-right: 1rem;
+  margin-top: 2.475rem;
+}
+.result_mask .result_box .optimum_score_wrap .get {
+  display: inline-block;
+  width: 2.65rem;
+}
+.result_mask .result_box .good_bar {
+  margin-top: 2.1rem;
+  width: 14.5rem;
+}
+.result_mask .btn_pk {
+  width: 13.475rem;
+  margin: 0.375rem auto 0;
+  /* animation: btn_pk 1s infinite linear alternate; */
+}
+.result_mask .restart {
+  color: #60530c;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-top: 0.6rem;
+}
+@keyframes btn_pk {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(1.1);
+  }
+}
+.result_footer_btn {
+  position: absolute;
+  bottom: 1.5rem;
+  width: 100%;
+  padding: 0 1.525rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.result_footer_btn .btn {
+  width: 7.025rem;
+}
+/*得分弹窗结束*/
+.pk_result_title {
+  margin-top: 1.425rem;
+}
+/*弹窗赢了开始*/
+.battle_info_wrap {
+  position: relative;
+  width: 16.7rem;
+  height: 8rem;
+  margin: 0 auto;
+  /* background: url("../images/battle_info.png") no-repeat center / cover; */
+  color: #fff;
+  font-size: 0.95rem;
+}
+.battle_info_wrap .win_info {
+  position: absolute;
+  left: 1.75rem;
+  top: 5.6rem;
+  text-align: center;
+}
+.battle_info_wrap .btn_reward {
+  margin-top: 0.325rem;
+  width: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #fff;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.6rem;
+  margin-left: 0.5rem;
+}
+.battle_info_wrap .fail_info {
+  position: absolute;
+  left: 12.25rem;
+  top: 5.6rem;
+}
+.battle_info_wrap .pk_icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.battle_info_wrap .user {
+  position: absolute;
+  top: 2.1rem;
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  border-radius: 3rem;
+}
+.battle_info_wrap .user1 {
+  left: 1.6rem;
+}
+.battle_info_wrap .user2 {
+  left: 12rem;
+}
+.pk_result_btns {
+  margin-top: 1.75rem;
+}
+.pk_result_btns img {
+  width: 11.25rem;
+  margin: 0.575rem auto;
+}
+.fail_mask .win_info {
+  left: 12.25rem;
+}
+.fail_mask .fail_info {
+  left: 1.75rem;
+}
+/*弹窗赢了结束*/
+/*我也要弹窗*/
+.wyy_mask {
+  padding-top: 2.675rem;
+}
+.wyy_mask .btn_close {
+  /* position: absolute; */
+  width: 1.425rem;
+  /* left: 16.45rem; */
+  /* top: 1.15rem; */
+  margin: 1rem auto 0;
+}
+.wyy_mask .wyy_title {
+  width: 17.075rem;
+  margin: 0 auto;
+}
+.wyy_mask .user_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffcd00;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+.wyy_mask .avatar_wrap {
+  position: relative;
+  margin: 0 0.5rem;
+}
+.wyy_mask .crown {
+  position: absolute;
+  width: 1.5rem;
+  right: -0.45rem;
+  top: -0.6rem;
+}
+.wyy_mask .avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid #ffcd00;
+  overflow: hidden;
+}
+.wyy_mask .qr_code {
+  width: 6.5rem;
+  margin: 0.675rem auto 1.35rem;
+}
+.wyy_mask .wyy_footer {
+  text-align: center;
+  line-height: 1.3rem;
+  color: #ffcd00;
+  font-weight: bold;
+  font-size: 1rem;
+  font-style: italic;
+}
+/*我也要弹窗*/
+/*宝箱弹窗开始*/
+.ling_mask {
+  overflow-y: scroll;
+}
+.ling_mask .ling_mask_title {
+  width: 13.925rem;
+  margin: 0 auto;
+}
+.ling_mask .highlight {
+  top: 12vh;
+}
+.ling_mask .open_tips,
+.ling_mask .prize_info {
+  font-size: 0.75rem;
+  color: #fff;
+  text-align: center;
+}
+.ling_mask .prize_box_close {
+  width: 6.2rem;
+  margin: 1.7rem auto 1.55rem;
+}
+.ling_mask .prize_box_open {
+  width: 7.9rem;
+  margin: 0 auto;
+}
+.ling_mask .ling_mask_btn {
+  width: 10.5rem;
+  margin: 0 auto;
+}
+.ling_mask .ling_mask_footer {
+  width: 16.15rem;
+  margin: 1.55rem auto 0.1rem;
+}
+.ling_mask .sao_tips {
+  font-size: 0.6rem;
+  color: #ffe991;
+  text-align: center;
+  margin: 0.6rem auto 0.2rem;
+}
+.ling_mask .qr_code {
+  width: 6.5rem;
+  margin: 0 auto;
+}
+.ling_mask .prize_name {
+  color: #fff369;
+}
+/*宝箱弹窗结束*/
+/*# sourceMappingURL=css.css.map */

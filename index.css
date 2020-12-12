@@ -12,6 +12,7 @@ body {
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   line-height: 1;
+  font-size: 0.14rem;
 }
 a {
   text-decoration: none;
@@ -29,6 +30,20 @@ img {
 }
 .absolute {
   position: absolute;
+}
+.flex {
+  display: -webkit-box;
+  display: flex;
+}
+.box-flex {
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+.c-center {
+  align-items: center;
+  justify-content: center;
 }
 /** start home */
 .home {
@@ -174,10 +189,147 @@ img {
 
 /** progress */
 .progress-wrap {
+  width: 6.79rem;
+  margin: 0 auto;
 }
 .progress-bg {
-  width: 6.79rem;
-  height: 0.41rem;
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 0.37rem;
+  box-sizing: border-box;
+  padding: 0 0.08rem;
   background: url("./images/progress_bg.png") center center/100% no-repeat;
+}
+.progress-bar {
+  width: 10%;
+  height: 0.25rem;
+  background: url("./images/progress_bar.png") center center no-repeat;
+  background-size: cover;
+  border-radius: 0.25rem;
+}
+.box {
+  display: inline-block;
+  top: -0.68rem;
+  width: 0.6rem;
+  height: 0.67rem;
+  background: url("./images/box.png") center center no-repeat;
+  background-size: contain;
+}
+.box:nth-of-type(1) {
+  top: -0.68rem;
+  left: 12%;
+}
+.box:nth-of-type(2) {
+  top: -0.68rem;
+  left: 32%;
+}
+.box:nth-of-type(3) {
+  top: -0.68rem;
+  left: 52%;
+}
+.box:nth-of-type(4) {
+  top: -0.68rem;
+  left: 72%;
+}
+.box:nth-of-type(5) {
+  top: -0.68rem;
+  left: 92%;
+}
+.box-number {
+  display: inline-block;
+  top: 0.5rem;
+  font-size: 0.2rem;
+  font-family: SourceHanSansCN Medium, SourceHanSansCN Medium-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #fdde90;
+}
+.box-number:nth-of-type(6) {
+  left: 13%;
+}
+.box-number:nth-of-type(7) {
+  left: 33%;
+}
+.box-number:nth-of-type(8) {
+  left: 53%;
+}
+.box-number:nth-of-type(9) {
+  left: 73%;
+}
+.box-number:nth-of-type(10) {
+  left: 93%;
+}
+.exploration-score {
+  margin-top: 0.8rem;
+  font-size: 0.28rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #fdde90;
+}
+
+.down-time {
+  position: relative;
+  width: 7.31rem;
+  height: 2.56rem;
+  margin: 0rem auto 0.48rem;
+  background: url("./images/down-time.png") center center no-repeat;
+  background-size: contain;
+}
+
+.status-text {
+  left: 0.69rem;
+  bottom: 0.04rem;
+  width: 1.6rem;
+  height: 0.39rem;
+  font-size: 0.24rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+}
+
+.down-text {
+  left: 2.83rem;
+  bottom: 0.96rem;
+  font-size: 0.22rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #94314d;
+}
+.down-time-t {
+  left: 2.7rem;
+  bottom: 0.44rem;
+  font-size: 0.21rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+}
+.down-time-t i {
+  font-style: normal;
+  margin-right: 0.04rem;
+}
+.down-time-t span {
+  width: 0.24rem;
+  height: 0.37rem;
+  background: rgba(202, 52, 103, 0.4);
+  border-radius: 0.04rem;
+  font-size: 0.3rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  display: -webkit-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.04rem;
+}
+.down-day {
+  margin-left: 0.08rem;
 }
 /** end home */

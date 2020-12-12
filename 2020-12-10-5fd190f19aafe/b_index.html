@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> </title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script> -->
+    <script>(function (doc, win) {
+            var docEl = doc.documentElement, resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 375)/2 + 'px';
+                    if (window.innerHeight / window.innerWidth > 1.8) {
+                        document.body.className = 'isIphone'
+                    } else {
+                        document.body.className = ''
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false)
+        })(document, window);</script>
+    <script src="http://img.wx.xiao-bo.com/a_res_app/js/app.all.js"></script>
+
+    <link href="/a_res_app/css/app.css?__v=1800" rel="stylesheet" />
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js?__v=0"></script>
+    <!-- <script src="{$WX_CONFIG_SRC}"></script> -->
+    <script src="./a_config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PreloadJS/1.0.1/preloadjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tweenjs/1.0.2/tweenjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SoundJS/1.0.2/soundjs.min.js"></script>
+    <!-- <script src="a__item_file__share?{$V}"></script> -->
+    <!--获取百度统计代码-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./b_index_css.css"
+    />
+    <style>
+        .music_icon {
+            position: absolute;
+            right: 0.975rem;
+            top: 1.15rem;
+            width: 1.72rem;
+            height: 1.72rem;
+            background: url("http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/music_close.png") no-repeat center / cover;
+            z-index: 99999;
+        }
+        .music_icon.active {
+            background-image: url("http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/music_active.png");
+            -webkit-animation: rotate 5s infinite linear;
+            animation: rotate 5s infinite linear;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <audio src="" id="bgm" loop></audio>
+        <div class="music_icon"></div>
+        <div class="page_game">
+            <div class="game-info">
+                <div class="avatar-wrap">
+                    <img src="" class="avatar user1" alt="">
+                </div>
+                <div id="score">0</div>
+                <div class="time-wrap">
+                    <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/clock.png" class="lazy clock" alt="">
+                    <div class="downTime-wrap"><span id="second">20</span>s</div>
+                </div>
+             
+            </div>
+            <div class="game-info1" style="display: none;">
+                <div class="avatar-wrap">
+                    <img src="" class="avatar user2" alt="">
+                </div>
+                <div id="pk_score"></div>
+            </div>
+            <div class="ceng"><span></span>层</div>
+            <div id="game_bg"></div>
+    <!--        <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/logo.gif" class="lazy logo" alt="">-->
+            <canvas id="game" width="750"></canvas>
+            <div class="mask tutorial_mask" style="display: block">
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/tutorial.png?v1"  class="lazy tutorial"  alt="">
+            </div>
+        </div>
+        <!--得分-->
+        <div class="result_mask mask" style="display: none">
+            <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/result_title.png" class="lazy result_title" alt="">
+            <div class="result_box">
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/cup_fun.png" class="lazy cup_fun" alt="">
+                <div class="score"></div>
+                <div class="layers_wrap">
+                    <span></span>层楼
+                </div>
+                <div class="optimum_score_wrap">
+                    最佳分数:<span></span>
+                    <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/get.png" class="lazy get" alt="">
+                </div>
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/good_bar.png?v1" class="lazy good_bar" alt="">
+            </div>
+            <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/btn_pk.png" class="lazy btn_pk" alt="">
+            <div class="restart">再来一次</div>
+        </div>
+        <!--赢了弹窗-->
+        <div class="mask win_mask" style="display: none">
+            <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/win_title.png" class="lazy pk_result_title" alt="">
+            <div class="battle_info_wrap">
+                <img src="" class="user1 user" alt="">
+                <img src="" class="user2 user" alt="">
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/pk_icon.png" class="lazy pk_icon" alt="">
+                <div class="win_info">
+                    <span></span>分
+                    <div class="btn_reward">奖励</div>
+                </div>
+                <div class="fail_info"><span></span>分</div>
+            </div>
+            <div class="pk_result_btns">
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/btn_ling.png" class="lazy btn_ling" alt="">
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/btn_wyy.png" class="lazy btn_wyy" alt="">
+            </div>
+        </div>
+    
+        <!--输了弹窗-->
+        <div class="mask fail_mask" style="display: none">
+            <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/fail_title.png" class="lazy pk_result_title" alt="">
+            <div class="battle_info_wrap">
+                <img src="" class="user1 user" alt="">
+                <img src="" class="user2 user" alt="">
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/pk_icon2.png" class="lazy pk_icon" alt="">
+                <div class="win_info">
+                    <span></span>分
+                    <div class="btn_reward">奖励</div>
+                </div>
+                <div class="fail_info"><span></span>分</div>
+            </div>
+            <div class="pk_result_btns">
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/btn_wyy2.png" class="lazy btn_wyy" alt="">
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/btn_redare.png" class="lazy btn_wyy" alt="">
+            </div>
+        </div>
+        <!--我也要弹窗-->
+        <div class="mask wyy_mask" style="display: none">
+            <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/wyy_title.png" class="lazy wyy_title" alt="">
+            <div class="user_info">
+                <span>扫码即可</span>
+                <div class="avatar_wrap">
+                    <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/crown.png" class="lazy crown" alt="">
+                    <div class="avatar">
+                        <img src="" alt="" class="user1">
+                    </div>
+                </div>
+                <span>成为擂主</span>
+            </div>
+            <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/qrcode.png" class="lazy qr_code" alt="">
+            <div class="wyy_footer">
+                万丈高楼由我起<br>
+                高额奖励靠自己
+            </div>
+            <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/btn_close.png" class="lazy btn_close" alt="">
+        </div>
+        <!--领取弹窗-->
+        <!-- <div class="mask ling_mask" style="display: none">
+            <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/ling_mask_title.png" class="lazy ling_mask_title" alt="">
+            <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/highlight.png" class="lazy highlight" alt="">
+            <div class="no_open_wrap" >
+                <div class="open_tips">快点击下方宝箱领取吧~</div>
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/prize_box_close.png" class="lazy prize_box_close" alt="">
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/ling_mask_btn.png" class="lazy ling_mask_btn" alt="">
+            </div>
+            <div class="open_wrap" style="display: none">
+                <div class="prize_info"><span class="user_name">小佳</span>，恭喜你获得 <span class="prize_name">100信积分</span></div>
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/prize_box_open.png" class="lazy prize_box_open" alt="">
+                <p class="sao_tips">长按扫码·兑换奖品</p>
+                <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/qr_code.png" class="lazy qr_code" alt="">
+            </div>
+            <img data-original="http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/ling_mask_footer.png" class="lazy ling_mask_footer" alt="">
+        </div> -->
+    </div>
+    <script src="./b_index_js.js"></script>
+  </body>
+</html>
