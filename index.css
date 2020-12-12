@@ -39,7 +39,7 @@ img {
 }
 .title {
   width: 6.1rem;
-  margin: 0 auto;
+  margin: 0 auto 10.2rem;
   padding-top: 1rem;
 }
 .snow_flow {
@@ -170,5 +170,14 @@ img {
   animation: pulse 1s linear infinite both;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
+}
+
+/** progress */
+.progress-wrap {
+}
+.progress-bg {
+  width: 6.79rem;
+  height: 0.41rem;
+  background: url("./images/progress_bg.png") center center/100% no-repeat;
 }
 /** end home */
