@@ -49,8 +49,8 @@ img {
 .home {
   overflow-x: hidden;
   position: relative;
-  height: 22.34rem;
-  background: #4a1a63 url("./images/body_bg.jpg") top center/100% no-repeat;
+  /* height: 22.34rem; */
+  background: #4a1a63 url('./images/body_bg.jpg') top center/100% no-repeat;
 }
 .title {
   width: 6.1rem;
@@ -201,12 +201,12 @@ img {
   height: 0.37rem;
   box-sizing: border-box;
   padding: 0 0.08rem;
-  background: url("./images/progress_bg.png") center center/100% no-repeat;
+  background: url('./images/progress_bg.png') center center/100% no-repeat;
 }
 .progress-bar {
   width: 10%;
   height: 0.25rem;
-  background: url("./images/progress_bar.png") center center no-repeat;
+  background: url('./images/progress_bar.png') center center no-repeat;
   background-size: cover;
   border-radius: 0.25rem;
 }
@@ -215,7 +215,7 @@ img {
   top: -0.68rem;
   width: 0.6rem;
   height: 0.67rem;
-  background: url("./images/box.png") center center no-repeat;
+  background: url('./images/box.png') center center no-repeat;
   background-size: contain;
 }
 .box:nth-of-type(1) {
@@ -276,7 +276,7 @@ img {
   width: 7.31rem;
   height: 2.56rem;
   margin: 0rem auto 0.48rem;
-  background: url("./images/down-time.png") center center no-repeat;
+  background: url('./images/down-time.png') center center no-repeat;
   background-size: contain;
 }
 
@@ -331,5 +331,47 @@ img {
 }
 .down-day {
   margin-left: 0.08rem;
+}
+.btn-wrap {
+  position: relative;
+  width: 100%;
+  background: url('./images/snow_bg.png') center center no-repeat;
+  background-size: cover;
+}
+.surplus-game-num {
+  position: relative;
+  width: 2.8rem;
+  background: #ffffff;
+  border-radius: 0.1rem;
+  font-size: 0.28rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #7a6ea1;
+  margin: 0.48rem auto 0.3rem;
+  padding: 0.08rem 0;
+}
+.surplus-game-num::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: -0.07rem;
+  bottom: -0.2rem;
+  border: 0.12rem solid;
+  border-color: #ffffff transparent transparent;
+}
+.start-btn {
+  width: 4.54rem;
+  height: 1.74rem;
+  margin: 0 auto;
+  -webkit-animation: pulse 1s linear infinite both;
+  animation: pulse 1s linear infinite both;
+}
+.get_btn-ka {
+  width: 4.54rem;
+  height: 1.74rem;
+  margin: 0 auto;
+  -webkit-animation: shakeX 8s linear infinite both;
+  animation: shakeX 8s linear infinite both;
 }
 /** end home */

@@ -1,0 +1,23 @@
+{
+
+"images": [
+    "jiazi.png"
+],
+
+"framerate": 20,
+"frames": [
+    [0, 0, 343, 385, 0, 0, 0],
+    [343, 0, 371, 389, 0, 0, 0]
+],
+
+"animations": {
+    "jiazhi-1": { "frames": [0] },
+    "jiazhi-2": { "frames": [1] }
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:0cefaf52efc08d868ef12377eef1ac1e:9f655c30b8c6ca9881c2b0a275709e65:119998172f813b05e2cbf5c826a30798$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}
