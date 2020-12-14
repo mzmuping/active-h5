@@ -50,7 +50,7 @@ img {
   overflow-x: hidden;
   position: relative;
   /* height: 22.34rem; */
-  background: #4a1a63 url('./images/body_bg.jpg') top center/100% no-repeat;
+  background: #4a1a63 url("./images/body_bg.jpg") top center/100% no-repeat;
 }
 .title {
   width: 6.1rem;
@@ -201,12 +201,12 @@ img {
   height: 0.37rem;
   box-sizing: border-box;
   padding: 0 0.08rem;
-  background: url('./images/progress_bg.png') center center/100% no-repeat;
+  background: url("./images/progress_bg.png") center center/100% no-repeat;
 }
 .progress-bar {
   width: 10%;
   height: 0.25rem;
-  background: url('./images/progress_bar.png') center center no-repeat;
+  background: url("./images/progress_bar.png") center center no-repeat;
   background-size: cover;
   border-radius: 0.25rem;
 }
@@ -215,7 +215,7 @@ img {
   top: -0.68rem;
   width: 0.6rem;
   height: 0.67rem;
-  background: url('./images/box.png') center center no-repeat;
+  background: url("./images/box.png") center center no-repeat;
   background-size: contain;
 }
 .box:nth-of-type(1) {
@@ -276,7 +276,7 @@ img {
   width: 7.31rem;
   height: 2.56rem;
   margin: 0rem auto 0.48rem;
-  background: url('./images/down-time.png') center center no-repeat;
+  background: url("./images/down-time.png") center center no-repeat;
   background-size: contain;
 }
 
@@ -335,7 +335,7 @@ img {
 .btn-wrap {
   position: relative;
   width: 100%;
-  background: url('./images/snow_bg.png') center center no-repeat;
+  background: url("./images/snow_bg.png") center center no-repeat;
   background-size: cover;
 }
 .surplus-game-num {
@@ -352,7 +352,7 @@ img {
   padding: 0.08rem 0;
 }
 .surplus-game-num::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   margin-left: -0.07rem;
@@ -375,3 +375,76 @@ img {
   animation: shakeX 8s linear infinite both;
 }
 /** end home */
+
+/** start game */
+.page_game {
+  position: relative;
+}
+.avatar {
+  top: 0.41rem;
+  left: 10px;
+}
+.avatar img {
+  position: relative;
+  z-index: 1;
+  width: 0.78rem;
+  height: 0.78rem;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-sizing: border-box;
+}
+.avatar div {
+  min-width: 1.78rem;
+  height: 0.58rem;
+  background: #f7598e;
+  border: 3px solid #ffc87a;
+  border-radius: 29px;
+  box-sizing: border-box;
+  margin-left: -0.3rem;
+  /* padding-left: 0.3rem; */
+  font-size: 0.38rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.time-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0.13rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  font-size: 0.44rem;
+  font-family: PingFangSC Semibold, PingFangSC Semibold-Semibold;
+  font-weight: 600;
+  text-align: left;
+  color: #ffffff;
+  padding: 0.14rem 0.34rem;
+}
+.downTime-wrap {
+  margin-left: 0.15rem;
+}
+.clock {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+.music_icon {
+  position: absolute;
+  top: 0.41rem;
+  right: 0.25rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  background: url("./images/games/music-icon.png") no-repeat center / cover;
+  z-index: 99999;
+}
+.music_icon.active {
+  background-image: url("./images/games/music-icon.png");
+  -webkit-animation: rotate 5s infinite linear;
+  animation: rotate 5s infinite linear;
+}
+/** end game */

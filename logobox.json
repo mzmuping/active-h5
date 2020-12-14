@@ -1,0 +1,37 @@
+{
+
+"images": [
+    "logobox.png"
+],
+
+"framerate": 20,
+"frames": [
+    [1, 1, 285, 292, 0, 0, 0],
+    [1, 295, 284, 291, 0, 0, 0],
+    [1, 588, 284, 291, 0, 0, 0],
+    [287, 295, 284, 291, 0, 0, 0],
+    [288, 1, 284, 291, 0, 0, 0],
+    [287, 588, 284, 291, 0, 0, 0],
+    [574, 1, 284, 291, 0, 0, 0],
+    [573, 294, 284, 291, 0, 0, 0],
+    [573, 587, 284, 291, 0, 0, 0]
+],
+
+"animations": {
+    "house8": { "frames": [0] },
+    "house1": { "frames": [1] },
+    "house2": { "frames": [2] },
+    "house3": { "frames": [3] },
+    "house4": { "frames": [4] },
+    "house5": { "frames": [5] },
+    "house6": { "frames": [6] },
+    "house7": { "frames": [7] },
+    "house9": { "frames": [8] }
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:8cebc7c534a9413f007a0b745d5c450c:80d14e076ceaff33dc16944404df4dc8:b042ea677c5a48fabe2a8c0d5283b9f0$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}
