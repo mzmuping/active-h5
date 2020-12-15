@@ -50,7 +50,14 @@ img {
   overflow-x: hidden;
   position: relative;
   /* height: 22.34rem; */
-  background: #4a1a63 url("./images/body_bg.jpg") top center/100% no-repeat;
+  background: #4a1a63 url("./images/body_bg_1.jpg") top center/100% no-repeat;
+}
+#snowCanvas {
+  top: 0;
+  left: 0;
+  display: block;
+  /* height: 100vh;
+  width: 100vw; */
 }
 .title {
   width: 6.1rem;
@@ -65,9 +72,9 @@ img {
 }
 .snow_luo {
   width: 100%;
-  top: 1.11rem;
-  -webkit-animation: fadeInDown 2s linear infinite both;
-  animation: fadeInDown 2s linear infinite both;
+  top: 0rem;
+  -webkit-animation: fadeInDown 3s linear infinite both;
+  animation: fadeInDown 3s linear infinite both;
 }
 .flash_light {
   width: 7.33rem;
@@ -80,39 +87,39 @@ img {
   top: 3.1rem;
   right: -0.935rem;
   width: 2.36rem;
-  opacity: 0.6;
+  /* opacity: 0.6;
   -webkit-animation: tada 1s linear infinite alternate both;
   animation: tada 1s linear infinite alternate both;
   -webkit-transform-origin: center bottom;
-  transform-origin: center bottom;
+  transform-origin: center bottom; */
 }
 .lamp_road {
   top: 3.27rem;
   left: 4.01rem;
   width: 2.36rem;
-  opacity: 0.6;
+  /* opacity: 0.6;
   -webkit-animation: swing 2s linear infinite alternate both;
   animation: swing 2s linear infinite alternate both;
   -webkit-transform-origin: center bottom;
-  transform-origin: center bottom;
+  transform-origin: center bottom; */
 }
 .lamp_1 {
   width: 1.36rem;
   top: 5.89rem;
   left: 1.83rem;
-  -webkit-animation: rotateIn 2s linear infinite alternate both;
+  /* -webkit-animation: rotateIn 2s linear infinite alternate both;
   animation: rotateIn 2s linear infinite alternate both;
   -webkit-transform-origin: center bottom;
-  transform-origin: center bottom;
+  transform-origin: center bottom; */
 }
 .lamp_1_1 {
   width: 1.36rem;
   top: 5.89rem;
   left: 3.51rem;
-  -webkit-animation: rotateIn_left 2s linear infinite alternate both;
+  /* -webkit-animation: rotateIn_left 2s linear infinite alternate both;
   animation: rotateIn_left 2s linear infinite alternate both;
   -webkit-transform-origin: center bottom;
-  transform-origin: center bottom;
+  transform-origin: center bottom; */
 }
 .car-yellow {
   width: 0.81rem;
@@ -160,13 +167,13 @@ img {
   transform-origin: center bottom;
 }
 .SantaClaus {
-  width: 0.83rem;
-  top: 9.46rem;
-  left: 1.49rem;
-  -webkit-animation: zoomInDown 2s linear infinite both;
+  width: 2rem;
+  top: 8.8rem;
+  left: 0.8rem;
+  /* -webkit-animation: zoomInDown 2s linear infinite both;
   animation: zoomInDown 2s linear infinite both;
   -webkit-transform-origin: center bottom;
-  transform-origin: center bottom;
+  transform-origin: center bottom; */
 }
 .bear-icon {
   width: 0.66rem;
@@ -185,6 +192,88 @@ img {
   animation: pulse 1s linear infinite both;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
+}
+
+/* 楼 */
+.floor1 {
+  opacity: 0.5;
+  width: 2.12rem;
+  top: 5.5rem;
+  left: 0;
+}
+.floor2 {
+  opacity: 0.5;
+  width: 2.21rem;
+  top: 7.49rem;
+  left: 1rem;
+}
+.floor3 {
+  opacity: 1;
+  width: 1.93rem;
+  top: 7.78rem;
+  left: 2.77rem;
+  z-index: 2;
+}
+.floor4 {
+  opacity: 0.5;
+  width: 3.06rem;
+  top: 5.9rem;
+  left: 4.06rem;
+  z-index: 1;
+}
+.floor5 {
+  opacity: 0.5;
+  width: 0.94rem;
+  top: 6.1rem;
+  right: 0;
+  z-index: 0;
+}
+.tree-red {
+  width: 0.4rem;
+  top: 9.03rem;
+  left: 0.14rem;
+}
+.tree-red-2 {
+  width: 0.4rem;
+  top: 9.29rem;
+  left: 0.6rem;
+}
+.tree {
+  width: 0.96rem;
+  top: 9.4rem;
+  left: 2.15rem;
+  z-index: 2;
+}
+.lipstick {
+  width: 0.4rem;
+  top: 9.55rem;
+  left: 4.39rem;
+  z-index: 2;
+}
+.prize-boss {
+  width: 1.08rem;
+  top: 9.67rem;
+  left: 3.28rem;
+  z-index: 3;
+  text-align: center;
+  font-size: 0.19rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 700;
+  color: #ffffff;
+}
+.prize-boss p:nth-child(2) {
+  font-size: 0.16rem;
+  padding: 0.06rem 0;
+  font-weight: 400;
+}
+.prize-boss-status {
+  margin: 0 auto;
+  width: 0.72rem;
+  height: 0.2rem;
+  font-size: 0.137rem;
+  background-color: #ee4780;
+  font-weight: 400;
+  border-radius: 0.2rem;
 }
 
 /** progress */
@@ -377,6 +466,18 @@ img {
 /** end home */
 
 /** start game */
+#gameCanvas {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+}
+#game_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #dc3d7f;
+}
 .page_game {
   position: relative;
 }
@@ -440,11 +541,71 @@ img {
   width: 0.72rem;
   height: 0.72rem;
   background: url("./images/games/music-icon.png") no-repeat center / cover;
-  z-index: 99999;
+  z-index: 100;
 }
 .music_icon.active {
   background-image: url("./images/games/music-icon.png");
   -webkit-animation: rotate 5s infinite linear;
   animation: rotate 5s infinite linear;
+}
+
+/* 游戏结束页 */
+.game-end {
+  display: none;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background: #521c65 url("./images/games/game-light-bg.png") no-repeat top/100%;
+  z-index: 99999;
+}
+.game-end-score {
+  margin: -0.5rem auto 0;
+  width: 6.2rem;
+  height: 10.81rem;
+  background: url("./images/games/game-end-bg.png") no-repeat top/100%;
+}
+.game-end-tips {
+  font-size: 0.32rem;
+  padding-top: 4rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+}
+.game-get-score {
+  margin: 0.59rem auto 0;
+  width: 2.71rem;
+  height: 2.91rem;
+  background: url("./images/games/score-bg.png") no-repeat;
+  background-size: contain;
+  font-size: 0.98rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  line-height: 0.73rem;
+  text-shadow: 0.05rem 0.05rem 0.27rem 0rem rgba(82, 53, 188, 0.31);
+  box-sizing: border-box;
+  padding-top: 0.79rem;
+}
+.surplus-num {
+  width: 3.67rem;
+  height: 0.77rem;
+  background: url("./images/games/score-num-bg.png") no-repeat;
+  background-size: contain;
+  margin: 1.1rem auto 0;
+  font-size: 0.28rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+}
+.btn-restart-game {
+  width: 4rem;
+  margin: 0.4rem auto 0.2rem;
+}
+.back-home {
+  width: 4rem;
+  margin: 0 auto;
 }
 /** end game */

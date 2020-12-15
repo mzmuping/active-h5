@@ -29,24 +29,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PreloadJS/1.0.1/preloadjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tweenjs/1.0.2/tweenjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SoundJS/1.0.2/soundjs.min.js"></script>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-      }
-      canvas {
-        display: block;
-        height: 100vh;
-        width: 100vw;
-      }
-      #game_bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: #dc3d7f;
-      }
-    </style>
+    <style></style>
     <link rel="stylesheet" type="text/css" href="./index.css" />
   </head>
   <body>
@@ -70,7 +53,23 @@
       </div>
       <div class="music_icon"></div>
       <div id="game_bg"></div>
-      <canvas id="game" width="750"></canvas>
+      <canvas id="gameCanvas" width="750"></canvas>
+      <!-- 游戏结束页 -->
+      <div class="absolute game-end">
+        <div class="game-end-score">
+          <div class="game-end-tips">恭喜你获得</div>
+          <div class="game-get-score">129</div>
+          <div class="surplus-num flex c-center">
+            当前剩余游戏卡：<span>2</span>
+          </div>
+        </div>
+        <img
+          class="btn-restart-game"
+          src="./images/games/btn-restart-game.png"
+          alt=""
+        />
+        <img class="back-home" src="./images/games/back-home.png" alt="" />
+      </div>
     </div>
 
     <script>
@@ -78,7 +77,7 @@
       bgm.src =
         "https://res.wx.qq.com/voice/getvoice?mediaid=MzU5ODAyMzYxMF8xMDAwMDAyNDU=";
       var prop_is_master = true;
-      var prop_game_count;
+      var prop_game_count =10;
       var prop_site_id;
       var game_key = {};
       var appsud_id = "";
@@ -89,7 +88,7 @@
 
       //游戏
       (function () {
-        const canvas = document.getElementById("game");
+        const canvas = document.getElementById("gameCanvas");
         const gameBg = document.getElementById("gameBg");
         const clientWidth = window.innerWidth * 2;
         const clientHeight = window.innerHeight * 2;
@@ -156,6 +155,10 @@
             ];
             let manifestHouse = [
               {
+                id: "chi",
+                src: "./images/games/chi.png",
+              },
+              {
                 id: "gameBg2",
                 src: "./images/games/game-bg_02.jpg",
               },
@@ -213,7 +216,7 @@
               },
             ];
             this.queue.loadManifest(manifestHouse);
-            this.queue.loadManifest(manifest);
+            // this.queue.loadManifest(manifest);
             this.queue.on("complete", (e) => {
               this.init();
               $(".ceng").show();
@@ -240,31 +243,32 @@
             this.bottomDir = canvas.height - bg.image.naturalHeight;
             this.gameBg.addChild(bg);
             this.stage.addChild(this.gameBg);
-            const data = {
-              images: [this.queue.getResult("logo")],
-              // "framerate": 0.01,
-              frames: [
-                [1, 1, 743, 201, 0, 0, 0],
-                [-35, 204, 745, 235, 0, 0, 0],
-                [1, 441, 643, 200, 0, 0, 0],
-              ],
 
-              animations: {
-                // "logo动图_0001_图层": { "frames": [0] },
-                // "logo动图_0002_图层": { "frames": [1] },
-                // "logo动图_0000_图层": { "frames": [2] }
-                run: {
-                  frames: [2, 0, 1],
-                  speed: 0.005,
-                },
-              },
-            };
-            const logoSheet = new createjs.SpriteSheet(data);
-            const logoSprite = new createjs.Sprite(logoSheet, "run");
-            console.log(canvas.height);
-            logoSprite.x = 5;
-            logoSprite.y = 660;
-            this.gameBg.addChild(logoSprite);
+            // const data = {
+            //   images: [this.queue.getResult("logo")],
+            //   // "framerate": 0.01,
+            //   frames: [
+            //     [1, 1, 743, 201, 0, 0, 0],
+            //     [-35, 204, 745, 235, 0, 0, 0],
+            //     [1, 441, 643, 200, 0, 0, 0],
+            //   ],
+
+            //   animations: {
+            //     // "logo动图_0001_图层": { "frames": [0] },
+            //     // "logo动图_0002_图层": { "frames": [1] },
+            //     // "logo动图_0000_图层": { "frames": [2] }
+            //     run: {
+            //       frames: [2, 0, 1],
+            //       speed: 0.005,
+            //     },
+            //   },
+            // };
+            // const logoSheet = new createjs.SpriteSheet(data);
+            // const logoSprite = new createjs.Sprite(logoSheet, "run");
+            // console.log(canvas.height);
+            // logoSprite.x = 5;
+            // logoSprite.y = 660;
+            // this.gameBg.addChild(logoSprite);
 
             const chiData = {
               images: [this.queue.getResult("chi")],
@@ -301,48 +305,60 @@
               cjs.Tween.get(gameSnow, { loop: true })
                 .wait(2000 * sindex)
                 .to({ alpha: 1, x: 0, y: canvas.height }, 3000)
-                .to({ alpha: 0, x: 0, visible:false, y: canvas.height }, 1);
+                .to({ alpha: 0, x: 0, visible: false, y: canvas.height }, 1);
             }
 
-            //云
-            const cloud1 = new cjs.Bitmap(this.queue.getResult("cloud"));
-            this.stage.addChild(cloud1);
-            cloud1.y = 100;
-            cloud1.x = 600;
-            const cloud2 = new cjs.Bitmap(this.queue.getResult("cloud"));
-            this.stage.addChild(cloud2);
-            cloud2.y = 400;
-            cloud2.x = 100;
-            cjs.Tween.get(cloud1, { loop: true })
-              .to({ x: 550 }, 1500)
-              .to({ x: 600 }, 1500);
-            cjs.Tween.get(cloud2, { loop: true })
-              .to({ x: 150 }, 1500)
-              .to({ x: 100 }, 1500);
+            // 雪花
+            let gameSnowFlower = new cjs.Bitmap(
+              this.queue.getResult("gameSnowFlower")
+            );
+
+            this.stage.addChild(gameSnowFlower);
+            gameSnowFlower.y = -gameSnowFlower.image.naturalHeight;
+            gameSnowFlower.x = -gameSnowFlower.image.naturalWidth;
+            cjs.Tween.get(gameSnowFlower, { loop: true })
+              .to({ alpha: 1, x: 0, y: canvas.height }, 5000)
+              .to({ alpha: 0, x: canvas.width, y: canvas.height }, 1);
+
+            // //云
+            // const cloud1 = new cjs.Bitmap(this.queue.getResult("cloud"));
+            // this.stage.addChild(cloud1);
+            // cloud1.y = 100;
+            // cloud1.x = 600;
+            // const cloud2 = new cjs.Bitmap(this.queue.getResult("cloud"));
+            // this.stage.addChild(cloud2);
+            // cloud2.y = 400;
+            // cloud2.x = 100;
+            // cjs.Tween.get(cloud1, { loop: true })
+            //   .to({ x: 550 }, 1500)
+            //   .to({ x: 600 }, 1500);
+            // cjs.Tween.get(cloud2, { loop: true })
+            //   .to({ x: 150 }, 1500)
+            //   .to({ x: 100 }, 1500);
 
             // 飞机
-            this.plan = new cjs.Bitmap(this.queue.getResult("plan"));
-            this.plan.x = -150;
-            this.stage.addChild(this.plan);
+            // this.plan = new cjs.Bitmap(this.queue.getResult("plan"));
+            // this.plan.x = -150;
+            // this.stage.addChild(this.plan);
 
             // 气球
-            this.balloon = new cjs.Bitmap(this.queue.getResult("balloon"));
-            this.balloon.x = 44;
-            this.balloon.y = 270;
-            cjs.Tween.get(this.balloon, { loop: true })
-              .to({ y: 290 }, 900)
-              .to({ y: 270 }, 900);
-            this.stage.addChild(this.balloon);
+            // this.balloon = new cjs.Bitmap(this.queue.getResult("balloon"));
+            // this.balloon.x = 44;
+            // this.balloon.y = 270;
+            // cjs.Tween.get(this.balloon, { loop: true })
+            //   .to({ y: 290 }, 900)
+            //   .to({ y: 270 }, 900);
+            // this.stage.addChild(this.balloon);
 
             // 浮动logo
-            this.fly_logo = new cjs.Bitmap(this.queue.getResult("fly_logo"));
-            this.fly_logo.x = 535;
-            this.fly_logo.y = 410;
-            this.fly_logo.visible = false;
-            cjs.Tween.get(this.fly_logo, { loop: true })
-              .to({ y: 430 }, 900)
-              .to({ y: 410 }, 900);
-            this.stage.addChild(this.fly_logo);
+            // this.fly_logo = new cjs.Bitmap(this.queue.getResult("fly_logo"));
+            // this.fly_logo.x = 535;
+            // this.fly_logo.y = 410;
+            // this.fly_logo.visible = false;
+            // cjs.Tween.get(this.fly_logo, { loop: true })
+            //   .to({ y: 430 }, 900)
+            //   .to({ y: 410 }, 900);
+            // this.stage.addChild(this.fly_logo);
 
             // //注册音乐
             createjs.Sound.alternateExtensions = ["mp3"];
@@ -397,7 +413,7 @@
             this.pliersContainer.visible = true;
             this.houseContainer.visible = true;
             this.gameBg.y = this.bottomDir;
-            this.rotateSpeed = 1;
+            this.rotateSpeed = 2;
             this.downCount = 0;
             this.score = 0;
             this.gameStart = false;
@@ -509,6 +525,20 @@
             this.gameStart = false;
             this.pliersContainer.visible = false;
             this.houseContainer.visible = false;
+            $(".game-end").show();
+            // 
+            $(".btn-restart-game")
+              .off()
+              .click(function () {
+                console.log(game);
+                if (prop_game_count > 0) {
+                  game.start();
+                  $(".game-end").hide();
+                } else {
+                  alert("没有游戏次数了");
+                }
+              });
+
             if (prop_is_master) {
               cjs.Sound.play("gameover");
               game_floor = this.downCount + 1;
@@ -685,12 +715,12 @@
                       house.removeAllEventListeners();
                       // 记录已经盖了多少层
                       this.downCount++;
-                      if (this.downCount > 7) {
-                        this.balloon.visible = false;
-                      }
-                      if (this.downCount > 8) {
-                        this.fly_logo.visible = true;
-                      }
+                      // if (this.downCount > 7) {
+                      //   this.balloon.visible = false;
+                      // }
+                      // if (this.downCount > 8) {
+                      //   this.fly_logo.visible = true;
+                      // }
                       $(".ceng span").html(this.downCount + 1);
                       house.y = this.lastHouse.y - house.height + reducH;
 
@@ -703,19 +733,19 @@
                       }
 
                       if (this.downCount > 2) {
-                        this.rotateSpeed = 3
+                        this.rotateSpeed = 3;
                       }
 
                       if (this.downCount > 6) {
-                        this.rotateSpeed = 3.5
+                        this.rotateSpeed = 3.5;
                       }
 
                       if (this.downCount > 9) {
-                        this.rotateSpeed = 4
+                        this.rotateSpeed = 4;
                       }
 
                       // 难点 ： 房子大于4的时候背景滑动高一点
-                      if (this.downCount >= 4) {
+                      if (this.downCount >= 3) {
                         cjs.Tween.get(this.downContainer)
                           .to(
                             {
@@ -740,17 +770,17 @@
                             this.chiSprite.visible = false;
                           });
 
-                        if (this.plan.fly) {
-                        } else {
-                          this.plan.x = 800;
-                          this.plan.y = 500;
-                          cjs.Tween.get(this.plan)
-                            .to({ x: -1000, y: 400 }, 10000)
-                            .call((e) => {
-                              this.plan.fly = false;
-                            });
-                          this.plan.fly = true;
-                        }
+                        // if (this.plan.fly) {
+                        // } else {
+                        //   this.plan.x = 800;
+                        //   this.plan.y = 500;
+                        //   cjs.Tween.get(this.plan)
+                        //     .to({ x: -1000, y: 400 }, 10000)
+                        //     .call((e) => {
+                        //       this.plan.fly = false;
+                        //     });
+                        //   this.plan.fly = true;
+                        // }
 
                         //突然升高时要进行调整
                         if (this.downCount === 5) {
