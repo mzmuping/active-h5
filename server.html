@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>&nbsp;</title>
+    <script>
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt =
+            "orientationchange" in window ? "orientationchange" : "resize",
+          recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + "px";
+            if (window.innerHeight / window.innerWidth > 1.8) {
+              document.body.className = "isIphone";
+            } else {
+              document.body.className = "";
+            }
+          };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+      })(document, window);
+    </script>
+
+    <script src="{root_cdn}jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{root_cdn}Swiper/4.5.0/css/swiper.min.css" />
+    <script src="{root_cdn}Swiper/4.2.2/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="{root_cdn}weui/1.1.3/style/weui.min.css" />
+    <link
+      rel="stylesheet"
+      href="{root_cdn}jquery-weui/1.2.1/css/jquery-weui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{root_static_file_cdn}app/act/t_002/index.css?{v}v=3111"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{root_static_file_cdn}app/act/t_002/index_animate.css"
+    />
+    <script src="{root_cdn}jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PreloadJS/1.0.1/preloadjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tweenjs/1.0.2/tweenjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SoundJS/1.0.2/soundjs.min.js"></script>
+  </head>
+
+  <body>
+    <div class="home">
+      <img
+        class="title animate__animated animate__bounceInDown"
+        src="{root_static_file_cdn}app/act/t_002/img/title.png"
+        alt=""
+      />
+      <!-- <img class="absolute snow_flow" src="{root_static_file_cdn}app/act/t_002/img/snow_flow.png" alt="雪花" /> -->
+      <!-- <img class="absolute snow_luo" src="{root_static_file_cdn}app/act/t_002/img/snow_luo.png" alt="雪花落下" /> -->
+      <img
+        class="absolute flash_light"
+        src="{root_static_file_cdn}app/act/t_002/img/flash_light.png"
+        alt="闪烁"
+      />
+      <img
+        class="absolute car-yellow"
+        src="{root_static_file_cdn}app/act/t_002/img/car-yellow.gif"
+        alt="黄车"
+      />
+      <img
+        class="absolute car-red"
+        src="{root_static_file_cdn}app/act/t_002/img/car-red.gif"
+        alt="红车"
+      />
+      <img
+        class="absolute aircraft"
+        src="{root_static_file_cdn}app/act/t_002/img/aircraft.gif"
+        alt="飞机"
+      />
+      <img
+        class="absolute aircraft2"
+        src="{root_static_file_cdn}app/act/t_002/img/aircraft.gif"
+        alt="飞机"
+      />
+      <img
+        class="absolute lamp_2"
+        src="{root_static_file_cdn}app/act/t_002/img/lamp_2.png"
+        alt="黄灯1"
+      />
+      <img
+        class="absolute lamp_road"
+        src="{root_static_file_cdn}app/act/t_002/img/lamp_2.png"
+        alt="黄灯2"
+      />
+      <img
+        class="absolute lamp_1"
+        src="{root_static_file_cdn}app/act/t_002/img/lamp_1.png"
+        alt="红灯1"
+      />
+      <img
+        class="absolute lamp_1_1"
+        src="{root_static_file_cdn}app/act/t_002/img/lamp_1.png"
+        alt="红灯2"
+      />
+      <img
+        class="absolute pic-icon"
+        src="{root_static_file_cdn}app/act/t_002/img/pic-icon1.png"
+        alt="大象"
+      />
+
+      <img
+        class="absolute floor1"
+        src="{root_static_file_cdn}app/act/t_002/img/floor1.png"
+        alt="楼1"
+      />
+      <img
+        class="absolute floor2"
+        src="{root_static_file_cdn}app/act/t_002/img/floor2.png"
+        alt="楼2"
+      />
+      <img
+        class="absolute floor3"
+        src="{root_static_file_cdn}app/act/t_002/img/floor3.png"
+        alt="楼3"
+      />
+      <img
+        class="absolute floor4"
+        src="{root_static_file_cdn}app/act/t_002/img/floor4.png"
+        alt="楼4"
+      />
+      <img
+        class="absolute floor5"
+        src="{root_static_file_cdn}app/act/t_002/img/floor5.png"
+        alt="楼5"
+      />
+      <img
+        class="absolute tree-red"
+        src="{root_static_file_cdn}app/act/t_002/img/tree-red.png"
+        alt="红树"
+      />
+      <img
+        class="absolute tree-red-2"
+        src="{root_static_file_cdn}app/act/t_002/img/tree-red.png"
+        alt="红树"
+      />
+      <img
+        class="absolute tree"
+        src="{root_static_file_cdn}app/act/t_002/img/tree.png"
+        alt="圣诞树"
+      />
+      <img
+        class="absolute lipstick"
+        src="{root_static_file_cdn}app/act/t_002/img/lipstick.png"
+        alt="圣诞树"
+      />
+      <div class="absolute prize-boss">
+        <p>终极大奖</p>
+        <p>跨年锦鲤券</p>
+        <div class="prize-boss-status flex c-center">待解锁</div>
+      </div>
+
+      <canvas id="snowCanvas" class="absolute" width="750"></canvas>
+
+      <img
+        class="absolute bird"
+        src="{root_static_file_cdn}app/act/t_002/img/bird.png"
+        alt="鸟"
+      />
+      <img
+        class="absolute rule-btn"
+        src="{root_static_file_cdn}app/act/t_002/img/rule-btn.png"
+        alt="活动说明"
+      />
+      <img
+        class="absolute SantaClaus"
+        src="{root_static_file_cdn}app/act/t_002/img/SantaClaus.gif"
+        alt="圣诞人"
+      />
+      <img
+        class="absolute bear-icon"
+        src="{root_static_file_cdn}app/act/t_002/img/bear-icon.png"
+        alt="鸟"
+      />
+      <img
+        class="absolute prize-my"
+        src="{root_static_file_cdn}app/act/t_002/img/prize-my.png"
+        alt="活动说明"
+      />
+      <!--  -->
+      <div class="relative progress-wrap">
+        <div class="progress-bg">
+          <div class="progress-bar"></div>
+        </div>
+        <span class="box box-prize-fun1 absolute"></span>
+        <span class="box box-prize-fun2 absolute"></span>
+        <span class="box box-prize-fun3 absolute"></span>
+        <span class="box box-prize-fun4 absolute"></span>
+        <span class="box box-prize-fun5 absolute"></span>
+
+        <span class="box-number box-fun1 absolute"></span>
+        <span class="box-number box-fun2 absolute"></span>
+        <span class="box-number box-fun3 absolute"></span>
+        <span class="box-number box-fun4 absolute"></span>
+        <span class="box-number box-fun5 absolute"></span>
+
+        <div class="exploration-score flex">
+          <div class="box-flex flex c-center">
+            探索积分：<span id="scoreNum"></span>
+          </div>
+          <div class="box-flex flex c-center">
+            当前探索进度：<span id="progressNum"></span>
+          </div>
+        </div>
+      </div>
+      <div class="down-time">
+        <span class="status-text flex c-center absolute">未获得</span>
+        <div class="down-text absolute">元旦前探索进度达到100%即可获得</div>
+        <div class="absolute flex c-center down-time-t">
+          获取倒计时
+          <span class="down-day">0</span>
+          <span>0</span>
+          <i>天</i>
+          <span>0</span>
+          <span>0</span>
+          <i>时</i>
+          <span>0</span>
+          <span>0</span>
+          <i>分</i>
+        </div>
+      </div>
+      <div class="btn-wrap">
+        <div class="surplus-game-num">当前剩余游戏卡：<span></span></div>
+        <img
+          class="start-btn btn-start-game"
+          src="{root_static_file_cdn}app/act/t_002/img/btn_start.png"
+          alt=""
+        />
+        <img
+          class="get_btn-ka"
+          src="{root_static_file_cdn}app/act/t_002/img/get_btn_ka.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <!-- 普通奖品 -->
+    <div class="normal-prize-main fixed">
+      <div class="mask absolute"></div>
+      <div class="normal-prize">
+        <img
+          class="prize-box-onpen"
+          src="{root_static_file_cdn}app/act/t_002/img/prize-box-onpen.png"
+          alt=""
+        />
+        <img
+          class="absolute finger"
+          src="{root_static_file_cdn}app/act/t_002/img/finger.png"
+          alt=""
+        />
+        <div class="absolute prize-wrap">
+          <div class="prize-tips">恭喜你中奖啦!</div>
+          <img
+            class="prize-img"
+            src="{root_static_file_cdn}app/act/t_002/img/prize-baowenbei.png"
+            alt=""
+          />
+        </div>
+        <div class="normal-prize-tips">点击宝箱抽奖</div>
+        <div class="prize-btn-wrap">
+          <div class="btn-reset-prize flex c-center">
+            再接再励
+            <img
+              class="absolute btn-SantaClaus"
+              src="{root_static_file_cdn}app/act/t_002/img/SantaClaus.gif"
+              alt="圣诞人"
+            />
+          </div>
+          <div class="btn-get-prize flex c-center">
+            收下奖品
+            <img
+              class="absolute btn-SantaClaus"
+              src="{root_static_file_cdn}app/act/t_002/img/SantaClaus.gif"
+              alt="圣诞人"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 大奖品 -->
+    <div class="big-prize-main fixed">
+      <div class="mask absolute"></div>
+      <div class="big-prize">
+        <div class="big-no-prize">
+          <div class="big-no-tips">
+            <p>元旦锦鲤宝箱</p>
+            <p>宝箱一开，好运滚滚来...</p>
+          </div>
+          <img
+            class="big-no-prize-box"
+            src="{root_static_file_cdn}app/act/t_002/img/big-no-prize-box.png"
+            alt=""
+          />
+          <img
+            class="absolute big-prize-red"
+            src="{root_static_file_cdn}app/act/t_002/img/big-prize-red.png"
+            alt=""
+          />
+          <div class="absolute big-prize-tips">点击宝箱抽奖</div>
+
+          <img
+            class="absolute big-finger"
+            src="{root_static_file_cdn}app/act/t_002/img/finger.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- 游戏 -->
+    <audio src="" id="bgm" loop></audio>
+    <div class="page_game">
+      <div class="absolute avatar flex c-center">
+        <img class="wxuser_headimgurl" alt="" />
+        <div id="score" class="score flex c-center"></div>
+      </div>
+      <div class="time-wrap flex c-center">
+        <img
+          data-original="{root_static_file_cdn}app/act/t_002/img/game/clock.png"
+          src="{root_static_file_cdn}app/act/t_002/img/game/clock.png"
+          class="lazy clock"
+          alt=""
+        />
+        <div class="downTime-wrap"><span id="second">20</span>s</div>
+      </div>
+      <div class="music_icon"></div>
+      <div id="game_bg"></div>
+      <canvas id="game" width="750"></canvas>
+      <!-- 游戏结束页 -->
+      <div class="absolute game-end">
+        <div class="game-end-score">
+          <div class="game-end-tips">恭喜你获得</div>
+          <div class="game-get-score"></div>
+          <div class="surplus-num flex c-center">
+            当前剩余游戏卡：<span></span>
+          </div>
+        </div>
+        <img
+          class="btn-restart-game"
+          src="{root_static_file_cdn}app/act/t_002/img/game/btn-restart-game.png"
+          alt=""
+        />
+        <img
+          class="back-home"
+          src="{root_static_file_cdn}app/act/t_002/img/game/back-home.png"
+          alt=""
+        />
+      </div>
+      <div class="game-load">
+        <div>
+          <div class="game-load-pro">0%</div>
+          <div>正在加载...</div>
+        </div>
+      </div>
+    </div>
+    <!-- test 二维码sdfsdf
+    <img
+      src="{root_static_file_cdn}app/z_common/app_api/wx_qr?x=jie01&word=act1604155011"
+    /> -->
+  </body>
+
+  <script>
+    let setInitData = {};
+    // 初始化数据 api
+    function func_get_init_data() {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_001`,
+        success(res) {
+          console.log("请求==", res.data);
+          setInitData = res.data;
+          set_data(res.data);
+        },
+      });
+    }
+    function set_data(data) {
+      let play_count = 0;
+
+      //  分数
+      $(".box-fun1").html(data.set_data.prize_fun_01);
+      $(".box-fun2").html(data.set_data.prize_fun_02);
+      $(".box-fun3").html(data.set_data.prize_fun_03);
+      $(".box-fun4").html(data.set_data.prize_fun_04);
+      $(".box-fun5").html(data.set_data.prize_fun_05);
+      let maxFun = Number(data.set_data.prize_fun_05);
+      let prize_fun_01 = Number(data.set_data.prize_fun_01);
+      let prize_fun_02 = Number(data.set_data.prize_fun_02);
+      let prize_fun_03 = Number(data.set_data.prize_fun_03);
+      let prize_fun_04 = Number(data.set_data.prize_fun_04);
+      let prize_fun_05 = Number(data.set_data.prize_fun_05);
+      let isGetMaxFun = Number(data.launch.fun) >= maxFun;
+      let prize_fun_arr = [
+        prize_fun_01,
+        prize_fun_02,
+        prize_fun_03,
+        prize_fun_04,
+        prize_fun_05,
+      ];
+
+      let masterfun = data.launch.fun; //获得积分
+      // let progressMaxFun = maxFun
+      play_count = data.launch.play_count; //游戏次数
+      for (let i = 0; i < prize_fun_arr.length; i++) {
+        let index = i + 1;
+        $(".box-prize-fun" + index).data("fun_key", "prize_fun_0" + index);
+
+        if (masterfun >= prize_fun_arr[i]) {
+          // progressMaxFun = prize_fun_arr[i]
+          $(".box-prize-fun" + index)
+            .css({
+              opacity: 1,
+            })
+            .data("isChou", 1);
+
+          $(".floor" + index).css({
+            opacity: 1,
+          });
+        }
+      }
+      for (let i = 0; i < data.list_chou.length; i++) {
+        let item = data.list_chou[i].adc_uix.split("|");
+        let funs = Number(item[item.length - 1]);
+        let index = prize_fun_arr.indexOf(funs);
+        $(".box-prize-fun" + (index + 1)).data("isChou", 0);
+      }
+      // surplus-game-num
+      $(".surplus-game-num span").html(play_count);
+      $("#scoreNum").html(data.launch.fun);
+      let fun = (Number(data.launch.fun) / maxFun) * 100;
+      fun = fun > 100 ? 100 : fun;
+      let progress = Number(fun).toFixed(0);
+      $(".progress-bar").css({
+        width: progress + "%",
+      });
+      $("#progressNum").html(progress + "%");
+      if (isGetMaxFun) {
+        $(".status-text").html("获得");
+      }
+
+      // 开启倒计时
+      getleftTimer(new Date().getTime() + data.prize_s * 1000);
+
+      $(".wxuser_headimgurl").attr("src", data.common.share.wxuser_headimgurl);
+
+      $(".btn-start-game")
+        .off()
+        .click(function () {
+          if (play_count > 0) {
+            $(".home").hide();
+            $(".page_game").show();
+
+            game = new Game();
+            game.preload();
+          } else {
+            alert("没有游戏次数了");
+          }
+        });
+    }
+
+    //   普通 抽奖
+    function fun_chou_normal(fun_key) {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_001/chou`,
+        method: "post",
+        data: {
+          fun_key,
+        },
+        success(res) {
+          console.log("请求==", res.data);
+        },
+      });
+    }
+    // 倒计时
+    function getleftTimer(downs) {
+      let timer = null;
+      function leftTimer() {
+        var leftTime = new Date(downs) - new Date(); //计算剩余的毫秒数
+        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
+        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10); //计算剩余的小时
+        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10); //计算剩余的分钟
+        var seconds = parseInt((leftTime / 1000) % 60, 10); //计算剩余的秒数
+        days = checkTime(days);
+        hours = checkTime(hours);
+        minutes = checkTime(minutes);
+        seconds = checkTime(seconds);
+        if (days > 0 || hours > 0 || minutes > 0 || seconds > 0) {
+          $(".down-time-t").html(`获取倒计时
+          <span class="down-day">${days.substring(0, 1)}</span>
+          <span>${days.substring(1, 2)}</span>
+          <i>天</i>
+          <span>${hours.substring(0, 1)}</span>
+          <span>${hours.substring(1, 2)}</span>
+          <i>时</i>
+          <span>${minutes.substring(0, 1)}</span>
+          <span>${minutes.substring(1, 2)}</span>
+          <i>分</i>`);
+          setTimeout(leftTimer, 1000);
+        } else {
+          $(".down-time-t").html(`获取倒计时
+          <span class="down-day">0</span>
+          <span>0</span>
+          <i>天</i>
+          <span>0</span>
+          <span>0</span>
+          <i>时</i>
+          <span>0</span>
+          <span>0</span>
+          <i>分</i>`);
+        }
+      }
+      leftTimer();
+    }
+    function checkTime(i) {
+      //将0-9的数字前面加上0，例1变为01
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i + "";
+    }
+
+    $(function () {
+      func_get_init_data();
+
+      $(".progress-wrap").click(function (e) {
+        let el = $(e.target).data();
+        console.log(el);
+        if (el.isChou === 1) {
+          fun_chou_normal(el.fun_key);
+        } else if (el.fun_key) {
+          alert("已经抽过了");
+        } else {
+          alert("还没开放");
+        }
+      });
+    });
+  </script>
+  <script>
+    const bgm = document.getElementById("bgm");
+    var game = null;
+    bgm.src =
+      "https://res.wx.qq.com/voice/getvoice?mediaid=MzU5ODAyMzYxMF8xMDAwMDAyNDU=";
+    // var prop_is_master = true;
+    // var prop_game_count = 10;
+    // var prop_site_id;
+    // var game_key = {};
+    // var appsud_id = "";
+    // var prop_master_fun = 0;
+    // var initGame; // 全局canvas
+    // var game_floor = 0;
+    // var prop_score = 0;
+
+    //游戏
+    (function () {
+      const canvas = document.getElementById("game");
+      const gameBg = document.getElementById("gameBg");
+      const clientWidth = window.innerWidth * 2;
+      const clientHeight = window.innerHeight * 2;
+      // canvas.width = clientWidth;
+      canvas.height = clientHeight;
+      canvas.addEventListener("touchstart", function (e) {
+        e.preventDefault();
+      });
+      const cjs = createjs;
+      class Game {
+        //预加载
+        preload() {
+          this.queue = new cjs.LoadQueue(false, "", true);
+          let manifestHouse = [
+            {
+              id: "chi",
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/chi.png",
+            },
+            {
+              id: "gameBg2",
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-bg_02.jpg",
+            },
+            {
+              id: "jiazi",
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/jiazi.png",
+            },
+            {
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/house1.png",
+              id: "house1",
+            },
+            {
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/house2.png",
+              id: "house2",
+            },
+            {
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/house3.png",
+              id: "house3",
+            },
+            {
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/house4.png",
+              id: "house4",
+            },
+            {
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/house5.png",
+              id: "house5",
+            },
+            {
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/house6.png",
+              id: "house6",
+            },
+            {
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/house7.png",
+              id: "house7",
+            },
+            {
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/house8.png",
+              id: "house8",
+            },
+            {
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/house9.png",
+              id: "house9",
+            },
+            {
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-snow.png",
+              id: "gameSnow",
+            },
+            {
+              src:
+                "https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-snow-flower.png",
+              id: "gameSnowFlower",
+            },
+          ];
+          this.queue.loadManifest(manifestHouse);
+          // this.queue.loadManifest(manifest);
+          this.queue.on("complete", (e) => {
+            this.init();
+            $(".game-load").hide();
+            console.log(this.queue);
+            if (typeof WeixinJSBridge === "object") {
+              WeixinJSBridge.invoke("getNetworkType", {}, function (e) {
+                bgm.play();
+                $(".music_icon").addClass("active");
+              });
+            }
+          });
+          let progressIndex = 0;
+          this.queue.on(
+            "progress",
+            (res) => {
+              progressIndex++;
+              console.log("progress===" + progressIndex);
+              let progressNum = Number(
+                (progressIndex / manifestHouse.length) * 100
+              ).toFixed();
+              $(".game-load-pro").html(progressNum + "%");
+            },
+            this
+          );
+        }
+
+        init() {
+          this.stage = new cjs.Stage("game");
+          cjs.Touch.enable(this.stage);
+          this.houseContainer = new cjs.Container();
+          cjs.Ticker.timingMode = cjs.Ticker.RAF;
+
+          //背景图
+          this.gameBg = new cjs.Container();
+          const bg = new cjs.Bitmap(this.queue.getResult("gameBg2"));
+          this.bottomDir = canvas.height - bg.image.naturalHeight;
+          this.gameBg.addChild(bg);
+          this.stage.addChild(this.gameBg);
+
+          // const data = {
+          //   images: [this.queue.getResult("logo")],
+          //   // "framerate": 0.01,
+          //   frames: [
+          //     [1, 1, 743, 201, 0, 0, 0],
+          //     [-35, 204, 745, 235, 0, 0, 0],
+          //     [1, 441, 643, 200, 0, 0, 0],
+          //   ],
+
+          //   animations: {
+          //     // "logo动图_0001_图层": { "frames": [0] },
+          //     // "logo动图_0002_图层": { "frames": [1] },
+          //     // "logo动图_0000_图层": { "frames": [2] }
+          //     run: {
+          //       frames: [2, 0, 1],
+          //       speed: 0.005,
+          //     },
+          //   },
+          // };
+          // const logoSheet = new createjs.SpriteSheet(data);
+          // const logoSprite = new createjs.Sprite(logoSheet, "run");
+          // console.log(canvas.height);
+          // logoSprite.x = 5;
+          // logoSprite.y = 660;
+          // this.gameBg.addChild(logoSprite);
+
+          const chiData = {
+            images: [this.queue.getResult("chi")],
+            framerate: 5,
+            frames: [
+              [1, 1, 429, 52, 0, 0, 0],
+              [1, 55, 429, 49, 0, 0, 0],
+            ],
+
+            animations: {
+              // "logo动图_0001_图层": { "frames": [0] },
+              // "logo动图_0002_图层": { "frames": [1] },
+              // "logo动图_0000_图层": { "frames": [2] }
+              run: {
+                frames: [1, 0],
+                speed: 0.08,
+              },
+            },
+          };
+          const chiSheet = new createjs.SpriteSheet(chiData);
+          this.chiSprite = new createjs.Sprite(chiSheet, "run");
+          this.chiSprite.visible = false;
+          console.log(canvas.height);
+          this.stage.addChild(this.chiSprite);
+
+          // 雪
+
+          for (let sindex = 0; sindex < 10; sindex++) {
+            let gameSnow = new cjs.Bitmap(this.queue.getResult("gameSnow"));
+
+            this.stage.addChild(gameSnow);
+            gameSnow.y = -gameSnow.image.naturalHeight;
+            gameSnow.x = 0;
+            cjs.Tween.get(gameSnow, { loop: true })
+              .wait(2000 * sindex)
+              .to({ alpha: 1, x: 0, y: canvas.height }, 3000)
+              .to({ alpha: 0, x: 0, visible: false, y: canvas.height }, 1);
+          }
+
+          // 雪花
+          let gameSnowFlower = new cjs.Bitmap(
+            this.queue.getResult("gameSnowFlower")
+          );
+
+          this.stage.addChild(gameSnowFlower);
+          gameSnowFlower.y = -gameSnowFlower.image.naturalHeight;
+          gameSnowFlower.x = -gameSnowFlower.image.naturalWidth;
+          cjs.Tween.get(gameSnowFlower, { loop: true })
+            .to({ alpha: 1, x: 0, y: canvas.height }, 5000)
+            .to({ alpha: 0, x: canvas.width, y: canvas.height }, 1);
+
+          // //云
+          // const cloud1 = new cjs.Bitmap(this.queue.getResult("cloud"));
+          // this.stage.addChild(cloud1);
+          // cloud1.y = 100;
+          // cloud1.x = 600;
+          // const cloud2 = new cjs.Bitmap(this.queue.getResult("cloud"));
+          // this.stage.addChild(cloud2);
+          // cloud2.y = 400;
+          // cloud2.x = 100;
+          // cjs.Tween.get(cloud1, { loop: true })
+          //   .to({ x: 550 }, 1500)
+          //   .to({ x: 600 }, 1500);
+          // cjs.Tween.get(cloud2, { loop: true })
+          //   .to({ x: 150 }, 1500)
+          //   .to({ x: 100 }, 1500);
+
+          // 飞机
+          // this.plan = new cjs.Bitmap(this.queue.getResult("plan"));
+          // this.plan.x = -150;
+          // this.stage.addChild(this.plan);
+
+          // 气球
+          // this.balloon = new cjs.Bitmap(this.queue.getResult("balloon"));
+          // this.balloon.x = 44;
+          // this.balloon.y = 270;
+          // cjs.Tween.get(this.balloon, { loop: true })
+          //   .to({ y: 290 }, 900)
+          //   .to({ y: 270 }, 900);
+          // this.stage.addChild(this.balloon);
+
+          // 浮动logo
+          // this.fly_logo = new cjs.Bitmap(this.queue.getResult("fly_logo"));
+          // this.fly_logo.x = 535;
+          // this.fly_logo.y = 410;
+          // this.fly_logo.visible = false;
+          // cjs.Tween.get(this.fly_logo, { loop: true })
+          //   .to({ y: 430 }, 900)
+          //   .to({ y: 410 }, 900);
+          // this.stage.addChild(this.fly_logo);
+
+          // //注册音乐
+          createjs.Sound.alternateExtensions = ["mp3"];
+          createjs.Sound.registerSounds([
+            {
+              src:
+                "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/click.mp3",
+              id: "sound",
+            },
+            {
+              src:
+                "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/gameover.mp3",
+              id: "gameover",
+            },
+            {
+              src:
+                "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/shibai.mp3",
+              id: "shibai",
+            },
+            {
+              src:
+                "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/success.mp3",
+              id: "success",
+            },
+            {
+              src: "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/chi.mp3",
+              id: "chi",
+            },
+          ]);
+          // cjs.Sound.on("fileload",this.registerBgm,this);
+
+          this.tipsArr = [];
+
+          //创建房子的容器
+          this.downContainer = new cjs.Container();
+          this.stage.addChild(this.downContainer);
+          this.stage.addChild(this.houseContainer);
+          this.drawPliers();
+          this.hpContainer = new cjs.Container();
+          this.stage.addChild(this.hpContainer);
+
+          // 开始游戏
+          this.start();
+          cjs.Ticker.addEventListener("tick", (e) => {
+            this.stage.update();
+          });
+        }
+
+        //重置游戏，重新开始
+        start() {
+          this.pliersContainer.visible = true;
+          this.houseContainer.visible = true;
+          this.gameBg.y = this.bottomDir;
+          this.rotateSpeed = 2;
+          this.downCount = 0;
+          this.score = 0;
+          this.gameStart = false;
+          this.time = 20;
+          this.hp = 1;
+          this.lastHouse = null;
+          this.downContainer.removeAllChildren();
+          this.downContainer.x = 0;
+          this.downContainer.y = 0;
+          this.lastGap = 20;
+          cjs.Tween.removeTweens(this.downContainer);
+          // this.drawHp();
+          $("#second").html(this.time);
+          $("#score").html(this.score);
+          $(".ceng span").html(this.downCount);
+          setInitData["game_adata_id"] = null;
+          func_set_game_fun(null, null);
+        }
+
+        drawHp() {
+          this.hpContainer.x = 27;
+          this.hpContainer.y = 140;
+          for (let i = 0; i < this.hp; i++) {
+            const hp = new cjs.Bitmap(this.queue.getResult("hp"));
+            hp.x = i * 60;
+            this.hpContainer.addChild(hp);
+          }
+        }
+
+        drawPliers() {
+          //钳子容器
+          this.pliersContainer = new cjs.Container();
+          //钳子图片
+          const data = {
+            images: [this.queue.getResult("machine_hand")],
+
+            framerate: 1,
+            frames: [
+              [1, 1, 397, 504, 0, -178, -68],
+              [400, 1, 382, 516, 0, -184, -68],
+              [400, 1, 382, 516, 0, -184, -68],
+              [784, 1, 381, 526, 0, -184, -68],
+              [1167, 1, 381, 523, 0, -184, -71],
+              [1550, 1, 375, 528, 0, -187, -68],
+            ],
+            animations: {
+              close: { frames: [5] },
+              open: {
+                frames: [5, 3, 2, 0, 1, 4],
+                next: "close",
+                speed: 0.5,
+              },
+            },
+          };
+          //钳子图片
+          const data2 = {
+            images: [this.queue.getResult("jiazi")],
+
+            framerate: 1,
+            frames: [
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [374, 1, 343, 385, 0, -178, -68],
+            ],
+            animations: {
+              close: { frames: [5] },
+              open: {
+                frames: [5, 1, 2, 3, 4, 0],
+                next: "close",
+                speed: 0.5,
+              },
+            },
+          };
+          const spriteSheet = new createjs.SpriteSheet(data2);
+          this.pliers = new createjs.Sprite(spriteSheet, "close");
+          // this.pliers = new cjs.Bitmap(this.queue.getResult('pliers'));
+          // //创建房子的容器
+          this.pliersContainer.addChild(this.pliers);
+          this.stage.addChild(this.pliersContainer);
+          this.pliersContainer.deg = 0;
+          this.pliersContainer.addEventListener("tick", (e) => {
+            this.pliersContainer.deg += this.rotateSpeed;
+            this.pliersContainer.x =
+              260 *
+              Math.cos(((this.pliersContainer.deg % 360) * Math.PI) / 180);
+            this.pliersContainer.y =
+              60 *
+                Math.sin(((this.pliersContainer.deg % 360) * Math.PI) / 180) -
+              150;
+          });
+          this.drawHouse();
+        }
+
+        timeDown() {
+          this.timer = setInterval((e) => {
+            if (this.time > 1) {
+              this.time--;
+            } else {
+              this.time = 0;
+              clearInterval(this.timer);
+              this.gameOver();
+            }
+            $("#second").html(this.time);
+          }, 1000);
+        }
+
+        gameOver() {
+          this.gameStart = false;
+          this.pliersContainer.visible = false;
+          this.houseContainer.visible = false;
+          setInitData.launch.play_count--;
+          $(".game-end").show();
+          $(".surplus-num").html(setInitData.launch.play_count);
+          $(".game-get-score").html(this.score);
+          //
+          func_set_game_fun(setInitData.game_adata_id, this.score);
+          //
+          $(".btn-restart-game")
+            .off()
+            .click(function () {
+              console.log(game);
+              if (setInitData.launch.play_count > 0) {
+                game.start();
+                $(".game-end").hide();
+              } else {
+                alert("没有游戏次数了");
+              }
+            });
+
+          $(".back-home")
+            .off()
+            .click(function () {
+              $(".game-end").hide();
+              $(".page_game").hide();
+              $(".home").show();
+              func_get_init_data();
+            });
+          //   if (prop_is_master) {
+          //     cjs.Sound.play("gameover");
+          //     game_floor = this.downCount + 1;
+          //     prop_score = this.score;
+          //     //   func_set_game_fun(prop_score, game_floor);
+          //   } else {
+          //     console.log(this.score, prop_master_fun);
+          //     var isWin = false;
+
+          //     // 挑战成功，加主人积分
+          //     if (this.score < prop_master_fun) {
+          //       $(".fail_mask .win_info span").html(prop_master_fun);
+          //       $(".fail_mask .fail_info span").html(this.score);
+          //       $(".fail_mask").show();
+          //       isWin = false;
+          //       func_help(this.score, 30);
+          //       cjs.Sound.play("shibai");
+          //     }
+          //     // 挑战成功，不加主人积分
+          //     if (this.score > prop_master_fun) {
+          //       $(".win_mask .win_info span").html(this.score);
+          //       $(".win_mask .fail_info span").html(prop_master_fun);
+          //       isWin = true;
+          //       $(".win_mask").show();
+          //       func_help(this.score, 0);
+          //       cjs.Sound.play("success");
+          //     }
+
+          //     // 同分，挑战失败，不加主人积分
+          //     if (this.score == prop_master_fun) {
+          //       $(".fail_mask .win_info span").html(prop_master_fun);
+          //       $(".fail_mask .fail_info span").html(this.score);
+          //       $(".fail_mask").show();
+          //       isWin = false;
+          //       func_help(this.score, 0);
+          //       cjs.Sound.play("shibai");
+          //     }
+
+          //     $(".btn_wyy")
+          //       .off()
+          //       .click(function () {
+          //         $(".mask").hide();
+          //         $(".wyy_mask").show();
+          //       });
+
+          //     $(".btn_close")
+          //       .off()
+          //       .click(function () {
+          //         $(".wyy_mask").hide();
+          //         if (isWin) {
+          //           $(".win_mask").show();
+          //         } else {
+          //           $(".fail_mask").show();
+          //         }
+          //       });
+          //   }
+        }
+
+        //绘制楼层
+        drawHouse() {
+          const rmd = Math.ceil(Math.random() * 9);
+          //创建的时候，把坐标设置画布之外，避免图片在0，0，位置闪烁一下
+          const house = new cjs.Bitmap(
+            this.queue.getResult("house" + rmd)
+          ).set({ x: -1000, y: -1000 });
+
+          this.houseContainer.addChild(house);
+          //房子的角度要和钳子的同步，要不然会出现错位
+          house.isDown = false;
+
+          house.height = house.image.naturalHeight;
+          house.width = house.image.naturalWidth;
+
+          house.addEventListener("tick", (e) => {
+            if (!house.isDown) {
+              house.deg = this.pliersContainer.deg;
+              house.x =
+                260 * Math.cos(((house.deg % 360) * Math.PI) / 180) + 198;
+              if (rmd === 8) {
+                house.x += 20;
+              }
+              house.y =
+                60 * Math.sin(((house.deg % 360) * Math.PI) / 180) + 190;
+            } else {
+              house.y += 20;
+              house.addScore = 100;
+              if (!this.lastHouse) {
+                if (!this.gameStart) {
+                  // 如果是主人
+                  //   if (prop_is_master) {
+                  //     //   func_insert_game_key();
+                  //   }
+                  this.timeDown();
+                  this.gameStart = true;
+                }
+
+                /**
+                 * 375 是画布底部距离第一次停留的位置
+                 * house.image.naturalHeight  源图片的高度
+                 * 350
+                 */
+                if (house.y >= canvas.height - house.height - 400) {
+                  house.y = canvas.height - house.height - 400;
+                  cjs.Sound.play("sound");
+                  console.log(house.x, 375, house.width);
+                  if (house.x < 375 - house.width || house.x > 375) {
+                    this.houseTopple(house, house.x < 375 - house.width / 2);
+                  } else {
+                    house.removeAllEventListeners();
+                    console.log(`length=${this.tipsArr.length}`);
+
+                    this.showFunHandle(house);
+                    $(".ceng span").html(this.downCount + 1);
+                    this.score += house.addScore;
+                    if (this.score <= 0) this.score = 0;
+                    $("#score").html(this.score);
+                    this.downContainer.addChild(house);
+                    this.drawHouse();
+                    //把当前的房设置为最后的房子
+                    this.lastHouse = house;
+                  }
+                }
+              } else {
+                /**
+                 * reducH 表示 两个箱子重叠部分
+                 */
+                let reducH = 173;
+                /**
+                 * 房子下落的y轴的位置 - 已经下落的房子容器的y轴 如果大于最后一个房子的y轴加上他的高度表示已经碰撞
+                 */
+                if (
+                  house.y - this.downContainer.y >=
+                  this.lastHouse.y - house.height + reducH
+                ) {
+                  //获取两个房子的x轴的绝对值差距
+                  console.log(
+                    this.lastHouse.getTransformedBounds().x,
+                    house.getTransformedBounds().x,
+                    this.downContainer.x
+                  );
+                  house.offset =
+                    this.lastHouse.getTransformedBounds().x -
+                    house.getTransformedBounds().x +
+                    this.downContainer.x;
+                  const gap = Math.abs(house.offset);
+                  console.log(gap);
+                  // 判断吻合程度进行加分
+                  if (gap <= 10) {
+                    house.x = this.lastHouse.x + this.downContainer.x;
+                    // 连续两次以上吻合的加双倍分数
+                    if (this.lastGap <= 10) {
+                      house.addScore = 100;
+                    } else {
+                      house.addScore = 80;
+                    }
+                  } else if (gap <= 60) {
+                    console.log("加200分");
+                    house.addScore = 30;
+                  } else if (gap <= house.width * 0.4) {
+                    console.log("加100分");
+                    house.addScore = 10;
+                  } else {
+                    console.log("没得分");
+                    console.log(house.offset);
+                    house.addScore = -90;
+                  }
+                  // 记录上一次吻合程度
+                  this.lastGap = gap;
+                  // 不加分（房子掉下去了）
+                  if (house.addScore <= 0) {
+                    this.houseTopple(house, house.offset > 0);
+                  } else {
+                    house.x -= this.downContainer.x;
+                    house.removeAllEventListeners();
+                    // 记录已经盖了多少层
+                    this.downCount++;
+                    // if (this.downCount > 7) {
+                    //   this.balloon.visible = false;
+                    // }
+                    // if (this.downCount > 8) {
+                    //   this.fly_logo.visible = true;
+                    // }
+                    $(".ceng span").html(this.downCount + 1);
+                    house.y = this.lastHouse.y - house.height + reducH;
+
+                    // 吻合程度好的添加翅膀效果
+                    if (gap <= 10) {
+                      this.chiSprite.x = house.x - 75 + this.downContainer.x;
+                      this.chiSprite.y = house.y + 30;
+                      this.chiSprite.y = this.downContainer.y + house.y + 30;
+                      this.chiSprite.visible = true;
+                    }
+
+                    if (this.downCount > 2) {
+                      this.rotateSpeed = 3;
+                    }
+
+                    if (this.downCount > 6) {
+                      this.rotateSpeed = 3.5;
+                    }
+
+                    if (this.downCount > 9) {
+                      this.rotateSpeed = 4;
+                    }
+
+                    // 难点 ： 房子大于4的时候背景滑动高一点
+                    if (this.downCount >= 3) {
+                      cjs.Tween.get(this.downContainer)
+                        .to(
+                          {
+                            y: (house.height - reducH) * (this.downCount + 2),
+                          },
+                          500
+                        )
+                        .to(
+                          { x: canvas.width / 2 - house.width / 2 - house.x },
+                          2000
+                        );
+                      cjs.Tween.get(this.gameBg)
+                        .to(
+                          {
+                            y:
+                              (house.height - reducH) * (this.downCount + 2) +
+                              this.bottomDir,
+                          },
+                          500
+                        )
+                        .call((e) => {
+                          this.chiSprite.visible = false;
+                        });
+
+                      // if (this.plan.fly) {
+                      // } else {
+                      //   this.plan.x = 800;
+                      //   this.plan.y = 500;
+                      //   cjs.Tween.get(this.plan)
+                      //     .to({ x: -1000, y: 400 }, 10000)
+                      //     .call((e) => {
+                      //       this.plan.fly = false;
+                      //     });
+                      //   this.plan.fly = true;
+                      // }
+
+                      //突然升高时要进行调整
+                      if (this.downCount === 5) {
+                        cjs.Tween.get(this.chiSprite).to(
+                          { y: this.chiSprite.y + house.height * 2 },
+                          500
+                        );
+                      } else {
+                        cjs.Tween.get(this.chiSprite).to(
+                          { y: this.chiSprite.y + house.height },
+                          500
+                        );
+                      }
+                    } else {
+                      cjs.Tween.get(this.downContainer)
+                        .to(
+                          {
+                            y: (house.height - reducH) * (this.downCount + 2),
+                          },
+                          500
+                        )
+                        .call((e) => {
+                          this.chiSprite.visible = false;
+                        });
+                      cjs.Tween.get(this.chiSprite).to(
+                        { y: this.chiSprite.y + house.height },
+                        500
+                      );
+                      cjs.Tween.get(this.gameBg).to(
+                        {
+                          y:
+                            (house.height - reducH) * (this.downCount + 2) +
+                            this.bottomDir,
+                        },
+                        500
+                      );
+                    }
+                    this.downContainer.addChild(house);
+                    this.lastHouse = house;
+                    this.drawHouse();
+                  }
+                  if (this.gameStart) {
+                    this.showFunHandle(house);
+                    if (gap <= 10) {
+                      cjs.Sound.play("chi");
+                    } else {
+                      cjs.Sound.play("sound");
+                    }
+                    this.score += house.addScore;
+                    if (this.score <= 0) this.score = 0;
+                    $("#score").html(this.score);
+                  }
+                }
+              }
+            }
+          });
+
+          // //click
+          $(canvas)
+            .off()
+            .on("touchstart", (e) => {
+              this.stage.removeAllEventListeners();
+              house.isDown = true;
+              this.pliers.gotoAndPlay("open");
+            });
+        }
+
+        // 显示加分的值
+        showFunHandle(house) {
+          let last = {};
+          if (this.lastHouse) {
+            last = this.lastHouse;
+          } else {
+            last = house;
+          }
+          if (this.tipsArr.length < 1) {
+            let addScoreTips;
+            if (house.addScore < 0) {
+              addScoreTips = new cjs.Text(
+                `${
+                  house.addScore > 0 ? "+" + house.addScore : house.addScore
+                } `,
+                "60px Arial",
+                "#0000ff"
+              );
+            } else {
+              addScoreTips = new cjs.Text(
+                `${
+                  house.addScore > 0 ? "+" + house.addScore : house.addScore
+                } `,
+                "60px Arial",
+                "#ffffff"
+              );
+            }
+
+            addScoreTips.y = this.downContainer.y + last.y;
+            addScoreTips.x =
+              last.x + house.width / 2 - 50 + this.downContainer.x;
+            addScoreTips.alpha = 1;
+            cjs.Tween.get(addScoreTips)
+              .to({ regY: 20, alpha: 0 }, 500)
+              .call((e) => {
+                addScoreTips.regY = 0;
+                this.tipsArr.push(addScoreTips);
+              });
+            this.stage.addChild(addScoreTips);
+          } else {
+            const addScoreTips = this.tipsArr.shift();
+            if (house.addScore < 0) {
+              addScoreTips.color = "#0000ff";
+            } else {
+              addScoreTips.color = "#ffffff";
+            }
+            addScoreTips.text = `${
+              house.addScore > 0 ? "+" + house.addScore : house.addScore
+            } `;
+            addScoreTips.y = this.downContainer.y + last.y;
+            addScoreTips.x =
+              last.x + house.width / 2 - 50 + this.downContainer.x;
+            addScoreTips.alpha = 1;
+            cjs.Tween.get(addScoreTips)
+              .to({ regY: 20, alpha: 0 }, 500)
+              .call((e) => {
+                addScoreTips.regY = 0;
+                this.tipsArr.push(addScoreTips);
+              });
+          }
+        }
+
+        //没盖好
+        houseTopple(house, dir_left) {
+          house.removeAllEventListeners();
+
+          house.regY = house.height / 2;
+          house.regX = house.width / 2;
+          house.y += house.height / 2;
+          house.x += house.width / 2;
+          let offset = 0;
+          let rotation = 0;
+          if (dir_left) {
+            offset = house.x - 60;
+            rotation = -450;
+          } else {
+            offset = house.x + 200;
+            rotation = 450;
+          }
+          cjs.Tween.get(house)
+            .wait(100)
+            .to(
+              {
+                y: 1500,
+                x: offset,
+                rotation: rotation,
+              },
+              500
+            )
+            .call((e) => {
+              console.log(this.houseContainer);
+              this.houseContainer.removeChild(house);
+              console.log(this.houseContainer);
+              // if (this.hp <= 0) {
+              //   this.gameOver();
+              //   clearInterval(this.timer);
+              // } else {
+              //   this.hp--;
+              //   this.hpContainer.removeChildAt(this.hp);
+              // }
+              this.drawHouse();
+            });
+        }
+
+        //注册音乐事件
+        registerBgm(e) {
+          console.log(e);
+        }
+
+        //获得一个随机值
+        static random(n) {
+          return Math.floor(Math.random() * n);
+        }
+      }
+      //   更新游戏积分
+      function func_set_game_fun(id, fun) {
+        func_axios({
+          url: `${pub_root_app}xweb/act/z_api_001/play`,
+          method: "post",
+          data: {
+            id: id,
+            fun: fun,
+          },
+          success(res) {
+            setInitData["game_adata_id"] = res.data.entity_play.adata_id;
+            console.log(res);
+          },
+        });
+      }
+
+      window.Game = Game;
+    })();
+    // const game = new Game();
+    // game.preload();
+    // game.start();
+  </script>
+  <script src="{root_static_file_cdn}app/act/t_002/snow.js?{v}=1223"></script>
+</html>
