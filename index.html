@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>“筑”力湾心</title>
     <script>
-      (function (doc, win) {
+      ;(function (doc, win) {
         var docEl = doc.documentElement,
           resizeEvt =
-            "orientationchange" in window ? "orientationchange" : "resize",
+            'orientationchange' in window ? 'orientationchange' : 'resize',
           recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + "px";
+            var clientWidth = docEl.clientWidth
+            if (!clientWidth) return
+            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + 'px'
             if (window.innerHeight / window.innerWidth > 1.8) {
-              document.body.className = "isIphone";
+              document.body.className = 'isIphone'
             } else {
-              document.body.className = "";
+              document.body.className = ''
             }
-          };
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener("DOMContentLoaded", recalc, false);
-      })(document, window);
+          }
+        if (!doc.addEventListener) return
+        win.addEventListener(resizeEvt, recalc, false)
+        doc.addEventListener('DOMContentLoaded', recalc, false)
+      })(document, window)
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
@@ -42,13 +42,24 @@
       />
       <!-- <img class="absolute snow_flow" src="./images/snow_flow.png" alt="雪花" /> -->
       <!-- <img class="absolute snow_luo" src="./images/snow_luo.png" alt="雪花落下" /> -->
-      <img class="absolute flash_light" src="./images/flash_light.png" alt="闪烁" />
+      <img
+        class="absolute flash_light"
+        src="./images/flash_light.png"
+        alt="闪烁"
+      />
+      <img
+        class="absolute car-yellow"
+        src="./images/car-yellow.gif"
+        alt="黄车"
+      />
+      <img class="absolute car-red" src="./images/car-red.gif" alt="红车" />
+      <img class="absolute aircraft" src="./images/aircraft.gif" alt="飞机" />
+      <img class="absolute aircraft2" src="./images/aircraft.gif" alt="飞机" />
       <img class="absolute lamp_2" src="./images/lamp_2.png" alt="黄灯1" />
       <img class="absolute lamp_road" src="./images/lamp_2.png" alt="黄灯2" />
       <img class="absolute lamp_1" src="./images/lamp_1.png" alt="红灯1" />
       <img class="absolute lamp_1_1" src="./images/lamp_1.png" alt="红灯2" />
-      <img class="absolute car-yellow" src="./images/car-yellow.png" alt="黄车" />
-      <img class="absolute car-red" src="./images/car-red.png" alt="红车" />
+
       <img class="absolute pic-icon" src="./images/pic-icon1.png" alt="大象" />
 
       <img class="absolute floor1" src="./images/floor1.png" alt="楼1" />
@@ -68,13 +79,23 @@
 
       <canvas id="snowCanvas" class="absolute" width="750"></canvas>
 
-
-
       <img class="absolute bird" src="./images/bird.png" alt="鸟" />
-      <img class="absolute rule-btn" src="./images/rule-btn.png" alt="活动说明" />
-      <img class="absolute SantaClaus" src="./images/SantaClaus.gif" alt="圣诞人" />
+      <img
+        class="absolute rule-btn"
+        src="./images/rule-btn.png"
+        alt="活动说明"
+      />
+      <img
+        class="absolute SantaClaus"
+        src="./images/SantaClaus.gif"
+        alt="圣诞人"
+      />
       <img class="absolute bear-icon" src="./images/bear-icon.png" alt="鸟" />
-      <img class="absolute prize-my" src="./images/prize-my.png" alt="活动说明" />
+      <img
+        class="absolute prize-my"
+        src="./images/prize-my.png"
+        alt="活动说明"
+      />
       <!--  -->
       <div class="relative progress-wrap">
         <div class="progress-bg">
@@ -92,7 +113,7 @@
         <span class="box-number absolute">4000</span>
         <span class="box-number absolute">8000</span>
 
-        <div class="exploration-score flex ">
+        <div class="exploration-score flex">
           <div class="box-flex flex c-center">
             探索积分：<span id="scoreNum">268</span>
           </div>
@@ -100,34 +121,29 @@
             当前探索进度：<span id="progressNum">90%</span>
           </div>
         </div>
-
-       
       </div>
       <div class="down-time">
         <span class="status-text flex c-center absolute">未获得</span>
         <div class="down-text absolute">元旦前探索进度达到100%即可获得</div>
         <div class="absolute flex c-center down-time-t">
-          获取倒计时 
+          获取倒计时
           <span class="down-day">1</span>
           <span>0</span>
-          <i >天</i> 
+          <i>天</i>
           <span>2</span>
           <span>2</span>
-          <i >时</i> 
+          <i>时</i>
           <span>3</span>
           <span>5</span>
-          <i >分</i>
+          <i>分</i>
         </div>
       </div>
       <div class="btn-wrap">
-        <div class="surplus-game-num">
-          当前剩余游戏卡：<span>100</span>
-        </div>
-        <img class="start-btn" src="./images/btn_start.png" alt="">
-        <img class="get_btn-ka" src="./images/get_btn_ka.png" alt="">
+        <div class="surplus-game-num">当前剩余游戏卡：<span>100</span></div>
+        <img class="start-btn" src="./images/btn_start.png" alt="" />
+        <img class="get_btn-ka" src="./images/get_btn_ka.png" alt="" />
       </div>
     </div>
   </body>
   <script src="./main4.js"></script>
-
 </html>

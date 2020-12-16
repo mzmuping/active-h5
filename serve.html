@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>&nbsp;</title>
+    <script>
+      ;(function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt =
+            'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth
+            if (!clientWidth) return
+            docEl.style.fontSize = 20 * (clientWidth / 375) + 'px'
+            if (window.innerHeight / window.innerWidth > 1.8) {
+              document.body.className = 'isIphone'
+            } else {
+              document.body.className = ''
+            }
+          }
+        if (!doc.addEventListener) return
+        win.addEventListener(resizeEvt, recalc, false)
+        doc.addEventListener('DOMContentLoaded', recalc, false)
+      })(document, window)
+    </script>
+
+    <script src="{root_cdn}jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{root_cdn}Swiper/4.5.0/css/swiper.min.css" />
+    <script src="{root_cdn}Swiper/4.2.2/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="{root_cdn}weui/1.1.3/style/weui.min.css" />
+    <link
+      rel="stylesheet"
+      href="{root_cdn}jquery-weui/1.2.1/css/jquery-weui.min.css"
+    />
+    <script src="{root_cdn}jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+  </head>
+
+  <body>
+    test 二维码sdfsdf
+    <img
+      src="{root_app}app/z_common/app_api/wx_qr?x=jie01&word=act1604155011"
+    />
+  </body>
+
+  <script>
+    func_axios({
+      url: `${pub_root_app}xweb/act/z_api_001`,
+      success(res) {
+        console.log('请求==', res)
+      },
+    })
+    console.log('func_axios()')
+  </script>
+</html>

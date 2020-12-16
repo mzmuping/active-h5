@@ -50,7 +50,7 @@ img {
   overflow-x: hidden;
   position: relative;
   /* height: 22.34rem; */
-  background: #4a1a63 url("./images/body_bg_1.jpg") top center/100% no-repeat;
+  background: #4a1a63 url('./images/body_bg_1.jpg') top center/100% no-repeat;
 }
 #snowCanvas {
   top: 0;
@@ -122,20 +122,41 @@ img {
   transform-origin: center bottom; */
 }
 .car-yellow {
-  width: 0.81rem;
-  top: 4.58rem;
-  left: 4.3rem;
+  width: 2rem;
+  top: 3.58rem;
+  left: 4.2rem;
+
   -webkit-animation: fadeOutBottomLeft 3s linear infinite both;
   animation: fadeOutBottomLeft 3s linear infinite both;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
 }
 .car-red {
-  width: 0.81rem;
-  top: 5.44rem;
-  left: 2.9rem;
+  width: 2rem;
+  top: 4.44rem;
+  left: 1.9rem;
   -webkit-animation: fadeOutBottomRight 3s linear infinite both;
   animation: fadeOutBottomRight 3s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.aircraft {
+  width: 2rem;
+  top: 4.44rem;
+  right: -2rem;
+  z-index: 3;
+  -webkit-animation: fadeOutBottomLeftaircraft 7s linear infinite both;
+  animation: fadeOutBottomLeftaircraft 7s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.aircraft2 {
+  width: 2rem;
+  top: 2.44rem;
+  right: -2rem;
+  z-index: 3;
+  -webkit-animation: fadeOutBottomLeftaircraft 9s linear infinite both;
+  animation: fadeOutBottomLeftaircraft 9s linear infinite both;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
 }
@@ -274,6 +295,7 @@ img {
   background-color: #ee4780;
   font-weight: 400;
   border-radius: 0.2rem;
+  line-height: 1;
 }
 
 /** progress */
@@ -290,12 +312,12 @@ img {
   height: 0.37rem;
   box-sizing: border-box;
   padding: 0 0.08rem;
-  background: url("./images/progress_bg.png") center center/100% no-repeat;
+  background: url('./images/progress_bg.png') center center/100% no-repeat;
 }
 .progress-bar {
   width: 10%;
   height: 0.25rem;
-  background: url("./images/progress_bar.png") center center no-repeat;
+  background: url('./images/progress_bar.png') center center no-repeat;
   background-size: cover;
   border-radius: 0.25rem;
 }
@@ -304,7 +326,7 @@ img {
   top: -0.68rem;
   width: 0.6rem;
   height: 0.67rem;
-  background: url("./images/box.png") center center no-repeat;
+  background: url('./images/box.png') center center no-repeat;
   background-size: contain;
 }
 .box:nth-of-type(1) {
@@ -365,7 +387,7 @@ img {
   width: 7.31rem;
   height: 2.56rem;
   margin: 0rem auto 0.48rem;
-  background: url("./images/down-time.png") center center no-repeat;
+  background: url('./images/down-time.png') center center no-repeat;
   background-size: contain;
 }
 
@@ -424,7 +446,7 @@ img {
 .btn-wrap {
   position: relative;
   width: 100%;
-  background: url("./images/snow_bg.png") center center no-repeat;
+  background: url('./images/snow_bg.png') center center no-repeat;
   background-size: cover;
 }
 .surplus-game-num {
@@ -441,7 +463,7 @@ img {
   padding: 0.08rem 0;
 }
 .surplus-game-num::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 50%;
   margin-left: -0.07rem;
@@ -540,11 +562,11 @@ img {
   right: 0.25rem;
   width: 0.72rem;
   height: 0.72rem;
-  background: url("./images/games/music-icon.png") no-repeat center / cover;
+  background: url('./images/games/music-icon.png') no-repeat center / cover;
   z-index: 100;
 }
 .music_icon.active {
-  background-image: url("./images/games/music-icon.png");
+  background-image: url('./images/games/music-icon.png');
   -webkit-animation: rotate 5s infinite linear;
   animation: rotate 5s infinite linear;
 }
@@ -555,14 +577,14 @@ img {
   width: 100%;
   top: 0;
   bottom: 0;
-  background: #521c65 url("./images/games/game-light-bg.png") no-repeat top/100%;
+  background: #521c65 url('./images/games/game-light-bg.png') no-repeat top/100%;
   z-index: 99999;
 }
 .game-end-score {
   margin: -0.5rem auto 0;
   width: 6.2rem;
   height: 10.81rem;
-  background: url("./images/games/game-end-bg.png") no-repeat top/100%;
+  background: url('./images/games/game-end-bg.png') no-repeat top/100%;
 }
 .game-end-tips {
   font-size: 0.32rem;
@@ -576,7 +598,7 @@ img {
   margin: 0.59rem auto 0;
   width: 2.71rem;
   height: 2.91rem;
-  background: url("./images/games/score-bg.png") no-repeat;
+  background: url('./images/games/score-bg.png') no-repeat;
   background-size: contain;
   font-size: 0.98rem;
   font-family: PingFangSC Medium, PingFangSC Medium-Medium;
@@ -591,7 +613,7 @@ img {
 .surplus-num {
   width: 3.67rem;
   height: 0.77rem;
-  background: url("./images/games/score-num-bg.png") no-repeat;
+  background: url('./images/games/score-num-bg.png') no-repeat;
   background-size: contain;
   margin: 1.1rem auto 0;
   font-size: 0.28rem;
