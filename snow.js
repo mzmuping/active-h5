@@ -1,8 +1,8 @@
 /**
  * Created by ajex on 2017/4/11.
  */
-(function(){
-    let canvas,
+(function () {
+  let canvas,
     stage,
     container1,
     container2,
@@ -19,15 +19,15 @@
     stage.addChild(container1);
     // container2 = new createjs.Container(); //前雪景容器
     stage.addChild(container2);
-  
+
     let loader = new createjs.LoadQueue(false);
     loader.addEventListener("fileload", handleFileLoad);
     loader.addEventListener("complete", completeHandler);
     loader.loadManifest([
-      { src: "images/snow.png", id: "snow1" },
-      { src: "images/snow-dian.png", id: "snow2" },
+      { src: "https://filex.wx.siyoumi.com/app/act/t_002/img/snow.png", id: "snow1" },
+      { src: "https://filex.wx.siyoumi.com/app/act/t_002/img/snow-dian.png", id: "snow2" },
     ]);
-  
+
     createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
     createjs.Ticker.setFPS(60);
     createjs.Ticker.addEventListener("tick", stageBreakHandler);
@@ -43,10 +43,10 @@
     stageBreakHandler();
     createSnow();
   }
-  
+
   //雪花数组 用作回收
   let _snow1List = [];
-  
+
   function createSnow() {
     let i;
     let snow;
@@ -71,19 +71,19 @@
     let scale;
     for (i = 0; i < container1.numChildren; i++) {
       mc = container1.getChildAt(i);
-  
+
       // mc.x -= 0.1;
       mc.y += mc.speed;
       // mc.alpha -= 0.001;
-      if(mc.flower){
-          mc.rotation += 1;
+      if (mc.flower) {
+        mc.rotation += 1;
       }
       if (mc.y > canvas.height + 100) {
         // mc.alpha = 1;
         scale = 0.2 + Math.random() * 1 - 0.5;
         mc.scaleX = scale;
         mc.scaleY = scale;
-  
+
         mc.x = Math.random() * canvas.width;
         mc.y = -Math.random() * canvas.height;
       }
@@ -108,6 +108,4 @@
     stage.update();
   }
   init();
-  
-})()
-
+})();

@@ -31,6 +31,9 @@ img {
 .absolute {
   position: absolute;
 }
+.fixed {
+  position: fixed;
+}
 .flex {
   display: -webkit-box;
   display: flex;
@@ -50,12 +53,15 @@ img {
   overflow-x: hidden;
   position: relative;
   /* height: 22.34rem; */
-  background: #4a1a63 url('./images/body_bg_1.jpg') top center/100% no-repeat;
+  background: #4a1a63
+    url('https://filex.wx.siyoumi.com/app/act/t_002/img/body_bg_1.jpg') top
+    center/100% no-repeat;
 }
 #snowCanvas {
   top: 0;
   left: 0;
   display: block;
+  z-index: 3;
   /* height: 100vh;
   width: 100vw; */
 }
@@ -125,7 +131,6 @@ img {
   width: 2rem;
   top: 3.58rem;
   left: 4.2rem;
-
   -webkit-animation: fadeOutBottomLeft 3s linear infinite both;
   animation: fadeOutBottomLeft 3s linear infinite both;
   -webkit-transform-origin: center bottom;
@@ -133,8 +138,8 @@ img {
 }
 .car-red {
   width: 2rem;
-  top: 4.44rem;
-  left: 1.9rem;
+  top: 4rem;
+  left: 1.2rem;
   -webkit-animation: fadeOutBottomRight 3s linear infinite both;
   animation: fadeOutBottomRight 3s linear infinite both;
   -webkit-transform-origin: center bottom;
@@ -142,11 +147,11 @@ img {
 }
 .aircraft {
   width: 2rem;
-  top: 4.44rem;
+  top: 5.44rem;
   right: -2rem;
   z-index: 3;
-  -webkit-animation: fadeOutBottomLeftaircraft 7s linear infinite both;
-  animation: fadeOutBottomLeftaircraft 7s linear infinite both;
+  -webkit-animation: fadeOutBottomLeftAircraft 7s linear infinite both;
+  animation: fadeOutBottomLeftAircraft 7s linear infinite both;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
 }
@@ -155,8 +160,8 @@ img {
   top: 2.44rem;
   right: -2rem;
   z-index: 3;
-  -webkit-animation: fadeOutBottomLeftaircraft 9s linear infinite both;
-  animation: fadeOutBottomLeftaircraft 9s linear infinite both;
+  -webkit-animation: fadeOutBottomLeftAircraft 9s linear infinite both;
+  animation: fadeOutBottomLeftAircraft 9s linear infinite both;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
 }
@@ -229,7 +234,7 @@ img {
   left: 1rem;
 }
 .floor3 {
-  opacity: 1;
+  opacity: 0.5;
   width: 1.93rem;
   top: 7.78rem;
   left: 2.77rem;
@@ -302,6 +307,7 @@ img {
 .progress-wrap {
   width: 6.79rem;
   margin: 0 auto;
+  z-index: 5;
 }
 .progress-bg {
   position: relative;
@@ -312,12 +318,14 @@ img {
   height: 0.37rem;
   box-sizing: border-box;
   padding: 0 0.08rem;
-  background: url('./images/progress_bg.png') center center/100% no-repeat;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/progress_bg.png')
+    center center/100% no-repeat;
 }
 .progress-bar {
   width: 10%;
   height: 0.25rem;
-  background: url('./images/progress_bar.png') center center no-repeat;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/progress_bar.png')
+    center center no-repeat;
   background-size: cover;
   border-radius: 0.25rem;
 }
@@ -326,8 +334,10 @@ img {
   top: -0.68rem;
   width: 0.6rem;
   height: 0.67rem;
-  background: url('./images/box.png') center center no-repeat;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/box.png')
+    center center no-repeat;
   background-size: contain;
+  opacity: 0.5;
 }
 .box:nth-of-type(1) {
   top: -0.68rem;
@@ -387,8 +397,10 @@ img {
   width: 7.31rem;
   height: 2.56rem;
   margin: 0rem auto 0.48rem;
-  background: url('./images/down-time.png') center center no-repeat;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/down-time.png')
+    center center no-repeat;
   background-size: contain;
+  z-index: 5;
 }
 
 .status-text {
@@ -446,8 +458,10 @@ img {
 .btn-wrap {
   position: relative;
   width: 100%;
-  background: url('./images/snow_bg.png') center center no-repeat;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/snow_bg.png')
+    center center no-repeat;
   background-size: cover;
+  z-index: 5;
 }
 .surplus-game-num {
   position: relative;
@@ -488,7 +502,7 @@ img {
 /** end home */
 
 /** start game */
-#gameCanvas {
+#game {
   display: block;
   height: 100vh;
   width: 100vw;
@@ -501,6 +515,7 @@ img {
   background: #dc3d7f;
 }
 .page_game {
+  display: none;
   position: relative;
 }
 .avatar {
@@ -562,13 +577,169 @@ img {
   right: 0.25rem;
   width: 0.72rem;
   height: 0.72rem;
-  background: url('./images/games/music-icon.png') no-repeat center / cover;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/music-icon.png')
+    no-repeat center / cover;
   z-index: 100;
 }
 .music_icon.active {
-  background-image: url('./images/games/music-icon.png');
+  background-image: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/music-icon.png');
   -webkit-animation: rotate 5s infinite linear;
   animation: rotate 5s infinite linear;
+}
+
+/** 普通 奖品*/
+.normal-prize-main {
+  display: none;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.8);
+}
+.normal-prize {
+  position: relative;
+  z-index: 2;
+  height: 10.5rem;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/prize-box-bg.png')
+    no-repeat center / 100% auto;
+}
+.prize-box-onpen {
+  width: 3.34rem;
+  margin: 0.78rem auto 0.23rem;
+  padding-top: 3.8rem;
+}
+.prize-box-onpen.active {
+  -webkit-animation: shakeX 1s linear infinite both;
+  animation: shakeX 1s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.normal-prize-tips {
+  position: relative;
+  font-size: 0.32rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+}
+.finger {
+  width: 0.87rem;
+  top: 6.27rem;
+  left: 4.58rem;
+  -webkit-animation: shakeY 8s linear infinite both;
+  animation: shakeY 8s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.prize-wrap {
+  display: none;
+  bottom: 3.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7.5rem;
+}
+.prize-tips {
+  font-size: 0.4rem;
+  font-family: PingFangSC Semibold, PingFangSC Semibold-Semibold;
+  font-weight: 600;
+  text-align: center;
+  color: #ffdc90;
+}
+.prize-img {
+  width: 4.56rem;
+  margin: 0.3rem auto;
+}
+.btn-reset-prize,
+.btn-get-prize {
+  display: none;
+
+  position: relative;
+  width: 3.2rem;
+  height: 0.79rem;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/btn-reset-prize.png')
+    no-repeat center / cover;
+  margin: 0 auto;
+  font-size: 0.36rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.btn-SantaClaus {
+  width: 3rem;
+  top: 50%;
+  transform: translateY(-55%);
+  right: -1.5rem;
+}
+/** 大奖  */
+.big-prize-main {
+  display: none;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.big-prize {
+  position: relative;
+  z-index: 2;
+  height: 11.8rem;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/prize-box-bg.png')
+    no-repeat center / 100% auto;
+}
+.big-no-tips {
+  padding-top: 2.31rem;
+  font-size: 0.6rem;
+  font-family: PingFangSC Semibold, PingFangSC Semibold-Semibold;
+  font-weight: 600;
+  text-align: center;
+  color: #ffd97d;
+}
+.big-no-tips p:nth-child(2) {
+  padding-top: 0.53rem;
+  font-size: 0.32rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+}
+.big-no-prize-box {
+  position: relative;
+  width: 3.88rem;
+  margin: 0 auto;
+  left: -0.1rem;
+}
+.big-prize-red {
+  top: 4.5rem;
+  width: 6.58rem;
+  left: 0.4rem;
+}
+.big-finger {
+  width: 0.87rem;
+  top: 6.87rem;
+  left: 4.58rem;
+  -webkit-animation: shakeY 8s linear infinite both;
+  animation: shakeY 8s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.big-prize-tips {
+  top: 8rem;
+  width: 100%;
+  font-size: 0.32rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
 }
 
 /* 游戏结束页 */
@@ -577,14 +748,17 @@ img {
   width: 100%;
   top: 0;
   bottom: 0;
-  background: #521c65 url('./images/games/game-light-bg.png') no-repeat top/100%;
+  background: #521c65
+    url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-light-bg.png')
+    no-repeat top/100%;
   z-index: 99999;
 }
 .game-end-score {
   margin: -0.5rem auto 0;
   width: 6.2rem;
   height: 10.81rem;
-  background: url('./images/games/game-end-bg.png') no-repeat top/100%;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-end-bg.png')
+    no-repeat top/100%;
 }
 .game-end-tips {
   font-size: 0.32rem;
@@ -598,7 +772,8 @@ img {
   margin: 0.59rem auto 0;
   width: 2.71rem;
   height: 2.91rem;
-  background: url('./images/games/score-bg.png') no-repeat;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/score-bg.png')
+    no-repeat;
   background-size: contain;
   font-size: 0.98rem;
   font-family: PingFangSC Medium, PingFangSC Medium-Medium;
@@ -613,7 +788,8 @@ img {
 .surplus-num {
   width: 3.67rem;
   height: 0.77rem;
-  background: url('./images/games/score-num-bg.png') no-repeat;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/score-num-bg.png')
+    no-repeat;
   background-size: contain;
   margin: 1.1rem auto 0;
   font-size: 0.28rem;
@@ -629,5 +805,23 @@ img {
 .back-home {
   width: 4rem;
   margin: 0 auto;
+}
+.game-load {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+  font-size: 16px;
+}
+.game-load div {
+  text-align: center;
+  padding-top: 10px;
 }
 /** end game */

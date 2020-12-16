@@ -144,6 +144,116 @@
         <img class="get_btn-ka" src="./images/get_btn_ka.png" alt="" />
       </div>
     </div>
+    <!-- 普通奖品 -->
+    <div class="normal-prize-main fixed">
+      <div class="mask absolute"></div>
+      <div class="normal-prize">
+        <img
+          class="prize-box-onpen"
+          src="./images/prize-box-onpen.png"
+          alt=""
+        />
+        <img class="absolute finger" src="./images/finger.png" alt="" />
+        <div class="absolute prize-wrap">
+          <div class="prize-tips">恭喜你中奖啦!</div>
+          <img class="prize-img" src="./images/prize-baowenbei.png" alt="" />
+        </div>
+        <div class="normal-prize-tips">点击宝箱抽奖</div>
+        <div class="prize-btn-wrap">
+          <div class="btn-reset-prize flex c-center">
+            再接再励
+            <img
+              class="absolute btn-SantaClaus"
+              src="./images/SantaClaus.gif"
+              alt="圣诞人"
+            />
+          </div>
+          <div class="btn-get-prize flex c-center">
+            收下奖品
+            <img
+              class="absolute btn-SantaClaus"
+              src="./images/SantaClaus.gif"
+              alt="圣诞人"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 大奖品 -->
+    <div class="big-prize-main fixed">
+      <div class="mask absolute"></div>
+      <div class="big-prize">
+        <div class="big-no-prize">
+          <div class="big-no-tips">
+            <p>元旦锦鲤宝箱</p>
+            <p>宝箱一开，好运滚滚来...</p>
+          </div>
+          <img
+            class="big-no-prize-box"
+            src="./images/big-no-prize-box.png"
+            alt=""
+          />
+          <img
+            class="absolute big-prize-red"
+            src="./images/big-prize-red.png"
+            alt=""
+          />
+          <div class="absolute big-prize-tips">点击宝箱抽奖</div>
+
+          <img class="absolute big-finger" src="./images/finger.png" alt="" />
+        </div>
+      </div>
+    </div>
   </body>
-  <script src="./main4.js"></script>
+  <script language="javascript" type="text/javascript">
+    function getleftTimer(downs) {
+      let timer = null
+      function leftTimer() {
+        var leftTime = new Date(downs) - new Date() //计算剩余的毫秒数
+        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10) //计算剩余的天数
+        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10) //计算剩余的小时
+        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10) //计算剩余的分钟
+        var seconds = parseInt((leftTime / 1000) % 60, 10) //计算剩余的秒数
+        days = checkTime(days)
+        hours = checkTime(hours)
+        minutes = checkTime(minutes)
+        seconds = checkTime(seconds)
+        if (days > 0 || hours > 0 || minutes > 0 || seconds > 0) {
+          $('.down-time-t').html(`获取倒计时
+         <span class="down-day">${days.substring(0, 1)}</span>
+         <span>${days.substring(1, 2)}</span>
+         <i>天</i>
+         <span>${hours.substring(0, 1)}</span>
+         <span>${hours.substring(1, 2)}</span>
+         <i>时</i>
+         <span>${minutes.substring(0, 1)}</span>
+         <span>${minutes.substring(1, 2)}</span>
+         <i>分</i>`)
+          setTimeout(leftTimer, 1000)
+        } else {
+          $('.down-time-t').html(`获取倒计时
+         <span class="down-day">0</span>
+         <span>0</span>
+         <i>天</i>
+         <span>0</span>
+         <span>0</span>
+         <i>时</i>
+         <span>0</span>
+         <span>0</span>
+         <i>分</i>`)
+          console.log('结束了')
+        }
+      }
+      leftTimer()
+    }
+    function checkTime(i) {
+      //将0-9的数字前面加上0，例1变为01
+      if (i < 10) {
+        i = '0' + i
+      }
+      return i + ''
+    }
+    getleftTimer(new Date().getTime() + 1314935 * 1000)
+  </script>
+  <script src="./snow.js"></script>
 </html>

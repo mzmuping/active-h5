@@ -53,7 +53,7 @@
       </div>
       <div class="music_icon"></div>
       <div id="game_bg"></div>
-      <canvas id="gameCanvas" width="750"></canvas>
+      <canvas id="game" width="750"></canvas>
       <!-- 游戏结束页 -->
       <div class="absolute game-end">
         <div class="game-end-score">
@@ -69,6 +69,12 @@
           alt=""
         />
         <img class="back-home" src="./images/games/back-home.png" alt="" />
+      </div>
+      <div class="game-load">
+        <div >
+        <div class="game-load-pro">100%</div>
+        <div>正在加载...</div>
+      </div>
       </div>
     </div>
 
@@ -88,7 +94,7 @@
 
       //游戏
       (function () {
-        const canvas = document.getElementById("gameCanvas");
+        const canvas = document.getElementById("game");
         const gameBg = document.getElementById("gameBg");
         const clientWidth = window.innerWidth * 2;
         const clientHeight = window.innerHeight * 2;
@@ -229,6 +235,11 @@
                 });
               }
             });
+            let progressnum = 0
+            this.queue.on("progress", (res)=>{
+              progressnum++
+              console.log('progress==='+progressnum,res);
+            }, this);
           }
 
           init() {
@@ -967,7 +978,7 @@
       })();
       const game = new Game();
       game.preload();
-      //   game.start();
+        // game.start();
     </script>
   </body>
 </html>
