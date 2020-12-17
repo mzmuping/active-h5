@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>“筑”力湾心</title>
     <script>
-      (function (doc, win) {
+      ;(function (doc, win) {
         var docEl = doc.documentElement,
           resizeEvt =
-            "orientationchange" in window ? "orientationchange" : "resize",
+            'orientationchange' in window ? 'orientationchange' : 'resize',
           recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + "px";
+            var clientWidth = docEl.clientWidth
+            if (!clientWidth) return
+            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + 'px'
             if (window.innerHeight / window.innerWidth > 1.8) {
-              document.body.className = "isIphone";
+              document.body.className = 'isIphone'
             } else {
-              document.body.className = "";
+              document.body.className = ''
             }
-          };
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener("DOMContentLoaded", recalc, false);
-      })(document, window);
+          }
+        if (!doc.addEventListener) return
+        win.addEventListener(resizeEvt, recalc, false)
+        doc.addEventListener('DOMContentLoaded', recalc, false)
+      })(document, window)
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
@@ -129,10 +129,9 @@
             <p>新年快乐！！</p>
             <p>点击开启你的专属锦鲤宝箱</p>
           </div>
-         
         </div>
         <!-- <div class="down-text absolute">元旦前探索进度达到100%即可获得</div> -->
-        <div style="display: none;" class="absolute flex c-center down-time-t">
+        <div style="display: none" class="absolute flex c-center down-time-t">
           获取倒计时
           <span class="down-day">1</span>
           <span>0</span>
@@ -234,87 +233,91 @@
             alt=""
           />
           <div class="absolute big-prize-btn-wrap">
-            <div class="big-btn-reset-prize flex c-center">
-              明年再来
-            </div>
-            <div class="big-btn-get-prize flex c-center">
-              收下我的好运
-            </div>
+            <div class="big-btn-reset-prize flex c-center">明年再来</div>
+            <div class="big-btn-get-prize flex c-center">收下我的好运</div>
           </div>
         </div>
       </div>
     </div>
     <!-- 我的奖品 -->
     <div class="my-prize-list fixed">
-        <div class="prize-list-title">- 我的奖品 -</div>
-        <div class="prize-list-empty absolute">空空如也～</div>
-        <div class="prize-list-tips absolute">
-         <p>请勿擅自操作核销，</p> 
-         <p> 需由工作人员输入密码核销并发放奖品</p> 
-        </div>
-        <div class="prize-list-cont">
-            <div class="prize-list-item verification-no">
-              <img class="prize-item-img" src="./images/prize-big-2.png" alt="">
-              <div class="list-item-info">
-                  <div class="prize-name">小米手环5</div>
-                  <div class="expire-time">过期时间：2021年1月31日</div>
-                  <div class="detail">
-                    <div class="flex">
-                    <i class="detail-icon"></i>
-                    奖品详情
-                    </div>
-                    <div class="btn-verify flex c-center">密码核销</div>
-                  </div>
+      <div class="prize-list-title">- 我的奖品 -</div>
+      <div class="prize-list-empty absolute">空空如也～</div>
+      <div class="prize-list-tips absolute">
+        <p>请勿擅自操作核销，</p>
+        <p>需由工作人员输入密码核销并发放奖品</p>
+      </div>
+      <div class="prize-list-cont">
+        <div class="prize-list-item verification-no">
+          <img class="prize-item-img" src="./images/prize-big-2.png" alt="" />
+          <div class="list-item-info">
+            <div class="prize-name">小米手环5</div>
+            <div class="expire-time">过期时间：2021年1月31日</div>
+            <div class="detail">
+              <div class="flex">
+                <i class="detail-icon"></i>
+                奖品详情
               </div>
+              <div class="btn-verify flex c-center">密码核销</div>
             </div>
-            <div class="prize-list-item verification-yes">
-              <img class="prize-item-img" src="./images/prize-big-2.png" alt="">
-              <div class="list-item-info">
-                  <div class="prize-name">小米手环5</div>
-                  <div class="expire-time">过期时间：2021年1月31日</div>
-                  <div class="detail">
-                    <div class="flex">
-                    <i class="detail-icon"></i>
-                    奖品详情
-                    </div>
-                    <div class="btn-verify flex c-center">密码核销</div>
-                  </div>
-              </div>
-              
-            </div>
-        </div>
-        <div class="check-wrap fixed">
-          <div class="password-wrap">
-            <div class="password-title">请工作人员输入核销密码</div>
-            <div class="password-text flex c-center">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
-              <span>4</span>
-              <span>5</span>
-              <span>6</span>
-            </div>
-            <input type="text" name="" id="password-input">
-            <div class="btn-password flex c-center">确认</div>
           </div>
         </div>
+        <div class="prize-list-item verification-yes">
+          <img class="prize-item-img" src="./images/prize-big-2.png" alt="" />
+          <div class="list-item-info">
+            <div class="prize-name">小米手环5</div>
+            <div class="expire-time">过期时间：2021年1月31日</div>
+            <div class="detail">
+              <div class="flex">
+                <i class="detail-icon"></i>
+                奖品详情
+              </div>
+              <div class="btn-verify flex c-center">密码核销</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="check-wrap fixed">
+        <div class="password-wrap">
+          <div class="password-title">请工作人员输入核销密码</div>
+          <div class="password-text flex c-center">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+          </div>
+          <input type="text" name="" id="password-input" />
+          <div class="btn-password flex c-center">确认</div>
+        </div>
+      </div>
+    </div>
+    <!--海报 -->
+    <div class="poster-wrap fixed">
+      <img class="poster-img" alt="" />
+      <canvas
+        id="poster"
+        style="width: 7.5rem; height: 16.24rem"
+        width="750"
+      ></canvas>
     </div>
   </body>
   <script language="javascript" type="text/javascript">
     function getleftTimer(downs) {
-      let timer = null;
+      let timer = null
       function leftTimer() {
-        var leftTime = new Date(downs) - new Date(); //计算剩余的毫秒数
-        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
-        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10); //计算剩余的小时
-        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10); //计算剩余的分钟
-        var seconds = parseInt((leftTime / 1000) % 60, 10); //计算剩余的秒数
-        days = checkTime(days);
-        hours = checkTime(hours);
-        minutes = checkTime(minutes);
-        seconds = checkTime(seconds);
+        var leftTime = new Date(downs) - new Date() //计算剩余的毫秒数
+        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10) //计算剩余的天数
+        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10) //计算剩余的小时
+        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10) //计算剩余的分钟
+        var seconds = parseInt((leftTime / 1000) % 60, 10) //计算剩余的秒数
+        days = checkTime(days)
+        hours = checkTime(hours)
+        minutes = checkTime(minutes)
+        seconds = checkTime(seconds)
         if (days > 0 || hours > 0 || minutes > 0 || seconds > 0) {
-          $(".down-time-t").html(`获取倒计时
+          $('.down-time-t').html(`获取倒计时
          <span class="down-day">${days.substring(0, 1)}</span>
          <span>${days.substring(1, 2)}</span>
          <i>天</i>
@@ -323,10 +326,10 @@
          <i>时</i>
          <span>${minutes.substring(0, 1)}</span>
          <span>${minutes.substring(1, 2)}</span>
-         <i>分</i>`);
-          setTimeout(leftTimer, 1000);
+         <i>分</i>`)
+          setTimeout(leftTimer, 1000)
         } else {
-          $(".down-time-t").html(`获取倒计时
+          $('.down-time-t').html(`获取倒计时
          <span class="down-day">0</span>
          <span>0</span>
          <i>天</i>
@@ -335,20 +338,198 @@
          <i>时</i>
          <span>0</span>
          <span>0</span>
-         <i>分</i>`);
-          console.log("结束了");
+         <i>分</i>`)
+          console.log('结束了')
         }
       }
-      leftTimer();
+      leftTimer()
     }
     function checkTime(i) {
       //将0-9的数字前面加上0，例1变为01
       if (i < 10) {
-        i = "0" + i;
+        i = '0' + i
       }
-      return i + "";
+      return i + ''
     }
-    getleftTimer(new Date().getTime() + 1314935 * 1000);
+    getleftTimer(new Date().getTime() + 1314935 * 1000)
+    //
+    // poster()
+    function poster() {
+      const cjs = createjs
+      const canvas = document.getElementById('poster')
+      canvas.height = 1624
+      canvas.width = 750
+      let queue = new cjs.LoadQueue(false, '', true)
+      const manifest = [
+        {
+          src:
+            'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132',
+          id: 'wxuser_headimgurl',
+        },
+        {
+          src: 'http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg',
+          id: 'poster',
+        },
+        {
+          src:
+            'https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=act1604155011',
+          id: 'qrCode',
+        },
+      ]
+
+      let stage
+      queue.loadManifest(manifest)
+      queue.on('complete', (e) => {
+        console.log('complete')
+        stage = new cjs.Stage(canvas)
+
+        //背景图
+        let gameBg = new cjs.Container()
+        const bg = new cjs.Bitmap(queue.getResult('poster'))
+        console.log(bg)
+        let bottomDir = canvas.height - bg.image.naturalHeight
+        // gameBg.addChild(bg)
+        // stage.addChild(bg)
+        //创建图形
+        var bitmap1 = new cjs.Bitmap(queue.getResult('qrCode'))
+        console.log(bitmap1)
+        //可进行图片位移
+        bitmap1.x = 80
+        bitmap1.y = 80
+        //创建圆形
+        var circle = new cjs.Shape()
+        circle.graphics.beginFill().drawCircle(100, 100, 100)
+        stage.addChild(bitmap1)
+        // stage.addChild(circle)
+        //进行遮罩处理
+        // bitmap1.mask = circle
+        cjs.Ticker.addEventListener('tick', (e) => {
+          stage.update()
+        })
+      })
+    }
+    let p_url =
+      'https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=act1604155011'
+    let headPic =
+      'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132'
+    let p_bg = 'http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg'
+    drawPoster('sf', p_url, headPic, p_bg)
+    function drawPoster(p_name, p_url, headPic, p_bg) {
+      var can = null,
+        pen = null
+      // var total_sca = window.innerWidth / 320,
+      var total_sca = 1,
+        head_w = 100 * total_sca,
+        head_h = 100 * total_sca,
+        qr_w = 184 * total_sca,
+        qr_h = 184 * total_sca,
+        wx_openid = '',
+        wx_name = ''
+
+      let headX = 104,
+        headY = 350,
+        qrX = 496,
+        qrY = 1390
+      can = document.getElementById('poster')
+      pen = can.getContext('2d')
+      can.width = 750 * total_sca
+      can.height = 1624 * total_sca
+
+      console.log('开始绘制海报')
+      var poster_bg = new Image()
+      // 仙峰寺
+      let bgPic = p_bg
+      // if (posterId == 2) bgPic = `${pub_root_file}app/act/t_001/img/p9_poster.png?v=1`
+      poster_bg.crossOrigin = 'Anonymous'
+      poster_bg.src = bgPic
+
+      poster_bg.onload = function () {
+        pen.drawImage(poster_bg, 0, 0, can.width, can.height)
+        console.log('绘制底图完成')
+
+        var headUrl = new Image()
+        headUrl.crossOrigin = 'Anonymous'
+        headUrl.src = headPic
+        headUrl.onload = function () {
+          var can2 = document.createElement('canvas')
+          pen2 = can2.getContext('2d')
+          can2.width = can.width
+          can2.height = can.height
+          pen2.drawImage(
+            headUrl,
+            headX * total_sca - head_w / 2,
+            headY * total_sca,
+            head_w,
+            head_h
+          )
+          console.log('绘制头像完成')
+
+          // 创建图片纹理
+          var pattern = pen.createPattern(can2, 'repeat')
+          // 如果要绘制一个圆，使用下面代码
+          pen.arc(
+            headX * total_sca,
+            headY * total_sca + head_w / 2,
+            Math.max(head_w, head_h) / 2,
+            0,
+            2 * Math.PI
+          )
+          // 填充绘制的圆o
+          pen.fillStyle = pattern
+          pen.fill()
+
+          pen.arc(
+            headX * total_sca,
+            headY * total_sca + head_w / 2,
+            Math.max(head_w, head_h) / 2,
+            0,
+            2 * Math.PI
+          )
+          // pen.strokeStyle = '#ffffff'
+          // pen.lineWidth = 2
+          // pen.stroke()
+
+          var qrUrl = new Image()
+          qrUrl.crossOrigin = 'Anonymous'
+          console.log('传入的二维码', p_url)
+          qrUrl.src = p_url
+          qrUrl.onload = function () {
+            pen.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h)
+            console.log('绘制二维码完成')
+
+            pen.font = 28 * total_sca + "px '微软雅黑'"
+
+            console.log('文本' + pen.measureText(p_name).width)
+            // 设置字体填充颜色
+            pen.fillStyle = '#fff'
+            // 从坐标点(50,50)开始绘制文字
+            pen.textAlign = 'left'
+
+            if (p_name.length > 7) {
+              p_name = p_name.substring(0, 7)
+              p_name = p_name + '...'
+              console.log(p_name)
+            }
+            pen.fillText(p_name, 220 * total_sca, 920 * total_sca, 300)
+            let tips = `感恩时刻，"聆"感之声`,
+              tips2 = `扫码听听我对你的祝福吧～`,
+              tips3 = ``
+            // pen.fillText(tips, 220 * total_sca, 970 * total_sca, 750)
+
+            pen.font = 26 * total_sca + "px '微软雅黑'"
+
+            // pen.fillText(tips2, 220 * total_sca, 1010 * total_sca, 750)
+            // pen.fillText(tips3, 220 * total_sca, 1050 * total_sca, 750)
+            //
+
+            var result = can.toDataURL('image/png')
+            console.log('生成海报', result)
+
+            $('.poster-img').attr('src', result)
+          }
+        }
+      }
+    }
   </script>
   <script src="./snow.js"></script>
 </html>
