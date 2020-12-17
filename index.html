@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>“筑”力湾心</title>
     <script>
-      ;(function (doc, win) {
+      (function (doc, win) {
         var docEl = doc.documentElement,
           resizeEvt =
-            'orientationchange' in window ? 'orientationchange' : 'resize',
+            "orientationchange" in window ? "orientationchange" : "resize",
           recalc = function () {
-            var clientWidth = docEl.clientWidth
-            if (!clientWidth) return
-            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + 'px'
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + "px";
             if (window.innerHeight / window.innerWidth > 1.8) {
-              document.body.className = 'isIphone'
+              document.body.className = "isIphone";
             } else {
-              document.body.className = ''
+              document.body.className = "";
             }
-          }
-        if (!doc.addEventListener) return
-        win.addEventListener(resizeEvt, recalc, false)
-        doc.addEventListener('DOMContentLoaded', recalc, false)
-      })(document, window)
+          };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+      })(document, window);
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
@@ -124,8 +124,15 @@
       </div>
       <div class="down-time">
         <span class="status-text flex c-center absolute">未获得</span>
-        <div class="down-text absolute">元旦前探索进度达到100%即可获得</div>
-        <div class="absolute flex c-center down-time-t">
+        <div class="absolute flex c-center can-chou-big">
+          <div>
+            <p>新年快乐！！</p>
+            <p>点击开启你的专属锦鲤宝箱</p>
+          </div>
+         
+        </div>
+        <!-- <div class="down-text absolute">元旦前探索进度达到100%即可获得</div> -->
+        <div style="display: none;" class="absolute flex c-center down-time-t">
           获取倒计时
           <span class="down-day">1</span>
           <span>0</span>
@@ -188,6 +195,7 @@
             <p>元旦锦鲤宝箱</p>
             <p>宝箱一开，好运滚滚来...</p>
           </div>
+
           <img
             class="big-no-prize-box"
             src="./images/big-no-prize-box.png"
@@ -202,24 +210,111 @@
 
           <img class="absolute big-finger" src="./images/finger.png" alt="" />
         </div>
+        <div class="big-result-prize">
+          <div class="big-result-tips">
+            <p>恭喜你～！</p>
+            <p>我们的锦鲤宠儿</p>
+          </div>
+          <div class="big-result-no">
+            <p>没中奖哦，再接再厉</p>
+          </div>
+          <img
+            class="absolute big-prize-box"
+            src="./images/big-prize-box.png"
+            alt=""
+          />
+          <img
+            class="absolute prize-big-img"
+            src="./images/prize-big-2.png"
+            alt=""
+          />
+          <img
+            class="absolute big-prize-gold"
+            src="./images/big-prize-gold.png"
+            alt=""
+          />
+          <div class="absolute big-prize-btn-wrap">
+            <div class="big-btn-reset-prize flex c-center">
+              明年再来
+            </div>
+            <div class="big-btn-get-prize flex c-center">
+              收下我的好运
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+    <!-- 我的奖品 -->
+    <div class="my-prize-list fixed">
+        <div class="prize-list-title">- 我的奖品 -</div>
+        <div class="prize-list-empty absolute">空空如也～</div>
+        <div class="prize-list-tips absolute">
+         <p>请勿擅自操作核销，</p> 
+         <p> 需由工作人员输入密码核销并发放奖品</p> 
+        </div>
+        <div class="prize-list-cont">
+            <div class="prize-list-item verification-no">
+              <img class="prize-item-img" src="./images/prize-big-2.png" alt="">
+              <div class="list-item-info">
+                  <div class="prize-name">小米手环5</div>
+                  <div class="expire-time">过期时间：2021年1月31日</div>
+                  <div class="detail">
+                    <div class="flex">
+                    <i class="detail-icon"></i>
+                    奖品详情
+                    </div>
+                    <div class="btn-verify flex c-center">密码核销</div>
+                  </div>
+              </div>
+            </div>
+            <div class="prize-list-item verification-yes">
+              <img class="prize-item-img" src="./images/prize-big-2.png" alt="">
+              <div class="list-item-info">
+                  <div class="prize-name">小米手环5</div>
+                  <div class="expire-time">过期时间：2021年1月31日</div>
+                  <div class="detail">
+                    <div class="flex">
+                    <i class="detail-icon"></i>
+                    奖品详情
+                    </div>
+                    <div class="btn-verify flex c-center">密码核销</div>
+                  </div>
+              </div>
+              
+            </div>
+        </div>
+        <div class="check-wrap fixed">
+          <div class="password-wrap">
+            <div class="password-title">请工作人员输入核销密码</div>
+            <div class="password-text flex c-center">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+              <span>6</span>
+            </div>
+            <input type="text" name="" id="password-input">
+            <div class="btn-password flex c-center">确认</div>
+          </div>
+        </div>
     </div>
   </body>
   <script language="javascript" type="text/javascript">
     function getleftTimer(downs) {
-      let timer = null
+      let timer = null;
       function leftTimer() {
-        var leftTime = new Date(downs) - new Date() //计算剩余的毫秒数
-        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10) //计算剩余的天数
-        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10) //计算剩余的小时
-        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10) //计算剩余的分钟
-        var seconds = parseInt((leftTime / 1000) % 60, 10) //计算剩余的秒数
-        days = checkTime(days)
-        hours = checkTime(hours)
-        minutes = checkTime(minutes)
-        seconds = checkTime(seconds)
+        var leftTime = new Date(downs) - new Date(); //计算剩余的毫秒数
+        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
+        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10); //计算剩余的小时
+        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10); //计算剩余的分钟
+        var seconds = parseInt((leftTime / 1000) % 60, 10); //计算剩余的秒数
+        days = checkTime(days);
+        hours = checkTime(hours);
+        minutes = checkTime(minutes);
+        seconds = checkTime(seconds);
         if (days > 0 || hours > 0 || minutes > 0 || seconds > 0) {
-          $('.down-time-t').html(`获取倒计时
+          $(".down-time-t").html(`获取倒计时
          <span class="down-day">${days.substring(0, 1)}</span>
          <span>${days.substring(1, 2)}</span>
          <i>天</i>
@@ -228,10 +323,10 @@
          <i>时</i>
          <span>${minutes.substring(0, 1)}</span>
          <span>${minutes.substring(1, 2)}</span>
-         <i>分</i>`)
-          setTimeout(leftTimer, 1000)
+         <i>分</i>`);
+          setTimeout(leftTimer, 1000);
         } else {
-          $('.down-time-t').html(`获取倒计时
+          $(".down-time-t").html(`获取倒计时
          <span class="down-day">0</span>
          <span>0</span>
          <i>天</i>
@@ -240,20 +335,20 @@
          <i>时</i>
          <span>0</span>
          <span>0</span>
-         <i>分</i>`)
-          console.log('结束了')
+         <i>分</i>`);
+          console.log("结束了");
         }
       }
-      leftTimer()
+      leftTimer();
     }
     function checkTime(i) {
       //将0-9的数字前面加上0，例1变为01
       if (i < 10) {
-        i = '0' + i
+        i = "0" + i;
       }
-      return i + ''
+      return i + "";
     }
-    getleftTimer(new Date().getTime() + 1314935 * 1000)
+    getleftTimer(new Date().getTime() + 1314935 * 1000);
   </script>
   <script src="./snow.js"></script>
 </html>

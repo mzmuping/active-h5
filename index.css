@@ -54,7 +54,7 @@ img {
   position: relative;
   /* height: 22.34rem; */
   background: #4a1a63
-    url('https://filex.wx.siyoumi.com/app/act/t_002/img/body_bg_1.jpg') top
+    url("https://filex.wx.siyoumi.com/app/act/t_002/img/body_bg_1.jpg") top
     center/100% no-repeat;
 }
 #snowCanvas {
@@ -218,6 +218,7 @@ img {
   animation: pulse 1s linear infinite both;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
+  z-index: 5;
 }
 
 /* 楼 */
@@ -318,13 +319,13 @@ img {
   height: 0.37rem;
   box-sizing: border-box;
   padding: 0 0.08rem;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/progress_bg.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/progress_bg.png")
     center center/100% no-repeat;
 }
 .progress-bar {
   width: 10%;
   height: 0.25rem;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/progress_bar.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/progress_bar.png")
     center center no-repeat;
   background-size: cover;
   border-radius: 0.25rem;
@@ -334,7 +335,7 @@ img {
   top: -0.68rem;
   width: 0.6rem;
   height: 0.67rem;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/box.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/box.png")
     center center no-repeat;
   background-size: contain;
   opacity: 0.5;
@@ -397,7 +398,7 @@ img {
   width: 7.31rem;
   height: 2.56rem;
   margin: 0rem auto 0.48rem;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/down-time.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/down-time.png")
     center center no-repeat;
   background-size: contain;
   z-index: 5;
@@ -414,7 +415,20 @@ img {
   text-align: center;
   color: #ffffff;
 }
-
+.can-chou-big {
+  display: none;
+  width: 4rem;
+  left: 2.4rem;
+  bottom: 0.5rem;
+  font-size: 0.27rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #94314d;
+}
+.can-chou-big p:nth-child(1) {
+  padding-bottom: 0.1rem;
+}
 .down-text {
   left: 2.83rem;
   bottom: 0.96rem;
@@ -458,7 +472,7 @@ img {
 .btn-wrap {
   position: relative;
   width: 100%;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/snow_bg.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/snow_bg.png")
     center center no-repeat;
   background-size: cover;
   z-index: 5;
@@ -477,7 +491,7 @@ img {
   padding: 0.08rem 0;
 }
 .surplus-game-num::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   margin-left: -0.07rem;
@@ -577,12 +591,12 @@ img {
   right: 0.25rem;
   width: 0.72rem;
   height: 0.72rem;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/music-icon.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/music-icon.png")
     no-repeat center / cover;
   z-index: 100;
 }
 .music_icon.active {
-  background-image: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/music-icon.png');
+  background-image: url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/music-icon.png");
   -webkit-animation: rotate 5s infinite linear;
   animation: rotate 5s infinite linear;
 }
@@ -608,7 +622,7 @@ img {
   position: relative;
   z-index: 2;
   height: 10.5rem;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/prize-box-bg.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/prize-box-bg.png")
     no-repeat center / 100% auto;
 }
 .prize-box-onpen {
@@ -664,7 +678,7 @@ img {
   position: relative;
   width: 3.2rem;
   height: 0.79rem;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/btn-reset-prize.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/btn-reset-prize.png")
     no-repeat center / cover;
   margin: 0 auto;
   font-size: 0.36rem;
@@ -693,7 +707,7 @@ img {
   position: relative;
   z-index: 2;
   height: 11.8rem;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/prize-box-bg.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/prize-box-bg.png")
     no-repeat center / 100% auto;
 }
 .big-no-tips {
@@ -712,11 +726,22 @@ img {
   text-align: center;
   color: #ffffff;
 }
+.big-no-prize {
+  /* display: none; */
+}
+
 .big-no-prize-box {
   position: relative;
   width: 3.88rem;
   margin: 0 auto;
   left: -0.1rem;
+  z-index: 3;
+}
+.big-no-prize-box.active {
+  -webkit-animation: shakeX 1s linear infinite both;
+  animation: shakeX 1s linear infinite both;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
 }
 .big-prize-red {
   top: 4.5rem;
@@ -731,6 +756,7 @@ img {
   animation: shakeY 8s linear infinite both;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
+  z-index: 4;
 }
 .big-prize-tips {
   top: 8rem;
@@ -741,7 +767,279 @@ img {
   text-align: center;
   color: #ffffff;
 }
+/* 大奖开奖 */
+.big-result-prize {
+  display: none;
+}
+.big-result-tips,
+.big-result-no {
+  display: none;
+  padding-top: 1.5rem;
+  font-size: 0.36rem;
+  font-family: PingFangSC Semibold, PingFangSC Semibold-Semibold;
+  font-weight: 600;
+  text-align: center;
+  color: #ffd97d;
+  line-height: 0.48rem;
+}
+.big-result-no {
+  padding-top: 2.3rem;
+}
+.big-prize-box {
+  width: 4.74rem;
+  top: 4.33rem;
+  left: 1.45rem;
+}
+.big-prize-gold {
+  width: 3rem;
+  top: 5.49rem;
+  left: 2.25rem;
+}
+.prize-big-img {
+  width: 2.95rem;
+  bottom: 5.78rem;
+  left: 2.25rem;
+}
+.big-prize-btn-wrap {
+  width: 100%;
+  top: 8.55rem;
+}
+.big-btn-reset-prize,
+.big-btn-get-prize {
+  display: none;
+  width: 3.2rem;
+  height: 0.77rem;
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/btn-big-prize.png")
+    no-repeat center / 100% auto;
+  font-size: 0.32rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #be261c;
+  margin: 0 auto;
+}
+.big-btn-reset-prize.active,
+.big-btn-get-prize.active {
+  display: -webkit-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+/** 奖品页 */
+.my-prize-list {
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: #521c65
+    url("https://filex.wx.siyoumi.com/app/act/t_002/img/prize_list_bg.png")
+    no-repeat top/100%;
+  z-index: 99999;
+}
+.prize-list-title {
+  font-size: 0.34rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  line-height: 28px;
+  letter-spacing: 7px;
+  padding-top: 0.2rem;
+}
+.prize-list-empty {
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.34rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #461d59;
+}
+.prize-list-tips {
+  width: 100%;
+  top: 85vh;
+  font-size: 0.26rem;
+  font-family: PingFangSC Light, PingFangSC Light-Light;
+  font-weight: 300;
+  text-align: center;
+  color: #ffffff;
+  line-height: 0.36rem;
+}
+.prize-list-cont {
+  position: relative;
+  position: relative;
+  margin-top: 1rem;
+  height: 9rem;
+  overflow: auto;
+  padding-top: 0.9rem;
+}
+.prize-list-cont::before {
+  content: "";
+  border: 10px solid;
+  border-color: #b56cd6 transparent transparent;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0.4rem;
+}
+.prize-list-item {
+  position: relative;
+  width: 6rem;
+  margin: 0 auto 0.1rem;
+  background: #f7e6ff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.verification-no::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.76rem;
+  height: 1.71rem;
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/verification-no.png")
+    no-repeat top/100%;
+}
+.verification-yes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.76rem;
+  height: 1.71rem;
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/verification-yes.png")
+    no-repeat top/100%;
+}
+.prize-item-img {
+  width: 1.72rem;
+  height: 1.72rem;
+}
+.list-item-info {
+  padding-left: 0.32rem;
+  flex: 1;
+  z-index: 2;
+}
+.prize-name {
+  font-size: 0.34rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+
+  color: #461d59;
+}
+.expire-time {
+  font-size: 0.22rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  padding: 0.26rem 0 0.37rem;
+  color: #461d59;
+}
+.list-item-info .detail {
+  display: -webkit-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list-item-info .detail div:nth-child(1) {
+  flex: 1;
+  font-size: 0.22rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #461d59;
+}
+
+.detail-icon {
+  display: inline-block;
+  width: 0.23rem;
+  height: 0.23rem;
+  background: url(http://file.weixin.siyoumi.com/app/act/t_002/img/xiangqing.png)
+    no-repeat;
+  background-size: contain;
+  margin-right: 0.05rem;
+}
+.btn-verify {
+  width: 1.2rem;
+  height: 0.36rem;
+  border: 1px solid #461d59;
+  border-radius: 0.18rem;
+  font-size: 0.22rem;
+  font-family: PingFangSC Regular, PingFangSC Regular-Regular;
+  font-weight: 400;
+  color: #461d59;
+}
+.check-wrap {
+  display: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+.password-wrap {
+  width: 6.04rem;
+  height: 4.44rem;
+  background: #ffffff;
+  border: 0.04rem solid #83509a;
+  border-radius: 0.2rem;
+  margin: 2.1rem auto 0;
+}
+.password-title {
+  padding: 0.7rem 0 0.55rem;
+  font-size: 0.34rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #000000;
+}
+.password-text span {
+  width: 0.72rem;
+  height: 0.77rem;
+  display: -webkit-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  background: #f7e6ff;
+  font-size: 0.43rem;
+  border-radius: 0.1rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+  text-align: center;
+  text-align: center;
+  color: #83509a;
+  margin-left: 0.2rem;
+}
+.password-text span:nth-child(1) {
+  margin-left: 0;
+}
+.btn-password {
+  margin: 0.76rem auto 0;
+  width: 3.22rem;
+  height: 0.78rem;
+  border: 0.02rem solid #83509a;
+  border-radius: 38px;
+  font-size: 0.34rem;
+  font-family: PingFangSC Medium, PingFangSC Medium-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #83509a;
+}
+#password-input {
+  opacity: 0;
+  height: 0;
+  /* display: none; */
+}
 /* 游戏结束页 */
 .game-end {
   display: none;
@@ -749,7 +1047,7 @@ img {
   top: 0;
   bottom: 0;
   background: #521c65
-    url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-light-bg.png')
+    url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-light-bg.png")
     no-repeat top/100%;
   z-index: 99999;
 }
@@ -757,7 +1055,7 @@ img {
   margin: -0.5rem auto 0;
   width: 6.2rem;
   height: 10.81rem;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-end-bg.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-end-bg.png")
     no-repeat top/100%;
 }
 .game-end-tips {
@@ -772,7 +1070,7 @@ img {
   margin: 0.59rem auto 0;
   width: 2.71rem;
   height: 2.91rem;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/score-bg.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/score-bg.png")
     no-repeat;
   background-size: contain;
   font-size: 0.98rem;
@@ -788,7 +1086,7 @@ img {
 .surplus-num {
   width: 3.67rem;
   height: 0.77rem;
-  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/score-num-bg.png')
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/score-num-bg.png")
     no-repeat;
   background-size: contain;
   margin: 1.1rem auto 0;
