@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>“筑”力湾心</title>
     <script>
-      (function (doc, win) {
+      ;(function (doc, win) {
         var docEl = doc.documentElement,
           resizeEvt =
-            "orientationchange" in window ? "orientationchange" : "resize",
+            'orientationchange' in window ? 'orientationchange' : 'resize',
           recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + "px";
+            var clientWidth = docEl.clientWidth
+            if (!clientWidth) return
+            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + 'px'
             if (window.innerHeight / window.innerWidth > 1.8) {
-              document.body.className = "isIphone";
+              document.body.className = 'isIphone'
             } else {
-              document.body.className = "";
+              document.body.className = ''
             }
-          };
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener("DOMContentLoaded", recalc, false);
-      })(document, window);
+          }
+        if (!doc.addEventListener) return
+        win.addEventListener(resizeEvt, recalc, false)
+        doc.addEventListener('DOMContentLoaded', recalc, false)
+      })(document, window)
     </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PreloadJS/1.0.1/preloadjs.min.js"></script>
@@ -32,8 +33,98 @@
 
     <link rel="stylesheet" type="text/css" href="./index.css" />
     <link rel="stylesheet" type="text/css" href="./index_animate.css" />
+    <script>
+      $(function () {
+        func_video()
+        function func_video() {
+          var elevideo = document.getElementById('video')
+          elevideo.addEventListener('loadedmetadata', function () {
+            //加载数据
+            //视频的总长度
+            console.log(elevideo.duration)
+          })
+          // elevideo.addEventListener('canplaythrough', function () {
+          //   //SomeJavaScriptCode
+          //   //监听视频的加载
+          //   //一般采用oncanplaythrough,即readystate状态为3时，就可以顺畅播放，不会轻易造成卡顿，
+          //   console.log('顺畅播放')
+          //   elevideo.play()
+          // })
+
+          elevideo.addEventListener('play', function () {
+            //播放开始执行的函数
+            console.log('开始播放')
+          })
+          //使用事件监听方式捕捉事件
+          elevideo.addEventListener(
+            'timeupdate',
+            function () {
+              var timeDisplay
+              //用秒数来显示当前播放进度
+              timeDisplay = video.currentTime
+              console.log(video.currentTime)
+              var popCut = 10.6 //视频弹出时间
+              //当视频播放到 maxpopCut的时候做处理
+              if (timeDisplay >= popCut) {
+                video.pause() //视频暂停  play();视频播放
+                $('.video-wrap').hide()
+                $('.home').show()
+              }
+            },
+            false
+          )
+          elevideo.addEventListener('playing', function () {
+            //播放中
+            console.log('播放中')
+          })
+          elevideo.addEventListener('waiting', function () {
+            //加载
+            console.log('加载中')
+          })
+          elevideo.addEventListener('pause', function () {
+            //暂停开始执行的函数
+            console.log('暂停播放')
+          })
+          elevideo.addEventListener(
+            'ended',
+            function () {
+              //结束
+              console.log('播放结束')
+            },
+            false
+          )
+        }
+      })
+    </script>
   </head>
   <body>
+    <!-- 视频 -->
+    <div class="video-wrap">
+      <div class="btn-skip">跳过动画</div>
+
+      <!-- <video
+        src="https://siyoumi.oss-cn-beijing.aliyuncs.com/t_002/2.mp4"
+        x-webkit-airplay="true"
+        webkit-playsinline="true"
+        width="100%"
+        preload="auto"
+        id="video"
+      ></video> -->
+      <video
+        id="video"
+        muted
+        x-webkit-airplay="true"
+        webkit-playsinline=""
+        preload="true"
+        playsinline
+        x5-video-player-type="h5"
+      >
+        <source
+          type="video/mp4"
+          src="https://siyoumi.oss-cn-beijing.aliyuncs.com/t_002/2.mp4"
+        />
+      </video>
+    </div>
     <div class="home">
       <img
         class="title animate__animated animate__bounceInDown"
@@ -64,60 +155,179 @@
       />
       <img
         class="absolute aircraft2"
-        data-original="./images/aircraft.gif"
-        alt="飞机"
+        data-original="./images/aircraft2.gif"
+        alt="飞机2"
       />
-      <img
+      <div class="lamp_2 absolute">
+        <img
+          class="lamp_bottom"
+          data-original="./images/lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_center absolute"
+          data-original="./images/lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_left absolute"
+          data-original="./images/lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_right absolute"
+          data-original="./images/lamp_right.png"
+          alt="黄色灯"
+        />
+      </div>
+      <div class="lamp_yellow_1 absolute">
+        <img
+          class="lamp_bottom"
+          data-original="./images/lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_center absolute"
+          data-original="./images/lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_left absolute"
+          data-original="./images/lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_right absolute"
+          data-original="./images/lamp_right.png"
+          alt="黄色灯"
+        />
+      </div>
+      <div class="red_lamp_1 absolute">
+        <img
+          class="red_lamp_bottom"
+          data-original="./images/red_lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_center absolute"
+          data-original="./images/red_lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_left absolute"
+          data-original="./images/red_lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_right absolute"
+          data-original="./images/red_lamp_right.png"
+          alt="黄色灯"
+        />
+      </div>
+      <div class="red_lamp_2 absolute">
+        <img
+          class="red_lamp_bottom"
+          data-original="./images/red_lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_center absolute"
+          data-original="./images/red_lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_left absolute"
+          data-original="./images/red_lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_right absolute"
+          data-original="./images/red_lamp_right.png"
+          alt="黄色灯"
+        />
+      </div>
+
+      <!-- <img
         class="absolute lamp_2"
         data-original="./images/lamp_2.png"
         alt="黄灯1"
-      />
-      <img
+      /> -->
+      <!-- <img
         class="absolute lamp_road"
         data-original="./images/lamp_2.png"
         alt="黄灯2"
-      />
-      <img
+      /> -->
+      <!-- <img
         class="absolute lamp_1"
         data-original="./images/lamp_1.png"
         alt="红灯1"
-      />
-      <img
+      /> -->
+      <!-- <img
         class="absolute lamp_1_1"
         data-original="./images/lamp_1.png"
         alt="红灯2"
-      />
+      /> -->
 
       <img
         class="absolute pic-icon"
-        data-original="./images/pic-icon1.png"
+        data-original="./images/pic-icon.png"
         alt="大象"
+      />
+      <img
+        class="absolute prize-preview-icon"
+        data-original="./images/prize-tips.png"
+        alt="奖品一览"
       />
 
       <img
         class="absolute floor1"
-        data-original="./images/floor1.png"
+        data-original="./images/floor1_no.png"
         alt="楼1"
       />
       <img
+        class="absolute clock-no-1"
+        data-original="./images/clock-no.png"
+        alt="楼1锁"
+      />
+      <img
         class="absolute floor2"
-        data-original="./images/floor2.png"
+        data-original="./images/floor2_no.png"
         alt="楼2"
       />
       <img
+        class="absolute clock-no-2"
+        data-original="./images/clock-no.png"
+        alt="楼2锁"
+      />
+      <img
         class="absolute floor3"
-        data-original="./images/floor3.png"
+        data-original="./images/floor3_no.png"
         alt="楼3"
       />
       <img
+        class="absolute clock-no-3"
+        data-original="./images/clock-no.png"
+        alt="楼3锁"
+      />
+      <img
         class="absolute floor4"
-        data-original="./images/floor4.png"
+        data-original="./images/floor4_no.png"
         alt="楼4"
       />
       <img
+        class="absolute clock-no-4"
+        data-original="./images/clock-no.png"
+        alt="楼4锁"
+      />
+      <img
         class="absolute floor5"
-        data-original="./images/floor5.png"
+        data-original="./images/floor5_no.png"
         alt="楼5"
+      />
+      <img
+        class="absolute clock-no-5"
+        data-original="./images/clock-no.png"
+        alt="楼5锁"
       />
       <img
         class="absolute tree-red"
@@ -173,7 +383,7 @@
         <div class="progress-bg">
           <div class="progress-bar"></div>
         </div>
-        <span class="box absolute"></span>
+        <span class="box caned_chou absolute"></span>
         <span class="box absolute"></span>
         <span class="box absolute"></span>
         <span class="box absolute"></span>
@@ -317,11 +527,12 @@
     </div>
     <!-- 我的奖品 -->
     <div class="my-prize-list fixed">
-      <div class="prize-list-title">- 我的奖品 -</div>
-      <div class="prize-list-empty absolute">空空如也～</div>
+      <div class="my-prize-list-cont">
+        <div class="prize-list-title">- 我的奖品 -</div>
+        <div class="prize-list-empty absolute">空空如也～</div>
 
-      <div class="prize-list-cont">
-        <!-- <div class="item-cell"> -->
+        <div class="prize-list-cont">
+          <!-- <div class="item-cell"> -->
           <div class="prize-list-item verification-no">
             <img class="prize-item-img" src="./images/prize-big-2.png" alt="" />
             <div class="list-item-info">
@@ -339,9 +550,9 @@
               </div>
             </div>
           </div>
-         
-        <!-- </div> -->
-        <!-- <div class="item-cell"> -->
+
+          <!-- </div> -->
+          <!-- <div class="item-cell"> -->
           <div class="prize-list-item verification-yes">
             <img class="prize-item-img" src="./images/prize-big-2.png" alt="" />
             <div class="list-item-info">
@@ -356,12 +567,17 @@
               </div>
             </div>
           </div>
-        <!-- </div> -->
-      </div>
-      <img class="back-home-prize" src="./images/games/back-home.png" alt="" />
-      <div class="prize-list-tips">
-        <p>请勿擅自操作核销，</p>
-        <p>需由工作人员输入密码核销并发放奖品</p>
+          <!-- </div> -->
+        </div>
+        <img
+          class="back-home-prize"
+          src="./images/games/back-home.png"
+          alt=""
+        />
+        <div class="prize-list-tips">
+          <p>请勿擅自操作核销，</p>
+          <p>需由工作人员输入密码核销并发放奖品</p>
+        </div>
       </div>
       <div class="check-wrap fixed">
         <div class="password-wrap">
@@ -412,8 +628,8 @@
         <p>
           5、兑奖时请出示中奖凭证并交由工作人员输入密码 核销凭证并兑换奖品；
         </p>
+        <img class="rule-btn-close" src="./images/rule-btn-close.png" alt="" />
       </div>
-      <img class="rule-btn-close" src="./images/rule-btn-close.png" alt="" />
     </div>
 
     <!-- 奖品一览 -->
@@ -423,30 +639,35 @@
     <!-- 预加载 -->
     <div class="loading-wrap fixed">
       <div class="loading">
+        <img
+          class="load-SantaClaus"
+          src="http://file.weixin.siyoumi.com/app/act/t_002/img/SantaClaus.gif"
+          alt="圣诞人"
+        />
+        <!-- <span></span>
         <span></span>
         <span></span>
         <span></span>
-        <span></span>
-        <span></span>
+        <span></span> -->
         <div class="loading-tips">正在加载...</div>
       </div>
     </div>
   </body>
   <script language="javascript" type="text/javascript">
     function getleftTimer(downs) {
-      let timer = null;
+      let timer = null
       function leftTimer() {
-        var leftTime = new Date(downs) - new Date(); //计算剩余的毫秒数
-        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
-        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10); //计算剩余的小时
-        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10); //计算剩余的分钟
-        var seconds = parseInt((leftTime / 1000) % 60, 10); //计算剩余的秒数
-        days = checkTime(days);
-        hours = checkTime(hours);
-        minutes = checkTime(minutes);
-        seconds = checkTime(seconds);
+        var leftTime = new Date(downs) - new Date() //计算剩余的毫秒数
+        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10) //计算剩余的天数
+        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10) //计算剩余的小时
+        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10) //计算剩余的分钟
+        var seconds = parseInt((leftTime / 1000) % 60, 10) //计算剩余的秒数
+        days = checkTime(days)
+        hours = checkTime(hours)
+        minutes = checkTime(minutes)
+        seconds = checkTime(seconds)
         if (days > 0 || hours > 0 || minutes > 0 || seconds > 0) {
-          $(".down-time-t").html(`获取倒计时
+          $('.down-time-t').html(`获取倒计时
          <span class="down-day">${days.substring(0, 1)}</span>
          <span>${days.substring(1, 2)}</span>
          <i>天</i>
@@ -455,10 +676,10 @@
          <i>时</i>
          <span>${minutes.substring(0, 1)}</span>
          <span>${minutes.substring(1, 2)}</span>
-         <i>分</i>`);
-          setTimeout(leftTimer, 1000);
+         <i>分</i>`)
+          setTimeout(leftTimer, 1000)
         } else {
-          $(".down-time-t").html(`获取倒计时
+          $('.down-time-t').html(`获取倒计时
          <span class="down-day">0</span>
          <span>0</span>
          <i>天</i>
@@ -467,135 +688,135 @@
          <i>时</i>
          <span>0</span>
          <span>0</span>
-         <i>分</i>`);
-          console.log("结束了");
+         <i>分</i>`)
+          console.log('结束了')
         }
       }
-      leftTimer();
+      leftTimer()
     }
     function checkTime(i) {
       //将0-9的数字前面加上0，例1变为01
       if (i < 10) {
-        i = "0" + i;
+        i = '0' + i
       }
-      return i + "";
+      return i + ''
     }
-    getleftTimer(new Date().getTime() + 1314935 * 1000);
+    getleftTimer(new Date().getTime() + 1314935 * 1000)
     //
     // poster()
     function poster() {
-      const cjs = createjs;
-      const canvas = document.getElementById("poster");
-      canvas.height = 1624;
-      canvas.width = 750;
-      let queue = new cjs.LoadQueue(false, "", true);
+      const cjs = createjs
+      const canvas = document.getElementById('poster')
+      canvas.height = 1624
+      canvas.width = 750
+      let queue = new cjs.LoadQueue(false, '', true)
       const manifest = [
         {
           src:
-            "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132",
-          id: "wxuser_headimgurl",
+            'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132',
+          id: 'wxuser_headimgurl',
         },
         {
-          src: "http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg",
-          id: "poster",
+          src: 'http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg',
+          id: 'poster',
         },
         {
           src:
-            "https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=act1604155011",
-          id: "qrCode",
+            'https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=act1604155011',
+          id: 'qrCode',
         },
-      ];
+      ]
 
-      let stage;
-      queue.loadManifest(manifest);
-      queue.on("complete", (e) => {
-        console.log("complete");
-        stage = new cjs.Stage(canvas);
+      let stage
+      queue.loadManifest(manifest)
+      queue.on('complete', (e) => {
+        console.log('complete')
+        stage = new cjs.Stage(canvas)
 
         //背景图
-        let gameBg = new cjs.Container();
-        const bg = new cjs.Bitmap(queue.getResult("poster"));
-        console.log(bg);
-        let bottomDir = canvas.height - bg.image.naturalHeight;
+        let gameBg = new cjs.Container()
+        const bg = new cjs.Bitmap(queue.getResult('poster'))
+        console.log(bg)
+        let bottomDir = canvas.height - bg.image.naturalHeight
         // gameBg.addChild(bg)
         // stage.addChild(bg)
         //创建图形
-        var bitmap1 = new cjs.Bitmap(queue.getResult("qrCode"));
-        console.log(bitmap1);
+        var bitmap1 = new cjs.Bitmap(queue.getResult('qrCode'))
+        console.log(bitmap1)
         //可进行图片位移
-        bitmap1.x = 80;
-        bitmap1.y = 80;
+        bitmap1.x = 80
+        bitmap1.y = 80
         //创建圆形
-        var circle = new cjs.Shape();
-        circle.graphics.beginFill().drawCircle(100, 100, 100);
-        stage.addChild(bitmap1);
+        var circle = new cjs.Shape()
+        circle.graphics.beginFill().drawCircle(100, 100, 100)
+        stage.addChild(bitmap1)
         // stage.addChild(circle)
         //进行遮罩处理
         // bitmap1.mask = circle
-        cjs.Ticker.addEventListener("tick", (e) => {
-          stage.update();
-        });
-      });
+        cjs.Ticker.addEventListener('tick', (e) => {
+          stage.update()
+        })
+      })
     }
     let p_url =
-      "https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=act1604155011";
+      'https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=act1604155011'
     let headPic =
-      "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132";
-    let p_bg = "http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg";
+      'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132'
+    let p_bg = 'http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg'
     // drawPoster('sf', p_url, headPic, p_bg)
     // 海报
     function drawPoster(p_name, p_url, headPic, p_bg) {
       var can = null,
-        pen = null;
+        pen = null
       // var total_sca = window.innerWidth / 320,
       var total_sca = 1,
         head_w = 80 * total_sca,
         head_h = 80 * total_sca,
         qr_w = 130 * total_sca,
         qr_h = 130 * total_sca,
-        wx_openid = "",
-        wx_name = "";
+        wx_openid = '',
+        wx_name = ''
 
       let headX = 164,
         headY = 303,
         qrX = 562,
-        qrY = 1151;
-      can = document.getElementById("poster");
-      pen = can.getContext("2d");
-      can.width = 750 * total_sca;
-      can.height = 1334 * total_sca;
+        qrY = 1151
+      can = document.getElementById('poster')
+      pen = can.getContext('2d')
+      can.width = 750 * total_sca
+      can.height = 1334 * total_sca
 
-      console.log("开始绘制海报");
-      var poster_bg = new Image();
+      console.log('开始绘制海报')
+      var poster_bg = new Image()
       // 仙峰寺
-      let bgPic = p_bg;
+      let bgPic = p_bg
       // if (posterId == 2) bgPic = `${pub_root_file}app/act/t_001/img/p9_poster.png?v=1`
-      poster_bg.crossOrigin = "Anonymous";
-      poster_bg.src = bgPic;
+      poster_bg.crossOrigin = 'Anonymous'
+      poster_bg.src = bgPic
 
       poster_bg.onload = function () {
-        pen.drawImage(poster_bg, 0, 0, can.width, can.height);
-        console.log("绘制底图完成");
+        pen.drawImage(poster_bg, 0, 0, can.width, can.height)
+        console.log('绘制底图完成')
 
-        var headUrl = new Image();
-        headUrl.crossOrigin = "Anonymous";
-        headUrl.src = headPic;
+        var headUrl = new Image()
+        headUrl.crossOrigin = 'Anonymous'
+        headUrl.src = headPic
         headUrl.onload = function () {
-          var can2 = document.createElement("canvas");
-          pen2 = can2.getContext("2d");
-          can2.width = can.width;
-          can2.height = can.height;
+          var can2 = document.createElement('canvas')
+          pen2 = can2.getContext('2d')
+          can2.width = can.width
+          can2.height = can.height
           pen2.drawImage(
             headUrl,
             headX * total_sca - head_w / 2,
             headY * total_sca,
             head_w,
             head_h
-          );
-          console.log("绘制头像完成");
+          )
+          console.log('绘制头像完成')
 
           // 创建图片纹理
-          var pattern = pen.createPattern(can2, "repeat");
+          var pattern = pen.createPattern(can2, 'repeat')
           // 如果要绘制一个圆，使用下面代码
           pen.arc(
             headX * total_sca,
@@ -603,10 +824,10 @@
             Math.max(head_w, head_h) / 2,
             0,
             2 * Math.PI
-          );
+          )
           // 填充绘制的圆o
-          pen.fillStyle = pattern;
-          pen.fill();
+          pen.fillStyle = pattern
+          pen.fill()
 
           // pen.arc(
           //   headX * total_sca,
@@ -619,21 +840,21 @@
           // pen.lineWidth = 2
           // pen.stroke()
 
-          var qrUrl = new Image();
-          qrUrl.crossOrigin = "Anonymous";
-          console.log("传入的二维码", p_url);
-          qrUrl.src = p_url;
+          var qrUrl = new Image()
+          qrUrl.crossOrigin = 'Anonymous'
+          console.log('传入的二维码', p_url)
+          qrUrl.src = p_url
           qrUrl.onload = function () {
             // pen.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h);
-            console.log("绘制二维码完成");
-            let can2 = document.createElement("canvas");
-            pen2 = can2.getContext("2d");
-            can2.width = can.width;
-            can2.height = can.height;
-            console.log(can2.width);
-            pen2.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h);
+            console.log('绘制二维码完成')
+            let can2 = document.createElement('canvas')
+            pen2 = can2.getContext('2d')
+            can2.width = can.width
+            can2.height = can.height
+            console.log(can2.width)
+            pen2.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h)
             // 创建图片纹理
-            var pattern = pen.createPattern(can2, "repeat");
+            var pattern = pen.createPattern(can2, 'repeat')
             // 如果要绘制一个圆，使用下面代码
             // pen.arc(obj.width / 2, obj.height / 2, Math.max(obj.width, obj.height) / 2, 0, 2 * Math.PI);
             // 这里使用圆角矩形
@@ -643,11 +864,11 @@
               qr_w,
               qr_h,
               10 * 1 || 0
-            );
-            pen.x = 100;
+            )
+            pen.x = 100
             // 填充绘制的圆
-            pen.fillStyle = pattern;
-            pen.fill();
+            pen.fillStyle = pattern
+            pen.fill()
             // pen.font = 28 * total_sca + "px '微软雅黑'"
 
             // console.log('文本' + pen.measureText(p_name).width)
@@ -673,99 +894,145 @@
             // pen.fillText(tips3, 220 * total_sca, 1050 * total_sca, 750)
             //
 
-            var result = can.toDataURL("image/png");
-            $(".poster-load").hide();
-            $(".poster-img").attr("src", result);
-          };
-        };
-      };
+            var result = can.toDataURL('image/png')
+            $('.poster-load').hide()
+            $('.poster-img').attr('src', result)
+          }
+        }
+      }
     }
     //圆角矩形
     CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
-      var min_size = Math.min(w, h);
-      if (r > min_size / 2) r = min_size / 2;
+      var min_size = Math.min(w, h)
+      if (r > min_size / 2) r = min_size / 2
       // 开始绘制
-      this.beginPath();
-      this.moveTo(x + r, y);
-      this.arcTo(x + w, y, x + w, y + h, r);
-      this.arcTo(x + w, y + h, x, y + h, r);
-      this.arcTo(x, y + h, x, y, r);
-      this.arcTo(x, y, x + w, y, r);
-      this.closePath();
-      return this;
-    };
+      this.beginPath()
+      this.moveTo(x + r, y)
+      this.arcTo(x + w, y, x + w, y + h, r)
+      this.arcTo(x + w, y + h, x, y + h, r)
+      this.arcTo(x, y + h, x, y, r)
+      this.arcTo(x, y, x + w, y, r)
+      this.closePath()
+      return this
+    }
 
     $(function () {
-      $(".rule-btn").click(function () {
-        $(".rule-wrap").fadeIn("slow");
-      });
-      $(".rule-btn-close,.rule-mask").click(function () {
-        $(".rule-wrap").fadeOut("slow");
-      });
+      var elevideo = document.getElementById('video')
+      // 跳过广告
+      $('.btn-skip').click(function () {
+        elevideo.pause() //视频暂停  play();视频播放
+        $('.video-wrap').fadeOut('slow')
+        $('.home').fadeIn('slow')
+      })
+      // 活动说明
+      $('.rule-btn').click(function () {
+        $('.rule-wrap').show()
+        $('.rule-cont').removeClass('out').addClass('in')
+      })
+      $('.rule-btn-close,.rule-mask').click(function () {
+        $('.rule-cont').removeClass('in').addClass('out')
+        setTimeout(function () {
+          $('.rule-wrap').hide()
+        }, 800)
+      })
+
+      // 我的奖品 列表
+      $('.prize-my').click(function () {
+        $('.prize-list-empty').hide()
+        $('.my-prize-list').show()
+        $('.my-prize-list-cont').removeClass('out').addClass('in')
+        // func_prize_list()
+      })
+      // 关闭 我的奖品 列表
+      $('.back-home-prize').click(function () {
+        $('.my-prize-list-cont').removeClass('in').addClass('out')
+        setTimeout(function () {
+          $('.my-prize-list').hide()
+        }, 800)
+      })
 
       // 奖品一览
-      $(".pic-icon").click(function () {
-        $(".prize-preview-wrap").fadeIn("slow");
-      });
-      $(".prize-preview-wrap").click(function () {
-        $(".prize-preview-wrap").fadeOut("slow");
-      });
+      $('.prize-preview-icon').click(function () {
+        $('.prize-preview-wrap').show()
+        $('.prize-preview-img').removeClass('out').addClass('in')
+      })
+      // 关闭 奖品一览
+      $('.prize-preview-wrap').click(function () {
+        $('.prize-preview-img').removeClass('in').addClass('out')
+        setTimeout(function () {
+          $('.prize-preview-wrap').hide()
+        }, 800)
+      })
+
       // 分享
-      $(".get_btn-ka")
+      $('.get_btn-ka')
         .off()
         .click(function () {
-          $(".poster-wrap").show();
+          $('.poster-wrap').show()
           let p_url =
-            "https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=x&word=act1607656877";
+            'https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=x&word=act1607656877'
           let headPic =
-            "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132";
+            'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132'
 
           let p_bg =
-            "http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg?1";
-          if (!$(".poster-img").attr("src")) {
-            drawPoster("sf", p_url, headPic, p_bg);
+            'http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg?1'
+          if (!$('.poster-img').attr('src')) {
+            drawPoster('sf', p_url, headPic, p_bg)
           }
-        });
-      $(".poster-img").click(function () {
-        $(".poster-wrap").hide();
-      });
-      // 我的奖品 列表
-      $(".prize-my").click(function () {
-        $(".prize-list-empty").hide();
-        $(".my-prize-list").fadeIn("slow");
-        // $('.my-prize-list').fadeIn("slow");
-        func_prize_list();
-      });
+        })
+      $('.poster-img').click(function () {
+        $('.poster-wrap').hide()
+      })
 
-      $(".back-home-prize").click(function () {
-        $(".my-prize-list").fadeOut("slow");
-      });
-
-      preLoadImg();
-    });
-
+      preLoadImg()
+    })
+    // 预加载 home
     function preLoadImg() {
-      let homeImgArr = $(".home img");
-      let homeImgArrLenth = homeImgArr.length;
-      let index = 0;
+      var elevideo = document.getElementById('video')
+      let homeImgArr = $('.home img')
+      let homeImgArrLenth = homeImgArr.length
+      let index = 0
       for (let i = 0; i < homeImgArr.length; i++) {
-        let image = new Image();
-        let originalImage = $($(".home img")[i]);
-        image.src = $($(".home img")[i]).data().original;
+        let image = new Image()
+        let originalImage = $($('.home img')[i])
+        image.src = $($('.home img')[i]).data().original
 
         image.onload = function () {
-          console.log(originalImage);
           //图片下载完毕时异步调用callback函数。
-          index++;
-          originalImage.attr("src", image.src);
-          $(".loading-tips").html(
-            Number((index / homeImgArrLenth) * 100).toFixed(0) + "%"
-          );
-          if (index === homeImgArr.length) {
-            $(".loading-wrap").hide();
+          index++
+          originalImage.attr('src', image.src)
+          $('.loading-tips').html(
+            '正在加载' +
+              Number((index / homeImgArrLenth) * 100).toFixed(0) +
+              '%...'
+          )
+          if (index === homeImgArrLenth) {
+            $('.loading-wrap').hide()
           }
-        };
+        }
       }
+      elevideo.addEventListener('loadedmetadata', function () {
+        //加载数据
+        //视频的总长度
+        console.log(elevideo.duration)
+      })
+      elevideo.addEventListener('canplaythrough', function () {
+        index++
+        $('.loading-tips').html(
+          '正在加载' +
+            Number((index / homeImgArrLenth) * 100).toFixed(0) +
+            '%...'
+        )
+        if (index === homeImgArrLenth) {
+          $('.loading-wrap').hide()
+          // $('.video-wrap').hide()
+        }
+        //SomeJavaScriptCode
+        //监听视频的加载
+        //一般采用oncanplaythrough,即readystate状态为3时，就可以顺畅播放，不会轻易造成卡顿，
+        console.log('顺畅播放')
+        elevideo.play()
+      })
     }
   </script>
   <script src="./snow.js"></script>

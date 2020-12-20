@@ -1,0 +1,3097 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="pixel-ratio-2 retina ios ios-11 ios-11-0 ios-gt-10 ios-gt-9 ios-gt-8 ios-gt-7 ios-gt-6"
+  style="font-size: 50px"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="flexible" content="initial-dpr=1" />
+
+    <title>“筑”力湾心</title>
+
+    <script src="https://s0.pstatp.com/cdn/expire-1-M/axios/0.19.2/axios.min.js"></script>
+    <script>
+      var pub_root_app = 'https://app.siyoumi.com/'
+      var pub_root_file = 'https://filex.wx.siyoumi.com/'
+      var pub_v = '2680595'
+    </script>
+    <style>
+      #__vconsole {
+        color: #000;
+        font-size: 13px;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        /* global */
+        /* compoment */
+      }
+      #__vconsole .vc-max-height {
+        max-height: 19.23076923em;
+      }
+      #__vconsole .vc-max-height-line {
+        max-height: 3.38461538em;
+      }
+      #__vconsole .vc-min-height {
+        min-height: 3.07692308em;
+      }
+      #__vconsole dd,
+      #__vconsole dl,
+      #__vconsole pre {
+        margin: 0;
+      }
+      #__vconsole .vc-switch {
+        display: block;
+        position: fixed;
+        right: 0.76923077em;
+        bottom: 0.76923077em;
+        color: #fff;
+        background-color: #04be02;
+        line-height: 1;
+        font-size: 1.07692308em;
+        padding: 0.61538462em 1.23076923em;
+        z-index: 10000;
+        border-radius: 0.30769231em;
+        box-shadow: 0 0 0.61538462em rgba(0, 0, 0, 0.4);
+      }
+      #__vconsole .vc-mask {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0);
+        z-index: 10001;
+        transition: background 0.3s;
+        -webkit-tap-highlight-color: transparent;
+        overflow-y: scroll;
+      }
+      #__vconsole .vc-panel {
+        display: none;
+        position: fixed;
+        min-height: 85%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10002;
+        background-color: #efeff4;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
+        -webkit-transform: translate(0, 100%);
+        transform: translate(0, 100%);
+      }
+      #__vconsole .vc-tabbar {
+        border-bottom: 1px solid #d9d9d9;
+        overflow-x: auto;
+        height: 3em;
+        width: auto;
+        white-space: nowrap;
+      }
+      #__vconsole .vc-tabbar .vc-tab {
+        display: inline-block;
+        line-height: 3em;
+        padding: 0 1.15384615em;
+        border-right: 1px solid #d9d9d9;
+        text-decoration: none;
+        color: #000;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+      }
+      #__vconsole .vc-tabbar .vc-tab:active {
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+      #__vconsole .vc-tabbar .vc-tab.vc-actived {
+        background-color: #fff;
+      }
+      #__vconsole .vc-content {
+        background-color: #fff;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: absolute;
+        top: 3.07692308em;
+        left: 0;
+        right: 0;
+        bottom: 3.07692308em;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: constant(safe-area-inset-bottom);
+        margin-bottom: env(safe-area-inset-bottom);
+      }
+      #__vconsole .vc-content.vc-has-topbar {
+        top: 5.46153846em;
+      }
+      #__vconsole .vc-topbar {
+        background-color: #fbf9fe;
+        display: flex;
+        display: -webkit-box;
+        flex-direction: row;
+        flex-wrap: wrap;
+        -webkit-box-direction: row;
+        -webkit-flex-wrap: wrap;
+        width: 100%;
+      }
+      #__vconsole .vc-topbar .vc-toptab {
+        display: none;
+        flex: 1;
+        -webkit-box-flex: 1;
+        line-height: 2.30769231em;
+        padding: 0 1.15384615em;
+        border-bottom: 1px solid #d9d9d9;
+        text-decoration: none;
+        text-align: center;
+        color: #000;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+      }
+      #__vconsole .vc-topbar .vc-toptab.vc-toggle {
+        display: block;
+      }
+      #__vconsole .vc-topbar .vc-toptab:active {
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+      #__vconsole .vc-topbar .vc-toptab.vc-actived {
+        border-bottom: 1px solid #3e82f7;
+      }
+      #__vconsole .vc-logbox {
+        display: none;
+        position: relative;
+        min-height: 100%;
+      }
+      #__vconsole .vc-logbox i {
+        font-style: normal;
+      }
+      #__vconsole .vc-logbox .vc-log {
+        padding-bottom: 3em;
+        -webkit-tap-highlight-color: transparent;
+      }
+      #__vconsole .vc-logbox .vc-log:empty:before {
+        content: 'Empty';
+        color: #999;
+        position: absolute;
+        top: 45%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        font-size: 1.15384615em;
+        text-align: center;
+      }
+      #__vconsole .vc-logbox .vc-item {
+        margin: 0;
+        padding: 0.46153846em 0.61538462em;
+        overflow: hidden;
+        line-height: 1.3;
+        border-bottom: 1px solid #eee;
+        word-break: break-word;
+      }
+      #__vconsole .vc-logbox .vc-item-info {
+        color: #6a5acd;
+      }
+      #__vconsole .vc-logbox .vc-item-debug {
+        color: #daa520;
+      }
+      #__vconsole .vc-logbox .vc-item-warn {
+        color: #ffa500;
+        border-color: #ffb930;
+        background-color: #fffacd;
+      }
+      #__vconsole .vc-logbox .vc-item-error {
+        color: #dc143c;
+        border-color: #f4a0ab;
+        background-color: #ffe4e1;
+      }
+      #__vconsole .vc-logbox .vc-log.vc-log-partly .vc-item {
+        display: none;
+      }
+      #__vconsole .vc-logbox .vc-log.vc-log-partly-log .vc-item-log,
+      #__vconsole .vc-logbox .vc-log.vc-log-partly-info .vc-item-info,
+      #__vconsole .vc-logbox .vc-log.vc-log-partly-warn .vc-item-warn,
+      #__vconsole .vc-logbox .vc-log.vc-log-partly-error .vc-item-error {
+        display: block;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-item-content {
+        margin-right: 4.61538462em;
+        display: inline-block;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-item-repeat {
+        display: inline-block;
+        margin-right: 0.30769231em;
+        padding: 0 6.5px;
+        color: #d7e0ef;
+        background-color: #42597f;
+        border-radius: 8.66666667px;
+      }
+      #__vconsole .vc-logbox .vc-item.vc-item-error .vc-item-repeat {
+        color: #901818;
+        background-color: #dc2727;
+      }
+      #__vconsole .vc-logbox .vc-item.vc-item-warn .vc-item-repeat {
+        color: #987d20;
+        background-color: #f4bd02;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-item-code {
+        display: block;
+        white-space: pre-wrap;
+        overflow: auto;
+        position: relative;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-item-code.vc-item-code-input,
+      #__vconsole .vc-logbox .vc-item .vc-item-code.vc-item-code-output {
+        padding-left: 0.92307692em;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-item-code.vc-item-code-input:before,
+      #__vconsole .vc-logbox .vc-item .vc-item-code.vc-item-code-output:before {
+        content: '›';
+        position: absolute;
+        top: -0.23076923em;
+        left: 0;
+        font-size: 1.23076923em;
+        color: #6a5acd;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-item-code.vc-item-code-output:before {
+        content: '‹';
+      }
+      #__vconsole .vc-logbox .vc-item .vc-fold {
+        display: block;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-outer {
+        display: block;
+        font-style: italic;
+        padding-left: 0.76923077em;
+        position: relative;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-outer:active {
+        background-color: #e6e6e6;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-outer:before {
+        content: '';
+        position: absolute;
+        top: 0.30769231em;
+        left: 0.15384615em;
+        width: 0;
+        height: 0;
+        border: transparent solid 0.30769231em;
+        border-left-color: #000;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-outer.vc-toggle:before {
+        top: 0.46153846em;
+        left: 0;
+        border-top-color: #000;
+        border-left-color: transparent;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-inner {
+        display: none;
+        margin-left: 0.76923077em;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-inner.vc-toggle {
+        display: block;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-inner .vc-code-key {
+        margin-left: 0.76923077em;
+      }
+      #__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-outer .vc-code-key {
+        margin-left: 0;
+      }
+      #__vconsole .vc-logbox .vc-code-key {
+        color: #905;
+      }
+      #__vconsole .vc-logbox .vc-code-private-key {
+        color: #d391b5;
+      }
+      #__vconsole .vc-logbox .vc-code-function {
+        color: #905;
+        font-style: italic;
+      }
+      #__vconsole .vc-logbox .vc-code-number,
+      #__vconsole .vc-logbox .vc-code-boolean {
+        color: #0086b3;
+      }
+      #__vconsole .vc-logbox .vc-code-string {
+        color: #183691;
+      }
+      #__vconsole .vc-logbox .vc-code-null,
+      #__vconsole .vc-logbox .vc-code-undefined {
+        color: #666;
+      }
+      #__vconsole .vc-logbox .vc-cmd {
+        position: absolute;
+        height: 3.07692308em;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-top: 1px solid #d9d9d9;
+        display: block !important;
+      }
+      #__vconsole .vc-logbox .vc-cmd .vc-cmd-input-wrap {
+        display: block;
+        height: 2.15384615em;
+        margin-right: 3.07692308em;
+        padding: 0.46153846em 0.61538462em;
+      }
+      #__vconsole .vc-logbox .vc-cmd .vc-cmd-input {
+        width: 100%;
+        border: none;
+        resize: none;
+        outline: none;
+        padding: 0;
+        font-size: 0.92307692em;
+      }
+      #__vconsole .vc-logbox .vc-cmd .vc-cmd-input::-webkit-input-placeholder {
+        line-height: 2.15384615em;
+      }
+      #__vconsole .vc-logbox .vc-cmd .vc-cmd-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 3.07692308em;
+        border: none;
+        background-color: #efeff4;
+        outline: none;
+        -webkit-touch-callout: none;
+        font-size: 1em;
+      }
+      #__vconsole .vc-logbox .vc-cmd .vc-cmd-btn:active {
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+      #__vconsole .vc-logbox .vc-cmd .vc-cmd-prompted {
+        position: fixed;
+        width: 100%;
+        background-color: #fbf9fe;
+        border: 1px solid #d9d9d9;
+        overflow-x: scroll;
+        display: none;
+      }
+      #__vconsole .vc-logbox .vc-cmd .vc-cmd-prompted li {
+        list-style: none;
+        line-height: 30px;
+        padding: 0 0.46153846em;
+        border-bottom: 1px solid #d9d9d9;
+      }
+      #__vconsole .vc-logbox .vc-group .vc-group-preview {
+        -webkit-touch-callout: none;
+      }
+      #__vconsole .vc-logbox .vc-group .vc-group-preview:active {
+        background-color: #e6e6e6;
+      }
+      #__vconsole .vc-logbox .vc-group .vc-group-detail {
+        display: none;
+        padding: 0 0 0.76923077em 1.53846154em;
+        border-bottom: 1px solid #eee;
+      }
+      #__vconsole .vc-logbox .vc-group.vc-actived .vc-group-detail {
+        display: block;
+        background-color: #fbf9fe;
+      }
+      #__vconsole .vc-logbox .vc-group.vc-actived .vc-table-row {
+        background-color: #fff;
+      }
+      #__vconsole .vc-logbox .vc-group.vc-actived .vc-group-preview {
+        background-color: #fbf9fe;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-row {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        -webkit-box-direction: row;
+        -webkit-flex-wrap: wrap;
+        overflow: hidden;
+        border-bottom: 1px solid #eee;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-row.vc-left-border {
+        border-left: 1px solid #eee;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-col {
+        flex: 1;
+        -webkit-box-flex: 1;
+        padding: 0.23076923em 0.30769231em;
+        border-left: 1px solid #eee;
+        overflow: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+        /*white-space: nowrap;
+      text-overflow: ellipsis;*/
+        -webkit-overflow-scrolling: touch;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-col:first-child {
+        border: none;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-small .vc-table-col {
+        padding: 0 0.30769231em;
+        font-size: 0.92307692em;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-col-2 {
+        flex: 2;
+        -webkit-box-flex: 2;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-col-3 {
+        flex: 3;
+        -webkit-box-flex: 3;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-col-4 {
+        flex: 4;
+        -webkit-box-flex: 4;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-col-5 {
+        flex: 5;
+        -webkit-box-flex: 5;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-col-6 {
+        flex: 6;
+        -webkit-box-flex: 6;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-row-error {
+        border-color: #f4a0ab;
+        background-color: #ffe4e1;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-row-error .vc-table-col {
+        color: #dc143c;
+        border-color: #f4a0ab;
+      }
+      #__vconsole .vc-logbox .vc-table .vc-table-col-title {
+        font-weight: bold;
+      }
+      #__vconsole .vc-logbox.vc-actived {
+        display: block;
+      }
+      #__vconsole .vc-toolbar {
+        border-top: 1px solid #d9d9d9;
+        line-height: 3em;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        display: -webkit-box;
+        flex-direction: row;
+        -webkit-box-direction: row;
+      }
+      #__vconsole .vc-toolbar .vc-tool {
+        display: none;
+        text-decoration: none;
+        color: #000;
+        width: 50%;
+        flex: 1;
+        -webkit-box-flex: 1;
+        text-align: center;
+        position: relative;
+        -webkit-touch-callout: none;
+      }
+      #__vconsole .vc-toolbar .vc-tool.vc-toggle,
+      #__vconsole .vc-toolbar .vc-tool.vc-global-tool {
+        display: block;
+      }
+      #__vconsole .vc-toolbar .vc-tool:active {
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+      #__vconsole .vc-toolbar .vc-tool:after {
+        content: ' ';
+        position: absolute;
+        top: 0.53846154em;
+        bottom: 0.53846154em;
+        right: 0;
+        border-left: 1px solid #d9d9d9;
+      }
+      #__vconsole .vc-toolbar .vc-tool-last:after {
+        border: none;
+      }
+      @supports (bottom: constant(safe-area-inset-bottom)) or
+        (bottom: env(safe-area-inset-bottom)) {
+        #__vconsole .vc-toolbar,
+        #__vconsole .vc-switch {
+          bottom: constant(safe-area-inset-bottom);
+          bottom: env(safe-area-inset-bottom);
+        }
+      }
+      #__vconsole.vc-toggle .vc-switch {
+        display: none;
+      }
+      #__vconsole.vc-toggle .vc-mask {
+        background: rgba(0, 0, 0, 0.6);
+        display: block;
+      }
+      #__vconsole.vc-toggle .vc-panel {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+      }
+    </style>
+    <style>
+      /* color */
+      .vcelm-node {
+        color: #183691;
+      }
+      .vcelm-k {
+        color: #0086b3;
+      }
+      .vcelm-v {
+        color: #905;
+      }
+      /* layout */
+      .vcelm-l {
+        padding-left: 8px;
+        position: relative;
+        word-wrap: break-word;
+        line-height: 1;
+      }
+      /*.vcelm-l.vcelm-noc {
+padding-left: 0;
+}*/
+      .vcelm-l.vc-toggle > .vcelm-node {
+        display: block;
+      }
+      .vcelm-l .vcelm-node:active {
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+      .vcelm-l.vcelm-noc .vcelm-node:active {
+        background-color: transparent;
+      }
+      .vcelm-t {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+      /* level */
+      .vcelm-l .vcelm-l {
+        display: none;
+      }
+      .vcelm-l.vc-toggle > .vcelm-l {
+        margin-left: 4px;
+        display: block;
+      }
+      /* arrow */
+      .vcelm-l:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 3px;
+        width: 0;
+        height: 0;
+        border: transparent solid 3px;
+        border-left-color: #000;
+      }
+      .vcelm-l.vc-toggle:before {
+        display: block;
+        top: 6px;
+        left: 0;
+        border-top-color: #000;
+        border-left-color: transparent;
+      }
+      .vcelm-l.vcelm-noc:before {
+        display: none;
+      }
+    </style>
+    <script>
+      ;(function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt =
+            'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth
+
+            if (!clientWidth) {
+              return (docEl.style.fontSize = '50px')
+            }
+            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + 'px'
+            if (window.innerHeight / window.innerWidth > 1.8) {
+              document.body.className = 'isIphone'
+            } else {
+              document.body.className = ''
+            }
+          }
+        if (!doc.addEventListener) return
+        win.addEventListener(resizeEvt, recalc, false)
+        doc.addEventListener('DOMContentLoaded', recalc, false)
+      })(document, window)
+    </script>
+  </head>
+
+  <body class="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
+    <script>
+      // init vConsole
+      var vConsole = new VConsole()
+      console.log('Hello world')
+    </script>
+    <script src="https://s0.pstatp.com/cdn/expire-1-M/jquery/1.11.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://s0.pstatp.com/cdn/expire-1-M/Swiper/4.5.0/css/swiper.min.css"
+    />
+    <!-- <script src="https://s0.pstatp.com/cdn/expire-1-M/Swiper/4.2.2/js/swiper.min.js"></script> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://s0.pstatp.com/cdn/expire-1-M/weui/1.1.3/style/weui.min.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://s0.pstatp.com/cdn/expire-1-M/jquery-weui/1.2.1/css/jquery-weui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://filex.wx.siyoumi.com/app/act/t_002/index.css?2680595v=5ss4d06"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://filex.wx.siyoumi.com/app/act/t_002/index_animate.css"
+    />
+    <script src="https://s0.pstatp.com/cdn/expire-1-M/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+    <script src="https://s0.pstatp.com/cdn/expire-1-M/EaselJS/1.0.2/easeljs.min.js"></script>
+    <script src="https://s0.pstatp.com/cdn/expire-1-M/PreloadJS/1.0.1/preloadjs.min.js"></script>
+    <script src="https://s0.pstatp.com/cdn/expire-1-M/tweenjs/1.0.2/tweenjs.min.js"></script>
+    <script src="https://s0.pstatp.com/cdn/expire-1-M/SoundJS/1.0.2/soundjs.min.js"></script>
+
+    <div class="home">
+      <img
+        class="title animate__animated animate__bounceInDown"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/title.png"
+        alt=""
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/title.png"
+      />
+      <!-- <img class="absolute snow_flow" src="https://filex.wx.siyoumi.com/app/act/t_002/img/snow_flow.png" alt="雪花" /> -->
+      <!-- <img class="absolute snow_luo" src="https://filex.wx.siyoumi.com/app/act/t_002/img/snow_luo.png" alt="雪花落下" /> -->
+      <img
+        class="absolute flash_light"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/flash_light.png"
+        alt="闪烁"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/flash_light.png"
+      />
+      <img
+        class="absolute car-yellow"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/car-yellow.gif"
+        alt="黄车"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/car-yellow.gif"
+      />
+      <img
+        class="absolute car-red"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/car-red.gif"
+        alt="红车"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/car-red.gif"
+      />
+      <img
+        class="absolute aircraft"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/aircraft.gif"
+        alt="飞机"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/aircraft.gif"
+      />
+      <img
+        class="absolute aircraft2"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/aircraft.gif"
+        alt="飞机"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/aircraft.gif"
+      />
+      <img
+        class="absolute lamp_2"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/lamp_2.png"
+        alt="黄灯1"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/lamp_2.png"
+      />
+      <img
+        class="absolute lamp_road"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/lamp_2.png"
+        alt="黄灯2"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/lamp_2.png"
+      />
+      <img
+        class="absolute lamp_1"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/lamp_1.png"
+        alt="红灯1"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/lamp_1.png"
+      />
+      <img
+        class="absolute lamp_1_1"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/lamp_1.png"
+        alt="红灯2"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/lamp_1.png"
+      />
+      <img
+        class="absolute pic-icon"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/pic-icon1.png"
+        alt="大象"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/pic-icon1.png"
+      />
+
+      <img
+        class="absolute floor1"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/floor1.png"
+        alt="楼1"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/floor1.png"
+        style="opacity: 1"
+      />
+      <img
+        class="absolute floor2"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/floor2.png"
+        alt="楼2"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/floor2.png"
+        style="opacity: 1"
+      />
+      <img
+        class="absolute floor3"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/floor3.png"
+        alt="楼3"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/floor3.png"
+        style="opacity: 1"
+      />
+      <img
+        class="absolute floor4"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/floor4.png"
+        alt="楼4"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/floor4.png"
+        style="opacity: 1"
+      />
+      <img
+        class="absolute floor5"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/floor5.png"
+        alt="楼5"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/floor5.png"
+        style="opacity: 1"
+      />
+      <img
+        class="absolute tree-red"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/tree-red.png"
+        alt="红树"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/tree-red.png"
+      />
+      <img
+        class="absolute tree-red-2"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/tree-red.png"
+        alt="红树"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/tree-red.png"
+      />
+      <img
+        class="absolute tree"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/tree.png"
+        alt="圣诞树"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/tree.png"
+      />
+      <img
+        class="absolute lipstick"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/lipstick.png"
+        alt="圣诞树"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/lipstick.png"
+      />
+      <div class="absolute prize-boss">
+        <p>终极大奖</p>
+        <p>跨年锦鲤券</p>
+        <div class="prize-boss-status flex c-center">待解锁</div>
+      </div>
+
+      <canvas
+        id="snowCanvas"
+        class="absolute"
+        width="375"
+        height="844"
+        style="display: none"
+      ></canvas>
+
+      <img
+        class="absolute bird"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/bird.png"
+        alt="鸟"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/bird.png"
+      />
+      <img
+        class="absolute rule-btn"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/rule-btn.png"
+        alt="活动说明"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/rule-btn.png"
+      />
+      <img
+        class="absolute SantaClaus"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/SantaClaus.gif"
+        alt="圣诞人"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/SantaClaus.gif"
+      />
+      <img
+        class="absolute bear-icon"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/bear-icon.png"
+        alt="鸟"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/bear-icon.png"
+      />
+      <img
+        class="absolute prize-my"
+        data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/prize-my.png"
+        alt="我的奖品"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/prize-my.png"
+      />
+      <!--  -->
+      <div class="relative progress-wrap">
+        <div class="progress-bg">
+          <div class="progress-bar" style="width: 100%"></div>
+        </div>
+        <span class="box prize_fun_01 absolute" style="opacity: 1"></span>
+        <span class="box prize_fun_02 absolute" style="opacity: 1"></span>
+        <span class="box prize_fun_03 absolute" style="opacity: 1"></span>
+        <span class="box prize_fun_04 absolute" style="opacity: 1"></span>
+        <span class="box prize_fun_05 absolute" style="opacity: 1"></span>
+
+        <span class="box-number box-fun1 absolute">500</span>
+        <span class="box-number box-fun2 absolute">1000</span>
+        <span class="box-number box-fun3 absolute">2000</span>
+        <span class="box-number box-fun4 absolute">4000</span>
+        <span class="box-number box-fun5 absolute">8000</span>
+
+        <div class="exploration-score flex">
+          <div class="box-flex flex c-center">
+            探索积分：<span id="scoreNum">9600</span>
+          </div>
+          <div class="box-flex flex c-center">
+            当前探索进度：<span id="progressNum">100%</span>
+          </div>
+        </div>
+      </div>
+      <div class="down-time">
+        <span class="status-text flex c-center absolute">已开启</span>
+        <div class="absolute flex c-center can-chou-big">
+          <div>
+            <p>新年快乐！！</p>
+            <p>点击开启你的专属锦鲤宝箱</p>
+          </div>
+        </div>
+        <div
+          class="absolute flex c-center is_chou_caned"
+          style="display: block"
+        >
+          <div>
+            <p>新年快乐！！</p>
+            <p>宝箱一开，锦鲤就来</p>
+          </div>
+        </div>
+        <div class="down-text absolute" style="display: none"></div>
+        <div class="absolute flex c-center down-time-t" style="display: none">
+          获取倒计时
+          <span class="down-day">0</span>
+          <span>0</span>
+          <i>天</i>
+          <span>0</span>
+          <span>0</span>
+          <i>时</i>
+          <span>0</span>
+          <span>0</span>
+          <i>分</i>
+        </div>
+      </div>
+      <div class="btn-wrap">
+        <div class="surplus-game-num">当前剩余游戏卡：<span>73</span></div>
+        <img
+          class="start-btn btn-start-game"
+          data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/btn_start.png"
+          alt=""
+          src="https://filex.wx.siyoumi.com/app/act/t_002/img/btn_start.png"
+        />
+        <img
+          class="get_btn-ka"
+          data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/get_btn_ka.png"
+          alt=""
+          src="https://filex.wx.siyoumi.com/app/act/t_002/img/get_btn_ka.png"
+        />
+      </div>
+    </div>
+    <!-- 普通奖品 -->
+    <div class="normal-prize-main fixed">
+      <div class="mask absolute"></div>
+      <div class="normal-prize">
+        <img
+          class="prize-box-onpen"
+          src="https://filex.wx.siyoumi.com/app/act/t_002/img/prize-box-onpen.png"
+          alt=""
+        />
+        <img
+          class="absolute finger"
+          src="https://filex.wx.siyoumi.com/app/act/t_002/img/finger.png"
+          alt=""
+        />
+        <div class="absolute prize-wrap">
+          <div class="prize-tips"></div>
+          <img
+            class="prize-img"
+            src="https://filex.wx.siyoumi.com/app/act/t_002/img/prize-baowenbei.png"
+            alt=""
+          />
+        </div>
+        <div class="normal-prize-tips">点击宝箱抽奖</div>
+        <div class="prize-btn-wrap">
+          <div class="btn-reset-prize flex c-center">
+            再接再励
+            <img
+              class="absolute btn-SantaClaus"
+              src="https://filex.wx.siyoumi.com/app/act/t_002/img/SantaClaus.gif"
+              alt="圣诞人"
+            />
+          </div>
+          <div class="btn-get-prize flex c-center">
+            收下奖品
+            <img
+              class="absolute btn-SantaClaus"
+              src="https://filex.wx.siyoumi.com/app/act/t_002/img/SantaClaus.gif"
+              alt="圣诞人"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 大奖品 -->
+    <div class="big-prize-main fixed">
+      <div class="mask absolute"></div>
+      <div class="big-prize">
+        <div class="big-no-prize">
+          <div class="big-no-tips">
+            <p>元旦锦鲤宝箱</p>
+            <p>宝箱一开，好运滚滚来...</p>
+          </div>
+
+          <img
+            class="big-no-prize-box"
+            src="https://filex.wx.siyoumi.com/app/act/t_002/img/big-no-prize-box.png"
+            alt=""
+          />
+          <img
+            class="absolute big-prize-red"
+            src="https://filex.wx.siyoumi.com/app/act/t_002/img/big-prize-red.png"
+            alt=""
+          />
+          <div class="absolute big-prize-tips">点击宝箱抽奖</div>
+
+          <img
+            class="absolute big-finger"
+            src="https://filex.wx.siyoumi.com/app/act/t_002/img/finger.png"
+            alt=""
+          />
+        </div>
+        <div class="big-result-prize">
+          <div class="big-result-tips">
+            <p>恭喜你～！</p>
+            <p>我们的锦鲤宠儿</p>
+          </div>
+          <div class="big-result-no">
+            <p>没中奖哦，再接再厉</p>
+          </div>
+          <img
+            class="absolute big-prize-box"
+            src="https://filex.wx.siyoumi.com/app/act/t_002/img/big-prize-box.png"
+            alt=""
+          />
+          <img
+            class="absolute prize-big-img"
+            src="https://filex.wx.siyoumi.com/app/act/t_002/img/prize-big-no.png"
+            alt=""
+          />
+          <img
+            class="absolute big-prize-gold"
+            src="https://filex.wx.siyoumi.com/app/act/t_002/img/big-prize-gold.png"
+            alt=""
+          />
+          <div class="absolute big-prize-btn-wrap">
+            <div class="big-btn-reset-prize flex c-center">明年再来</div>
+            <div class="big-btn-get-prize flex c-center">收下我的好运</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 我的奖品 -->
+    <div class="my-prize-list fixed">
+      <div class="prize-list-title">- 我的奖品 -</div>
+      <div class="prize-list-empty absolute">空空如也～</div>
+
+      <div class="prize-list-cont"></div>
+      <img
+        class="back-home-prize"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/game/back-home.png"
+        alt=""
+      />
+      <div class="prize-list-tips">
+        <p>请勿擅自操作核销，</p>
+        <p>需由工作人员输入密码核销并发放奖品</p>
+      </div>
+      <div class="check-wrap fixed">
+        <div class="check-wrap-mask absolute"></div>
+        <div class="password-wrap">
+          <div class="password-title">请工作人员输入核销密码</div>
+          <div class="password-text flex c-center">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <input type="text" name="" maxlength="6" id="password-input" />
+          <div class="btn-password flex c-center">确认</div>
+        </div>
+      </div>
+    </div>
+    <!-- 预加载 -->
+    <div class="loading-wrap fixed" style="display: none">
+      <div class="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="loading-tips">正在加载100%...</div>
+      </div>
+    </div>
+    <!--海报 -->
+    <div class="poster-wrap fixed">
+      <img class="poster-img" alt="" />
+      <div class="poster-load">海报生成中...</div>
+      <canvas
+        id="poster"
+        style="width: 7.5rem; height: 13.34rem"
+        width="750"
+      ></canvas>
+    </div>
+    <!-- 活动说明 -->
+    <div class="rule-wrap fixed">
+      <div class="rule-mask mask absolute"></div>
+      <div class="rule-cont">
+        <p style="text-indent: 0.42rem">
+          本次活动是金湾华发商都双旦系列主题宣传活动，
+          活动奖品由金湾华发商都统一赞助提供。活动最终解
+          释权归金湾华发尚都所有。
+        </p>
+        <p>活动玩法</p>
+        <p>1、用户进入活动后，需要通过小游戏收集探索积分；</p>
+        <p>2、每个用户ID有2张初始游戏卡，每次玩游戏需要 消耗1张；</p>
+        <p>3、游戏卡可以通过邀请小伙伴一起探索游戏获取；</p>
+        <p>4、探索积分累计达到指定数值后，可以开启对应 的宝箱抽奖；</p>
+        <p>5、探索分数达到8000后解锁全部宝箱，并获得元 旦锦鲤终极宝箱；</p>
+        <p>6、元旦锦鲤终极宝箱于2021年1月1日0点后方可开 启；</p>
+        <p>奖品说明</p>
+        <p>1、本次活动奖品以实际发放实物为准，奖品不设折 现，不退不换；</p>
+        <p>2、请在活动限定兑奖时间内到指定地点兑换奖品， 逾期无效；</p>
+        <p>3、兑奖时间：2021年1月31日前；</p>
+        <p>4、兑奖地点：珠海市金湾华发商都...........</p>
+        <p>
+          5、兑奖时请出示中奖凭证并交由工作人员输入密码 核销凭证并兑换奖品；
+        </p>
+      </div>
+      <img
+        class="rule-btn-close"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/rule-btn-close.png"
+        alt=""
+      />
+    </div>
+    <!-- 奖品一览 -->
+    <div class="prize-preview-wrap fixed">
+      <img
+        class="prize-preview-img"
+        src="https://filex.wx.siyoumi.com/app/act/t_002/img/prize-preview.jpg"
+        alt=""
+      />
+    </div>
+    <!-- 游戏 -->
+    <audio
+      src="https://res.wx.qq.com/voice/getvoice?mediaid=MzI4NzkzNzM1M18xMDAwMDM1NDU="
+      id="bgm"
+      loop=""
+    ></audio>
+    <div class="page_game">
+      <div class="absolute avatar flex c-center">
+        <img
+          class="wxuser_headimgurl"
+          alt=""
+          src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132"
+        />
+        <div id="score" class="score flex c-center"></div>
+      </div>
+      <div class="time-wrap flex c-center">
+        <img
+          data-original="https://filex.wx.siyoumi.com/app/act/t_002/img/game/clock.png"
+          src="https://filex.wx.siyoumi.com/app/act/t_002/img/game/clock.png"
+          class="lazy clock"
+          alt=""
+        />
+        <div class="downTime-wrap"><span id="second">20</span>s</div>
+      </div>
+      <div class="music_icon"></div>
+      <div id="game_bg"></div>
+      <canvas id="game" width="750" height="1206"></canvas>
+      <!-- 游戏结束页 -->
+      <div class="absolute game-end">
+        <div class="game-end-score">
+          <div class="game-end-tips">恭喜你获得</div>
+          <div class="game-get-score"></div>
+          <div class="surplus-num flex c-center">
+            当前剩余游戏卡：<span></span>
+          </div>
+        </div>
+        <img
+          class="btn-restart-game"
+          src="https://filex.wx.siyoumi.com/app/act/t_002/img/game/btn-restart-game.png"
+          alt=""
+        />
+        <img
+          class="back-home"
+          src="https://filex.wx.siyoumi.com/app/act/t_002/img/game/back-home.png"
+          alt=""
+        />
+      </div>
+      <div class="game-load">
+        <div>
+          <div class="game-load-pro">0%</div>
+          <div>正在加载...</div>
+        </div>
+      </div>
+    </div>
+    <!-- test 二维码sdfsdf
+  <img
+    src="https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=act1604155011"
+  /> -->
+
+    <script>
+      let bigTextDown = [
+        '元旦前探索进度达到100%即可获得',
+        '元旦0点后可开启您的专属锦鲤宝箱',
+        '宝箱已过期',
+      ]
+      let isTimeEnd = false //时间结束
+      let isGetMaxFun = false //是否获得大奖
+      let setInitData = {}
+      // 初始化数据 api
+      function func_get_init_data() {
+        func_axios({
+          url: `${pub_root_app}xweb/act/z_api_001`,
+          success(res) {
+            console.log('请求==', res.data)
+            setInitData = res.data
+            set_data(res.data)
+          },
+        })
+      }
+      function set_data(data) {
+        let play_count = 0
+
+        //  分数
+        $('.box-fun1').html(data.set_data.prize_fun_01)
+        $('.box-fun2').html(data.set_data.prize_fun_02)
+        $('.box-fun3').html(data.set_data.prize_fun_03)
+        $('.box-fun4').html(data.set_data.prize_fun_04)
+        $('.box-fun5').html(data.set_data.prize_fun_05)
+        let maxFun = Number(data.set_data.prize_fun_05)
+        let prize_fun_01 = Number(data.set_data.prize_fun_01)
+        let prize_fun_02 = Number(data.set_data.prize_fun_02)
+        let prize_fun_03 = Number(data.set_data.prize_fun_03)
+        let prize_fun_04 = Number(data.set_data.prize_fun_04)
+        let prize_fun_05 = Number(data.set_data.prize_fun_05)
+        isGetMaxFun = Number(data.launch.fun) >= maxFun
+        let prize_fun_arr = [
+          prize_fun_01,
+          prize_fun_02,
+          prize_fun_03,
+          prize_fun_04,
+          prize_fun_05,
+        ]
+
+        let masterfun = data.launch.fun //获得积分
+        let progressIndex = 0
+        let progressNextFun = 0
+        let progressPreFun = 0
+        play_count = data.launch.play_count //游戏次数
+        for (let i = 0; i < prize_fun_arr.length; i++) {
+          let index = i + 1
+          $('.prize_fun_0' + index).data('fun_key', 'prize_fun_0' + index)
+
+          if (masterfun >= prize_fun_arr[i]) {
+            progressIndex++
+            $('.prize_fun_0' + index)
+              .css({
+                opacity: 1,
+              })
+              .data('isChou', 1)
+
+            $('.floor' + index).css({
+              opacity: 1,
+            })
+            let nextIndex = i + 1 === prize_fun_arr.length ? i : i + 1
+            if (
+              (masterfun > prize_fun_arr[i] &&
+                masterfun < prize_fun_arr[nextIndex]) ||
+              nextIndex === i
+            ) {
+              progressNextFun = prize_fun_arr[nextIndex]
+              progressPreFun = prize_fun_arr[i]
+            }
+          }
+        }
+        for (let i = 0; i < data.list_chou.length; i++) {
+          let funs = Number()
+          $('.' + data.list_chou[i]).data('isChou', 0)
+        }
+        // surplus-game-num
+        $('.surplus-game-num span').html(play_count)
+        $('#scoreNum').html(data.launch.fun)
+        // 进度条
+        let funProgress = (progressIndex / 5) * 100
+        let chaju = masterfun - progressPreFun
+        let bothMax = progressNextFun - progressPreFun
+        if (bothMax !== 0) {
+          funProgress = (chaju / bothMax) * 100 * 0.2 + funProgress
+        }
+        // funProgress = (chaju / maxFun) * 100 * 0.25 + funProgress
+        // let funProgress = (Number(data.launch.fun) / maxFun) * 100
+        funProgress = funProgress >= 100 ? 100 : funProgress
+
+        let progress = Number(funProgress).toFixed(2)
+        if (funProgress === 100) {
+          progress = 100
+        }
+        $('.progress-bar').css({
+          width: progress + '%',
+        })
+        $('#progressNum').html(progress + '%')
+
+        // 大奖
+        // 开启倒计时
+        if (data.prize_s <= 0) {
+          isTimeEnd = true
+        } else {
+          isTimeEnd = false
+        }
+        big_chou_status()
+
+        $('.wxuser_headimgurl').attr('src', data.common.user.wxuser_headimgurl)
+
+        //  跳走游戏有
+        $('.btn-start-game')
+          .off()
+          .click(function () {
+            if (play_count > 0) {
+              $('.home').hide()
+              $('.page_game').show()
+
+              game = new Game()
+              game.preload()
+            } else {
+              $.alert('没有游戏次数了')
+            }
+          })
+      }
+
+      function big_chou_status() {
+        // 时间没到
+        if (!isTimeEnd) {
+          // 获得
+          if (isGetMaxFun) {
+            $('.status-text').html('已获得')
+            $('.down-text').html(bigTextDown[1])
+          } else {
+            $('.status-text').html('未获得')
+            $('.down-text').html(bigTextDown[0])
+          }
+          getleftTimer(new Date().getTime() + data.prize_s * 1000)
+        } else {
+          // 获得
+          if (isGetMaxFun) {
+            $('.down-text').hide()
+            $('.down-time-t').hide()
+            // 已抽奖
+            if (setInitData.is_chou_max) {
+              $('.status-text').html('已开启')
+              $('.is_chou_caned').show()
+            } else {
+              $('.status-text').html('已获得')
+              $('.can-chou-big').show()
+            }
+          } else {
+            $('.status-text').html('未获得')
+            $('.down-text').html(bigTextDown[2]).css({
+              width: '3.5rem',
+              'text-align': 'center',
+            })
+          }
+        }
+      }
+
+      //   普通 抽奖
+      function fun_chou_normal(fun_key) {
+        func_axios({
+          url: `${pub_root_app}xweb/act/z_api_001/chou`,
+          method: 'post',
+          data: {
+            fun_key,
+          },
+          success(res) {
+            console.log('请求==', res.data)
+            if (res.data.errcode == 0) {
+              setTimeout(() => {
+                $('.prize-box-onpen').removeClass('active')
+                $('.normal-prize-tips').hide()
+                $(
+                  '.normal-prize-tips,.btn-reset-prize,.btn-get-prize,.finger'
+                ).hide()
+                $('.prize-wrap').show()
+
+                if (res.data.entity_prize) {
+                  $('.prize-tips').html('恭喜你中奖啦')
+                  $('.prize-img').attr(
+                    'src',
+                    pub_root_file + res.data.entity_prize.prize_pic
+                  )
+                  $('.btn-get-prize').css({
+                    display: 'flex',
+                  })
+                } else {
+                  $('.prize-tips').html(
+                    '就差一点点～<br><br>离中奖就差一念距离，再接再厉'
+                  )
+                  $('.btn-reset-prize').css({
+                    display: 'flex',
+                  })
+                  $('.prize-img').attr(
+                    'src',
+                    'https://filex.wx.siyoumi.com/app/act/t_002/img/min-no-prize.png'
+                  )
+                }
+              }, 1000)
+            } else {
+              $.alert('系统繁忙，请联系客服')
+            }
+          },
+        })
+      }
+
+      //   大奖 抽奖
+      function fun_chou_big() {
+        func_axios({
+          url: `${pub_root_app}xweb/act/z_api_001/chou_max`,
+          success(res) {
+            console.log('请求==', res.data)
+            if (res.data.errcode == 0) {
+              setTimeout(() => {
+                $('.big-no-prize-box').removeClass('active')
+                $('.big-no-prize').hide()
+                $('.big-result-prize').show()
+                $('.big-btn-reset-prize,.big-btn-get-prize').removeClass(
+                  'active'
+                )
+
+                if (res.data.entity_prize) {
+                  $('.big-result-tips').show()
+                  $('.big-btn-get-prize').addClass('active')
+                  $('.prize-big-img').attr(
+                    'src',
+                    pub_root_file + res.data.entity_prize.prize_pic
+                  )
+                } else {
+                  $('.big-btn-reset-prize').addClass('active')
+                  $('.big-result-no').show()
+                  $('.prize-big-img').attr(
+                    'src',
+                    'https://filex.wx.siyoumi.com/app/act/t_002/img/prize-big-no.png'
+                  )
+                }
+              }, 1000)
+            } else {
+              $.alert('系统繁忙，请联系客服')
+            }
+          },
+        })
+      }
+
+      //抽奖列表
+      function func_prize_list() {
+        func_axios({
+          url: `${pub_root_app}xweb/act/z_api_prize/list`,
+          success(res) {
+            console.log('请求==', res.data)
+            if (res.data.list.length === 0) {
+              $('.prize-list-empty').show()
+              $('.prize-list-cont').hide()
+            } else {
+              $('.prize-list-empty').hide()
+              $('.prize-list-cont').show()
+            }
+
+            $('.prize-list-cont').html('')
+            for (let i = 0; i < res.data.list.length; i++) {
+              let item = res.data.list[i]
+              let cell = `<div class="prize-list-item ${
+                item.prize_use === 1 ? 'verification-yes' : 'verification-no'
+              }">
+                        <img class="prize-item-img" src="${pub_root_file}${
+                item.prize_pic
+              }" alt="">
+                        <div class="list-item-info">
+                            <div class="prize-name">${item.prize_name}</div>
+                            <div class="expire-time">过期时间：${getTiemeFormat(
+                              item.prize_end_date
+                            )}</div>
+                            <div class="detail">
+                              <div class="flex toggle-detal">
+                                <i class="detail-icon"></i>
+                                奖品详情
+                              </div>
+                              ${
+                                item.prize_use === 1
+                                  ? ''
+                                  : `<div class="btn-verify flex c-center" data-prize_id='${item.prize_id}'>密码核销</div>`
+                              }
+                              
+                            </div>
+                            <div class="detial-cont">${item.prize_desc}</div>
+                        </div>
+                      </div>`
+              $('.prize-list-cont').append(cell)
+            }
+          },
+        })
+      }
+
+      //核销
+      function func_prize_use(id, txt) {
+        func_axios({
+          url: `${pub_root_app}xweb/act/z_api_prize/use`,
+          method: 'post',
+          data: {
+            id,
+            txt,
+          },
+          success(res) {
+            console.log('请求==', res.data)
+            if (res.data.errcode !== 0) {
+              $.alert(res.data.errmsg)
+            } else {
+              $.alert('核销成功')
+              $('.check-wrap').hide()
+              func_prize_list()
+            }
+          },
+        })
+      }
+
+      // 时间格式
+      function getTiemeFormat(val) {
+        let date = new Date(val.replace(/-/g, '/'))
+        let year = date.getFullYear()
+        let month = date.getMonth() + 1
+        let day = date.getDate()
+        return `${year}年${month}月${day}日`
+      }
+      // 倒计时
+      function getleftTimer(downs) {
+        let timer = null
+        function leftTimer() {
+          var leftTime = new Date(downs) - new Date() //计算剩余的毫秒数
+          var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10) //计算剩余的天数
+          var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10) //计算剩余的小时
+          var minutes = parseInt((leftTime / 1000 / 60) % 60, 10) //计算剩余的分钟
+          var seconds = parseInt((leftTime / 1000) % 60, 10) //计算剩余的秒数
+          days = checkTime(days)
+          hours = checkTime(hours)
+          if (seconds > 0 && minutes <= 0) {
+            minutes = 1
+          }
+          minutes = checkTime(minutes)
+          seconds = checkTime(seconds)
+          if (days > 0 || hours > 0 || minutes > 0 || seconds > 0) {
+            $('.down-time-t').html(`获取倒计时
+        <span class="down-day">${days.substring(0, 1)}</span>
+        <span>${days.substring(1, 2)}</span>
+        <i>天</i>
+        <span>${hours.substring(0, 1)}</span>
+        <span>${hours.substring(1, 2)}</span>
+        <i>时</i>
+        <span>${minutes.substring(0, 1)}</span>
+        <span>${minutes.substring(1, 2)}</span>
+        <i>分</i>`)
+
+            setTimeout(leftTimer, 1000)
+          } else {
+            isTimeEnd = true
+            big_chou_status()
+            // if (isGetMaxFun) {
+            //   // $('.down-text').html(bigTextDown[3])
+            //   // $('.down-time-t').html(bigTextDown[3])
+            // } else {
+            //   $('.down-text').html(bigTextDown[2])
+            // }
+            // $(".down-time-t").html(`获取倒计时
+            // <span class="down-day">0</span>
+            // <span>0</span>
+            // <i>天</i>
+            // <span>0</span>
+            // <span>0</span>
+            // <i>时</i>
+            // <span>0</span>
+            // <span>0</span>
+            // <i>分</i>`);
+          }
+        }
+        leftTimer()
+      }
+      function checkTime(i) {
+        //将0-9的数字前面加上0，例1变为01
+        if (i < 10) {
+          i = '0' + i
+        }
+        return i + ''
+      }
+
+      // 海报
+      function drawPoster(p_name, p_url, headPic, p_bg) {
+        var can = null,
+          pen = null
+        // var total_sca = window.innerWidth / 320,
+        var total_sca = 1,
+          head_w = 80 * total_sca,
+          head_h = 80 * total_sca,
+          qr_w = 130 * total_sca,
+          qr_h = 130 * total_sca,
+          wx_openid = '',
+          wx_name = ''
+
+        let headX = 164,
+          headY = 303,
+          qrX = 562,
+          qrY = 1151
+        can = document.getElementById('poster')
+        pen = can.getContext('2d')
+        can.width = 750 * total_sca
+        can.height = 1334 * total_sca
+
+        console.log('开始绘制海报')
+        var poster_bg = new Image()
+        // 仙峰寺
+        let bgPic = p_bg
+        // if (posterId == 2) bgPic = `${pub_root_file}app/act/t_001/img/p9_poster.png?v=1`
+        poster_bg.crossOrigin = 'Anonymous'
+        poster_bg.src = bgPic
+
+        poster_bg.onload = function () {
+          pen.drawImage(poster_bg, 0, 0, can.width, can.height)
+          console.log('绘制底图完成')
+
+          var headUrl = new Image()
+          headUrl.crossOrigin = 'Anonymous'
+          headUrl.src = headPic
+          headUrl.onload = function () {
+            var can2 = document.createElement('canvas')
+            pen2 = can2.getContext('2d')
+            can2.width = can.width
+            can2.height = can.height
+            pen2.drawImage(
+              headUrl,
+              headX * total_sca - head_w / 2,
+              headY * total_sca,
+              head_w,
+              head_h
+            )
+            console.log('绘制头像完成')
+
+            // 创建图片纹理
+            var pattern = pen.createPattern(can2, 'repeat')
+            // 如果要绘制一个圆，使用下面代码
+            pen.arc(
+              headX * total_sca,
+              headY * total_sca + head_w / 2,
+              Math.max(head_w, head_h) / 2,
+              0,
+              2 * Math.PI
+            )
+            // 填充绘制的圆o
+            pen.fillStyle = pattern
+            pen.fill()
+
+            var qrUrl = new Image()
+            qrUrl.crossOrigin = 'Anonymous'
+            console.log('传入的二维码', p_url)
+            qrUrl.src = p_url
+            qrUrl.onload = function () {
+              // pen.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h);
+              console.log('绘制二维码完成')
+              let can2 = document.createElement('canvas')
+              pen2 = can2.getContext('2d')
+              can2.width = can.width
+              can2.height = can.height
+              console.log(can2.width)
+              pen2.drawImage(
+                qrUrl,
+                qrX * total_sca,
+                qrY * total_sca,
+                qr_w,
+                qr_h
+              )
+              // 创建图片纹理
+              var pattern = pen.createPattern(can2, 'repeat')
+              // 如果要绘制一个圆，使用下面代码
+              // pen.arc(obj.width / 2, obj.height / 2, Math.max(obj.width, obj.height) / 2, 0, 2 * Math.PI);
+              // 这里使用圆角矩形
+              pen.roundRect(
+                qrX * total_sca,
+                qrY * total_sca,
+                qr_w,
+                qr_h,
+                10 * 1 || 0
+              )
+              pen.x = 100
+              // 填充绘制的圆
+              pen.fillStyle = pattern
+              pen.fill()
+
+              var result = can.toDataURL('image/png')
+              $('.poster-load').hide()
+              $('.poster-img').attr('src', result)
+            }
+          }
+        }
+      }
+      //圆角矩形
+      CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
+        var min_size = Math.min(w, h)
+        if (r > min_size / 2) r = min_size / 2
+        // 开始绘制
+        this.beginPath()
+        this.moveTo(x + r, y)
+        this.arcTo(x + w, y, x + w, y + h, r)
+        this.arcTo(x + w, y + h, x, y + h, r)
+        this.arcTo(x, y + h, x, y, r)
+        this.arcTo(x, y, x + w, y, r)
+        this.closePath()
+        return this
+      }
+      // 预加载 home
+      function preLoadImg() {
+        let homeImgArr = $('.home img')
+        let homeImgArrLenth = homeImgArr.length
+        let index = 0
+        for (let i = 0; i < homeImgArr.length; i++) {
+          let image = new Image()
+          let originalImage = $($('.home img')[i])
+          image.src = $($('.home img')[i]).data().original
+
+          image.onload = function () {
+            //图片下载完毕时异步调用callback函数。
+            index++
+            originalImage.attr('src', image.src)
+            $('.loading-tips').html(
+              '正在加载' +
+                Number((index / homeImgArrLenth) * 100).toFixed(0) +
+                '%...'
+            )
+            if (index === homeImgArr.length) {
+              $('.loading-wrap').hide()
+            }
+          }
+        }
+      }
+
+      $(function () {
+        // 预加载
+        preLoadImg()
+        // 获取数据
+        func_get_init_data()
+
+        let elData = ''
+        $('.progress-wrap').click(function (e) {
+          let el = $(e.target).data()
+          elData = el
+          console.log(el)
+          if (el.isChou === 1) {
+            $('.normal-prize-main').show()
+          } else if (el.fun_key) {
+            if (el.isChou === 0) {
+              $.alert('已经抽过了')
+            } else {
+              $.alert('积分不够，加油哦！')
+            }
+          }
+        })
+
+        // 分享
+        $('.get_btn-ka')
+          .off()
+          .click(function () {
+            $('.poster-wrap').show()
+            let p_url =
+              'https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=' +
+              setInitData.help_word
+            let headPic = setInitData.common.user.wxuser_headimgurl
+
+            let p_bg =
+              'http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg?v=1'
+
+            if (!$('.poster-img').attr('src')) {
+              drawPoster('sf', p_url, headPic, p_bg)
+            }
+          })
+        $('.poster-img').click(function () {
+          $('.poster-wrap').hide()
+        })
+
+        // 抽大奖
+        $('.down-time').click(function () {
+          if (isGetMaxFun && isTimeEnd) {
+            if (setInitData.is_chou_max) {
+              $.alert('一抽过')
+            } else {
+              $('.big-prize-main').show()
+            }
+          } else {
+            $.alert('还没获得，或者还没开启')
+          }
+        })
+
+        // 抽大奖 宝箱
+        $('.big-no-prize-box').click(function () {
+          $(this).addClass('active')
+          fun_chou_big()
+        })
+
+        // 明年再来
+        $('.big-btn-reset-prize').click(function () {
+          $('.big-prize-main').hide()
+          func_get_init_data()
+        })
+
+        // 大奖 我的奖品
+        $('.big-btn-get-prize').click(function () {
+          $('.big-prize-main').hide()
+          $('.prize-list-empty').hide()
+          $('.my-prize-list').fadeIn('slow')
+          func_prize_list()
+          func_get_init_data()
+        })
+        // 打开宝箱
+        $('.prize-box-onpen')
+          .off()
+          .click(function () {
+            $(this).addClass('active')
+
+            fun_chou_normal(elData.fun_key)
+          })
+
+        // 我的奖品 列表
+        $('.prize-my').click(function () {
+          $('.prize-list-empty').hide()
+          $('.my-prize-list').fadeIn('slow')
+          // $('.my-prize-list').fadeIn("slow");
+          func_prize_list()
+        })
+        // 关闭
+        $('.back-home-prize').click(function () {
+          $('.my-prize-list').fadeOut('slow')
+        })
+
+        // 活动说明
+        $('.rule-btn').click(function () {
+          $('.rule-wrap').fadeIn('slow')
+        })
+        // 关闭 活动说明
+        $('.rule-btn-close,.rule-mask').click(function () {
+          $('.rule-wrap').fadeOut('slow')
+        })
+
+        // 奖品一览
+        $('.pic-icon').click(function () {
+          $('.prize-preview-wrap').fadeIn('slow')
+        })
+        // 关闭 奖品一览
+        $('.prize-preview-wrap').click(function () {
+          $('.prize-preview-wrap').fadeOut('slow')
+        })
+
+        // 核销
+        let prize_id = ''
+        $('.prize-list-cont').click(function (e) {
+          let el = $(e.target)
+          prize_id = el.data().prize_id
+          if (el.hasClass('btn-verify')) {
+            $('.check-wrap').show()
+          } else if (
+            el.hasClass('toggle-detal') ||
+            el.hasClass('detail-icon')
+          ) {
+            $(el)
+              .parents()
+              .find('.list-item-info')
+              .find('.detial-cont')
+              .toggle()
+          }
+        })
+        $('.password-text').click(function () {
+          console.log('password-text=====')
+          $('#password-input').focus()
+          $('#password-input').click()
+        })
+        $('#password-input').bind('input propertychange', function (event) {
+          let value = $('#password-input').val()
+          let html = `<span>${value.substr(0, 1)}</span>
+          <span>${value.substr(1, 1)}</span>
+          <span>${value.substr(2, 1)}</span>
+          <span>${value.substr(3, 1)}</span>
+          <span>${value.substr(4, 1)}</span>
+          <span>${value.substr(5, 1)}</span>`
+          $('.password-text').html(html)
+        })
+        // $('#password-input').change(function(val){
+
+        // });
+        // 核销按钮
+        $('.btn-password').click(function () {
+          let password = $('#password-input').val().substr(0, 6)
+          if (password.length < 6) {
+            $.alert('请输入密码')
+            return
+          }
+          func_prize_use(prize_id, password)
+        })
+        $('.check-wrap-mask').click(function () {
+          $('.check-wrap').fadeOut()
+        })
+        // 普通 我的奖品 按钮
+        $('.btn-get-prize').click(function () {
+          reset_normal_status()
+        })
+        // 返回首页
+        $('.btn-reset-prize').click(function () {
+          reset_normal_status()
+        })
+
+        function reset_normal_status() {
+          $('.normal-prize-main').hide()
+          $('.prize-wrap').hide()
+          $('.finger').show()
+          $('.normal-prize-tips').show()
+          $('.btn-reset-prize,.btn-get-prize').hide()
+          func_get_init_data()
+        }
+
+        // 关闭音乐
+        $('.music_icon').click(function () {
+          if ($(this).hasClass('active')) {
+            pauseMusic()
+          } else {
+            playMusic()
+          }
+        })
+      })
+      function pauseMusic() {
+        bgm.pause()
+        $('.music_icon').removeClass('active')
+      }
+      function playMusic() {
+        bgm.play()
+        $('.music_icon').addClass('active')
+      }
+    </script>
+    <script>
+      const bgm = document.getElementById('bgm')
+      var game = null
+      bgm.src =
+        'https://res.wx.qq.com/voice/getvoice?mediaid=MzI4NzkzNzM1M18xMDAwMDM1NDU='
+
+      //游戏
+      ;(function () {
+        const canvas = document.getElementById('game')
+        const gameBg = document.getElementById('gameBg')
+        const clientWidth = window.innerWidth * 2
+        const clientHeight = window.innerHeight * 2
+        // canvas.width = clientWidth;
+        canvas.height = clientHeight
+        canvas.addEventListener('touchstart', function (e) {
+          e.preventDefault()
+        })
+        const cjs = createjs
+        class Game {
+          //预加载
+          preload() {
+            this.queue = new cjs.LoadQueue(false, '', true)
+            let manifestHouse = [
+              {
+                id: 'chi',
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/chi.png',
+              },
+              {
+                id: 'gameBg2',
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-bg_02.jpg',
+              },
+              {
+                id: 'jiazi',
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/jiazi.png',
+              },
+              {
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/house1.png',
+                id: 'house1',
+              },
+              {
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/house2.png',
+                id: 'house2',
+              },
+              {
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/house3.png',
+                id: 'house3',
+              },
+              {
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/house4.png',
+                id: 'house4',
+              },
+              {
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/house5.png',
+                id: 'house5',
+              },
+              {
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/house6.png',
+                id: 'house6',
+              },
+              {
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/house7.png',
+                id: 'house7',
+              },
+              {
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/house8.png',
+                id: 'house8',
+              },
+              {
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/house9.png',
+                id: 'house9',
+              },
+              {
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-snow.png',
+                id: 'gameSnow',
+              },
+              {
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-snow-flower.png',
+                id: 'gameSnowFlower',
+              },
+            ]
+            this.queue.loadManifest(manifestHouse)
+            // this.queue.loadManifest(manifest);
+            this.queue.on('complete', (e) => {
+              this.init()
+              $('.game-load').hide()
+
+              if (typeof WeixinJSBridge === 'object') {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                  playMusic()
+                })
+              }
+            })
+            let progressIndex = 0
+            this.queue.on(
+              'progress',
+              (res) => {
+                progressIndex++
+                console.log('progress===' + progressIndex)
+                let progressNum = Number(
+                  (progressIndex / manifestHouse.length) * 100
+                ).toFixed()
+                $('.game-load-pro').html(progressNum + '%')
+              },
+              this
+            )
+          }
+
+          init() {
+            this.stage = new cjs.Stage('game')
+            cjs.Touch.enable(this.stage)
+            this.houseContainer = new cjs.Container()
+            cjs.Ticker.timingMode = cjs.Ticker.RAF
+
+            //背景图
+            this.gameBg = new cjs.Container()
+            const bg = new cjs.Bitmap(this.queue.getResult('gameBg2'))
+            this.bottomDir = canvas.height - bg.image.naturalHeight
+            this.gameBg.addChild(bg)
+            this.stage.addChild(this.gameBg)
+
+            // const data = {
+            //   images: [this.queue.getResult("logo")],
+            //   // "framerate": 0.01,
+            //   frames: [
+            //     [1, 1, 743, 201, 0, 0, 0],
+            //     [-35, 204, 745, 235, 0, 0, 0],
+            //     [1, 441, 643, 200, 0, 0, 0],
+            //   ],
+
+            //   animations: {
+            //     // "logo动图_0001_图层": { "frames": [0] },
+            //     // "logo动图_0002_图层": { "frames": [1] },
+            //     // "logo动图_0000_图层": { "frames": [2] }
+            //     run: {
+            //       frames: [2, 0, 1],
+            //       speed: 0.005,
+            //     },
+            //   },
+            // };
+            // const logoSheet = new createjs.SpriteSheet(data);
+            // const logoSprite = new createjs.Sprite(logoSheet, "run");
+            // console.log(canvas.height);
+            // logoSprite.x = 5;
+            // logoSprite.y = 660;
+            // this.gameBg.addChild(logoSprite);
+
+            const chiData = {
+              images: [this.queue.getResult('chi')],
+              framerate: 5,
+              frames: [
+                [1, 1, 429, 52, 0, 0, 0],
+                [1, 55, 429, 49, 0, 0, 0],
+              ],
+
+              animations: {
+                // "logo动图_0001_图层": { "frames": [0] },
+                // "logo动图_0002_图层": { "frames": [1] },
+                // "logo动图_0000_图层": { "frames": [2] }
+                run: {
+                  frames: [1, 0],
+                  speed: 0.08,
+                },
+              },
+            }
+            const chiSheet = new createjs.SpriteSheet(chiData)
+            this.chiSprite = new createjs.Sprite(chiSheet, 'run')
+            this.chiSprite.visible = false
+            console.log(canvas.height)
+            this.stage.addChild(this.chiSprite)
+
+            // 雪
+
+            for (let sindex = 0; sindex < 10; sindex++) {
+              let gameSnow = new cjs.Bitmap(this.queue.getResult('gameSnow'))
+
+              this.stage.addChild(gameSnow)
+              gameSnow.y = -gameSnow.image.naturalHeight
+              gameSnow.x = 0
+              cjs.Tween.get(gameSnow, { loop: true })
+                .wait(2000 * sindex)
+                .to({ alpha: 1, x: 0, y: canvas.height }, 3000)
+                .to({ alpha: 0, x: 0, visible: false, y: canvas.height }, 1)
+            }
+
+            // 雪花
+            let gameSnowFlower = new cjs.Bitmap(
+              this.queue.getResult('gameSnowFlower')
+            )
+
+            this.stage.addChild(gameSnowFlower)
+            gameSnowFlower.y = -gameSnowFlower.image.naturalHeight
+            gameSnowFlower.x = -gameSnowFlower.image.naturalWidth
+            cjs.Tween.get(gameSnowFlower, { loop: true })
+              .to({ alpha: 1, x: 0, y: canvas.height }, 5000)
+              .to({ alpha: 0, x: canvas.width, y: canvas.height }, 1)
+
+            // //云
+            // const cloud1 = new cjs.Bitmap(this.queue.getResult("cloud"));
+            // this.stage.addChild(cloud1);
+            // cloud1.y = 100;
+            // cloud1.x = 600;
+            // const cloud2 = new cjs.Bitmap(this.queue.getResult("cloud"));
+            // this.stage.addChild(cloud2);
+            // cloud2.y = 400;
+            // cloud2.x = 100;
+            // cjs.Tween.get(cloud1, { loop: true })
+            //   .to({ x: 550 }, 1500)
+            //   .to({ x: 600 }, 1500);
+            // cjs.Tween.get(cloud2, { loop: true })
+            //   .to({ x: 150 }, 1500)
+            //   .to({ x: 100 }, 1500);
+
+            // 飞机
+            // this.plan = new cjs.Bitmap(this.queue.getResult("plan"));
+            // this.plan.x = -150;
+            // this.stage.addChild(this.plan);
+
+            // 气球
+            // this.balloon = new cjs.Bitmap(this.queue.getResult("balloon"));
+            // this.balloon.x = 44;
+            // this.balloon.y = 270;
+            // cjs.Tween.get(this.balloon, { loop: true })
+            //   .to({ y: 290 }, 900)
+            //   .to({ y: 270 }, 900);
+            // this.stage.addChild(this.balloon);
+
+            // 浮动logo
+            // this.fly_logo = new cjs.Bitmap(this.queue.getResult("fly_logo"));
+            // this.fly_logo.x = 535;
+            // this.fly_logo.y = 410;
+            // this.fly_logo.visible = false;
+            // cjs.Tween.get(this.fly_logo, { loop: true })
+            //   .to({ y: 430 }, 900)
+            //   .to({ y: 410 }, 900);
+            // this.stage.addChild(this.fly_logo);
+
+            // //注册音乐
+            createjs.Sound.alternateExtensions = ['mp3']
+            createjs.Sound.registerSounds([
+              {
+                src:
+                  'http://file.weixin.siyoumi.com/app/act/t_002/mp3/click.mp3',
+                id: 'sound',
+              },
+              {
+                src:
+                  'http://file.weixin.siyoumi.com/app/act/t_002/mp3/gameover.mp3',
+                id: 'gameover',
+              },
+              {
+                src:
+                  'http://file.weixin.siyoumi.com/app/act/t_002/mp3/shibai.mp3',
+                id: 'shibai',
+              },
+              {
+                src:
+                  'http://file.weixin.siyoumi.com/app/act/t_002/mp3/success.mp3',
+                id: 'success',
+              },
+              {
+                src: 'http://file.weixin.siyoumi.com/app/act/t_002/mp3/chi.mp3',
+                id: 'chi',
+              },
+            ])
+            // cjs.Sound.on("fileload",this.registerBgm,this);
+
+            this.tipsArr = []
+
+            //创建房子的容器
+            this.downContainer = new cjs.Container()
+            this.stage.addChild(this.downContainer)
+            this.stage.addChild(this.houseContainer)
+            this.drawPliers()
+            this.hpContainer = new cjs.Container()
+            this.stage.addChild(this.hpContainer)
+
+            // 开始游戏
+            this.start()
+            cjs.Ticker.addEventListener('tick', (e) => {
+              this.stage.update()
+            })
+          }
+
+          //重置游戏，重新开始
+          start() {
+            this.pliersContainer.visible = true
+            this.houseContainer.visible = true
+            this.gameBg.y = this.bottomDir
+            this.rotateSpeed = 2
+            this.downCount = 0
+            this.score = 0
+            this.gameStart = false
+            this.time = 20
+            this.hp = 1
+            this.lastHouse = null
+            this.downContainer.removeAllChildren()
+            this.downContainer.x = 0
+            this.downContainer.y = 0
+            this.lastGap = 20
+            cjs.Tween.removeTweens(this.downContainer)
+            // this.drawHp();
+            $('#second').html(this.time)
+            $('#score').html(this.score)
+            $('.ceng span').html(this.downCount)
+            setInitData['game_adata_id'] = null
+            func_set_game_fun(null, null)
+          }
+
+          drawHp() {
+            this.hpContainer.x = 27
+            this.hpContainer.y = 140
+            for (let i = 0; i < this.hp; i++) {
+              const hp = new cjs.Bitmap(this.queue.getResult('hp'))
+              hp.x = i * 60
+              this.hpContainer.addChild(hp)
+            }
+          }
+
+          drawPliers() {
+            //钳子容器
+            this.pliersContainer = new cjs.Container()
+            //钳子图片
+            const data = {
+              images: [this.queue.getResult('machine_hand')],
+
+              framerate: 1,
+              frames: [
+                [1, 1, 397, 504, 0, -178, -68],
+                [400, 1, 382, 516, 0, -184, -68],
+                [400, 1, 382, 516, 0, -184, -68],
+                [784, 1, 381, 526, 0, -184, -68],
+                [1167, 1, 381, 523, 0, -184, -71],
+                [1550, 1, 375, 528, 0, -187, -68],
+              ],
+              animations: {
+                close: { frames: [5] },
+                open: {
+                  frames: [5, 3, 2, 0, 1, 4],
+                  next: 'close',
+                  speed: 0.5,
+                },
+              },
+            }
+            //钳子图片
+            const data2 = {
+              images: [this.queue.getResult('jiazi')],
+
+              framerate: 1,
+              frames: [
+                [1, 1, 371, 389, 0, -178, -68],
+                [1, 1, 371, 389, 0, -178, -68],
+                [1, 1, 371, 389, 0, -178, -68],
+                [1, 1, 371, 389, 0, -178, -68],
+                [1, 1, 371, 389, 0, -178, -68],
+                [374, 1, 343, 385, 0, -178, -68],
+              ],
+              animations: {
+                close: { frames: [5] },
+                open: {
+                  frames: [5, 1, 2, 3, 4, 0],
+                  next: 'close',
+                  speed: 0.5,
+                },
+              },
+            }
+            const spriteSheet = new createjs.SpriteSheet(data2)
+            this.pliers = new createjs.Sprite(spriteSheet, 'close')
+            // this.pliers = new cjs.Bitmap(this.queue.getResult('pliers'));
+            // //创建房子的容器
+            this.pliersContainer.addChild(this.pliers)
+            this.stage.addChild(this.pliersContainer)
+            this.pliersContainer.deg = 0
+            this.pliersContainer.addEventListener('tick', (e) => {
+              this.pliersContainer.deg += this.rotateSpeed
+              this.pliersContainer.x =
+                260 *
+                Math.cos(((this.pliersContainer.deg % 360) * Math.PI) / 180)
+              this.pliersContainer.y =
+                60 *
+                  Math.sin(((this.pliersContainer.deg % 360) * Math.PI) / 180) -
+                150
+            })
+            this.drawHouse()
+          }
+
+          timeDown() {
+            this.timer = setInterval((e) => {
+              if (this.time > 1) {
+                this.time--
+              } else {
+                this.time = 0
+                clearInterval(this.timer)
+                this.gameOver()
+              }
+              $('#second').html(this.time)
+            }, 1000)
+          }
+
+          gameOver() {
+            this.gameStart = false
+            this.pliersContainer.visible = false
+            this.houseContainer.visible = false
+            setInitData.launch.play_count--
+            $('.game-end').show()
+            $('.surplus-num span').html(setInitData.launch.play_count)
+            $('.game-get-score').html(this.score)
+            cjs.Sound.play('gameover')
+            // pauseMusic();
+            //
+            func_set_game_fun(setInitData.game_adata_id, this.score)
+            //
+            $('.btn-restart-game')
+              .off()
+              .click(function () {
+                console.log(game)
+                if (setInitData.launch.play_count > 0) {
+                  game.start()
+
+                  $('.game-end').hide()
+                } else {
+                  $.alert('没有游戏次数了')
+                }
+              })
+
+            $('.back-home')
+              .off()
+              .click(function () {
+                $('.game-end').hide()
+                $('.page_game').hide()
+                $('.home').show()
+                func_get_init_data()
+              })
+            //   if (prop_is_master) {
+            //     cjs.Sound.play("gameover");
+            //     game_floor = this.downCount + 1;
+            //     prop_score = this.score;
+            //     //   func_set_game_fun(prop_score, game_floor);
+            //   } else {
+            //     console.log(this.score, prop_master_fun);
+            //     var isWin = false;
+
+            //     // 挑战成功，加主人积分
+            //     if (this.score < prop_master_fun) {
+            //       $(".fail_mask .win_info span").html(prop_master_fun);
+            //       $(".fail_mask .fail_info span").html(this.score);
+            //       $(".fail_mask").show();
+            //       isWin = false;
+            //       func_help(this.score, 30);
+            //       cjs.Sound.play("shibai");
+            //     }
+            //     // 挑战成功，不加主人积分
+            //     if (this.score > prop_master_fun) {
+            //       $(".win_mask .win_info span").html(this.score);
+            //       $(".win_mask .fail_info span").html(prop_master_fun);
+            //       isWin = true;
+            //       $(".win_mask").show();
+            //       func_help(this.score, 0);
+            //       cjs.Sound.play("success");
+            //     }
+
+            //     // 同分，挑战失败，不加主人积分
+            //     if (this.score == prop_master_fun) {
+            //       $(".fail_mask .win_info span").html(prop_master_fun);
+            //       $(".fail_mask .fail_info span").html(this.score);
+            //       $(".fail_mask").show();
+            //       isWin = false;
+            //       func_help(this.score, 0);
+            //       cjs.Sound.play("shibai");
+            //     }
+
+            //     $(".btn_wyy")
+            //       .off()
+            //       .click(function () {
+            //         $(".mask").hide();
+            //         $(".wyy_mask").show();
+            //       });
+
+            //     $(".btn_close")
+            //       .off()
+            //       .click(function () {
+            //         $(".wyy_mask").hide();
+            //         if (isWin) {
+            //           $(".win_mask").show();
+            //         } else {
+            //           $(".fail_mask").show();
+            //         }
+            //       });
+            //   }
+          }
+
+          //绘制楼层
+          drawHouse() {
+            const rmd = Math.ceil(Math.random() * 9)
+            //创建的时候，把坐标设置画布之外，避免图片在0，0，位置闪烁一下
+            const house = new cjs.Bitmap(
+              this.queue.getResult('house' + rmd)
+            ).set({ x: -1000, y: -1000 })
+
+            this.houseContainer.addChild(house)
+            //房子的角度要和钳子的同步，要不然会出现错位
+            house.isDown = false
+
+            house.height = house.image.naturalHeight
+            house.width = house.image.naturalWidth
+
+            house.addEventListener('tick', (e) => {
+              if (!house.isDown) {
+                house.deg = this.pliersContainer.deg
+                house.x =
+                  260 * Math.cos(((house.deg % 360) * Math.PI) / 180) + 198
+                if (rmd === 8) {
+                  house.x += 20
+                }
+                house.y =
+                  60 * Math.sin(((house.deg % 360) * Math.PI) / 180) + 190
+              } else {
+                house.y += 20
+                house.addScore = 100
+                if (!this.lastHouse) {
+                  if (!this.gameStart) {
+                    // 如果是主人
+                    //   if (prop_is_master) {
+                    //     //   func_insert_game_key();
+                    //   }
+                    this.timeDown()
+                    this.gameStart = true
+                  }
+
+                  /**
+                   * 375 是画布底部距离第一次停留的位置
+                   * house.image.naturalHeight  源图片的高度
+                   * 350
+                   */
+                  if (house.y >= canvas.height - house.height - 400) {
+                    house.y = canvas.height - house.height - 400
+                    cjs.Sound.play('sound')
+                    console.log(house.x, 375, house.width)
+                    if (house.x < 375 - house.width || house.x > 375) {
+                      this.houseTopple(house, house.x < 375 - house.width / 2)
+                    } else {
+                      house.removeAllEventListeners()
+                      console.log(`length=${this.tipsArr.length}`)
+
+                      this.showFunHandle(house)
+                      $('.ceng span').html(this.downCount + 1)
+                      this.score += house.addScore
+                      if (this.score <= 0) this.score = 0
+                      $('#score').html(this.score)
+                      this.downContainer.addChild(house)
+                      this.drawHouse()
+                      //把当前的房设置为最后的房子
+                      this.lastHouse = house
+                    }
+                  }
+                } else {
+                  /**
+                   * reducH 表示 两个箱子重叠部分
+                   */
+                  let reducH = 173
+                  /**
+                   * 房子下落的y轴的位置 - 已经下落的房子容器的y轴 如果大于最后一个房子的y轴加上他的高度表示已经碰撞
+                   */
+                  if (
+                    house.y - this.downContainer.y >=
+                    this.lastHouse.y - house.height + reducH
+                  ) {
+                    //获取两个房子的x轴的绝对值差距
+                    console.log(
+                      this.lastHouse.getTransformedBounds().x,
+                      house.getTransformedBounds().x,
+                      this.downContainer.x
+                    )
+                    house.offset =
+                      this.lastHouse.getTransformedBounds().x -
+                      house.getTransformedBounds().x +
+                      this.downContainer.x
+                    const gap = Math.abs(house.offset)
+                    console.log(gap)
+                    // 判断吻合程度进行加分
+                    if (gap <= 10) {
+                      house.x = this.lastHouse.x + this.downContainer.x
+                      // 连续两次以上吻合的加双倍分数
+                      if (this.lastGap <= 10) {
+                        house.addScore = 100
+                      } else {
+                        house.addScore = 80
+                      }
+                    } else if (gap <= 60) {
+                      console.log('加200分')
+                      house.addScore = 30
+                    } else if (gap <= house.width * 0.4) {
+                      console.log('加100分')
+                      house.addScore = 10
+                    } else {
+                      console.log('没得分')
+                      console.log(house.offset)
+                      house.addScore = -90
+                    }
+                    // 记录上一次吻合程度
+                    this.lastGap = gap
+                    // 不加分（房子掉下去了）
+                    if (house.addScore <= 0) {
+                      this.houseTopple(house, house.offset > 0)
+                    } else {
+                      house.x -= this.downContainer.x
+                      house.removeAllEventListeners()
+                      // 记录已经盖了多少层
+                      this.downCount++
+                      // if (this.downCount > 7) {
+                      //   this.balloon.visible = false;
+                      // }
+                      // if (this.downCount > 8) {
+                      //   this.fly_logo.visible = true;
+                      // }
+                      $('.ceng span').html(this.downCount + 1)
+                      house.y = this.lastHouse.y - house.height + reducH
+
+                      // 吻合程度好的添加翅膀效果
+                      if (gap <= 10) {
+                        this.chiSprite.x = house.x - 75 + this.downContainer.x
+                        this.chiSprite.y = house.y + 30
+                        this.chiSprite.y = this.downContainer.y + house.y + 30
+                        this.chiSprite.visible = true
+                      }
+
+                      if (this.downCount > 2) {
+                        this.rotateSpeed = 3
+                      }
+
+                      if (this.downCount > 6) {
+                        this.rotateSpeed = 3.5
+                      }
+
+                      if (this.downCount > 9) {
+                        this.rotateSpeed = 4
+                      }
+
+                      // 难点 ： 房子大于4的时候背景滑动高一点
+                      if (this.downCount >= 3) {
+                        cjs.Tween.get(this.downContainer)
+                          .to(
+                            {
+                              y: (house.height - reducH) * (this.downCount + 2),
+                            },
+                            500
+                          )
+                          .to(
+                            { x: canvas.width / 2 - house.width / 2 - house.x },
+                            2000
+                          )
+                        cjs.Tween.get(this.gameBg)
+                          .to(
+                            {
+                              y:
+                                (house.height - reducH) * (this.downCount + 2) +
+                                this.bottomDir,
+                            },
+                            500
+                          )
+                          .call((e) => {
+                            this.chiSprite.visible = false
+                          })
+
+                        // if (this.plan.fly) {
+                        // } else {
+                        //   this.plan.x = 800;
+                        //   this.plan.y = 500;
+                        //   cjs.Tween.get(this.plan)
+                        //     .to({ x: -1000, y: 400 }, 10000)
+                        //     .call((e) => {
+                        //       this.plan.fly = false;
+                        //     });
+                        //   this.plan.fly = true;
+                        // }
+
+                        //突然升高时要进行调整
+                        if (this.downCount === 5) {
+                          cjs.Tween.get(this.chiSprite).to(
+                            { y: this.chiSprite.y + house.height * 2 },
+                            500
+                          )
+                        } else {
+                          cjs.Tween.get(this.chiSprite).to(
+                            { y: this.chiSprite.y + house.height },
+                            500
+                          )
+                        }
+                      } else {
+                        cjs.Tween.get(this.downContainer)
+                          .to(
+                            {
+                              y: (house.height - reducH) * (this.downCount + 2),
+                            },
+                            500
+                          )
+                          .call((e) => {
+                            this.chiSprite.visible = false
+                          })
+                        cjs.Tween.get(this.chiSprite).to(
+                          { y: this.chiSprite.y + house.height },
+                          500
+                        )
+                        cjs.Tween.get(this.gameBg).to(
+                          {
+                            y:
+                              (house.height - reducH) * (this.downCount + 2) +
+                              this.bottomDir,
+                          },
+                          500
+                        )
+                      }
+                      this.downContainer.addChild(house)
+                      this.lastHouse = house
+                      this.drawHouse()
+                    }
+                    if (this.gameStart) {
+                      this.showFunHandle(house)
+                      if (gap <= 10) {
+                        cjs.Sound.play('chi')
+                      } else {
+                        cjs.Sound.play('sound')
+                      }
+                      this.score += house.addScore
+                      if (this.score <= 0) this.score = 0
+                      $('#score').html(this.score)
+                    }
+                  }
+                }
+              }
+            })
+
+            // //click
+            $(canvas)
+              .off()
+              .on('touchstart', (e) => {
+                this.stage.removeAllEventListeners()
+                house.isDown = true
+                this.pliers.gotoAndPlay('open')
+              })
+          }
+
+          // 显示加分的值
+          showFunHandle(house) {
+            let last = {}
+            if (this.lastHouse) {
+              last = this.lastHouse
+            } else {
+              last = house
+            }
+            if (this.tipsArr.length < 1) {
+              let addScoreTips
+              if (house.addScore < 0) {
+                addScoreTips = new cjs.Text(
+                  `${
+                    house.addScore > 0 ? '+' + house.addScore : house.addScore
+                  } `,
+                  '60px Arial',
+                  '#0000ff'
+                )
+              } else {
+                addScoreTips = new cjs.Text(
+                  `${
+                    house.addScore > 0 ? '+' + house.addScore : house.addScore
+                  } `,
+                  '60px Arial',
+                  '#ffffff'
+                )
+              }
+
+              addScoreTips.y = this.downContainer.y + last.y
+              addScoreTips.x =
+                last.x + house.width / 2 - 50 + this.downContainer.x
+              addScoreTips.alpha = 1
+              cjs.Tween.get(addScoreTips)
+                .to({ regY: 20, alpha: 0 }, 500)
+                .call((e) => {
+                  addScoreTips.regY = 0
+                  this.tipsArr.push(addScoreTips)
+                })
+              this.stage.addChild(addScoreTips)
+            } else {
+              const addScoreTips = this.tipsArr.shift()
+              if (house.addScore < 0) {
+                addScoreTips.color = '#0000ff'
+              } else {
+                addScoreTips.color = '#ffffff'
+              }
+              addScoreTips.text = `${
+                house.addScore > 0 ? '+' + house.addScore : house.addScore
+              } `
+              addScoreTips.y = this.downContainer.y + last.y
+              addScoreTips.x =
+                last.x + house.width / 2 - 50 + this.downContainer.x
+              addScoreTips.alpha = 1
+              cjs.Tween.get(addScoreTips)
+                .to({ regY: 20, alpha: 0 }, 500)
+                .call((e) => {
+                  addScoreTips.regY = 0
+                  this.tipsArr.push(addScoreTips)
+                })
+            }
+          }
+
+          //没盖好
+          houseTopple(house, dir_left) {
+            house.removeAllEventListeners()
+
+            house.regY = house.height / 2
+            house.regX = house.width / 2
+            house.y += house.height / 2
+            house.x += house.width / 2
+            let offset = 0
+            let rotation = 0
+            if (dir_left) {
+              offset = house.x - 60
+              rotation = -450
+            } else {
+              offset = house.x + 200
+              rotation = 450
+            }
+            cjs.Tween.get(house)
+              .wait(100)
+              .to(
+                {
+                  y: 1500,
+                  x: offset,
+                  rotation: rotation,
+                },
+                500
+              )
+              .call((e) => {
+                console.log(this.houseContainer)
+                this.houseContainer.removeChild(house)
+                console.log(this.houseContainer)
+                // if (this.hp <= 0) {
+                //   this.gameOver();
+                //   clearInterval(this.timer);
+                // } else {
+                //   this.hp--;
+                //   this.hpContainer.removeChildAt(this.hp);
+                // }
+                this.drawHouse()
+              })
+          }
+
+          //注册音乐事件
+          registerBgm(e) {
+            console.log(e)
+          }
+
+          //获得一个随机值
+          static random(n) {
+            return Math.floor(Math.random() * n)
+          }
+        }
+        //   更新游戏积分
+        function func_set_game_fun(id, fun) {
+          func_axios({
+            url: `${pub_root_app}xweb/act/z_api_001/play`,
+            method: 'post',
+            data: {
+              id: id,
+              fun: fun,
+            },
+            success(res) {
+              setInitData['game_adata_id'] = res.data.entity_play.adata_id
+              console.log(res)
+            },
+          })
+        }
+
+        window.Game = Game
+      })()
+      // const game = new Game();
+      // game.preload();
+      // game.start();
+    </script>
+    <script src="https://filex.wx.siyoumi.com/app/act/t_002/snow.js?2680595=1223"></script>
+    <div
+      id="preloadjs-container"
+      style="
+        visibility: hidden;
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        overflow: hidden;
+        transform: translate(-10px, -10px);
+      "
+    ></div>
+
+    <script>
+      if (!common_isWX) {
+        new Promise(function () {
+          funcSysReady()
+        })
+      } else {
+        wx.ready(function () {
+          funcSysReady()
+        })
+      }
+
+      function funcSysReady() {
+        console.log('funcSysReady')
+        if (typeof funcReady != 'undefined') {
+          funcReady()
+        }
+      }
+    </script>
+  </body>
+  <div id="__vconsole" class="">
+    <div class="vc-switch">vConsole</div>
+    <div class="vc-mask" style="display: none"></div>
+    <div class="vc-panel">
+      <div class="vc-tabbar">
+        <a class="vc-tab vc-actived" data-tab="default" id="__vc_tab_default"
+          >Log</a
+        ><a class="vc-tab" data-tab="system" id="__vc_tab_system">System</a
+        ><a class="vc-tab" data-tab="network" id="__vc_tab_network">Network</a
+        ><a class="vc-tab" data-tab="element" id="__vc_tab_element">Element</a
+        ><a class="vc-tab" data-tab="storage" id="__vc_tab_storage">Storage</a>
+      </div>
+      <div class="vc-topbar">
+        <a
+          class="vc-toptab vc-topbar-default vc-actived vc-toggle"
+          data-type="all"
+          >All</a
+        ><a class="vc-toptab vc-topbar-default vc-toggle" data-type="log">Log</a
+        ><a class="vc-toptab vc-topbar-default vc-toggle" data-type="info"
+          >Info</a
+        ><a class="vc-toptab vc-topbar-default vc-toggle" data-type="warn"
+          >Warn</a
+        ><a class="vc-toptab vc-topbar-default vc-toggle" data-type="error"
+          >Error</a
+        ><a class="vc-toptab vc-topbar-system vc-actived" data-type="all">All</a
+        ><a class="vc-toptab vc-topbar-system" data-type="log">Log</a
+        ><a class="vc-toptab vc-topbar-system" data-type="info">Info</a
+        ><a class="vc-toptab vc-topbar-system" data-type="warn">Warn</a
+        ><a class="vc-toptab vc-topbar-system" data-type="error">Error</a
+        ><a class="vc-toptab vc-topbar-storage vc-actived" data-type="cookies"
+          >Cookies</a
+        ><a class="vc-toptab vc-topbar-storage" data-type="localstorage"
+          >LocalStorage</a
+        ><a class="vc-toptab vc-topbar-storage" data-type="sessionstorage"
+          >SessionStorage</a
+        >
+      </div>
+      <div class="vc-content vc-has-topbar">
+        <div class="vc-logbox vc-actived" id="__vc_log_default">
+          <div>
+            <div class="vc-log">
+              <div id="__vc_hmp7xp" class="vc-item vc-item-log">
+                <div class="vc-item-content"><span> Hello world</span></div>
+              </div>
+              <div id="__vc_nvkoi4" class="vc-item vc-item-warn">
+                <div class="vc-item-content">
+                  <span>
+                    Deprecated property or method 'Ticker.setFPS'. See docs for
+                    info.</span
+                  >
+                </div>
+              </div>
+              <div id="__vc_o4ugpk" class="vc-item vc-item-log">
+                <div class="vc-item-content">
+                  <span> func_axios:success</span>
+                </div>
+              </div>
+              <div id="__vc_umdi28" class="vc-item vc-item-log">
+                <div class="vc-item-content">
+                  <span> 请求==</span>
+                  <div class="vc-fold">
+                    <i class="vc-fold-outer"
+                      >Object {__d: "2020-12-19 13:52:25", common:...</i
+                    >
+                    <div class="vc-fold-inner"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="__vc_2v9zn6" class="vc-item vc-item-log">
+                <div class="vc-item-content">
+                  <span> func_axios:complete</span>
+                </div>
+              </div>
+              <div id="__vc_osefaz" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <div class="vc-fold">
+                    <i class="vc-fold-outer"
+                      >Object {appId: "wx6e50f190298e4151", jsApiL...</i
+                    >
+                    <div class="vc-fold-inner"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="__vc_pc3c5u" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <div class="vc-fold">
+                    <i class="vc-fold-outer"
+                      >Object {errMsg: "config:ok", jsApiList: Arr...</i
+                    >
+                    <div class="vc-fold-inner"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="__vc_uvx6pa" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <div class="vc-fold">
+                    <i class="vc-fold-outer">Object {}</i>
+                    <div class="vc-fold-inner"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="__vc_x1msfa" class="vc-item vc-item-log">
+                <div class="vc-item-content"><span> funcSysReady</span></div>
+              </div>
+              <div id="__vc_z7awt7" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <div class="vc-fold">
+                    <i class="vc-fold-outer"
+                      >Object {errMsg: "hideOptionMenu:ok"}</i
+                    >
+                    <div class="vc-fold-inner"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form class="vc-cmd">
+              <button class="vc-cmd-btn" type="submit">OK</button>
+              <ul class="vc-cmd-prompted"></ul>
+              <div class="vc-cmd-input-wrap">
+                <textarea
+                  class="vc-cmd-input"
+                  placeholder="command..."
+                ></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="vc-logbox" id="__vc_log_system">
+          <div>
+            <div class="vc-log">
+              <div id="__vc_ev4i1a" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <span> System:</span
+                  ><span> iPhone, iOS 11.0, WeChat 7.0.4</span>
+                </div>
+              </div>
+              <div id="__vc_vd9262" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <span> Protocol:</span><span> HTTPS</span>
+                </div>
+              </div>
+              <div id="__vc_0ibgin" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <span> UA:</span
+                  ><span>
+                    Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X)
+                    AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0
+                    Mobile/15A372 Safari/604.1 wechatdevtools/1.03.2011120
+                    MicroMessenger/7.0.4 Language/zh_CN
+                    webview/16080438528835546 webdebugger port/57824
+                    token/bdc2c8dad61af797d9d1da77bccd715f</span
+                  >
+                </div>
+              </div>
+              <div id="__vc_nqb7um" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <span> navigationStart:</span><span> 1608357144368</span>
+                </div>
+              </div>
+              <div id="__vc_fgbw60" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <span> navigation:</span><span> 11ms</span>
+                </div>
+              </div>
+              <div id="__vc_pc0aso" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <span> dns:</span><span> 206ms</span>
+                </div>
+              </div>
+              <div id="__vc_f4dyhi" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <span> tcp (ssl):</span><span> 26ms (15ms)</span>
+                </div>
+              </div>
+              <div id="__vc_uzd7ke" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <span> request:</span><span> 31ms</span>
+                </div>
+              </div>
+              <div id="__vc_whhnxv" class="vc-item vc-item-info">
+                <div class="vc-item-content">
+                  <span> response:</span><span> 12ms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vc-logbox" id="__vc_log_network">
+          <div class="vc-table">
+            <dl class="vc-table-row">
+              <dd class="vc-table-col vc-table-col-4">Name (1)</dd>
+              <dd class="vc-table-col">Method</dd>
+              <dd class="vc-table-col">Status</dd>
+              <dd class="vc-table-col">Time</dd>
+            </dl>
+            <div class="vc-log">
+              <div class="vc-group">
+                <dl
+                  class="vc-table-row vc-group-preview"
+                  data-reqid="00140c65-2172-4f2d-b4f6-92b5cdec3b73"
+                >
+                  <dd class="vc-table-col vc-table-col-4">
+                    https://app.siyoumi.com/xweb/act/z_api_001
+                  </dd>
+                  <dd class="vc-table-col">GET</dd>
+                  <dd class="vc-table-col">200</dd>
+                  <dd class="vc-table-col">303ms</dd>
+                </dl>
+                <div class="vc-group-detail">
+                  <div>
+                    <dl class="vc-table-row vc-left-border">
+                      <dt class="vc-table-col vc-table-col-title">Response</dt>
+                    </dl>
+                    <div class="vc-table-row vc-left-border vc-small">
+                      <pre class="vc-table-col vc-max-height vc-min-height">
+{
+"errcode": 0,
+"errmsg": "",
+"__d": "2020-12-19 13:52:25",
+"common": {
+"share": {
+ "reply_do_share": 0,
+ "reply_share_title": "",
+ "reply_share_pic": "",
+ "reply_share_desc": "",
+ "share_url": "http://php.siyoumi.com/wx/oauth_re?x=jie01&amp;scope=snsapi_userinfo&amp;word=__WORD__"
+},
+"user": {
+ "x": "jie01",
+ "word": "act1607656877",
+ "openid": "oSfH5w6CiWHknAfX-HpjBsh0Adf4",
+ "wxuser_nickname": "#😄#",
+ "wxuser_headimgurl": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132"
+}
+},
+"help_word": "act1607656877%24play_add%3AoSfH5w6CiWHknAfX-HpjBsh0Adf4",
+"prize_s": 0,
+"v_date": {
+"errcode": 0,
+"errmsg": "",
+"__d": "2020-12-19 13:52:25"
+},
+"set_data": {
+"play_count_init": "10",
+"prize_fun_01": "500",
+"prize_fun_02": "1000",
+"prize_fun_03": "2000",
+"prize_fun_04": "4000",
+"prize_fun_05": "8000",
+"play_max_fun": "2000",
+"prize_date_end": "2020-12-18 21:10",
+"master_msg84": "主人48小时通知",
+"prize_pwd": "999999",
+"prize_max_act_id": "5"
+},
+"list_chou": [
+"prize_fun_02",
+"prize_fun_01"
+],
+"is_chou_max": true,
+"launch": {
+"fun": 9600,
+"play_count": 73
+}
+}</pre
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vc-logbox" id="__vc_log_element">
+          <div><div class="vc-log"></div></div>
+        </div>
+        <div class="vc-logbox" id="__vc_log_storage">
+          <div class="vc-table"><div class="vc-log"></div></div>
+        </div>
+      </div>
+      <div class="vc-toolbar">
+        <a class="vc-tool vc-tool-default vc-toggle">Clear</a
+        ><a class="vc-tool vc-tool-system">Clear</a
+        ><a class="vc-tool vc-tool-network">Clear</a
+        ><a class="vc-tool vc-tool-element">Expand</a
+        ><a class="vc-tool vc-tool-element">Collapse</a
+        ><a class="vc-tool vc-tool-storage">Refresh</a
+        ><a class="vc-tool vc-tool-storage">Clear</a
+        ><a class="vc-tool vc-global-tool vc-tool-last vc-hide">Hide</a>
+      </div>
+    </div>
+  </div>
+</html>

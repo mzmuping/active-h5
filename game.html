@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      (function (doc, win) {
+      ;(function (doc, win) {
         var docEl = doc.documentElement,
           resizeEvt =
-            "orientationchange" in window ? "orientationchange" : "resize",
+            'orientationchange' in window ? 'orientationchange' : 'resize',
           recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + "px";
+            var clientWidth = docEl.clientWidth
+            if (!clientWidth) return
+            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + 'px'
             if (window.innerHeight / window.innerWidth > 1.8) {
-              document.body.className = "isIphone";
+              document.body.className = 'isIphone'
             } else {
-              document.body.className = "";
+              document.body.className = ''
             }
-          };
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener("DOMContentLoaded", recalc, false);
-      })(document, window);
+          }
+        if (!doc.addEventListener) return
+        win.addEventListener(resizeEvt, recalc, false)
+        doc.addEventListener('DOMContentLoaded', recalc, false)
+      })(document, window)
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
@@ -34,7 +34,7 @@
   </head>
   <body>
     <audio src="" id="bgm" loop></audio>
-    <div class="page_game">
+    <div class="page_game" style="display: block">
       <div class="absolute avatar flex c-center">
         <img
           src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607945411250&di=46132990964672ae4d0ba9f39c49b089&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn19%2F0%2Fw400h400%2F20180910%2F3391-hiycyfw5413589.jpg"
@@ -70,191 +70,167 @@
         />
         <img class="back-home" src="./images/games/back-home.png" alt="" />
       </div>
-      <div class="game-load">
-        <div >
-        <div class="game-load-pro">100%</div>
-        <div>正在加载...</div>
+      <div class="game-load" style="display: none">
+        <div>
+          <div class="game-load-pro">100%</div>
+          <div>正在加载...</div>
+        </div>
       </div>
+      <!-- 游戏玩法 -->
+      <div class="game-previw fixed" style="display: none">
+        <div class="game-preview-bg">
+          <img
+            class="game-gif"
+            src="https://siyoumi.oss-cn-beijing.aliyuncs.com/t_002/geme-gif.gif"
+            alt=""
+          />
+        </div>
+        <img
+          class="game-start-btn"
+          src="http://file.weixin.siyoumi.com/app/act/t_002/img/game/btn-start-game.png"
+          alt=""
+        />
       </div>
     </div>
 
     <script>
-      const bgm = document.getElementById("bgm");
+      const bgm = document.getElementById('bgm')
       bgm.src =
-        "https://res.wx.qq.com/voice/getvoice?mediaid=MzU5ODAyMzYxMF8xMDAwMDAyNDU=";
-      var prop_is_master = true;
-      var prop_game_count =10;
-      var prop_site_id;
-      var game_key = {};
-      var appsud_id = "";
-      var prop_master_fun = 0;
-      var initGame; // 全局canvas
-      var game_floor = 0;
-      var prop_score = 0;
+        'https://res.wx.qq.com/voice/getvoice?mediaid=MzU5ODAyMzYxMF8xMDAwMDAyNDU='
+      var prop_is_master = true
+      var prop_game_count = 10
+      var prop_site_id
+      var game_key = {}
+      var appsud_id = ''
+      var prop_master_fun = 0
+      var initGame // 全局canvas
+      var game_floor = 0
+      var prop_score = 0
 
       //游戏
-      (function () {
-        const canvas = document.getElementById("game");
-        const gameBg = document.getElementById("gameBg");
-        const clientWidth = window.innerWidth * 2;
-        const clientHeight = window.innerHeight * 2;
+      ;(function () {
+        const canvas = document.getElementById('game')
+        const gameBg = document.getElementById('gameBg')
+        const clientWidth = window.innerWidth * 2
+        const clientHeight = window.innerHeight * 2
         // canvas.width = clientWidth;
-        canvas.height = clientHeight;
-        canvas.addEventListener("touchstart", function (e) {
-          e.preventDefault();
-        });
-        const cjs = createjs;
+        canvas.height = clientHeight
+        canvas.addEventListener('touchstart', function (e) {
+          e.preventDefault()
+        })
+        const cjs = createjs
         class Game {
           //预加载
           preload() {
-            this.queue = new cjs.LoadQueue(false, "", true);
-            const manifest = [
-              {
-                src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/pliers.png",
-                id: "pliers",
-              },
-              {
-                src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/gameBg.png",
-                id: "gameBg",
-              },
-              {
-                src: "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/hp.png",
-                id: "hp",
-              },
-              {
-                src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/machine_hand.png",
-                id: "machine_hand",
-              },
-              {
-                src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/logo.png",
-                id: "logo",
-              },
-              {
-                src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/chi.png",
-                id: "chi",
-              },
-              {
-                src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/cloud.png",
-                id: "cloud",
-              },
-              {
-                src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/plan.png",
-                id: "plan",
-              },
-              {
-                src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/balloon.png",
-                id: "balloon",
-              },
-              {
-                src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/fly_logo.png",
-                id: "fly_logo",
-              },
-            ];
+            this.queue = new cjs.LoadQueue(false, '', true)
             let manifestHouse = [
               {
-                id: "chi",
-                src: "./images/games/chi.png",
+                id: 'chi',
+                src: './images/games/chi.png',
               },
               {
-                id: "gameBg2",
-                src: "./images/games/game-bg_02.jpg",
+                id: 'gameBg2',
+                src: './images/games/game-bg_02.jpg',
               },
               {
-                id: "jiazi",
-                src: "./images/games/jiazi.png",
+                id: 'jiazi',
+                src: './images/games/jiazi.png',
               },
               {
-                src: "./images/games/house1.png",
-                id: "house1",
+                src: './images/games/house1.png',
+                id: 'house1',
               },
               {
-                src: "./images/games/house2.png",
-                id: "house2",
+                src: './images/games/house2.png',
+                id: 'house2',
               },
               {
-                src: "./images/games/house3.png",
-                id: "house3",
+                src: './images/games/house3.png',
+                id: 'house3',
               },
               {
-                src: "./images/games/house4.png",
-                id: "house4",
+                src: './images/games/house4.png',
+                id: 'house4',
               },
               {
-                src: "./images/games/house5.png",
-                id: "house5",
+                src: './images/games/house5.png',
+                id: 'house5',
               },
               {
-                src: "./images/games/house6.png",
-                id: "house6",
+                src: './images/games/house6.png',
+                id: 'house6',
               },
               {
-                src: "./images/games/house7.png",
-                id: "house7",
+                src: './images/games/house7.png',
+                id: 'house7',
               },
               {
-                src: "./images/games/house8.png",
-                id: "house8",
+                src: './images/games/house8.png',
+                id: 'house8',
               },
               {
-                src: "./images/games/house9.png",
-                id: "house9",
+                src: './images/games/house9.png',
+                id: 'house9',
               },
               {
-                src: "./images/games/logobox.png",
-                id: "logobox",
+                src: './images/games/logobox.png',
+                id: 'logobox',
               },
               {
-                src: "./images/games/game-snow.png",
-                id: "gameSnow",
+                src: 'https://filex.wx.siyoumi.com/app/act/t_002/img/snow.png',
+                id: 'snow1',
               },
               {
-                src: "./images/games/game-snow-flower.png",
-                id: "gameSnowFlower",
+                src:
+                  'https://filex.wx.siyoumi.com/app/act/t_002/img/snow-dian.png',
+                id: 'snow2',
               },
-            ];
-            this.queue.loadManifest(manifestHouse);
+              // {
+              //   src: './images/games/game-snow.png',
+              //   id: 'gameSnow',
+              // },
+              // {
+              //   src: './images/games/game-snow-flower.png',
+              //   id: 'gameSnowFlower',
+              // },
+            ]
+            this.queue.loadManifest(manifestHouse)
             // this.queue.loadManifest(manifest);
-            this.queue.on("complete", (e) => {
-              this.init();
-              $(".ceng").show();
-              $(".tutorial_mask").hide();
-              console.log(this.queue);
-              if (typeof WeixinJSBridge === "object") {
-                WeixinJSBridge.invoke("getNetworkType", {}, function (e) {
-                  bgm.play();
-                  $(".music_icon").addClass("active");
-                });
+            this.queue.on('complete', (e) => {
+              this.init()
+              $('.ceng').show()
+              $('.tutorial_mask').hide()
+              console.log(this.queue)
+              if (typeof WeixinJSBridge === 'object') {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                  bgm.play()
+                  $('.music_icon').addClass('active')
+                })
               }
-            });
+            })
             let progressnum = 0
-            this.queue.on("progress", (res)=>{
-              progressnum++
-              console.log('progress==='+progressnum,res);
-            }, this);
+            this.queue.on(
+              'progress',
+              (res) => {
+                progressnum++
+                console.log('progress===' + progressnum, res)
+              },
+              this
+            )
           }
 
           init() {
-            this.stage = new cjs.Stage("game");
-            cjs.Touch.enable(this.stage);
-            this.houseContainer = new cjs.Container();
-            cjs.Ticker.timingMode = cjs.Ticker.RAF;
+            this.stage = new cjs.Stage('game')
+            cjs.Touch.enable(this.stage)
+            this.houseContainer = new cjs.Container()
+            cjs.Ticker.timingMode = cjs.Ticker.RAF
 
             //背景图
-            this.gameBg = new cjs.Container();
-            const bg = new cjs.Bitmap(this.queue.getResult("gameBg2"));
-            this.bottomDir = canvas.height - bg.image.naturalHeight;
-            this.gameBg.addChild(bg);
-            this.stage.addChild(this.gameBg);
-
+            this.gameBg = new cjs.Container()
+            const bg = new cjs.Bitmap(this.queue.getResult('gameBg2'))
+            this.bottomDir = canvas.height - bg.image.naturalHeight
+            this.gameBg.addChild(bg)
+            this.stage.addChild(this.gameBg)
             // const data = {
             //   images: [this.queue.getResult("logo")],
             //   // "framerate": 0.01,
@@ -282,7 +258,7 @@
             // this.gameBg.addChild(logoSprite);
 
             const chiData = {
-              images: [this.queue.getResult("chi")],
+              images: [this.queue.getResult('chi')],
               framerate: 5,
               frames: [
                 [1, 1, 429, 52, 0, 0, 0],
@@ -298,38 +274,38 @@
                   speed: 0.08,
                 },
               },
-            };
-            const chiSheet = new createjs.SpriteSheet(chiData);
-            this.chiSprite = new createjs.Sprite(chiSheet, "run");
-            this.chiSprite.visible = false;
-            console.log(canvas.height);
-            this.stage.addChild(this.chiSprite);
-
-            // 雪
-
-            for (let sindex = 0; sindex < 10; sindex++) {
-              let gameSnow = new cjs.Bitmap(this.queue.getResult("gameSnow"));
-
-              this.stage.addChild(gameSnow);
-              gameSnow.y = -gameSnow.image.naturalHeight;
-              gameSnow.x = 0;
-              cjs.Tween.get(gameSnow, { loop: true })
-                .wait(2000 * sindex)
-                .to({ alpha: 1, x: 0, y: canvas.height }, 3000)
-                .to({ alpha: 0, x: 0, visible: false, y: canvas.height }, 1);
             }
+            const chiSheet = new createjs.SpriteSheet(chiData)
+            this.chiSprite = new createjs.Sprite(chiSheet, 'run')
+            this.chiSprite.visible = false
+            console.log(canvas.height)
+            this.stage.addChild(this.chiSprite)
+
+            this.snowFlower()
+            // 雪
+            // for (let sindex = 0; sindex < 10; sindex++) {
+            //   let gameSnow = new cjs.Bitmap(this.queue.getResult('gameSnow'))
+
+            //   this.stage.addChild(gameSnow)
+            //   gameSnow.y = -gameSnow.image.naturalHeight
+            //   gameSnow.x = 0
+            //   cjs.Tween.get(gameSnow, { loop: true })
+            //     .wait(2000 * sindex)
+            //     .to({ alpha: 1, x: 0, y: canvas.height }, 30000)
+            //     .to({ alpha: 0, x: 0, visible: false, y: canvas.height }, 1)
+            // }
 
             // 雪花
-            let gameSnowFlower = new cjs.Bitmap(
-              this.queue.getResult("gameSnowFlower")
-            );
+            // let gameSnowFlower = new cjs.Bitmap(
+            //   this.queue.getResult('gameSnowFlower')
+            // )
 
-            this.stage.addChild(gameSnowFlower);
-            gameSnowFlower.y = -gameSnowFlower.image.naturalHeight;
-            gameSnowFlower.x = -gameSnowFlower.image.naturalWidth;
-            cjs.Tween.get(gameSnowFlower, { loop: true })
-              .to({ alpha: 1, x: 0, y: canvas.height }, 5000)
-              .to({ alpha: 0, x: canvas.width, y: canvas.height }, 1);
+            // this.stage.addChild(gameSnowFlower)
+            // gameSnowFlower.y = -gameSnowFlower.image.naturalHeight
+            // gameSnowFlower.x = -gameSnowFlower.image.naturalWidth
+            // cjs.Tween.get(gameSnowFlower, { loop: true })
+            //   .to({ alpha: 1, x: 0, y: canvas.height }, 5000)
+            //   .to({ alpha: 0, x: canvas.width, y: canvas.height }, 1)
 
             // //云
             // const cloud1 = new cjs.Bitmap(this.queue.getResult("cloud"));
@@ -372,92 +348,160 @@
             // this.stage.addChild(this.fly_logo);
 
             // //注册音乐
-            createjs.Sound.alternateExtensions = ["mp3"];
+            createjs.Sound.alternateExtensions = ['mp3']
             createjs.Sound.registerSounds([
               {
                 src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/click.mp3",
-                id: "sound",
+                  'http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/click.mp3',
+                id: 'sound',
               },
               {
                 src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/gameover.mp3",
-                id: "gameover",
+                  'http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/gameover.mp3',
+                id: 'gameover',
               },
               {
                 src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/shibai.mp3",
-                id: "shibai",
+                  'http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/shibai.mp3',
+                id: 'shibai',
               },
               {
                 src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/success.mp3",
-                id: "success",
+                  'http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/success.mp3',
+                id: 'success',
               },
               {
                 src:
-                  "http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/chi.mp3",
-                id: "chi",
+                  'http://img.wx.xiao-bo.com/z/act/2019-101112/zx_gl/chi.mp3',
+                id: 'chi',
               },
-            ]);
+            ])
             // cjs.Sound.on("fileload",this.registerBgm,this);
 
-            this.tipsArr = [];
+            this.tipsArr = []
 
             //创建房子的容器
-            this.downContainer = new cjs.Container();
-            this.stage.addChild(this.downContainer);
-            this.stage.addChild(this.houseContainer);
-            this.drawPliers();
-            this.hpContainer = new cjs.Container();
-            this.stage.addChild(this.hpContainer);
+            this.downContainer = new cjs.Container()
+            this.stage.addChild(this.downContainer)
+            this.stage.addChild(this.houseContainer)
+            this.drawPliers()
+            this.hpContainer = new cjs.Container()
+            this.stage.addChild(this.hpContainer)
 
             // 开始游戏
-            this.start();
-            cjs.Ticker.addEventListener("tick", (e) => {
-              this.stage.update();
-            });
+            this.start()
+            cjs.Ticker.addEventListener('tick', (e) => {
+              this.stage.update()
+            })
+          }
+
+          // 雪花
+          snowFlower() {
+            //后雪景容器
+            this.snowContainer = new createjs.Container()
+            this.stage.addChild(this.snowContainer)
+
+            //雪花数组 用作回收
+            this._snow1List = []
+
+            let i
+            let snow
+            let scale
+            for (i = 0; i < 50; i++) {
+              //后景雪
+              snow = this.getSnow()
+              scale = 0.2 + Math.random() * 1
+              snow.scaleX = scale
+              snow.scaleY = scale
+              snow.x = Math.random() * canvas.width
+              snow.y = -Math.random() * canvas.height
+              snow.speed = 0.8 + Math.random() * 1
+              snow.rotation = 360 * Math.random()
+              this._snow1List.push(snow)
+              this.snowContainer.addChild(snow)
+            }
+            this.snowContainer.addEventListener('tick', (e) => {
+              this.snowFrameHandler()
+            })
+          }
+
+          // 创建 雪花
+          getSnow() {
+            let random = Math.random() * 10
+            let snow
+            if (random > 8) {
+              snow = new createjs.Bitmap(this.queue.getResult('snow1'))
+              snow.flower = true
+            } else {
+              snow = new createjs.Bitmap(this.queue.getResult('snow2'))
+            }
+            return snow
+          }
+          //雪花飘
+          snowFrameHandler() {
+            let i
+            let snow
+            let scale
+            for (i = 0; i < this.snowContainer.numChildren; i++) {
+              let mc = this.snowContainer.getChildAt(i)
+
+              // mc.x -= 0.1;
+              mc.y += mc.speed
+              // mc.alpha -= 0.001;
+              if (mc.flower) {
+                mc.rotation += 1
+              }
+              if (mc.y > canvas.height + 100) {
+                // mc.alpha = 1;
+                scale = 0.2 + Math.random() * 1
+                mc.scaleX = scale
+                mc.scaleY = scale
+
+                mc.x = Math.random() * canvas.width
+                mc.y = -Math.random() * canvas.height
+              }
+            }
           }
 
           //重置游戏，重新开始
           start() {
-            this.pliersContainer.visible = true;
-            this.houseContainer.visible = true;
-            this.gameBg.y = this.bottomDir;
-            this.rotateSpeed = 2;
-            this.downCount = 0;
-            this.score = 0;
-            this.gameStart = false;
-            this.time = 20;
-            this.hp = 1;
-            this.lastHouse = null;
-            this.downContainer.removeAllChildren();
-            this.downContainer.x = 0;
-            this.downContainer.y = 0;
-            this.lastGap = 20;
-            cjs.Tween.removeTweens(this.downContainer);
+            this.pliersContainer.visible = true
+            this.houseContainer.visible = true
+            this.gameBg.y = this.bottomDir
+            this.rotateSpeed = 2
+            this.downCount = 0
+            this.score = 0
+            this.gameStart = false
+            this.time = 20
+            this.hp = 1
+            this.lastHouse = null
+            this.downContainer.removeAllChildren()
+            this.downContainer.x = 0
+            this.downContainer.y = 0
+            this.lastGap = 20
+            cjs.Tween.removeTweens(this.downContainer)
             // this.drawHp();
-            $("#second").html(this.time);
-            $("#score").html(this.score);
-            $(".ceng span").html(this.downCount);
+            $('#second').html(this.time)
+            $('#score').html(this.score)
+            $('.ceng span').html(this.downCount)
           }
 
           drawHp() {
-            this.hpContainer.x = 27;
-            this.hpContainer.y = 140;
+            this.hpContainer.x = 27
+            this.hpContainer.y = 140
             for (let i = 0; i < this.hp; i++) {
-              const hp = new cjs.Bitmap(this.queue.getResult("hp"));
-              hp.x = i * 60;
-              this.hpContainer.addChild(hp);
+              const hp = new cjs.Bitmap(this.queue.getResult('hp'))
+              hp.x = i * 60
+              this.hpContainer.addChild(hp)
             }
           }
 
           drawPliers() {
             //钳子容器
-            this.pliersContainer = new cjs.Container();
+            this.pliersContainer = new cjs.Container()
             //钳子图片
             const data = {
-              images: [this.queue.getResult("machine_hand")],
+              images: [this.queue.getResult('machine_hand')],
 
               framerate: 1,
               frames: [
@@ -472,14 +516,14 @@
                 close: { frames: [5] },
                 open: {
                   frames: [5, 3, 2, 0, 1, 4],
-                  next: "close",
+                  next: 'close',
                   speed: 0.5,
                 },
               },
-            };
+            }
             //钳子图片
             const data2 = {
-              images: [this.queue.getResult("jiazi")],
+              images: [this.queue.getResult('jiazi')],
 
               framerate: 1,
               frames: [
@@ -494,156 +538,156 @@
                 close: { frames: [5] },
                 open: {
                   frames: [5, 1, 2, 3, 4, 0],
-                  next: "close",
+                  next: 'close',
                   speed: 0.5,
                 },
               },
-            };
-            const spriteSheet = new createjs.SpriteSheet(data2);
-            this.pliers = new createjs.Sprite(spriteSheet, "close");
+            }
+            const spriteSheet = new createjs.SpriteSheet(data2)
+            this.pliers = new createjs.Sprite(spriteSheet, 'close')
             // this.pliers = new cjs.Bitmap(this.queue.getResult('pliers'));
             // //创建房子的容器
-            this.pliersContainer.addChild(this.pliers);
-            this.stage.addChild(this.pliersContainer);
-            this.pliersContainer.deg = 0;
-            this.pliersContainer.addEventListener("tick", (e) => {
-              this.pliersContainer.deg += this.rotateSpeed;
+            this.pliersContainer.addChild(this.pliers)
+            this.stage.addChild(this.pliersContainer)
+            this.pliersContainer.deg = 0
+            this.pliersContainer.addEventListener('tick', (e) => {
+              this.pliersContainer.deg += this.rotateSpeed
               this.pliersContainer.x =
                 260 *
-                Math.cos(((this.pliersContainer.deg % 360) * Math.PI) / 180);
+                Math.cos(((this.pliersContainer.deg % 360) * Math.PI) / 180)
               this.pliersContainer.y =
                 60 *
                   Math.sin(((this.pliersContainer.deg % 360) * Math.PI) / 180) -
-                150;
-            });
-            this.drawHouse();
+                150
+            })
+            this.drawHouse()
           }
 
           timeDown() {
             this.timer = setInterval((e) => {
               if (this.time > 1) {
-                this.time--;
+                this.time--
               } else {
-                this.time = 0;
-                clearInterval(this.timer);
-                this.gameOver();
+                this.time = 0
+                clearInterval(this.timer)
+                this.gameOver()
               }
-              $("#second").html(this.time);
-            }, 1000);
+              $('#second').html(this.time)
+            }, 1000)
           }
 
           gameOver() {
-            this.gameStart = false;
-            this.pliersContainer.visible = false;
-            this.houseContainer.visible = false;
-            $(".game-end").show();
-            // 
-            $(".btn-restart-game")
+            this.gameStart = false
+            this.pliersContainer.visible = false
+            this.houseContainer.visible = false
+            $('.game-end').show()
+            //
+            $('.btn-restart-game')
               .off()
               .click(function () {
-                console.log(game);
+                console.log(game)
                 if (prop_game_count > 0) {
-                  game.start();
-                  $(".game-end").hide();
+                  game.start()
+                  $('.game-end').hide()
                 } else {
-                  alert("没有游戏次数了");
+                  alert('没有游戏次数了')
                 }
-              });
+              })
 
             if (prop_is_master) {
-              cjs.Sound.play("gameover");
-              game_floor = this.downCount + 1;
-              prop_score = this.score;
+              cjs.Sound.play('gameover')
+              game_floor = this.downCount + 1
+              prop_score = this.score
               //   func_set_game_fun(prop_score, game_floor);
             } else {
-              console.log(this.score, prop_master_fun);
-              var isWin = false;
+              console.log(this.score, prop_master_fun)
+              var isWin = false
 
               // 挑战成功，加主人积分
               if (this.score < prop_master_fun) {
-                $(".fail_mask .win_info span").html(prop_master_fun);
-                $(".fail_mask .fail_info span").html(this.score);
-                $(".fail_mask").show();
-                isWin = false;
-                func_help(this.score, 30);
-                cjs.Sound.play("shibai");
+                $('.fail_mask .win_info span').html(prop_master_fun)
+                $('.fail_mask .fail_info span').html(this.score)
+                $('.fail_mask').show()
+                isWin = false
+                func_help(this.score, 30)
+                cjs.Sound.play('shibai')
               }
               // 挑战成功，不加主人积分
               if (this.score > prop_master_fun) {
-                $(".win_mask .win_info span").html(this.score);
-                $(".win_mask .fail_info span").html(prop_master_fun);
-                isWin = true;
-                $(".win_mask").show();
-                func_help(this.score, 0);
-                cjs.Sound.play("success");
+                $('.win_mask .win_info span').html(this.score)
+                $('.win_mask .fail_info span').html(prop_master_fun)
+                isWin = true
+                $('.win_mask').show()
+                func_help(this.score, 0)
+                cjs.Sound.play('success')
               }
 
               // 同分，挑战失败，不加主人积分
               if (this.score == prop_master_fun) {
-                $(".fail_mask .win_info span").html(prop_master_fun);
-                $(".fail_mask .fail_info span").html(this.score);
-                $(".fail_mask").show();
-                isWin = false;
-                func_help(this.score, 0);
-                cjs.Sound.play("shibai");
+                $('.fail_mask .win_info span').html(prop_master_fun)
+                $('.fail_mask .fail_info span').html(this.score)
+                $('.fail_mask').show()
+                isWin = false
+                func_help(this.score, 0)
+                cjs.Sound.play('shibai')
               }
 
-              $(".btn_wyy")
+              $('.btn_wyy')
                 .off()
                 .click(function () {
-                  $(".mask").hide();
-                  $(".wyy_mask").show();
-                });
+                  $('.mask').hide()
+                  $('.wyy_mask').show()
+                })
 
-              $(".btn_close")
+              $('.btn_close')
                 .off()
                 .click(function () {
-                  $(".wyy_mask").hide();
+                  $('.wyy_mask').hide()
                   if (isWin) {
-                    $(".win_mask").show();
+                    $('.win_mask').show()
                   } else {
-                    $(".fail_mask").show();
+                    $('.fail_mask').show()
                   }
-                });
+                })
             }
           }
 
           //绘制楼层
           drawHouse() {
-            const rmd = Math.ceil(Math.random() * 9);
+            const rmd = Math.ceil(Math.random() * 9)
             //创建的时候，把坐标设置画布之外，避免图片在0，0，位置闪烁一下
             const house = new cjs.Bitmap(
-              this.queue.getResult("house" + rmd)
-            ).set({ x: -1000, y: -1000 });
+              this.queue.getResult('house' + rmd)
+            ).set({ x: -1000, y: -1000 })
 
-            this.houseContainer.addChild(house);
+            this.houseContainer.addChild(house)
             //房子的角度要和钳子的同步，要不然会出现错位
-            house.isDown = false;
+            house.isDown = false
 
-            house.height = house.image.naturalHeight;
-            house.width = house.image.naturalWidth;
+            house.height = house.image.naturalHeight
+            house.width = house.image.naturalWidth
 
-            house.addEventListener("tick", (e) => {
+            house.addEventListener('tick', (e) => {
               if (!house.isDown) {
-                house.deg = this.pliersContainer.deg;
+                house.deg = this.pliersContainer.deg
                 house.x =
-                  260 * Math.cos(((house.deg % 360) * Math.PI) / 180) + 198;
+                  260 * Math.cos(((house.deg % 360) * Math.PI) / 180) + 198
                 if (rmd === 8) {
-                  house.x += 20;
+                  house.x += 20
                 }
                 house.y =
-                  60 * Math.sin(((house.deg % 360) * Math.PI) / 180) + 190;
+                  60 * Math.sin(((house.deg % 360) * Math.PI) / 180) + 190
               } else {
-                house.y += 20;
-                house.addScore = 100;
+                house.y += 20
+                house.addScore = 100
                 if (!this.lastHouse) {
                   if (!this.gameStart) {
                     // 如果是主人
                     if (prop_is_master) {
                       //   func_insert_game_key();
                     }
-                    this.timeDown();
-                    this.gameStart = true;
+                    this.timeDown()
+                    this.gameStart = true
                   }
 
                   /**
@@ -652,31 +696,31 @@
                    * 350
                    */
                   if (house.y >= canvas.height - house.height - 400) {
-                    house.y = canvas.height - house.height - 400;
-                    cjs.Sound.play("sound");
-                    console.log(house.x, 375, house.width);
+                    house.y = canvas.height - house.height - 400
+                    cjs.Sound.play('sound')
+                    console.log(house.x, 375, house.width)
                     if (house.x < 375 - house.width || house.x > 375) {
-                      this.houseTopple(house, house.x < 375 - house.width / 2);
+                      this.houseTopple(house, house.x < 375 - house.width / 2)
                     } else {
-                      house.removeAllEventListeners();
-                      console.log(`length=${this.tipsArr.length}`);
+                      house.removeAllEventListeners()
+                      console.log(`length=${this.tipsArr.length}`)
 
-                      this.showFunHandle(house);
-                      $(".ceng span").html(this.downCount + 1);
-                      this.score += house.addScore;
-                      if (this.score <= 0) this.score = 0;
-                      $("#score").html(this.score);
-                      this.downContainer.addChild(house);
-                      this.drawHouse();
+                      this.showFunHandle(house)
+                      $('.ceng span').html(this.downCount + 1)
+                      this.score += house.addScore
+                      if (this.score <= 0) this.score = 0
+                      $('#score').html(this.score)
+                      this.downContainer.addChild(house)
+                      this.drawHouse()
                       //把当前的房设置为最后的房子
-                      this.lastHouse = house;
+                      this.lastHouse = house
                     }
                   }
                 } else {
                   /**
                    * reducH 表示 两个箱子重叠部分
                    */
-                  let reducH = 173;
+                  let reducH = 173
                   /**
                    * 房子下落的y轴的位置 - 已经下落的房子容器的y轴 如果大于最后一个房子的y轴加上他的高度表示已经碰撞
                    */
@@ -689,70 +733,70 @@
                       this.lastHouse.getTransformedBounds().x,
                       house.getTransformedBounds().x,
                       this.downContainer.x
-                    );
+                    )
                     house.offset =
                       this.lastHouse.getTransformedBounds().x -
                       house.getTransformedBounds().x +
-                      this.downContainer.x;
-                    const gap = Math.abs(house.offset);
-                    console.log(gap);
+                      this.downContainer.x
+                    const gap = Math.abs(house.offset)
+                    console.log(gap)
                     // 判断吻合程度进行加分
                     if (gap <= 10) {
-                      house.x = this.lastHouse.x + this.downContainer.x;
+                      house.x = this.lastHouse.x + this.downContainer.x
                       // 连续两次以上吻合的加双倍分数
                       if (this.lastGap <= 10) {
-                        house.addScore = 350;
+                        house.addScore = 350
                       } else {
-                        house.addScore = 260;
+                        house.addScore = 260
                       }
                     } else if (gap <= 60) {
-                      console.log("加200分");
-                      house.addScore = 180;
+                      console.log('加200分')
+                      house.addScore = 180
                     } else if (gap <= house.width * 0.4) {
-                      console.log("加100分");
-                      house.addScore = 100;
+                      console.log('加100分')
+                      house.addScore = 100
                     } else {
-                      console.log("没得分");
-                      console.log(house.offset);
-                      house.addScore = -250;
+                      console.log('没得分')
+                      console.log(house.offset)
+                      house.addScore = -250
                     }
                     // 记录上一次吻合程度
-                    this.lastGap = gap;
+                    this.lastGap = gap
                     // 不加分（房子掉下去了）
                     if (house.addScore <= 0) {
-                      this.houseTopple(house, house.offset > 0);
+                      this.houseTopple(house, house.offset > 0)
                     } else {
-                      house.x -= this.downContainer.x;
-                      house.removeAllEventListeners();
+                      house.x -= this.downContainer.x
+                      house.removeAllEventListeners()
                       // 记录已经盖了多少层
-                      this.downCount++;
+                      this.downCount++
                       // if (this.downCount > 7) {
                       //   this.balloon.visible = false;
                       // }
                       // if (this.downCount > 8) {
                       //   this.fly_logo.visible = true;
                       // }
-                      $(".ceng span").html(this.downCount + 1);
-                      house.y = this.lastHouse.y - house.height + reducH;
+                      $('.ceng span').html(this.downCount + 1)
+                      house.y = this.lastHouse.y - house.height + reducH
 
                       // 吻合程度好的添加翅膀效果
                       if (gap <= 10) {
-                        this.chiSprite.x = house.x - 75 + this.downContainer.x;
-                        this.chiSprite.y = house.y + 30;
-                        this.chiSprite.y = this.downContainer.y + house.y + 30;
-                        this.chiSprite.visible = true;
+                        this.chiSprite.x = house.x - 75 + this.downContainer.x
+                        this.chiSprite.y = house.y + 30
+                        this.chiSprite.y = this.downContainer.y + house.y + 30
+                        this.chiSprite.visible = true
                       }
 
                       if (this.downCount > 2) {
-                        this.rotateSpeed = 3;
+                        this.rotateSpeed = 3
                       }
 
                       if (this.downCount > 6) {
-                        this.rotateSpeed = 3.5;
+                        this.rotateSpeed = 3.5
                       }
 
                       if (this.downCount > 9) {
-                        this.rotateSpeed = 4;
+                        this.rotateSpeed = 4
                       }
 
                       // 难点 ： 房子大于4的时候背景滑动高一点
@@ -767,7 +811,7 @@
                           .to(
                             { x: canvas.width / 2 - house.width / 2 - house.x },
                             2000
-                          );
+                          )
                         cjs.Tween.get(this.gameBg)
                           .to(
                             {
@@ -778,8 +822,8 @@
                             500
                           )
                           .call((e) => {
-                            this.chiSprite.visible = false;
-                          });
+                            this.chiSprite.visible = false
+                          })
 
                         // if (this.plan.fly) {
                         // } else {
@@ -798,12 +842,12 @@
                           cjs.Tween.get(this.chiSprite).to(
                             { y: this.chiSprite.y + house.height * 2 },
                             500
-                          );
+                          )
                         } else {
                           cjs.Tween.get(this.chiSprite).to(
                             { y: this.chiSprite.y + house.height },
                             500
-                          );
+                          )
                         }
                       } else {
                         cjs.Tween.get(this.downContainer)
@@ -814,12 +858,12 @@
                             500
                           )
                           .call((e) => {
-                            this.chiSprite.visible = false;
-                          });
+                            this.chiSprite.visible = false
+                          })
                         cjs.Tween.get(this.chiSprite).to(
                           { y: this.chiSprite.y + house.height },
                           500
-                        );
+                        )
                         cjs.Tween.get(this.gameBg).to(
                           {
                             y:
@@ -827,116 +871,116 @@
                               this.bottomDir,
                           },
                           500
-                        );
+                        )
                       }
-                      this.downContainer.addChild(house);
-                      this.lastHouse = house;
-                      this.drawHouse();
+                      this.downContainer.addChild(house)
+                      this.lastHouse = house
+                      this.drawHouse()
                     }
                     if (this.gameStart) {
-                      this.showFunHandle(house);
+                      this.showFunHandle(house)
                       if (gap <= 10) {
-                        cjs.Sound.play("chi");
+                        cjs.Sound.play('chi')
                       } else {
-                        cjs.Sound.play("sound");
+                        cjs.Sound.play('sound')
                       }
-                      this.score += house.addScore;
-                      if (this.score <= 0) this.score = 0;
-                      $("#score").html(this.score);
+                      this.score += house.addScore
+                      if (this.score <= 0) this.score = 0
+                      $('#score').html(this.score)
                     }
                   }
                 }
               }
-            });
+            })
 
             // //click
             $(canvas)
               .off()
-              .on("touchstart", (e) => {
-                this.stage.removeAllEventListeners();
-                house.isDown = true;
-                this.pliers.gotoAndPlay("open");
-              });
+              .on('touchstart', (e) => {
+                this.stage.removeAllEventListeners()
+                house.isDown = true
+                this.pliers.gotoAndPlay('open')
+              })
           }
 
           // 显示加分的值
           showFunHandle(house) {
-            let last = {};
+            let last = {}
             if (this.lastHouse) {
-              last = this.lastHouse;
+              last = this.lastHouse
             } else {
-              last = house;
+              last = house
             }
             if (this.tipsArr.length < 1) {
-              let addScoreTips;
+              let addScoreTips
               if (house.addScore < 0) {
                 addScoreTips = new cjs.Text(
                   `${
-                    house.addScore > 0 ? "+" + house.addScore : house.addScore
+                    house.addScore > 0 ? '+' + house.addScore : house.addScore
                   } `,
-                  "60px Arial",
-                  "#0000ff"
-                );
+                  '60px Arial',
+                  '#0000ff'
+                )
               } else {
                 addScoreTips = new cjs.Text(
                   `${
-                    house.addScore > 0 ? "+" + house.addScore : house.addScore
+                    house.addScore > 0 ? '+' + house.addScore : house.addScore
                   } `,
-                  "60px Arial",
-                  "#ffffff"
-                );
+                  '60px Arial',
+                  '#ffffff'
+                )
               }
 
-              addScoreTips.y = this.downContainer.y + last.y;
+              addScoreTips.y = this.downContainer.y + last.y
               addScoreTips.x =
-                last.x + house.width / 2 - 50 + this.downContainer.x;
-              addScoreTips.alpha = 1;
+                last.x + house.width / 2 - 50 + this.downContainer.x
+              addScoreTips.alpha = 1
               cjs.Tween.get(addScoreTips)
                 .to({ regY: 20, alpha: 0 }, 500)
                 .call((e) => {
-                  addScoreTips.regY = 0;
-                  this.tipsArr.push(addScoreTips);
-                });
-              this.stage.addChild(addScoreTips);
+                  addScoreTips.regY = 0
+                  this.tipsArr.push(addScoreTips)
+                })
+              this.stage.addChild(addScoreTips)
             } else {
-              const addScoreTips = this.tipsArr.shift();
+              const addScoreTips = this.tipsArr.shift()
               if (house.addScore < 0) {
-                addScoreTips.color = "#0000ff";
+                addScoreTips.color = '#0000ff'
               } else {
-                addScoreTips.color = "#ffffff";
+                addScoreTips.color = '#ffffff'
               }
               addScoreTips.text = `${
-                house.addScore > 0 ? "+" + house.addScore : house.addScore
-              } `;
-              addScoreTips.y = this.downContainer.y + last.y;
+                house.addScore > 0 ? '+' + house.addScore : house.addScore
+              } `
+              addScoreTips.y = this.downContainer.y + last.y
               addScoreTips.x =
-                last.x + house.width / 2 - 50 + this.downContainer.x;
-              addScoreTips.alpha = 1;
+                last.x + house.width / 2 - 50 + this.downContainer.x
+              addScoreTips.alpha = 1
               cjs.Tween.get(addScoreTips)
                 .to({ regY: 20, alpha: 0 }, 500)
                 .call((e) => {
-                  addScoreTips.regY = 0;
-                  this.tipsArr.push(addScoreTips);
-                });
+                  addScoreTips.regY = 0
+                  this.tipsArr.push(addScoreTips)
+                })
             }
           }
 
           //没盖好
           houseTopple(house, dir_left) {
-            house.removeAllEventListeners();
+            house.removeAllEventListeners()
 
-            house.regY = house.height / 2;
-            house.regX = house.width / 2;
-            house.y += house.height / 2;
-            house.x += house.width / 2;
-            let offset = 0;
-            let rotation = 0;
+            house.regY = house.height / 2
+            house.regX = house.width / 2
+            house.y += house.height / 2
+            house.x += house.width / 2
+            let offset = 0
+            let rotation = 0
             if (dir_left) {
-              offset = house.x - 60;
-              rotation = -450;
+              offset = house.x - 60
+              rotation = -450
             } else {
-              offset = house.x + 200;
-              rotation = 450;
+              offset = house.x + 200
+              rotation = 450
             }
             cjs.Tween.get(house)
               .wait(100)
@@ -949,9 +993,9 @@
                 500
               )
               .call((e) => {
-                console.log(this.houseContainer);
-                this.houseContainer.removeChild(house);
-                console.log(this.houseContainer);
+                console.log(this.houseContainer)
+                this.houseContainer.removeChild(house)
+                console.log(this.houseContainer)
                 // if (this.hp <= 0) {
                 //   this.gameOver();
                 //   clearInterval(this.timer);
@@ -959,26 +1003,26 @@
                 //   this.hp--;
                 //   this.hpContainer.removeChildAt(this.hp);
                 // }
-                this.drawHouse();
-              });
+                this.drawHouse()
+              })
           }
 
           //注册音乐事件
           registerBgm(e) {
-            console.log(e);
+            console.log(e)
           }
 
           //获得一个随机值
           static random(n) {
-            return Math.floor(Math.random() * n);
+            return Math.floor(Math.random() * n)
           }
         }
 
-        window.Game = Game;
-      })();
-      const game = new Game();
-      game.preload();
-        // game.start();
+        window.Game = Game
+      })()
+      const game = new Game()
+      game.preload()
+      // game.start();
     </script>
   </body>
 </html>
