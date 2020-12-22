@@ -48,6 +48,10 @@ img {
   align-items: center;
   justify-content: center;
 }
+.weui-toast {
+  width: 15em;
+  margin-left: -7.8em;
+}
 /* 视频 */
 .video-wrap {
   position: fixed;
@@ -79,7 +83,7 @@ img {
   position: relative;
   /* height: 22.34rem; */
   background: #4a1a63
-    url("https://filex.wx.siyoumi.com/app/act/t_002/img/body_bg_1.jpg") top
+    url('https://filex.wx.siyoumi.com/app/act/t_002/img/body_bg_1.jpg') top
     center/100% no-repeat;
 }
 #snowCanvas {
@@ -95,17 +99,14 @@ img {
   margin: 0 auto 10.2rem;
   padding-top: 1rem;
 }
-.snow_flow {
-  width: 100%;
-  top: 1.11rem;
-  -webkit-animation: fadeIn 2s linear infinite alternate both;
-  animation: fadeIn 2s linear infinite alternate both;
-}
-.snow_luo {
-  width: 100%;
-  top: 0rem;
-  -webkit-animation: fadeInDown 3s linear infinite both;
-  animation: fadeInDown 3s linear infinite both;
+.finger-arrow {
+  width: 1.12rem;
+  left: 50%;
+  top: 79vh;
+  margin-left: -0.56rem;
+  z-index: 4;
+  -webkit-animation: fadeInUp 2s linear infinite both;
+  animation: fadeInUp 2s linear infinite both;
 }
 .flash_light {
   width: 7.33rem;
@@ -455,13 +456,13 @@ img {
   height: 0.37rem;
   box-sizing: border-box;
   padding: 0 0.08rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/progress_bg.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/progress_bg.png')
     center center/100% no-repeat;
 }
 .progress-bar {
   width: 0%;
   height: 0.25rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/progress_bar.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/progress_bar.png')
     center center no-repeat;
   background-size: cover;
   border-radius: 0.25rem;
@@ -471,13 +472,13 @@ img {
   top: -0.68rem;
   width: 0.6rem;
   height: 0.67rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/box.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/box.png')
     center center no-repeat;
   background-size: contain;
   opacity: 0.5;
 }
 .box.active {
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/box-active.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/box-active.png')
     center center no-repeat;
   background-size: contain;
   opacity: 1;
@@ -508,6 +509,30 @@ img {
   top: -0.68rem;
   left: 92%;
 }
+.prize_box_can_open {
+  display: none;
+  top: -1.1rem;
+  width: 0.69rem;
+  height: 0.38rem;
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/prize_box_can_open.png')
+    center center no-repeat;
+  background-size: contain;
+}
+.prize_fun_01_can_open {
+  left: 0.75rem;
+}
+.prize_fun_02_can_open {
+  left: 2.15rem;
+}
+.prize_fun_03_can_open {
+  left: 3.5rem;
+}
+.prize_fun_04_can_open {
+  left: 4.85rem;
+}
+.prize_fun_05_can_open {
+  left: 6.23rem;
+}
 .box-number {
   display: inline-block;
   top: 0.5rem;
@@ -517,19 +542,19 @@ img {
   text-align: left;
   color: #fdde90;
 }
-.box-number:nth-of-type(6) {
+.box-fun1 {
   left: 13%;
 }
-.box-number:nth-of-type(7) {
+.box-fun2 {
   left: 33%;
 }
-.box-number:nth-of-type(8) {
+.box-fun3 {
   left: 53%;
 }
-.box-number:nth-of-type(9) {
+.box-fun4 {
   left: 73%;
 }
-.box-number:nth-of-type(10) {
+.box-fun5 {
   left: 93%;
 }
 .exploration-score {
@@ -546,7 +571,7 @@ img {
   width: 7.31rem;
   height: 2.56rem;
   margin: 0rem auto 0.48rem;
-  background-image: url("https://filex.wx.siyoumi.com/app/act/t_002/img/down-time-no-open.png?v=3");
+  background-image: url('https://filex.wx.siyoumi.com/app/act/t_002/img/down-time-no-open.png?v=3');
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -627,7 +652,7 @@ img {
 .btn-wrap {
   position: relative;
   width: 100%;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/snow_bg.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/snow_bg.png')
     center center no-repeat;
   background-size: cover;
   z-index: 5;
@@ -646,7 +671,7 @@ img {
   padding: 0.08rem 0;
 }
 .surplus-game-num::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 50%;
   margin-left: -0.07rem;
@@ -864,12 +889,12 @@ img {
   right: 0.25rem;
   width: 0.72rem;
   height: 0.72rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/music-icon.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/music-icon.png')
     no-repeat center / cover;
   z-index: 10;
 }
 .music_icon.active {
-  background-image: url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/music-icon.png");
+  background-image: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/music-icon.png');
   -webkit-animation: rotate 5s infinite linear;
   animation: rotate 5s infinite linear;
 }
@@ -921,7 +946,7 @@ img {
   position: relative;
   z-index: 2;
   height: 10.5rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/prize-box-bg.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/prize-box-bg.png')
     no-repeat center / 100% auto;
 }
 .prize-box-onpen {
@@ -977,7 +1002,7 @@ img {
   position: relative;
   width: 3.2rem;
   height: 0.79rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/btn-reset-prize.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/btn-reset-prize.png')
     no-repeat center / cover;
   margin: 0 auto;
   font-size: 0.36rem;
@@ -1006,7 +1031,7 @@ img {
   position: relative;
   z-index: 2;
   height: 11.8rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/prize-box-bg.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/prize-box-bg.png')
     no-repeat center / 100% auto;
 }
 .big-no-tips {
@@ -1108,7 +1133,7 @@ img {
   display: none;
   width: 3.2rem;
   height: 0.77rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/btn-big-prize.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/btn-big-prize.png')
     no-repeat center / 100% auto;
   font-size: 0.32rem;
   font-family: PingFangSC Medium, PingFangSC Medium-Medium;
@@ -1128,7 +1153,7 @@ img {
 /** 奖品页 */
 .my-prize-list-cont {
   background: #521c65
-    url("https://filex.wx.siyoumi.com/app/act/t_002/img/prize_list_bg.png")
+    url('https://filex.wx.siyoumi.com/app/act/t_002/img/prize_list_bg.png')
     no-repeat top/100%;
   /* overflow: auto; */
 }
@@ -1188,8 +1213,8 @@ img {
   height: 8.1rem;
   overflow: auto;
 }
-.prize-list-cont::before {
-  content: "";
+.prize-list-cont.active::before {
+  content: '';
   border: 7px solid;
   border-color: #b56cd6 transparent transparent;
   position: fixed;
@@ -1213,23 +1238,23 @@ img {
   overflow: hidden;
 }
 .verification-no::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
   width: 1.76rem;
   height: 1.71rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/verification-no.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/verification-no.png')
     no-repeat top/100%;
 }
 .verification-yes::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
   width: 1.76rem;
   height: 1.71rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/verification-yes.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/verification-yes.png')
     no-repeat top/100%;
 }
 .detial-cont {
@@ -1395,7 +1420,7 @@ img {
   z-index: 2;
   width: 6.61rem;
   height: 11.83rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/rule-bg.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/rule-bg.png')
     no-repeat top/100%;
   margin: 0.42rem auto 0.21rem;
   font-size: 0.25rem;
@@ -1434,7 +1459,7 @@ img {
   top: 0;
   min-height: 100%;
   background: #521c65
-    url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-light-bg.png")
+    url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-light-bg.png')
     no-repeat top/100%;
   z-index: 1000;
 }
@@ -1442,7 +1467,7 @@ img {
   margin: -0.5rem auto 0;
   width: 6.2rem;
   height: 10.81rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-end-bg.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/game-end-bg.png')
     no-repeat top/100%;
 }
 .game-end-tips {
@@ -1457,7 +1482,7 @@ img {
   margin: 0.59rem auto 0;
   width: 2.71rem;
   height: 2.91rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/score-bg.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/score-bg.png')
     no-repeat;
   background-size: contain;
   font-size: 0.98rem;
@@ -1473,7 +1498,7 @@ img {
 .surplus-num {
   width: 3.67rem;
   height: 0.77rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/game/score-num-bg.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/game/score-num-bg.png')
     no-repeat;
   background-size: contain;
   margin: 1.1rem auto 0;
@@ -1538,7 +1563,7 @@ img {
   margin: -2rem 0 0 -2.7rem;
   width: 5.4rem;
   height: 4rem;
-  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/mask-bg.png")
+  background: url('https://filex.wx.siyoumi.com/app/act/t_002/img/mask-bg.png')
     no-repeat;
   background-size: contain;
 }
