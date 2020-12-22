@@ -1232,7 +1232,8 @@ img {
   display: -webkit-box;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  /* align-items: center; */
   padding: 0.2rem;
   box-sizing: border-box;
   overflow: hidden;
@@ -1431,6 +1432,10 @@ img {
   line-height: 0.44rem;
   box-sizing: border-box;
   padding: 1rem 0.23rem 0 0.43rem;
+}
+.rule-cont-main {
+  height: 10.5rem;
+  overflow: auto;
 }
 .rule-btn-close {
   width: 0.8rem;

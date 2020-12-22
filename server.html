@@ -49,7 +49,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{root_static_file_cdn}app/act/t_002/index.css?{v}v=405"
+      href="{root_static_file_cdn}app/act/t_002/index.css?{v}v=46d34d05"
     />
     <link
       rel="stylesheet"
@@ -487,7 +487,7 @@
             <p>我们的锦鲤宠儿</p>
           </div>
           <div class="big-result-no">
-            <p>没中奖哦，再接再厉</p>
+            <p>没中奖哦，再接再励</p>
           </div>
           <img
             class="absolute big-prize-box"
@@ -595,26 +595,37 @@
     <div class="rule-wrap fixed">
       <div class="rule-mask mask absolute"></div>
       <div class="rule-cont">
-        <p style="text-indent: 0.42rem">
-          本次活动是金湾华发商都双旦系列主题宣传活动，
-          活动奖品由金湾华发商都统一赞助提供。活动最终解
-          释权归金湾华发尚都所有。
-        </p>
-        <p>活动玩法</p>
-        <p>1、用户进入活动后，需要通过小游戏收集探索积分；</p>
-        <p>2、每个用户ID有2张初始游戏卡，每次玩游戏需要 消耗1张；</p>
-        <p>3、游戏卡可以通过邀请小伙伴一起探索游戏获取；</p>
-        <p>4、探索积分累计达到指定数值后，可以开启对应 的宝箱抽奖；</p>
-        <p>5、探索分数达到8000后解锁全部宝箱，并获得元 旦锦鲤终极宝箱；</p>
-        <p>6、元旦锦鲤终极宝箱于2021年1月1日0点后方可开 启；</p>
-        <p>奖品说明</p>
-        <p>1、本次活动奖品以实际发放实物为准，奖品不设折 现，不退不换；</p>
-        <p>2、请在活动限定兑奖时间内到指定地点兑换奖品， 逾期无效；</p>
-        <p>3、兑奖时间：2021年1月31日前；</p>
-        <p>4、兑奖地点：珠海市金湾华发商都...........</p>
-        <p>
-          5、兑奖时请出示中奖凭证并交由工作人员输入密码 核销凭证并兑换奖品；
-        </p>
+        <div class="rule-cont-main">
+          <h4>活动玩法</h4>
+          <p>1.用户进入活动后，需要通过小游戏收集探索积分；</p>
+          <p>2.每个用户ID有2张初始游戏卡，每次玩游戏需要消耗1张；</p>
+          <p>3.游戏卡可以通过邀请小伙伴一起探索游戏获取；</p>
+          <p>4.探索积分累计达到指定数值后，可以开启对应的宝箱抽奖；</p>
+          <p>5.探索分数达到8000后解锁全部宝箱，并获得元旦锦鲤终极宝箱；</p>
+          <p>6.元旦锦鲤终极宝箱于2021年1月1日0点后方可开启；</p>
+          <h4>奖品说明</h4>
+          <p>*本次活动奖品以实际发放实物为准，奖品不设折现，不退不换</p>
+          <p>*请在活动限定兑奖时间内到指定地点兑换奖品，逾期无效</p>
+          <h4>解锁小宝箱奖品说明：</h4>
+          <p>1.奖品包含：小米手环、炊大皇保温壶、Miniso护手霜、文具套装等</p>
+          <p>2.兑奖地点：广东省珠海市金湾区华发中央公园1楼活动兑奖处;</p>
+          <p>3.兑奖时间：2020年12月24日-27日（10:00-22:00）</p>
+          <p>
+            4.兑奖时请出示中奖凭证并交由工作人员输入密码核销凭证并兑换奖品；
+          </p>
+          <h4>元旦锦鲤终极宝箱奖品说明：</h4>
+          <p>1.奖品包含：戴森吸尘器、小米手环、炊大皇保温壶等;</p>
+          <p>2.兑奖地点：广东省珠海市金湾区金湾华发国际商务中心2楼招商中心;</p>
+          <p>3.兑奖时间：2021年1月31日前（周二-周五10:00-17:00）；</p>
+          <p>
+            4.兑奖时请出示中奖凭证并交由工作人员输入密码核销凭证并兑换奖品；
+          </p>
+          <p style="padding-top: 20px">
+            *本次活动是金湾华发商都双旦系列主题宣传活动，活动奖品由金湾华发商都统一赞助提供
+          </p>
+          <p>*活动最终解释权归金湾华发商都所有</p>
+        </div>
+
         <img
           class="rule-btn-close"
           src="{root_static_file_cdn}app/act/t_002/img/rule-btn-close.png"
@@ -939,7 +950,7 @@
                 })
               } else {
                 $('.prize-tips').html(
-                  '就差一点点～<br><br>离中奖就差一念距离，再接再厉'
+                  '就差一点点～<p style="padding-top:20px"></p>离中奖已经不远了，再接再励！'
                 )
                 $('.btn-reset-prize').css({
                   display: 'flex',
@@ -1035,10 +1046,9 @@
                                    }
 
                                  </div>
-                                 <div class="detial-cont">${
-                                   item.prize_desc
-                                 }</div>
+                                 
                              </div>
+                             <div class="detial-cont">${item.prize_desc}</div>
                            </div>`
             $('.prize-list-cont').append(cell)
           }
@@ -1610,7 +1620,7 @@
         if (el.hasClass('btn-verify')) {
           $('.check-wrap').show()
         } else if (el.hasClass('toggle-detal') || el.hasClass('detail-icon')) {
-          $(el).parents('.list-item-info').find('.detial-cont').toggle()
+          $(el).parents('.prize-list-item').find('.detial-cont').toggle()
         }
       })
       $('.password-text').click(function () {
@@ -1934,7 +1944,7 @@
           this.downCount = 0
           this.score = 0
           this.gameStart = false
-          this.time = 60
+          this.time = 30
           this.hp = 1
           this.lastHouse = null
           this.downContainer.removeAllChildren()
