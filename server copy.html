@@ -1,0 +1,4838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="flexible" content="initial-dpr=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>“筑”力湾心</title>
+    <script>
+      ;(function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt =
+            'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth
+
+            if (!clientWidth) {
+              return (docEl.style.fontSize = '50px')
+            }
+            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + 'px'
+            if (window.innerHeight / window.innerWidth > 1.8) {
+              document.body.className = 'isIphone'
+            } else {
+              document.body.className = ''
+            }
+          }
+        if (!doc.addEventListener) return
+        win.addEventListener(resizeEvt, recalc, false)
+        doc.addEventListener('DOMContentLoaded', recalc, false)
+      })(document, window)
+    </script>
+    <!-- <script src="{root_cdn}vConsole/3.3.0/vconsole.min.js"></script>
+    <script>
+      // init vConsole
+      var vConsole = new VConsole()
+      console.log('Hello world')
+    </script> -->
+    <script src="{root_cdn}jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{root_cdn}Swiper/4.5.0/css/swiper.min.css" />
+    <script src="{root_cdn}Swiper/4.2.2/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="{root_cdn}weui/1.1.3/style/weui.min.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="{root_cdn}jquery-weui/1.2.1/css/jquery-weui.min.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{root_static_file_cdn}app/act/t_002/index.css?{v}v=4444545"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{root_static_file_cdn}app/act/t_002/index_animate.css?ds4f2"
+    />
+    <script src="{root_cdn}jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+    <script src="{root_cdn}EaselJS/1.0.2/easeljs.min.js"></script>
+    <script src="{root_cdn}PreloadJS/1.0.1/preloadjs.min.js"></script>
+    <script src="{root_cdn}tweenjs/1.0.2/tweenjs.min.js"></script>
+    <script src="{root_cdn}SoundJS/1.0.2/soundjs.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 视频 -->
+    <div class="video-wrap">
+      <div class="btn-skip">跳过动画</div>
+      <video
+        src="https://siyoumi.oss-cn-beijing.aliyuncs.com/t_002/2.5.mp4"
+        x-webkit-airplay="true"
+        webkit-playsinline="true"
+        width="100%"
+        preload="auto"
+        id="video"
+        playsinline
+        x5-video-player-type="h5"
+      ></video>
+    </div>
+    <div class="home">
+      <img
+        class="title animate__animated animate__bounceInDown"
+        data-original="{root_static_file_cdn}app/act/t_002/img/title.png"
+        alt=""
+      />
+      <img
+        class="absolute flash_light"
+        data-original="{root_static_file_cdn}app/act/t_002/img/flash_light.png"
+        alt="闪烁"
+      />
+      <img
+        class="absolute car-yellow"
+        data-original="{root_static_file_cdn}app/act/t_002/img/car-yellow.gif"
+        alt="黄车"
+      />
+      <img
+        class="absolute car-red"
+        data-original="{root_static_file_cdn}app/act/t_002/img/car-red.gif"
+        alt="红车"
+      />
+      <img
+        class="absolute aircraft"
+        data-original="{root_static_file_cdn}app/act/t_002/img/aircraft.gif"
+        alt="飞机"
+      />
+      <img
+        class="absolute aircraft2"
+        data-original="{root_static_file_cdn}app/act/t_002/img/aircraft2.gif"
+        alt="飞机"
+      />
+      <div class="lamp_2 absolute">
+        <img
+          class="lamp_bottom"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_center absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_left absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_right absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_right.png"
+          alt="黄色灯"
+        />
+      </div>
+      <div class="lamp_yellow_1 absolute">
+        <img
+          class="lamp_bottom"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_center absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_left absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_right absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_right.png"
+          alt="黄色灯"
+        />
+      </div>
+      <div class="red_lamp_1 absolute">
+        <img
+          class="red_lamp_bottom"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_center absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_left absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_right absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_right.png?=1"
+          alt="黄色灯"
+        />
+      </div>
+      <div class="red_lamp_2 absolute">
+        <img
+          class="red_lamp_bottom"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_center absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_left absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_right absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_right.png?v=1"
+          alt="黄色灯"
+        />
+      </div>
+
+      <!-- <img
+        class="absolute lamp_2"
+        data-original="{root_static_file_cdn}app/act/t_002/img/lamp_2.png"
+        alt="黄灯1"
+      />
+      <img
+        class="absolute lamp_road"
+        data-original="{root_static_file_cdn}app/act/t_002/img/lamp_2.png"
+        alt="黄灯2"
+      /> -->
+      <!-- <img
+        class="absolute lamp_1"
+        data-original="{root_static_file_cdn}app/act/t_002/img/lamp_1.png"
+        alt="红灯1"
+      />
+      <img
+        class="absolute lamp_1_1"
+        data-original="{root_static_file_cdn}app/act/t_002/img/lamp_1.png"
+        alt="红灯2"
+      /> -->
+      <img
+        class="absolute pic-icon"
+        data-original="{root_static_file_cdn}app/act/t_002/img/pic-icon.png"
+        alt="大象"
+      />
+      <img
+        class="absolute prize-preview-icon"
+        data-original="{root_static_file_cdn}app/act/t_002/img/prize-tips.png"
+        alt="奖品一览"
+      />
+
+      <img
+        class="absolute floor1"
+        data-original="{root_static_file_cdn}app/act/t_002/img/floor1_no.png"
+        alt="楼1"
+      />
+      <img
+        class="absolute clock-no-1"
+        data-original="{root_static_file_cdn}app/act/t_002/img/clock-no.png"
+        alt="楼1锁"
+      />
+      <img
+        class="absolute floor2"
+        data-original="{root_static_file_cdn}app/act/t_002/img/floor2_no.png"
+        alt="楼2"
+      />
+      <img
+        class="absolute clock-no-2"
+        data-original="{root_static_file_cdn}app/act/t_002/img/clock-no.png"
+        alt="楼2锁"
+      />
+      <img
+        class="absolute floor3"
+        data-original="{root_static_file_cdn}app/act/t_002/img/floor3_no.png"
+        alt="楼3"
+      />
+      <img
+        class="absolute clock-no-3"
+        data-original="{root_static_file_cdn}app/act/t_002/img/clock-no.png"
+        alt="楼3锁"
+      />
+      <img
+        class="absolute floor4"
+        data-original="{root_static_file_cdn}app/act/t_002/img/floor4_no.png"
+        alt="楼4"
+      />
+      <img
+        class="absolute clock-no-4"
+        data-original="{root_static_file_cdn}app/act/t_002/img/clock-no.png"
+        alt="楼4锁"
+      />
+      <img
+        class="absolute floor5"
+        data-original="{root_static_file_cdn}app/act/t_002/img/floor5_no.png"
+        alt="楼5"
+      />
+      <img
+        class="absolute clock-no-5"
+        data-original="{root_static_file_cdn}app/act/t_002/img/clock-no.png"
+        alt="楼5锁"
+      />
+      <img
+        class="absolute tree-red"
+        data-original="{root_static_file_cdn}app/act/t_002/img/tree-red.png"
+        alt="红树"
+      />
+      <img
+        class="absolute tree-red-2"
+        data-original="{root_static_file_cdn}app/act/t_002/img/tree-red.png"
+        alt="红树"
+      />
+      <img
+        class="absolute tree"
+        data-original="{root_static_file_cdn}app/act/t_002/img/tree.png"
+        alt="圣诞树"
+      />
+      <img
+        class="absolute lipstick"
+        data-original="{root_static_file_cdn}app/act/t_002/img/lipstick.png"
+        alt="圣诞树"
+      />
+      <div class="absolute prize-boss">
+        <p>终极大奖</p>
+        <p>跨年锦鲤券</p>
+        <div class="prize-boss-status flex c-center">待解锁</div>
+      </div>
+
+      <canvas id="snowCanvas" class="absolute" width="750"></canvas>
+
+      <img
+        class="absolute bird"
+        data-original="{root_static_file_cdn}app/act/t_002/img/bird.png"
+        alt="鸟"
+      />
+      <img
+        class="absolute rule-btn"
+        data-original="{root_static_file_cdn}app/act/t_002/img/rule-btn.png"
+        alt="活动说明"
+      />
+      <img
+        class="absolute SantaClaus"
+        data-original="{root_static_file_cdn}app/act/t_002/img/SantaClaus.gif"
+        alt="圣诞人"
+      />
+      <img
+        class="absolute bear-icon"
+        data-original="{root_static_file_cdn}app/act/t_002/img/bear-icon.png"
+        alt="鸟"
+      />
+      <img
+        class="absolute prize-my"
+        data-original="{root_static_file_cdn}app/act/t_002/img/prize-my.png"
+        alt="我的奖品"
+      />
+      <!--  -->
+      <div class="relative progress-wrap">
+        <div class="progress-bg">
+          <div class="progress-bar"></div>
+        </div>
+        <span class="box prize_fun_01 absolute"></span>
+        <span class="box prize_fun_02 absolute"></span>
+        <span class="box prize_fun_03 absolute"></span>
+        <span class="box prize_fun_04 absolute"></span>
+        <span class="box prize_fun_05 absolute"></span>
+
+        <span class="box-number box-fun1 absolute"></span>
+        <span class="box-number box-fun2 absolute"></span>
+        <span class="box-number box-fun3 absolute"></span>
+        <span class="box-number box-fun4 absolute"></span>
+        <span class="box-number box-fun5 absolute"></span>
+
+        <div class="exploration-score flex">
+          <div class="box-flex flex c-center">
+            探索积分：<span id="scoreNum"></span>
+          </div>
+          <div class="box-flex flex c-center">
+            当前探索进度：<span id="progressNum"></span>
+          </div>
+        </div>
+      </div>
+      <div class="down-time">
+        <span class="status-text flex c-center absolute">未获得</span>
+        <div class="absolute flex c-center can-chou-big">
+          <div>
+            <p>新年快乐！！</p>
+            <p>点击开启你的专属锦鲤宝箱</p>
+          </div>
+        </div>
+        <div class="absolute flex c-center is_chou_caned">
+          <div>
+            <p>新年快乐！！</p>
+            <p>宝箱一开，锦鲤就来</p>
+          </div>
+        </div>
+        <div class="down-text absolute"></div>
+        <div class="absolute flex c-center down-time-t">
+          获取倒计时
+          <span class="down-day">0</span>
+          <span>0</span>
+          <i>天</i>
+          <span>0</span>
+          <span>0</span>
+          <i>时</i>
+          <span>0</span>
+          <span>0</span>
+          <i>分</i>
+        </div>
+      </div>
+      <div class="btn-wrap">
+        <div class="surplus-game-num">当前剩余游戏卡：<span></span></div>
+        <img
+          class="start-btn btn-start-game"
+          data-original="{root_static_file_cdn}app/act/t_002/img/btn_start.png"
+          alt=""
+        />
+        <img
+          class="get_btn-ka"
+          data-original="{root_static_file_cdn}app/act/t_002/img/get_btn_ka.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <!-- 普通奖品 -->
+    <div class="normal-prize-main fixed">
+      <div class="mask absolute"></div>
+      <div class="normal-prize">
+        <img
+          class="prize-box-onpen"
+          src="{root_static_file_cdn}app/act/t_002/img/prize-box-onpen.png"
+          alt=""
+        />
+        <img
+          class="absolute finger"
+          src="{root_static_file_cdn}app/act/t_002/img/finger.png"
+          alt=""
+        />
+        <div class="absolute prize-wrap">
+          <div class="prize-tips"></div>
+          <img
+            class="prize-img"
+            src="{root_static_file_cdn}app/act/t_002/img/prize-baowenbei.png"
+            alt=""
+          />
+        </div>
+        <div class="normal-prize-tips">点击宝箱抽奖</div>
+        <div class="prize-btn-wrap">
+          <div class="btn-reset-prize flex c-center">
+            再接再励
+            <img
+              class="absolute btn-SantaClaus"
+              src="{root_static_file_cdn}app/act/t_002/img/SantaClaus.gif"
+              alt="圣诞人"
+            />
+          </div>
+          <div class="btn-get-prize flex c-center">
+            收下奖品
+            <img
+              class="absolute btn-SantaClaus"
+              src="{root_static_file_cdn}app/act/t_002/img/SantaClaus.gif"
+              alt="圣诞人"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 大奖品 -->
+    <div class="big-prize-main fixed">
+      <div class="mask absolute"></div>
+      <div class="big-prize">
+        <div class="big-no-prize">
+          <div class="big-no-tips">
+            <p>元旦锦鲤宝箱</p>
+            <p>宝箱一开，好运滚滚来...</p>
+          </div>
+
+          <img
+            class="big-no-prize-box"
+            src="{root_static_file_cdn}app/act/t_002/img/big-no-prize-box.png"
+            alt=""
+          />
+          <img
+            class="absolute big-prize-red"
+            src="{root_static_file_cdn}app/act/t_002/img/big-prize-red.png"
+            alt=""
+          />
+          <div class="absolute big-prize-tips">点击宝箱抽奖</div>
+
+          <img
+            class="absolute big-finger"
+            src="{root_static_file_cdn}app/act/t_002/img/finger.png"
+            alt=""
+          />
+        </div>
+        <div class="big-result-prize">
+          <div class="big-result-tips">
+            <p>恭喜你～！</p>
+            <p>我们的锦鲤宠儿</p>
+          </div>
+          <div class="big-result-no">
+            <p>没中奖哦，再接再厉</p>
+          </div>
+          <img
+            class="absolute big-prize-box"
+            src="{root_static_file_cdn}app/act/t_002/img/big-prize-box.png"
+            alt=""
+          />
+          <img
+            class="absolute prize-big-img"
+            src="{root_static_file_cdn}app/act/t_002/img/prize-big-no.png"
+            alt=""
+          />
+          <img
+            class="absolute big-prize-gold"
+            src="{root_static_file_cdn}app/act/t_002/img/big-prize-gold.png"
+            alt=""
+          />
+          <div class="absolute big-prize-btn-wrap">
+            <div class="big-btn-reset-prize flex c-center">明年再来</div>
+            <div class="big-btn-get-prize flex c-center">收下我的好运</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 我的奖品 -->
+    <div class="my-prize-list fixed">
+      <div class="my-prize-list-cont">
+        <div class="prize-list-title">- 我的奖品 -</div>
+        <div class="prize-list-empty absolute">空空如也～</div>
+
+        <div class="prize-list-cont"></div>
+        <img
+          class="back-home-prize"
+          src="{root_static_file_cdn}app/act/t_002/img/game/back-home.png"
+          alt=""
+        />
+        <div class="prize-list-tips">
+          <p>请勿擅自操作核销，</p>
+          <p>需由工作人员输入密码核销并发放奖品</p>
+        </div>
+      </div>
+      <div class="check-wrap fixed">
+        <div class="check-wrap-mask absolute"></div>
+        <div class="password-wrap">
+          <div class="password-title">请工作人员输入核销密码</div>
+          <div class="password-text flex c-center">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <input type="text" name="" maxlength="6" id="password-input" />
+          <div class="btn-password flex c-center">确认</div>
+        </div>
+      </div>
+    </div>
+    <!-- 预加载 -->
+    <div class="loading-wrap fixed">
+      <div class="loading">
+        <div class="relative">
+          <img
+            class="pre-loading"
+            src="{root_static_file_cdn}app/act/t_002/img/pre-loading.gif"
+            alt="加载图"
+          />
+          <img
+            class="load-SantaClaus"
+            src="{root_static_file_cdn}app/act/t_002/img/SantaClaus.gif"
+            alt="圣诞人"
+          />
+        </div>
+        <div class="loading-tips">0%</div>
+        <div class="loading-rule">正在准备双旦礼物，请稍后......</div>
+        <img
+          class="btn-go-now"
+          src="{root_static_file_cdn}app/act/t_002/img/btn-go-now.png?v=1"
+          alt="加载图"
+        />
+      </div>
+    </div>
+    <!--海报 -->
+    <div class="poster-wrap fixed">
+      <div class="poster-cont">
+        <div class="poster-title">已为您生成专属海报</div>
+        <div class="relative poster-img-wrap">
+          <img class="poster-img" alt="" />
+          <div class="poster-load">海报生成中...</div>
+        </div>
+        <div class="poster-down flex c-center">
+          <img
+            src="{root_static_file_cdn}app/act/t_002/img/down-poster.png"
+            alt=""
+          />
+          <div>
+            <p>长按保存海报或直接邀请小伙伴</p>
+            <p>参与活动即可获得游戏卡哦</p>
+          </div>
+        </div>
+      </div>
+
+      <canvas id="poster" width="750"></canvas>
+    </div>
+    <!-- 活动说明 -->
+    <div class="rule-wrap fixed">
+      <div class="rule-mask mask absolute"></div>
+      <div class="rule-cont">
+        <p style="text-indent: 0.42rem">
+          本次活动是金湾华发商都双旦系列主题宣传活动，
+          活动奖品由金湾华发商都统一赞助提供。活动最终解
+          释权归金湾华发尚都所有。
+        </p>
+        <p>活动玩法</p>
+        <p>1、用户进入活动后，需要通过小游戏收集探索积分；</p>
+        <p>2、每个用户ID有2张初始游戏卡，每次玩游戏需要 消耗1张；</p>
+        <p>3、游戏卡可以通过邀请小伙伴一起探索游戏获取；</p>
+        <p>4、探索积分累计达到指定数值后，可以开启对应 的宝箱抽奖；</p>
+        <p>5、探索分数达到8000后解锁全部宝箱，并获得元 旦锦鲤终极宝箱；</p>
+        <p>6、元旦锦鲤终极宝箱于2021年1月1日0点后方可开 启；</p>
+        <p>奖品说明</p>
+        <p>1、本次活动奖品以实际发放实物为准，奖品不设折 现，不退不换；</p>
+        <p>2、请在活动限定兑奖时间内到指定地点兑换奖品， 逾期无效；</p>
+        <p>3、兑奖时间：2021年1月31日前；</p>
+        <p>4、兑奖地点：珠海市金湾华发商都...........</p>
+        <p>
+          5、兑奖时请出示中奖凭证并交由工作人员输入密码 核销凭证并兑换奖品；
+        </p>
+        <img
+          class="rule-btn-close"
+          src="{root_static_file_cdn}app/act/t_002/img/rule-btn-close.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <!-- 奖品一览 -->
+    <div class="prize-preview-wrap fixed">
+      <img
+        class="prize-preview-img"
+        src="{root_static_file_cdn}app/act/t_002/img/prize-preview.jpg?v=1"
+        alt=""
+      />
+    </div>
+    <!-- 弹框 -->
+    <div class="alert-mask fixed">
+      <div class="alert-mask-cont absolute">
+        <div class="alert-tips-cont"></div>
+        <img
+          class="btn-mask-close"
+          src="{root_static_file_cdn}app/act/t_002/img/btn-mask-close.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="music_icon"></div>
+
+    <!-- 游戏 -->
+    <audio src="" id="bgm" loop></audio>
+    <div class="page_game">
+      <div class="absolute avatar flex c-center">
+        <img class="wxuser_headimgurl" alt="" />
+        <div id="score" class="score flex c-center"></div>
+      </div>
+      <div class="time-wrap flex c-center">
+        <img
+          data-original="{root_static_file_cdn}app/act/t_002/img/game/clock.png"
+          src="{root_static_file_cdn}app/act/t_002/img/game/clock.png"
+          class="lazy clock"
+          alt=""
+        />
+        <div class="downTime-wrap"><span id="second">20</span>s</div>
+      </div>
+      <div id="game_bg"></div>
+      <canvas id="game" width="750"></canvas>
+      <!-- 游戏结束页 -->
+      <div class="absolute game-end">
+        <div class="game-end-score">
+          <div class="game-end-tips">恭喜你获得</div>
+          <div class="game-get-score"></div>
+          <div class="surplus-num flex c-center">
+            当前剩余游戏卡：<span></span>
+          </div>
+        </div>
+        <img
+          class="btn-restart-game"
+          src="{root_static_file_cdn}app/act/t_002/img/game/btn-restart-game.png"
+          alt=""
+        />
+        <img
+          class="back-home"
+          src="{root_static_file_cdn}app/act/t_002/img/game/back-home.png"
+          alt=""
+        />
+      </div>
+      <div class="game-load">
+        <div>
+          <div class="game-load-pro">0%</div>
+          <div>正在加载...</div>
+        </div>
+      </div>
+      <!-- 游戏玩法 -->
+      <div class="game-previw fixed">
+        <div class="game-preview-bg">
+          <img
+            class="game-gif"
+            src="https://siyoumi.oss-cn-beijing.aliyuncs.com/t_002/geme-gif.gif"
+            alt=""
+          />
+        </div>
+        <img
+          class="game-start-btn"
+          src="{root_static_file_cdn}app/act/t_002/img/game/btn-start-game.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <!-- test 二维码sdfsdf
+    <img
+      src="{root_app}app/z_common/app_api/wx_qr?x=jie01&word=act1604155011"
+    /> -->
+  </body>
+
+  <script>
+    const bgm = document.getElementById('bgm')
+    bgm.src =
+      'https://res.wx.qq.com/voice/getvoice?mediaid=MzI4NzkzNzM1M18xMDAwMDM1NDU='
+    let bigTextDown = [
+      '元旦前探索进度达到100%即可获得',
+      '元旦0点后可开启您的专属锦鲤宝箱',
+      '宝箱已过期',
+    ]
+    let isTimeEnd = false //时间结束
+    let isGetMaxFun = false //是否获得大奖
+    let setInitData = {}
+    // 初始化数据 api
+    function func_get_init_data() {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_001`,
+        success(res) {
+          console.log('请求==', res.data)
+          setInitData = res.data
+          set_data(res.data)
+        },
+      })
+    }
+    function set_data(data) {
+      let play_count = 0
+
+      //  分数
+      $('.box-fun1').html(data.set_data.prize_fun_01)
+      $('.box-fun2').html(data.set_data.prize_fun_02)
+      $('.box-fun3').html(data.set_data.prize_fun_03)
+      $('.box-fun4').html(data.set_data.prize_fun_04)
+      $('.box-fun5').html(data.set_data.prize_fun_05)
+      let maxFun = Number(data.set_data.prize_fun_05)
+      let prize_fun_01 = Number(data.set_data.prize_fun_01)
+      let prize_fun_02 = Number(data.set_data.prize_fun_02)
+      let prize_fun_03 = Number(data.set_data.prize_fun_03)
+      let prize_fun_04 = Number(data.set_data.prize_fun_04)
+      let prize_fun_05 = Number(data.set_data.prize_fun_05)
+      isGetMaxFun = Number(data.launch.fun) >= maxFun
+      let prize_fun_arr = [
+        prize_fun_01,
+        prize_fun_02,
+        prize_fun_03,
+        prize_fun_04,
+        prize_fun_05,
+      ]
+
+      let masterfun = data.launch.fun //获得积分
+      let progressIndex = 0
+      let progressNextFun = 0
+      let progressPreFun = 0
+      play_count = data.launch.play_count //游戏次数
+      for (let i = 0; i < prize_fun_arr.length; i++) {
+        let index = i + 1
+        $('.prize_fun_0' + index).data('fun_key', 'prize_fun_0' + index)
+
+        if (masterfun >= prize_fun_arr[i]) {
+          progressIndex++
+          $('.prize_fun_0' + index)
+            .css({
+              opacity: 1,
+            })
+            .data('isChou', 1)
+            .addClass('caned_chou')
+
+          $('.floor' + index).attr(
+            'src',
+            '{root_static_file_cdn}app/act/t_002/img/floor' + index + '.png'
+          )
+          $('.clock-no-' + index).hide()
+          if (progressIndex >= 3) {
+            $('.prize-boss').show()
+          }
+          let nextIndex = i + 1 === prize_fun_arr.length ? i : i + 1
+          if (
+            (masterfun > prize_fun_arr[i] &&
+              masterfun < prize_fun_arr[nextIndex]) ||
+            nextIndex === i
+          ) {
+            progressNextFun = prize_fun_arr[nextIndex]
+            progressPreFun = prize_fun_arr[i]
+          }
+        }
+      }
+      for (let i = 0; i < data.list_chou.length; i++) {
+        let funs = Number()
+        $('.' + data.list_chou[i])
+          .data('isChou', 0)
+          .removeClass('caned_chou')
+          .addClass('active')
+      }
+      // surplus-game-num
+      $('.surplus-game-num span').html(play_count)
+      $('#scoreNum').html(data.launch.fun)
+      // 进度条
+      let funProgress = (progressIndex / 5) * 100
+      let chaju = masterfun - progressPreFun
+      let bothMax = progressNextFun - progressPreFun
+      if (bothMax !== 0) {
+        funProgress = (chaju / bothMax) * 100 * 0.2 + funProgress
+      }
+      // funProgress = (chaju / maxFun) * 100 * 0.25 + funProgress
+      // let funProgress = (Number(data.launch.fun) / maxFun) * 100
+      funProgress = funProgress >= 100 ? 100 : funProgress
+
+      let progress = Number(funProgress).toFixed(2)
+      if (funProgress === 100) {
+        progress = 100
+      }
+      $('.progress-bar').css({
+        width: progress + '%',
+      })
+      $('#progressNum').html(progress + '%')
+
+      // 大奖
+      // 开启倒计时
+      if (data.prize_s <= 0) {
+        isTimeEnd = true
+      } else {
+        isTimeEnd = false
+      }
+      big_chou_status()
+
+      $('.wxuser_headimgurl').attr('src', data.common.user.wxuser_headimgurl)
+
+      //  跳走游戏有
+      $('.btn-start-game')
+        .off()
+        .click(function () {
+          if (play_count > 0) {
+            $('.home').hide()
+            $('.page_game').show()
+            $('.game-previw').show()
+            $('.game-load').show()
+          } else {
+            $_alert('没有游戏次数了')
+          }
+        })
+      //  开始游戏
+      $('.game-start-btn')
+        .off()
+        .click(function () {
+          $('.game-previw').hide()
+          game = new Game()
+          game.preload()
+        })
+    }
+
+    function big_chou_status() {
+      // 时间没到
+      if (!isTimeEnd) {
+        // 获得
+        if (isGetMaxFun) {
+          $('.prize-boss-status').html('已解锁')
+          $('.status-text').html('已获得')
+          $('.down-text').html(bigTextDown[1])
+        } else {
+          $('.status-text').html('未获得')
+          $('.down-text').html(bigTextDown[0])
+        }
+        getleftTimer(new Date().getTime() + setInitData.prize_s * 1000)
+      } else {
+        // 获得
+        if (isGetMaxFun) {
+          $('.prize-boss-status').html('已解锁')<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="flexible" content="initial-dpr=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>“筑”力湾心</title>
+    <script>
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt =
+            "orientationchange" in window ? "orientationchange" : "resize",
+          recalc = function () {
+            var clientWidth = docEl.clientWidth;
+
+            if (!clientWidth) {
+              return (docEl.style.fontSize = "50px");
+            }
+            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + "px";
+            if (window.innerHeight / window.innerWidth > 1.8) {
+              document.body.className = "isIphone";
+            } else {
+              document.body.className = "";
+            }
+          };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener("DOMContentLoaded", recalc, false);
+      })(document, window);
+    </script>
+    <!-- <script src="{root_cdn}vConsole/3.3.0/vconsole.min.js"></script>
+    <script>
+      // init vConsole
+      var vConsole = new VConsole()
+      console.log('Hello world')
+    </script> -->
+    <script src="{root_cdn}jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{root_cdn}Swiper/4.5.0/css/swiper.min.css" />
+    <script src="{root_cdn}Swiper/4.2.2/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="{root_cdn}weui/1.1.3/style/weui.min.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="{root_cdn}jquery-weui/1.2.1/css/jquery-weui.min.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{root_static_file_cdn}app/act/t_002/index.css?{v}v=45"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{root_static_file_cdn}app/act/t_002/index_animate.css?ds4f2"
+    />
+    <script src="{root_cdn}jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+    <script src="{root_cdn}EaselJS/1.0.2/easeljs.min.js"></script>
+    <script src="{root_cdn}PreloadJS/1.0.1/preloadjs.min.js"></script>
+    <script src="{root_cdn}tweenjs/1.0.2/tweenjs.min.js"></script>
+    <script src="{root_cdn}SoundJS/1.0.2/soundjs.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 视频 -->
+    <div class="video-wrap">
+      <div class="btn-skip">跳过动画</div>
+      <video
+        src="https://siyoumi.oss-cn-beijing.aliyuncs.com/t_002/2.5.mp4"
+        x-webkit-airplay="true"
+        webkit-playsinline="true"
+        width="100%"
+        preload="auto"
+        id="video"
+        playsinline
+        x5-video-player-type="h5"
+      ></video>
+    </div>
+    <div class="home">
+      <img
+        class="title animate__animated animate__bounceInDown"
+        data-original="{root_static_file_cdn}app/act/t_002/img/title.png"
+        alt=""
+      />
+      <img
+        class="absolute finger-arrow"
+        data-original="{root_static_file_cdn}app/act/t_002/img/finger-arrow.png?v=11"
+        alt="手指向上"
+      />
+      <img
+        class="absolute flash_light"
+        data-original="{root_static_file_cdn}app/act/t_002/img/flash_light.png"
+        alt="闪烁"
+      />
+      <img
+        class="absolute car-yellow"
+        data-original="{root_static_file_cdn}app/act/t_002/img/car-yellow.gif"
+        alt="黄车"
+      />
+      <img
+        class="absolute car-red"
+        data-original="{root_static_file_cdn}app/act/t_002/img/car-red.gif"
+        alt="红车"
+      />
+      <img
+        class="absolute aircraft"
+        data-original="{root_static_file_cdn}app/act/t_002/img/aircraft.gif"
+        alt="飞机"
+      />
+      <img
+        class="absolute aircraft2"
+        data-original="{root_static_file_cdn}app/act/t_002/img/aircraft2.gif"
+        alt="飞机"
+      />
+      <div class="lamp_2 absolute">
+        <img
+          class="lamp_bottom"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_center absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_left absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_right absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_right.png"
+          alt="黄色灯"
+        />
+      </div>
+      <div class="lamp_yellow_1 absolute">
+        <img
+          class="lamp_bottom"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_center absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_left absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="lamp_right absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/lamp_right.png"
+          alt="黄色灯"
+        />
+      </div>
+      <div class="red_lamp_1 absolute">
+        <img
+          class="red_lamp_bottom"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_center absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_left absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_right absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_right.png?=1"
+          alt="黄色灯"
+        />
+      </div>
+      <div class="red_lamp_2 absolute">
+        <img
+          class="red_lamp_bottom"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_bottom.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_center absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_center.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_left absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_left.png"
+          alt="黄色灯"
+        />
+        <img
+          class="red_lamp_right absolute"
+          data-original="{root_static_file_cdn}app/act/t_002/img/red_lamp_right.png?v=1"
+          alt="黄色灯"
+        />
+      </div>
+
+      <!-- <img
+        class="absolute lamp_2"
+        data-original="{root_static_file_cdn}app/act/t_002/img/lamp_2.png"
+        alt="黄灯1"
+      />
+      <img
+        class="absolute lamp_road"
+        data-original="{root_static_file_cdn}app/act/t_002/img/lamp_2.png"
+        alt="黄灯2"
+      /> -->
+      <!-- <img
+        class="absolute lamp_1"
+        data-original="{root_static_file_cdn}app/act/t_002/img/lamp_1.png"
+        alt="红灯1"
+      />
+      <img
+        class="absolute lamp_1_1"
+        data-original="{root_static_file_cdn}app/act/t_002/img/lamp_1.png"
+        alt="红灯2"
+      /> -->
+      <img
+        class="absolute pic-icon"
+        data-original="{root_static_file_cdn}app/act/t_002/img/pic-icon.png"
+        alt="大象"
+      />
+      <img
+        class="absolute prize-preview-icon"
+        data-original="{root_static_file_cdn}app/act/t_002/img/prize-tips.png?v=1"
+        alt="奖品一览"
+      />
+
+      <img
+        class="absolute floor1"
+        data-original="{root_static_file_cdn}app/act/t_002/img/floor1_no.png"
+        alt="楼1"
+      />
+      <img
+        class="absolute clock-no-1"
+        data-original="{root_static_file_cdn}app/act/t_002/img/clock-no.png"
+        alt="楼1锁"
+      />
+      <img
+        class="absolute floor2"
+        data-original="{root_static_file_cdn}app/act/t_002/img/floor2_no.png"
+        alt="楼2"
+      />
+      <img
+        class="absolute clock-no-2"
+        data-original="{root_static_file_cdn}app/act/t_002/img/clock-no.png"
+        alt="楼2锁"
+      />
+      <img
+        class="absolute floor3"
+        data-original="{root_static_file_cdn}app/act/t_002/img/floor3_no.png"
+        alt="楼3"
+      />
+      <img
+        class="absolute clock-no-3"
+        data-original="{root_static_file_cdn}app/act/t_002/img/clock-no.png"
+        alt="楼3锁"
+      />
+      <img
+        class="absolute floor4"
+        data-original="{root_static_file_cdn}app/act/t_002/img/floor4_no.png"
+        alt="楼4"
+      />
+      <img
+        class="absolute clock-no-4"
+        data-original="{root_static_file_cdn}app/act/t_002/img/clock-no.png"
+        alt="楼4锁"
+      />
+      <img
+        class="absolute floor5"
+        data-original="{root_static_file_cdn}app/act/t_002/img/floor5_no.png"
+        alt="楼5"
+      />
+      <img
+        class="absolute clock-no-5"
+        data-original="{root_static_file_cdn}app/act/t_002/img/clock-no.png"
+        alt="楼5锁"
+      />
+      <img
+        class="absolute tree-red"
+        data-original="{root_static_file_cdn}app/act/t_002/img/tree-red.png"
+        alt="红树"
+      />
+      <img
+        class="absolute tree-red-2"
+        data-original="{root_static_file_cdn}app/act/t_002/img/tree-red.png"
+        alt="红树"
+      />
+      <img
+        class="absolute tree"
+        data-original="{root_static_file_cdn}app/act/t_002/img/tree.png"
+        alt="圣诞树"
+      />
+      <img
+        class="absolute lipstick"
+        data-original="{root_static_file_cdn}app/act/t_002/img/lipstick.png"
+        alt="圣诞树"
+      />
+      <div class="absolute prize-boss">
+        <p>终极大奖</p>
+        <p>跨年锦鲤券</p>
+        <div class="prize-boss-status flex c-center">待解锁</div>
+      </div>
+
+      <canvas id="snowCanvas" class="absolute" width="750"></canvas>
+
+      <img
+        class="absolute bird"
+        data-original="{root_static_file_cdn}app/act/t_002/img/bird.png"
+        alt="鸟"
+      />
+      <img
+        class="absolute rule-btn"
+        data-original="{root_static_file_cdn}app/act/t_002/img/rule-btn.png"
+        alt="活动说明"
+      />
+      <img
+        class="absolute SantaClaus"
+        data-original="{root_static_file_cdn}app/act/t_002/img/SantaClaus.gif"
+        alt="圣诞人"
+      />
+      <img
+        class="absolute bear-icon"
+        data-original="{root_static_file_cdn}app/act/t_002/img/bear-icon.png"
+        alt="鸟"
+      />
+      <img
+        class="absolute prize-my"
+        data-original="{root_static_file_cdn}app/act/t_002/img/prize-my.png"
+        alt="我的奖品"
+      />
+      <!--  -->
+      <div class="relative progress-wrap">
+        <div class="progress-bg">
+          <div class="progress-bar"></div>
+        </div>
+        <span class="box prize_fun_01 absolute"></span>
+        <span class="box prize_fun_02 absolute"></span>
+        <span class="box prize_fun_03 absolute"></span>
+        <span class="box prize_fun_04 absolute"></span>
+        <span class="box prize_fun_05 absolute"></span>
+        <span class="prize_fun_01_can_open prize_box_can_open absolute"></span>
+        <span class="prize_fun_02_can_open prize_box_can_open absolute"></span>
+        <span class="prize_fun_03_can_open prize_box_can_open absolute"></span>
+        <span class="prize_fun_04_can_open prize_box_can_open absolute"></span>
+        <span class="prize_fun_05_can_open prize_box_can_open absolute"></span>
+
+        <span class="box-number box-fun1 absolute"></span>
+        <span class="box-number box-fun2 absolute"></span>
+        <span class="box-number box-fun3 absolute"></span>
+        <span class="box-number box-fun4 absolute"></span>
+        <span class="box-number box-fun5 absolute"></span>
+
+        <div class="exploration-score flex">
+          <div class="box-flex flex c-center">
+            探索积分：<span id="scoreNum"></span>
+          </div>
+          <div class="box-flex flex c-center">
+            当前探索进度：<span id="progressNum"></span>
+          </div>
+        </div>
+      </div>
+      <div class="down-time">
+        <span class="status-text flex c-center absolute">未获得</span>
+        <div class="absolute flex c-center can-chou-big">
+          <div>
+            <p>新年快乐！！</p>
+            <p>点击开启你的专属锦鲤宝箱</p>
+          </div>
+        </div>
+        <div class="absolute flex c-center is_chou_caned">
+          <div>
+            <p>新年快乐！！</p>
+            <p>宝箱一开，锦鲤就来</p>
+          </div>
+        </div>
+        <div class="down-text absolute"></div>
+        <div class="absolute flex c-center down-time-t">
+          获取倒计时
+          <span class="down-day">0</span>
+          <span>0</span>
+          <i>天</i>
+          <span>0</span>
+          <span>0</span>
+          <i>时</i>
+          <span>0</span>
+          <span>0</span>
+          <i>分</i>
+        </div>
+      </div>
+      <div class="btn-wrap">
+        <div class="surplus-game-num">当前剩余游戏卡：<span></span></div>
+        <img
+          class="start-btn btn-start-game"
+          data-original="{root_static_file_cdn}app/act/t_002/img/btn_start.png"
+          alt=""
+        />
+        <img
+          class="get_btn-ka"
+          data-original="{root_static_file_cdn}app/act/t_002/img/get_btn_ka.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <!-- 普通奖品 -->
+    <div class="normal-prize-main fixed">
+      <div class="mask absolute"></div>
+      <div class="normal-prize">
+        <img
+          class="prize-box-onpen"
+          src="{root_static_file_cdn}app/act/t_002/img/prize-box-onpen.png"
+          alt=""
+        />
+        <img
+          class="absolute finger"
+          src="{root_static_file_cdn}app/act/t_002/img/finger.png"
+          alt=""
+        />
+        <div class="absolute prize-wrap">
+          <div class="prize-tips"></div>
+          <img
+            class="prize-img"
+            src="{root_static_file_cdn}app/act/t_002/img/prize-baowenbei.png"
+            alt=""
+          />
+        </div>
+        <div class="normal-prize-tips">点击宝箱抽奖</div>
+        <div class="prize-btn-wrap">
+          <div class="btn-reset-prize flex c-center">
+            再接再励
+            <img
+              class="absolute btn-SantaClaus"
+              src="{root_static_file_cdn}app/act/t_002/img/SantaClaus.gif"
+              alt="圣诞人"
+            />
+          </div>
+          <div class="btn-get-prize flex c-center">
+            收下奖品
+            <img
+              class="absolute btn-SantaClaus"
+              src="{root_static_file_cdn}app/act/t_002/img/SantaClaus.gif"
+              alt="圣诞人"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 大奖品 -->
+    <div class="big-prize-main fixed">
+      <div class="mask absolute"></div>
+      <div class="big-prize">
+        <div class="big-no-prize">
+          <div class="big-no-tips">
+            <p>元旦锦鲤宝箱</p>
+            <p>宝箱一开，好运滚滚来...</p>
+          </div>
+
+          <img
+            class="big-no-prize-box"
+            src="{root_static_file_cdn}app/act/t_002/img/big-no-prize-box.png"
+            alt=""
+          />
+          <img
+            class="absolute big-prize-red"
+            src="{root_static_file_cdn}app/act/t_002/img/big-prize-red.png"
+            alt=""
+          />
+          <div class="absolute big-prize-tips">点击宝箱抽奖</div>
+
+          <img
+            class="absolute big-finger"
+            src="{root_static_file_cdn}app/act/t_002/img/finger.png"
+            alt=""
+          />
+        </div>
+        <div class="big-result-prize">
+          <div class="big-result-tips">
+            <p>恭喜你～！</p>
+            <p>我们的锦鲤宠儿</p>
+          </div>
+          <div class="big-result-no">
+            <p>没中奖哦，再接再厉</p>
+          </div>
+          <img
+            class="absolute big-prize-box"
+            src="{root_static_file_cdn}app/act/t_002/img/big-prize-box.png"
+            alt=""
+          />
+          <img
+            class="absolute prize-big-img"
+            src="{root_static_file_cdn}app/act/t_002/img/prize-big-no.png"
+            alt=""
+          />
+          <img
+            class="absolute big-prize-gold"
+            src="{root_static_file_cdn}app/act/t_002/img/big-prize-gold.png"
+            alt=""
+          />
+          <div class="absolute big-prize-btn-wrap">
+            <div class="big-btn-reset-prize flex c-center">明年再来</div>
+            <div class="big-btn-get-prize flex c-center">收下我的好运</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 我的奖品 -->
+    <div class="my-prize-list fixed">
+      <div class="my-prize-list-cont">
+        <div class="prize-list-title">- 我的奖品 -</div>
+        <div class="prize-list-empty absolute">空空如也～</div>
+
+        <div class="prize-list-cont"></div>
+        <img
+          class="back-home-prize"
+          src="{root_static_file_cdn}app/act/t_002/img/game/back-home.png"
+          alt=""
+        />
+        <div class="prize-list-tips">
+          <p>请勿擅自操作核销，</p>
+          <p>需由工作人员输入密码核销并发放奖品</p>
+        </div>
+      </div>
+      <div class="check-wrap fixed">
+        <div class="check-wrap-mask absolute"></div>
+        <div class="password-wrap">
+          <div class="password-title">请工作人员输入核销密码</div>
+          <div class="password-text flex c-center">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <input type="text" name="" maxlength="6" id="password-input" />
+          <div class="btn-password flex c-center">确认</div>
+        </div>
+      </div>
+    </div>
+    <!-- 预加载 -->
+    <div class="loading-wrap fixed">
+      <div class="loading">
+        <div class="relative">
+          <img
+            class="pre-loading"
+            src="{root_static_file_cdn}app/act/t_002/img/pre-loading.gif"
+            alt="加载图"
+          />
+          <img
+            class="load-SantaClaus"
+            src="{root_static_file_cdn}app/act/t_002/img/SantaClaus.gif"
+            alt="圣诞人"
+          />
+        </div>
+        <div class="loading-tips">0%</div>
+        <div class="loading-rule">正在准备双旦礼物，请稍后......</div>
+        <img
+          class="btn-go-now"
+          src="{root_static_file_cdn}app/act/t_002/img/btn-go-now.png?v=1"
+          alt="加载图"
+        />
+      </div>
+    </div>
+    <!--海报 -->
+    <div class="poster-wrap fixed">
+      <div class="poster-cont">
+        <div class="poster-title">已为您生成专属海报</div>
+        <div class="relative poster-img-wrap">
+          <img class="poster-img" alt="" />
+          <div class="poster-load">海报生成中...</div>
+        </div>
+        <div class="poster-down flex c-center">
+          <img
+            src="{root_static_file_cdn}app/act/t_002/img/down-poster.png"
+            alt=""
+          />
+          <div>
+            <p>长按保存海报或直接邀请小伙伴</p>
+            <p>参与活动即可获得游戏卡哦</p>
+          </div>
+        </div>
+      </div>
+
+      <canvas id="poster" width="750"></canvas>
+    </div>
+    <!-- 活动说明 -->
+    <div class="rule-wrap fixed">
+      <div class="rule-mask mask absolute"></div>
+      <div class="rule-cont">
+        <p style="text-indent: 0.42rem">
+          本次活动是金湾华发商都双旦系列主题宣传活动，
+          活动奖品由金湾华发商都统一赞助提供。活动最终解
+          释权归金湾华发尚都所有。
+        </p>
+        <p>活动玩法</p>
+        <p>1、用户进入活动后，需要通过小游戏收集探索积分；</p>
+        <p>2、每个用户ID有2张初始游戏卡，每次玩游戏需要 消耗1张；</p>
+        <p>3、游戏卡可以通过邀请小伙伴一起探索游戏获取；</p>
+        <p>4、探索积分累计达到指定数值后，可以开启对应 的宝箱抽奖；</p>
+        <p>5、探索分数达到8000后解锁全部宝箱，并获得元 旦锦鲤终极宝箱；</p>
+        <p>6、元旦锦鲤终极宝箱于2021年1月1日0点后方可开 启；</p>
+        <p>奖品说明</p>
+        <p>1、本次活动奖品以实际发放实物为准，奖品不设折 现，不退不换；</p>
+        <p>2、请在活动限定兑奖时间内到指定地点兑换奖品， 逾期无效；</p>
+        <p>3、兑奖时间：2021年1月31日前；</p>
+        <p>4、兑奖地点：珠海市金湾华发商都...........</p>
+        <p>
+          5、兑奖时请出示中奖凭证并交由工作人员输入密码 核销凭证并兑换奖品；
+        </p>
+        <img
+          class="rule-btn-close"
+          src="{root_static_file_cdn}app/act/t_002/img/rule-btn-close.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <!-- 奖品一览 -->
+    <div class="prize-preview-wrap fixed">
+      <img
+        class="prize-preview-img"
+        src="{root_static_file_cdn}app/act/t_002/img/prize-preview.jpg"
+        alt=""
+      />
+    </div>
+    <!-- 弹框 -->
+    <div class="alert-mask fixed">
+      <div class="alert-mask-cont absolute">
+        <div class="alert-tips-cont"></div>
+        <img
+          class="btn-mask-close"
+          src="{root_static_file_cdn}app/act/t_002/img/btn-mask-close.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="music_icon"></div>
+
+    <!-- 游戏 -->
+    <audio src="" id="bgm" loop></audio>
+    <div class="page_game">
+      <div class="absolute avatar flex c-center">
+        <img class="wxuser_headimgurl" alt="" />
+        <div id="score" class="score flex c-center"></div>
+      </div>
+      <div class="time-wrap flex c-center">
+        <img
+          data-original="{root_static_file_cdn}app/act/t_002/img/game/clock.png"
+          src="{root_static_file_cdn}app/act/t_002/img/game/clock.png"
+          class="lazy clock"
+          alt=""
+        />
+        <div class="downTime-wrap"><span id="second">20</span>s</div>
+      </div>
+      <div id="game_bg"></div>
+      <canvas id="game" width="750"></canvas>
+      <!-- 游戏结束页 -->
+      <div class="absolute game-end">
+        <div class="game-end-score">
+          <div class="game-end-tips">恭喜你获得</div>
+          <div class="game-get-score"></div>
+          <div class="surplus-num flex c-center">
+            当前剩余游戏卡：<span></span>
+          </div>
+        </div>
+        <img
+          class="btn-restart-game"
+          src="{root_static_file_cdn}app/act/t_002/img/game/btn-restart-game.png"
+          alt=""
+        />
+        <img
+          class="back-home"
+          src="{root_static_file_cdn}app/act/t_002/img/game/back-home.png"
+          alt=""
+        />
+      </div>
+      <div class="game-load">
+        <div>
+          <div class="game-load-pro">0%</div>
+          <div>正在加载...</div>
+        </div>
+      </div>
+      <!-- 游戏玩法 -->
+      <div class="game-previw fixed">
+        <div class="game-preview-bg">
+          <img
+            class="game-gif"
+            src="https://siyoumi.oss-cn-beijing.aliyuncs.com/t_002/geme-gif.gif"
+            alt=""
+          />
+        </div>
+        <img
+          class="game-start-btn"
+          src="{root_static_file_cdn}app/act/t_002/img/game/btn-start-game.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <!-- test 二维码sdfsdf
+    <img
+      src="{root_app}app/z_common/app_api/wx_qr?x=jie01&word=act1604155011"
+    /> -->
+  </body>
+
+  <script>
+    const bgm = document.getElementById("bgm");
+    bgm.src =
+      "https://res.wx.qq.com/voice/getvoice?mediaid=MzI4NzkzNzM1M18xMDAwMDM1NDU=";
+    let bigTextDown = [
+      "元旦前探索进度达到100%即可获得",
+      "元旦0点后可开启您的专属锦鲤宝箱",
+      "宝箱已过期",
+    ];
+    let isTimeEnd = false; //时间结束
+    let isGetMaxFun = false; //是否获得大奖
+    let setInitData = {};
+    // 初始化数据 api
+    function func_get_init_data() {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_001`,
+        success(res) {
+          console.log("请求==", res.data);
+          setInitData = res.data;
+          set_data(res.data);
+        },
+      });
+    }
+    function set_data(data) {
+      let play_count = 0;
+
+      //  分数
+      $(".box-fun1").html(data.set_data.prize_fun_01);
+      $(".box-fun2").html(data.set_data.prize_fun_02);
+      $(".box-fun3").html(data.set_data.prize_fun_03);
+      $(".box-fun4").html(data.set_data.prize_fun_04);
+      $(".box-fun5").html(data.set_data.prize_fun_05);
+      let maxFun = Number(data.set_data.prize_fun_05);
+      let prize_fun_01 = Number(data.set_data.prize_fun_01);
+      let prize_fun_02 = Number(data.set_data.prize_fun_02);
+      let prize_fun_03 = Number(data.set_data.prize_fun_03);
+      let prize_fun_04 = Number(data.set_data.prize_fun_04);
+      let prize_fun_05 = Number(data.set_data.prize_fun_05);
+      isGetMaxFun = Number(data.launch.fun) >= maxFun;
+      let prize_fun_arr = [
+        prize_fun_01,
+        prize_fun_02,
+        prize_fun_03,
+        prize_fun_04,
+        prize_fun_05,
+      ];
+
+      let masterfun = data.launch.fun; //获得积分
+      let progressIndex = 0;
+      let progressNextFun = 0;
+      let progressPreFun = 0;
+      play_count = data.launch.play_count; //游戏次数
+      for (let i = 0; i < prize_fun_arr.length; i++) {
+        let index = i + 1;
+        $(".prize_fun_0" + index).data("fun_key", "prize_fun_0" + index);
+
+        if (masterfun >= prize_fun_arr[i]) {
+          let prize_lable = "prize_fun_0" + index;
+          progressIndex++;
+          $(".prize_fun_0" + index)
+            .css({
+              opacity: 1,
+            })
+            .data("isChou", 1)
+            .addClass("caned_chou");
+          if (data.list_chou.includes(prize_lable)) {
+            $("." + prize_lable)
+              .data("isChou", 0)
+              .removeClass("caned_chou")
+              .addClass("active");
+          } else {
+            $("." + prize_lable + "_can_open").show();
+          }
+          $(".floor" + index).attr(
+            "src",
+            "{root_static_file_cdn}app/act/t_002/img/floor" + index + ".png"
+          );
+          $(".clock-no-" + index).hide();
+          if (progressIndex >= 3) {
+            $(".prize-boss").show();
+          }
+          let nextIndex = i + 1 === prize_fun_arr.length ? i : i + 1;
+          if (
+            (masterfun > prize_fun_arr[i] &&
+              masterfun < prize_fun_arr[nextIndex]) ||
+            nextIndex === i
+          ) {
+            progressNextFun = prize_fun_arr[nextIndex];
+            progressPreFun = prize_fun_arr[i];
+          }
+        }
+      }
+      // for (let i = 0; i < data.list_chou.length; i++) {
+      //   let funs = Number();
+      //   $("." + data.list_chou[i])
+      //     .data("isChou", 0)
+      //     .removeClass("caned_chou")
+      //     .addClass("active");
+      //   // $("." + data.list_chou[i] + "_can_open").hide();
+      // }
+      // surplus-game-num
+      $(".surplus-game-num span").html(play_count);
+      $("#scoreNum").html(data.launch.fun);
+      // 进度条
+      let funProgress = (progressIndex / 5) * 100;
+      let chaju = masterfun - progressPreFun;
+      let bothMax = progressNextFun - progressPreFun;
+      if (bothMax !== 0) {
+        funProgress = (chaju / bothMax) * 100 * 0.2 + funProgress;
+      }
+      // funProgress = (chaju / maxFun) * 100 * 0.25 + funProgress
+      // let funProgress = (Number(data.launch.fun) / maxFun) * 100
+      funProgress = funProgress >= 100 ? 100 : funProgress;
+
+      let progress = Number(funProgress).toFixed(2);
+      if (funProgress === 100) {
+        progress = 100;
+      }
+      $(".progress-bar").css({
+        width: progress + "%",
+      });
+      $("#progressNum").html(progress + "%");
+
+      // 大奖
+      // 开启倒计时
+      if (data.prize_s <= 0) {
+        isTimeEnd = true;
+      } else {
+        isTimeEnd = false;
+      }
+      big_chou_status();
+
+      $(".wxuser_headimgurl").attr("src", data.common.user.wxuser_headimgurl);
+
+      //  跳走游戏有
+      $(".btn-start-game")
+        .off()
+        .click(function () {
+          if (play_count > 0) {
+            $(".home").hide();
+            $(".page_game").show();
+            $(".game-previw").show();
+            $(".game-load").show();
+          } else {
+            $_alert("没有游戏次数了");
+          }
+        });
+      //  开始游戏
+      $(".game-start-btn")
+        .off()
+        .click(function () {
+          $(".game-previw").hide();
+          game = new Game();
+          game.preload();
+        });
+    }
+
+    function big_chou_status() {
+      // 时间没到
+      if (!isTimeEnd) {
+        // 获得
+        if (isGetMaxFun) {
+          $(".prize-boss-status").html("已解锁");
+          $(".status-text").html("已获得");
+          $(".down-text").html(bigTextDown[1]);
+        } else {
+          $(".status-text").html("未获得");
+          $(".down-text").html(bigTextDown[0]);
+        }
+        getleftTimer(new Date().getTime() + setInitData.prize_s * 1000);
+      } else {
+        // 获得
+        if (isGetMaxFun) {
+          $(".prize-boss-status").html("已解锁");
+
+          $(".down-text").hide();
+          $(".down-time-t").hide();
+          // 已抽奖
+          if (setInitData.is_chou_max) {
+            $(".status-text").html("已开启");
+            $(".is_chou_caned").show();
+            $(".down-time").css({
+              "background-image":
+                "url({root_static_file_cdn}app/act/t_002/img/down-time-open.png)",
+            });
+          } else {
+            $(".status-text").html("已获得");
+            $(".can-chou-big").show();
+          }
+        } else {
+          $(".status-text").html("未获得");
+          $(".down-text").html(bigTextDown[2]).css({
+            width: "3.5rem",
+            "text-align": "center",
+          });
+        }
+      }
+    }
+
+    //   普通 抽奖
+    function fun_chou_normal(fun_key) {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_001/chou`,
+        method: "post",
+        data: {
+          fun_key,
+        },
+        success(res) {
+          console.log("请求==", res.data);
+          if (res.data.errcode == 0) {
+            setTimeout(() => {
+              $(".prize-box-onpen").removeClass("active");
+              $(".normal-prize-tips").hide();
+              $(
+                ".normal-prize-tips,.btn-reset-prize,.btn-get-prize,.finger"
+              ).hide();
+              $(".prize-wrap").show();
+
+              if (res.data.entity_prize) {
+                $(".prize-tips").html("恭喜你中奖啦");
+                $(".prize-img").attr(
+                  "src",
+                  pub_root_file + res.data.entity_prize.prize_pic
+                );
+                $(".btn-get-prize").css({
+                  display: "flex",
+                });
+              } else {
+                $(".prize-tips").html(
+                  "就差一点点～<br><br>离中奖就差一念距离，再接再厉"
+                );
+                $(".btn-reset-prize").css({
+                  display: "flex",
+                });
+                $(".prize-img").attr(
+                  "src",
+                  "{root_static_file_cdn}app/act/t_002/img/min-no-prize.png"
+                );
+              }
+            }, 1000);
+          } else {
+            $_alert("系统繁忙，请联系客服");
+          }
+        },
+      });
+    }
+
+    //   大奖 抽奖
+    function fun_chou_big() {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_001/chou_max`,
+        success(res) {
+          console.log("请求==", res.data);
+          if (res.data.errcode == 0) {
+            setTimeout(() => {
+              $(".big-no-prize-box").removeClass("active");
+              $(".big-no-prize").hide();
+              $(".big-result-prize").show();
+              $(".big-btn-reset-prize,.big-btn-get-prize").removeClass(
+                "active"
+              );
+
+              if (res.data.entity_prize) {
+                $(".big-result-tips").show();
+                $(".big-btn-get-prize").addClass("active");
+                $(".prize-big-img").attr(
+                  "src",
+                  pub_root_file + res.data.entity_prize.prize_pic
+                );
+              } else {
+                $(".big-btn-reset-prize").addClass("active");
+                $(".big-result-no").show();
+                $(".prize-big-img").attr(
+                  "src",
+                  "{root_static_file_cdn}app/act/t_002/img/prize-big-no.png"
+                );
+              }
+            }, 1000);
+          } else {
+            $_alert("系统繁忙，请联系客服");
+          }
+        },
+      });
+    }
+
+    //抽奖列表
+    function func_prize_list() {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_prize/list`,
+        success(res) {
+          console.log("请求==", res.data);
+          if (res.data.list.length === 0) {
+            $(".prize-list-empty").show();
+            $(".prize-list-cont").hide();
+          } else {
+            $(".prize-list-empty").hide();
+            $(".prize-list-cont").show();
+          }
+
+          $(".prize-list-cont").html("");
+          for (let i = 0; i < res.data.list.length; i++) {
+            let item = res.data.list[i];
+            let cell = `<div class="prize-list-item ${
+              item.prize_use === 1 ? "verification-yes" : "verification-no"
+            }">
+                             <img class="prize-item-img" src="${pub_root_file}${
+              item.prize_pic
+            }" alt="">
+                             <div class="list-item-info">
+                                 <div class="prize-name">${
+                                   item.prize_name
+                                 }</div>
+                                 <div class="expire-time">过期时间：${getTiemeFormat(
+                                   item.prize_end_date
+                                 )}</div>
+                                 <div class="detail">
+                                   <div class="flex toggle-detal">
+                                     <i class="detail-icon"></i>
+                                     奖品详情
+                                   </div>
+                                   ${
+                                     item.prize_use === 1
+                                       ? ""
+                                       : `<div class="btn-verify flex c-center" data-prize_id='${item.prize_id}'>密码核销</div>`
+                                   }
+
+                                 </div>
+                                 <div class="detial-cont">${
+                                   item.prize_desc
+                                 }</div>
+                             </div>
+                           </div>`;
+            $(".prize-list-cont").append(cell);
+          }
+        },
+      });
+    }
+
+    //核销
+    function func_prize_use(id, txt) {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_prize/use`,
+        method: "post",
+        data: {
+          id,
+          txt,
+        },
+        success(res) {
+          console.log("请求==", res.data);
+          if (res.data.errcode !== 0) {
+            $_alert(res.data.errmsg);
+          } else {
+            $_alert("核销成功");
+            $(".check-wrap").hide();
+            func_prize_list();
+          }
+        },
+      });
+    }
+
+    // 时间格式
+    function getTiemeFormat(val) {
+      let date = new Date(val.replace(/-/g, "/"));
+      let year = date.getFullYear();
+      let month = date.getMonth() + 1;
+      let day = date.getDate();
+      return `${year}年${month}月${day}日`;
+    }
+    // 倒计时
+    function getleftTimer(downs) {
+      let timer = null;
+      function leftTimer() {
+        var leftTime = new Date(downs) - new Date(); //计算剩余的毫秒数
+        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
+        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10); //计算剩余的小时
+        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10); //计算剩余的分钟
+        var seconds = parseInt((leftTime / 1000) % 60, 10); //计算剩余的秒数
+        days = checkTime(days);
+        hours = checkTime(hours);
+        if (seconds > 0 && minutes <= 0) {
+          minutes = 1;
+        }
+        minutes = checkTime(minutes);
+        seconds = checkTime(seconds);
+        if (days > 0 || hours > 0 || minutes > 0 || seconds > 0) {
+          $(".down-time-t").html(`获取倒计时
+             <span class="down-day">${days.substring(0, 1)}</span>
+             <span>${days.substring(1, 2)}</span>
+             <i>天</i>
+             <span>${hours.substring(0, 1)}</span>
+             <span>${hours.substring(1, 2)}</span>
+             <i>时</i>
+             <span>${minutes.substring(0, 1)}</span>
+             <span>${minutes.substring(1, 2)}</span>
+             <i>分</i>`);
+
+          setTimeout(leftTimer, 1000);
+        } else {
+          isTimeEnd = true;
+          big_chou_status();
+          // if (isGetMaxFun) {
+          //   // $('.down-text').html(bigTextDown[3])
+          //   // $('.down-time-t').html(bigTextDown[3])
+          // } else {
+          //   $('.down-text').html(bigTextDown[2])
+          // }
+          // $(".down-time-t").html(`获取倒计时
+          // <span class="down-day">0</span>
+          // <span>0</span>
+          // <i>天</i>
+          // <span>0</span>
+          // <span>0</span>
+          // <i>时</i>
+          // <span>0</span>
+          // <span>0</span>
+          // <i>分</i>`);
+        }
+      }
+      leftTimer();
+    }
+    function checkTime(i) {
+      //将0-9的数字前面加上0，例1变为01
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i + "";
+    }
+
+    // 海报
+    function drawPoster(p_name, p_url, headPic, p_bg) {
+      var can = null,
+        pen = null;
+      // var total_sca = window.innerWidth / 320,
+      var total_sca = 1,
+        head_w = 80 * total_sca,
+        head_h = 80 * total_sca,
+        qr_w = 130 * total_sca,
+        qr_h = 130 * total_sca,
+        wx_openid = "",
+        wx_name = "";
+
+      let headX = 164,
+        headY = 303,
+        qrX = 562,
+        qrY = 1151;
+      can = document.getElementById("poster");
+      pen = can.getContext("2d");
+      can.width = 750 * total_sca;
+      can.height = 1334 * total_sca;
+
+      console.log("开始绘制海报");
+      var poster_bg = new Image();
+      // 仙峰寺
+      let bgPic = p_bg;
+      // if (posterId == 2) bgPic = `${pub_root_file}app/act/t_001/img/p9_poster.png?v=1`
+      poster_bg.crossOrigin = "Anonymous";
+      poster_bg.src = bgPic;
+
+      poster_bg.onload = function () {
+        pen.drawImage(poster_bg, 0, 0, can.width, can.height);
+        console.log("绘制底图完成");
+
+        var headUrl = new Image();
+        headUrl.crossOrigin = "Anonymous";
+        headUrl.src = headPic;
+        headUrl.onload = function () {
+          var can2 = document.createElement("canvas");
+          pen2 = can2.getContext("2d");
+          can2.width = can.width;
+          can2.height = can.height;
+          pen2.drawImage(
+            headUrl,
+            headX * total_sca - head_w / 2,
+            headY * total_sca,
+            head_w,
+            head_h
+          );
+          console.log("绘制头像完成");
+
+          // 创建图片纹理
+          var pattern = pen.createPattern(can2, "repeat");
+          // 如果要绘制一个圆，使用下面代码
+          pen.arc(
+            headX * total_sca,
+            headY * total_sca + head_w / 2,
+            Math.max(head_w, head_h) / 2,
+            0,
+            2 * Math.PI
+          );
+          // 填充绘制的圆o
+          pen.fillStyle = pattern;
+          pen.fill();
+
+          var qrUrl = new Image();
+          qrUrl.crossOrigin = "Anonymous";
+          console.log("传入的二维码", p_url);
+          qrUrl.src = p_url;
+          qrUrl.onload = function () {
+            // pen.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h);
+            console.log("绘制二维码完成");
+            let can2 = document.createElement("canvas");
+            pen2 = can2.getContext("2d");
+            can2.width = can.width;
+            can2.height = can.height;
+            console.log(can2.width);
+            pen2.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h);
+            // 创建图片纹理
+            var pattern = pen.createPattern(can2, "repeat");
+            // 如果要绘制一个圆，使用下面代码
+            // pen.arc(obj.width / 2, obj.height / 2, Math.max(obj.width, obj.height) / 2, 0, 2 * Math.PI);
+            // 这里使用圆角矩形
+            pen.roundRect(
+              qrX * total_sca,
+              qrY * total_sca,
+              qr_w,
+              qr_h,
+              10 * 1 || 0
+            );
+            pen.x = 100;
+            // 填充绘制的圆
+            pen.fillStyle = pattern;
+            pen.fill();
+
+            var result = can.toDataURL("image/png");
+            $(".poster-load").hide();
+            $(".poster-img").attr("src", result);
+          };
+        };
+      };
+    }
+    //圆角矩形
+    CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
+      var min_size = Math.min(w, h);
+      if (r > min_size / 2) r = min_size / 2;
+      // 开始绘制
+      this.beginPath();
+      this.moveTo(x + r, y);
+      this.arcTo(x + w, y, x + w, y + h, r);
+      this.arcTo(x + w, y + h, x, y + h, r);
+      this.arcTo(x, y + h, x, y, r);
+      this.arcTo(x, y, x + w, y, r);
+      this.closePath();
+      return this;
+    };
+    // 预加载 home
+    function preLoadImg() {
+      var elevideo = document.getElementById("video");
+      let homeImgArr =  Array.prototype.slice.call($(".home img")); 
+        homeImgArr.concat(Array.prototype.slice.call($(".normal-prize-main img")))
+        homeImgArr.concat(Array.prototype.slice.call($(".big-prize-main img")))
+        homeImgArr.concat(Array.prototype.slice.call($(".my-prize-list img")))
+        homeImgArr.concat(Array.prototype.slice.call($(".rule-wrap img")))
+        homeImgArr.concat(Array.prototype.slice.call($(".prize-preview-wrap img")))
+      let homeImgArrLenth = homeImgArr.length + 1;
+      let index = 0;
+      let video_ready = false;
+      for (let i = 0; i < homeImgArr.length; i++) {
+        let image = new Image();
+        let originalImage = $(homeImgArr[i]);
+
+        image.src = $(homeImgArr[i]).data().original || $(homeImgArr[i]).src;
+
+        image.onload = function () {
+          //图片下载完毕时异步调用callback函数。
+          index++;
+          originalImage.attr("src", image.src);
+          $(".loading-tips").html(
+            Number((index / homeImgArrLenth) * 100).toFixed(0) + "%"
+          );
+
+          if (index === homeImgArrLenth - 1 && !video_ready) {
+            // 获取数据
+            func_get_init_data();
+            setTimeout(function () {
+              $(".loading-tips").html("100%");
+              $(".loading-rule").html("礼物已打包完成，随时出发");
+              $(".btn-go-now").addClass("active");
+            }, 10000);
+          } else if (index === homeImgArrLenth) {
+            $(".loading-rule").html("礼物已打包完成，随时出发");
+            $(".btn-go-now").addClass("active");
+            // 获取数据
+            func_get_init_data();
+          }
+        };
+      }
+      func_video();
+      // elevideo.addEventListener('loadedmetadata', function () {
+      //   //加载数据
+      //   //视频的总长度
+      //   console.log(elevideo.duration)
+      // })
+
+      // $('.btn-video-pay').click(function () {
+      //   elevideo.play()
+      // })
+      elevideo.addEventListener("canplaythrough", function () {
+        index++;
+        video_ready = true;
+        $(".loading-tips").html(
+          Number((index / homeImgArrLenth) * 100).toFixed(0) + "%"
+        );
+        if (index === homeImgArrLenth) {
+          $(".loading-rule").html("礼物已打包完成，随时出发");
+          $(".btn-go-now").addClass("active");
+        }
+      });
+      // let u = navigator.userAgent
+      // let ios = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+      // elevideo.addEventListener('ended', function () {
+      //   $('.video-wrap').hide()
+      //   $('.home').show()
+      // })
+      // if (ios) {
+      // elevideo.addEventListener('ended', function () {
+      //   $('.video-wrap').hide()
+      //   $('.home').show()
+      // })
+      // } else {
+      //安卓的情况
+      // $('#video').on('timeupdate', function () {
+      //   console.log('安卓的情况')
+      //   if (this.currentTime > 68 - 0.3) {
+      //   }
+      // })
+      // }
+    }
+
+    //视频控制
+    function func_video() {
+      var elevideo = document.getElementById("video");
+      elevideo.addEventListener("loadedmetadata", function () {
+        //加载数据
+        //视频的总长度
+        console.log(elevideo.duration);
+      });
+      // elevideo.addEventListener('canplaythrough', function () {
+      //   //SomeJavaScriptCode
+      //   //监听视频的加载
+      //   //一般采用oncanplaythrough,即readystate状态为3时，就可以顺畅播放，不会轻易造成卡顿，
+      //   console.log('顺畅播放')
+      //   elevideo.play()
+      // })
+
+      elevideo.addEventListener("play", function () {
+        //播放开始执行的函数
+        console.log("开始播放");
+      });
+      //使用事件监听方式捕捉事件
+      elevideo.addEventListener(
+        "timeupdate",
+        function () {
+          var timeDisplay;
+          //用秒数来显示当前播放进度
+          timeDisplay = Math.floor(video.currentTime);
+
+          var popCut = 10.5; //视频弹出时间
+          //当视频播放到 maxpopCut的时候做处理
+          if (timeDisplay >= popCut) {
+            pauseVideo();
+          }
+        },
+        false
+      );
+      elevideo.addEventListener("playing", function () {
+        //播放中
+        console.log("播放中");
+      });
+      elevideo.addEventListener("waiting", function () {
+        //加载
+        console.log("加载中");
+      });
+      elevideo.addEventListener("pause", function () {
+        //暂停开始执行的函数
+        console.log("暂停播放");
+      });
+      elevideo.addEventListener(
+        "ended",
+        function () {
+          //结束
+          pauseVideo();
+          // 获取数据
+          // func_get_init_data()
+        },
+        false
+      );
+    }
+
+    // alert
+    function $_alert(msg) {
+      $(".alert-mask").show();
+      $(".alert-tips-cont").html(msg);
+      $(".alert-mask-cont").removeClass("out").addClass("in");
+      $(".btn-mask-close")
+        .off()
+        .click(function () {
+          $(".alert-mask-cont").removeClass("in").addClass("out");
+          setTimeout(function () {
+            $(".alert-mask").hide();
+          }, 800);
+        });
+    }
+
+    function pageScrollListener(time = 48) {
+      // 页面位置信息
+      const page = document.documentElement || document.body;
+      const windowRect = {
+        width: page.clientWidth,
+        height: page.clientHeight,
+      };
+      let direction = 0; // 滚动的方向 负数向下,正数向上
+      let oldScrollY = 0; // 记录上一次滚动距离记录
+
+      // 滚动事件处理方法
+      const handler = throttle(() => {
+        direction = oldScrollY - window.scrollY; // 以旧的滚动距离减去新滚动距离，向下为负，向上为正
+        oldScrollY = window.scrollY; // 覆盖旧记录
+        if(oldScrollY<150){
+          $('.finger-arrow').hide()
+          window.removeEventListener("scroll", handler);
+        }
+      }, time);
+
+      // 监听处理事件
+      window.addEventListener("scroll", handler);
+      // 返回取消监听事件方法
+     
+    }
+
+    function throttle(func, delay = 300) {
+      let timer = null;
+      let startTime = Date.now();
+      return function loop(...args) {
+        const curTime = Date.now();
+        const remaining = delay - (curTime - startTime);
+        const context = this;
+        clearTimeout(timer);
+        if (remaining <= 0) {
+          func.apply(context, args);
+          startTime = Date.now();
+        } else {
+          timer = setTimeout(() => func.apply(context, args), remaining);
+        }
+      };
+    }
+
+    $(function () {
+      document.title = "“筑”力湾心";
+      var elevideo = document.getElementById("video");
+
+      // 预加载
+      preLoadImg();
+      // 滚动
+      pageScrollListener()
+
+
+      let elData = "";
+      $(".progress-wrap").click(function (e) {
+        let el = $(e.target).data();
+        elData = el;
+        console.log(el);
+        if (el.isChou === 1) {
+          $(".normal-prize-main").show();
+        } else if (el.fun_key) {
+          if (el.isChou === 0) {
+            $_alert("已经抽过了");
+          } else {
+            $_alert("积分不够，加油哦！");
+          }
+        }
+      });
+
+      // 开始旅程
+      $(".btn-go-now").click(function () {
+        $(".loading-wrap").hide();
+
+        elevideo.play();
+        // $('.video-wrap').hide()
+        // $('.home').show()
+      });
+
+      // 跳过广告
+      $(".btn-skip").click(function () {
+        pauseVideo();
+      });
+
+      // 分享
+      $(".get_btn-ka")
+        .off()
+        .click(function () {
+          $(".poster-wrap").show();
+          $(".poster-cont").removeClass("out").addClass("in");
+          let p_url =
+            "{root_app}app/z_common/app_api/wx_qr?x=jie01&word=" +
+            setInitData.help_word;
+          let headPic = setInitData.common.user.wxuser_headimgurl;
+
+          let p_bg =
+            "http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg?v=12";
+
+          if (!$(".poster-img").attr("src")) {
+            drawPoster("sf", p_url, headPic, p_bg);
+          }
+        });
+      $(".poster-wrap").click(function () {
+        $(".poster-cont").removeClass("in").addClass("out");
+        setTimeout(function () {
+          $(".poster-wrap").hide();
+        }, 800);
+      });
+
+      // 抽大奖
+      $(".down-time").click(function () {
+        if (isGetMaxFun && isTimeEnd) {
+          if (setInitData.is_chou_max) {
+            $_alert("已抽过，明年再来");
+          } else {
+            $(".big-prize-main").show();
+          }
+        } else {
+          $_alert("还没获得，或者还没开启");
+        }
+      });
+
+      // 抽大奖 宝箱
+      $(".big-no-prize-box").click(function () {
+        $(this).addClass("active");
+        fun_chou_big();
+      });
+
+      // 明年再来
+      $(".big-btn-reset-prize").click(function () {
+        $(".big-prize-main").hide();
+        func_get_init_data();
+      });
+
+      // 大奖 我的奖品
+      $(".big-btn-get-prize").click(function () {
+        $(".big-prize-main").hide();
+        $(".prize-list-empty").hide();
+        $(".my-prize-list").fadeIn("slow");
+        func_prize_list();
+        func_get_init_data();
+      });
+      // 打开宝箱
+      $(".prize-box-onpen")
+        .off()
+        .click(function () {
+          $(this).addClass("active");
+
+          fun_chou_normal(elData.fun_key);
+        });
+
+      // 我的奖品 列表
+      $(".prize-my").click(function () {
+        $(".prize-list-empty").hide();
+        $(".my-prize-list").show();
+        $(".my-prize-list-cont").removeClass("out").addClass("in");
+        func_prize_list();
+      });
+      // 关闭 我的奖品 列表
+      $(".back-home-prize").click(function () {
+        $(".my-prize-list-cont").removeClass("in").addClass("out");
+        setTimeout(function () {
+          $(".my-prize-list").hide();
+        }, 800);
+      });
+
+      // 活动说明
+      $(".rule-btn").click(function () {
+        $(".rule-wrap").show();
+        $(".rule-cont").removeClass("out").addClass("in");
+      });
+      // 关闭 活动
+      $(".rule-btn-close,.rule-mask").click(function () {
+        $(".rule-cont").removeClass("in").addClass("out");
+        setTimeout(function () {
+          $(".rule-wrap").hide();
+        }, 800);
+      });
+
+      // 奖品一览
+      $(".prize-preview-icon").click(function () {
+        $(".prize-preview-wrap").show();
+        $(".prize-preview-img").removeClass("out").addClass("in");
+      });
+      // 关闭 奖品一览
+      $(".prize-preview-wrap").click(function () {
+        $(".prize-preview-img").removeClass("in").addClass("out");
+        setTimeout(function () {
+          $(".prize-preview-wrap").hide();
+        }, 800);
+      });
+
+      // 核销
+      let prize_id = "";
+      $(".prize-list-cont").click(function (e) {
+        let el = $(e.target);
+        prize_id = el.data().prize_id;
+        if (el.hasClass("btn-verify")) {
+          $(".check-wrap").show();
+        } else if (el.hasClass("toggle-detal") || el.hasClass("detail-icon")) {
+          $(el).parents(".list-item-info").find(".detial-cont").toggle();
+        }
+      });
+      $(".password-text").click(function () {
+        console.log("password-text=====");
+        $("#password-input").focus();
+        $("#password-input").click();
+      });
+      $("#password-input").bind("input propertychange", function (event) {
+        let value = $("#password-input").val();
+        let html = `<span>${value.substr(0, 1)}</span>
+               <span>${value.substr(1, 1)}</span>
+               <span>${value.substr(2, 1)}</span>
+               <span>${value.substr(3, 1)}</span>
+               <span>${value.substr(4, 1)}</span>
+               <span>${value.substr(5, 1)}</span>`;
+        $(".password-text").html(html);
+      });
+      // $('#password-input').change(function(val){
+
+      // });
+      // 核销按钮
+      $(".btn-password").click(function () {
+        let password = $("#password-input").val().substr(0, 6);
+        if (password.length < 6) {
+          $_alert("请输入密码");
+          return;
+        }
+        func_prize_use(prize_id, password);
+      });
+      $(".check-wrap-mask").click(function () {
+        $(".check-wrap").fadeOut();
+      });
+      // 普通 我的奖品 按钮
+      $(".btn-get-prize").click(function () {
+        reset_normal_status();
+      });
+      // 返回首页
+      $(".btn-reset-prize").click(function () {
+        reset_normal_status();
+      });
+
+      function reset_normal_status() {
+        $(".normal-prize-main").hide();
+        $(".prize-wrap").hide();
+        $(".finger").show();
+        $(".normal-prize-tips").show();
+        $(".btn-reset-prize,.btn-get-prize").hide();
+        func_get_init_data();
+      }
+
+      // 关闭音乐
+      $(".music_icon").click(function () {
+        if ($(this).hasClass("active")) {
+          pauseMusic();
+        } else {
+          playMusic();
+        }
+      });
+    });
+    function pauseMusic() {
+      bgm.pause();
+      $(".music_icon").removeClass("active");
+    }
+    function playMusic() {
+      bgm.play();
+      $(".music_icon").addClass("active");
+    }
+    function pauseVideo() {
+      var video = document.getElementById("video");
+      video.pause(); //视频暂停  play();视频播放
+      $(".video-wrap").fadeOut("slow");
+      $(".home").fadeIn("slow");
+      $(".music_icon").show();
+      // 播放音乐
+      playMusic();
+    }
+  </script>
+  <script>
+    var game = null;
+
+    //游戏
+    (function () {
+      const canvas = document.getElementById("game");
+      const gameBg = document.getElementById("gameBg");
+      const clientWidth = window.innerWidth * 2;
+      const clientHeight = window.innerHeight * 2;
+      // canvas.width = clientWidth;
+      canvas.height = clientHeight;
+      canvas.addEventListener("touchstart", function (e) {
+        e.preventDefault();
+      });
+      const cjs = createjs;
+      class Game {
+        //预加载
+        preload() {
+          this.queue = new cjs.LoadQueue(false, "", true);
+
+          let manifestHouse = [
+            {
+              id: "chi",
+              src: "{root_static_file_cdn}app/act/t_002/img/game/chi.png",
+            },
+            {
+              id: "gameBg2",
+              src:
+                "{root_static_file_cdn}app/act/t_002/img/game/game-bg_02.jpg",
+            },
+            {
+              id: "jiazi",
+              src: "{root_static_file_cdn}app/act/t_002/img/game/jiazi.png",
+            },
+
+            {
+              src: "{root_static_file_cdn}app/act/t_002/img/game/game-snow.png",
+              id: "gameSnow",
+            },
+            {
+              src:
+                "{root_static_file_cdn}app/act/t_002/img/game/game-snow-flower.png",
+              id: "gameSnowFlower",
+            },
+            {
+              src: "{root_static_file_cdn}app/act/t_002/img/snow.png",
+              id: "snow1",
+            },
+            {
+              src: "{root_static_file_cdn}app/act/t_002/img/snow-dian.png",
+              id: "snow2",
+            },
+          ];
+          for (let i = 1; i <= 32; i++) {
+            manifestHouse.push({
+              src:
+                "{root_static_file_cdn}app/act/t_002/img/game/house" +
+                i +
+                ".png",
+              id: "house" + i,
+            });
+          }
+          this.queue.loadManifest(manifestHouse);
+          // this.queue.loadManifest(manifest);
+          this.queue.on("complete", (e) => {
+            this.init();
+            $(".game-load").hide();
+
+            if (typeof WeixinJSBridge === "object") {
+              WeixinJSBridge.invoke("getNetworkType", {}, function (e) {
+                playMusic();
+              });
+            }
+          });
+          let progressIndex = 0;
+          this.queue.on(
+            "progress",
+            (res) => {
+              progressIndex++;
+              console.log("progress===" + progressIndex);
+              let progressNum = Number(
+                (progressIndex / manifestHouse.length) * 100
+              ).toFixed();
+              $(".game-load-pro").html(progressNum + "%");
+            },
+            this
+          );
+        }
+
+        init() {
+          this.stage = new cjs.Stage("game");
+          cjs.Touch.enable(this.stage);
+          this.houseContainer = new cjs.Container();
+          cjs.Ticker.timingMode = cjs.Ticker.RAF;
+
+          //背景图
+          this.gameBg = new cjs.Container();
+          const bg = new cjs.Bitmap(this.queue.getResult("gameBg2"));
+          this.bottomDir = canvas.height - bg.image.naturalHeight;
+          this.gameBg.addChild(bg);
+          this.stage.addChild(this.gameBg);
+
+          const chiData = {
+            images: [this.queue.getResult("chi")],
+            framerate: 5,
+            frames: [
+              [1, 1, 429, 52, 0, 0, 0],
+              [1, 55, 429, 49, 0, 0, 0],
+            ],
+
+            animations: {
+              run: {
+                frames: [1, 0],
+                speed: 0.08,
+              },
+            },
+          };
+          const chiSheet = new createjs.SpriteSheet(chiData);
+          this.chiSprite = new createjs.Sprite(chiSheet, "run");
+          this.chiSprite.visible = false;
+          console.log(canvas.height);
+          this.stage.addChild(this.chiSprite);
+
+          // 雪
+          this.snowFlower();
+
+          // //注册音乐
+          createjs.Sound.alternateExtensions = ["mp3"];
+          createjs.Sound.registerSounds([
+            {
+              src: "{root_static_file_cdn}app/act/t_002/mp3/click.mp3",
+              id: "sound",
+            },
+            {
+              src: "{root_static_file_cdn}app/act/t_002/mp3/gameover.mp3",
+              id: "gameover",
+            },
+            {
+              src: "{root_static_file_cdn}app/act/t_002/mp3/shibai.mp3",
+              id: "shibai",
+            },
+            {
+              src: "{root_static_file_cdn}app/act/t_002/mp3/success.mp3",
+              id: "success",
+            },
+            {
+              src: "{root_static_file_cdn}app/act/t_002/mp3/chi.mp3",
+              id: "chi",
+            },
+          ]);
+          // cjs.Sound.on("fileload",this.registerBgm,this);
+
+          this.tipsArr = [];
+
+          //创建房子的容器
+          this.downContainer = new cjs.Container();
+          this.stage.addChild(this.downContainer);
+          this.stage.addChild(this.houseContainer);
+          this.drawPliers();
+          this.hpContainer = new cjs.Container();
+          this.stage.addChild(this.hpContainer);
+
+          // 开始游戏
+          this.start();
+          cjs.Ticker.addEventListener("tick", (e) => {
+            this.stage.update();
+          });
+        }
+
+        // 雪花
+        snowFlower() {
+          //后雪景容器
+          this.snowContainer = new createjs.Container();
+          this.stage.addChild(this.snowContainer);
+
+          //雪花数组 用作回收
+          this._snow1List = [];
+
+          let i;
+          let snow;
+          let scale;
+          for (i = 0; i < 50; i++) {
+            //后景雪
+            snow = this.getSnow();
+            scale = 0.2 + Math.random() * 1;
+            snow.scaleX = scale;
+            snow.scaleY = scale;
+            snow.x = Math.random() * canvas.width;
+            snow.y = -Math.random() * canvas.height;
+            snow.speed = 0.8 + Math.random() * 1;
+            snow.rotation = 360 * Math.random();
+            this._snow1List.push(snow);
+            this.snowContainer.addChild(snow);
+          }
+          this.snowContainer.addEventListener("tick", (e) => {
+            this.snowFrameHandler();
+          });
+        }
+
+        // 创建 雪花
+        getSnow() {
+          let random = Math.random() * 10;
+          let snow;
+          if (random > 8) {
+            snow = new createjs.Bitmap(this.queue.getResult("snow1"));
+            snow.flower = true;
+          } else {
+            snow = new createjs.Bitmap(this.queue.getResult("snow2"));
+          }
+          return snow;
+        }
+        //雪花飘
+        snowFrameHandler() {
+          let i;
+          let snow;
+          let scale;
+          for (i = 0; i < this.snowContainer.numChildren; i++) {
+            let mc = this.snowContainer.getChildAt(i);
+
+            // mc.x -= 0.1;
+            mc.y += mc.speed;
+            // mc.alpha -= 0.001;
+            if (mc.flower) {
+              mc.rotation += 1;
+            }
+            if (mc.y > canvas.height + 100) {
+              // mc.alpha = 1;
+              scale = 0.2 + Math.random() * 1;
+              mc.scaleX = scale;
+              mc.scaleY = scale;
+
+              mc.x = Math.random() * canvas.width;
+              mc.y = -Math.random() * canvas.height;
+            }
+          }
+        }
+
+        //重置游戏，重新开始
+        start() {
+          this.pliersContainer.visible = true;
+          this.houseContainer.visible = true;
+          this.gameBg.y = this.bottomDir;
+          this.rotateSpeed = 2;
+          this.downCount = 0;
+          this.score = 0;
+          this.gameStart = false;
+          this.time = 60;
+          this.hp = 1;
+          this.lastHouse = null;
+          this.downContainer.removeAllChildren();
+          this.downContainer.x = 0;
+          this.downContainer.y = 0;
+          this.lastGap = 20;
+          cjs.Tween.removeTweens(this.downContainer);
+          // this.drawHp();
+          $("#second").html(this.time);
+          $("#score").html(this.score);
+          $(".ceng span").html(this.downCount);
+          setInitData["game_adata_id"] = null;
+          func_set_game_fun(null, null);
+        }
+
+        drawHp() {
+          this.hpContainer.x = 27;
+          this.hpContainer.y = 140;
+          for (let i = 0; i < this.hp; i++) {
+            const hp = new cjs.Bitmap(this.queue.getResult("hp"));
+            hp.x = i * 60;
+            this.hpContainer.addChild(hp);
+          }
+        }
+
+        drawPliers() {
+          //钳子容器
+          this.pliersContainer = new cjs.Container();
+          //钳子图片
+          const data = {
+            images: [this.queue.getResult("machine_hand")],
+
+            framerate: 1,
+            frames: [
+              [1, 1, 397, 504, 0, -178, -68],
+              [400, 1, 382, 516, 0, -184, -68],
+              [400, 1, 382, 516, 0, -184, -68],
+              [784, 1, 381, 526, 0, -184, -68],
+              [1167, 1, 381, 523, 0, -184, -71],
+              [1550, 1, 375, 528, 0, -187, -68],
+            ],
+            animations: {
+              close: { frames: [5] },
+              open: {
+                frames: [5, 3, 2, 0, 1, 4],
+                next: "close",
+                speed: 0.5,
+              },
+            },
+          };
+          //钳子图片
+          const data2 = {
+            images: [this.queue.getResult("jiazi")],
+
+            framerate: 1,
+            frames: [
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [374, 1, 343, 385, 0, -178, -68],
+            ],
+            animations: {
+              close: { frames: [5] },
+              open: {
+                frames: [5, 1, 2, 3, 4, 0],
+                next: "close",
+                speed: 0.5,
+              },
+            },
+          };
+          const spriteSheet = new createjs.SpriteSheet(data2);
+          this.pliers = new createjs.Sprite(spriteSheet, "close");
+          // this.pliers = new cjs.Bitmap(this.queue.getResult('pliers'));
+          // //创建房子的容器
+          this.pliersContainer.addChild(this.pliers);
+          this.stage.addChild(this.pliersContainer);
+          this.pliersContainer.deg = 0;
+          this.pliersContainer.addEventListener("tick", (e) => {
+            this.pliersContainer.deg += this.rotateSpeed;
+            this.pliersContainer.x =
+              260 *
+              Math.cos(((this.pliersContainer.deg % 360) * Math.PI) / 180);
+            this.pliersContainer.y =
+              60 *
+                Math.sin(((this.pliersContainer.deg % 360) * Math.PI) / 180) -
+              150;
+          });
+          this.drawHouse();
+        }
+
+        timeDown() {
+          this.timer = setInterval((e) => {
+            if (this.time > 1) {
+              this.time--;
+            } else {
+              this.time = 0;
+              clearInterval(this.timer);
+              this.gameOver();
+            }
+            $("#second").html(this.time);
+          }, 1000);
+        }
+
+        gameOver() {
+          this.gameStart = false;
+          this.pliersContainer.visible = false;
+          this.houseContainer.visible = false;
+          setInitData.launch.play_count--;
+          $(".game-end").show();
+          $(".surplus-num span").html(setInitData.launch.play_count);
+          $(".game-get-score").html(this.score);
+          cjs.Sound.play("gameover");
+          // pauseMusic();
+          //
+          func_set_game_fun(setInitData.game_adata_id, this.score);
+          //
+          $(".btn-restart-game")
+            .off()
+            .click(function () {
+              console.log(game);
+              if (setInitData.launch.play_count > 0) {
+                game.start();
+
+                $(".game-end").hide();
+              } else {
+                $_alert("没有游戏次数了");
+              }
+            });
+
+          $(".back-home")
+            .off()
+            .click(function () {
+              $(".game-end").hide();
+              $(".page_game").hide();
+              $(".home").show();
+              func_get_init_data();
+            });
+        }
+
+        //绘制楼层
+        drawHouse() {
+          const rmd = Math.ceil(Math.random() * 32);
+          //创建的时候，把坐标设置画布之外，避免图片在0，0，位置闪烁一下
+          const house = new cjs.Bitmap(
+            this.queue.getResult("house" + rmd)
+          ).set({ x: -1000, y: -1000 });
+
+          this.houseContainer.addChild(house);
+          //房子的角度要和钳子的同步，要不然会出现错位
+          house.isDown = false;
+
+          house.height = house.image.naturalHeight;
+          house.width = house.image.naturalWidth;
+
+          house.addEventListener("tick", (e) => {
+            if (!house.isDown) {
+              house.deg = this.pliersContainer.deg;
+              house.x =
+                260 * Math.cos(((house.deg % 360) * Math.PI) / 180) + 198;
+              if (rmd === 8) {
+                house.x += 20;
+              }
+              house.y =
+                60 * Math.sin(((house.deg % 360) * Math.PI) / 180) + 190;
+            } else {
+              house.y += 20;
+              house.addScore = 100;
+              if (!this.lastHouse) {
+                if (!this.gameStart) {
+                  // 如果是主人
+                  //   if (prop_is_master) {
+                  //     //   func_insert_game_key();
+                  //   }
+                  this.timeDown();
+                  this.gameStart = true;
+                }
+
+                /**
+                 * 375 是画布底部距离第一次停留的位置
+                 * house.image.naturalHeight  源图片的高度
+                 * 350
+                 */
+                if (house.y >= canvas.height - house.height - 400) {
+                  house.y = canvas.height - house.height - 400;
+                  cjs.Sound.play("sound");
+                  console.log(house.x, 375, house.width);
+                  if (house.x < 375 - house.width || house.x > 375) {
+                    this.houseTopple(house, house.x < 375 - house.width / 2);
+                  } else {
+                    house.removeAllEventListeners();
+                    console.log(`length=${this.tipsArr.length}`);
+
+                    this.showFunHandle(house);
+                    $(".ceng span").html(this.downCount + 1);
+                    this.score += house.addScore;
+                    if (this.score <= 0) this.score = 0;
+                    $("#score").html(this.score);
+                    this.downContainer.addChild(house);
+                    this.drawHouse();
+                    //把当前的房设置为最后的房子
+                    this.lastHouse = house;
+                  }
+                }
+              } else {
+                /**
+                 * reducH 表示 两个箱子重叠部分
+                 */
+                let reducH = 173;
+                /**
+                 * 房子下落的y轴的位置 - 已经下落的房子容器的y轴 如果大于最后一个房子的y轴加上他的高度表示已经碰撞
+                 */
+                if (
+                  house.y - this.downContainer.y >=
+                  this.lastHouse.y - house.height + reducH
+                ) {
+                  //获取两个房子的x轴的绝对值差距
+                  console.log(
+                    this.lastHouse.getTransformedBounds().x,
+                    house.getTransformedBounds().x,
+                    this.downContainer.x
+                  );
+                  house.offset =
+                    this.lastHouse.getTransformedBounds().x -
+                    house.getTransformedBounds().x +
+                    this.downContainer.x;
+                  const gap = Math.abs(house.offset);
+                  console.log(gap);
+                  // 判断吻合程度进行加分
+                  if (gap <= 10) {
+                    house.x = this.lastHouse.x + this.downContainer.x;
+                    // 连续两次以上吻合的加双倍分数
+                    if (this.lastGap <= 10) {
+                      house.addScore = 100;
+                    } else {
+                      house.addScore = 80;
+                    }
+                  } else if (gap <= 60) {
+                    console.log("加200分");
+                    house.addScore = 30;
+                  } else if (gap <= house.width * 0.4) {
+                    console.log("加100分");
+                    house.addScore = 10;
+                  } else {
+                    console.log("没得分");
+                    console.log(house.offset);
+                    house.addScore = -90;
+                  }
+                  // 记录上一次吻合程度
+                  this.lastGap = gap;
+                  // 不加分（房子掉下去了）
+                  if (house.addScore <= 0) {
+                    this.houseTopple(house, house.offset > 0);
+                  } else {
+                    house.x -= this.downContainer.x;
+                    house.removeAllEventListeners();
+                    // 记录已经盖了多少层
+                    this.downCount++;
+                    // if (this.downCount > 7) {
+                    //   this.balloon.visible = false;
+                    // }
+                    // if (this.downCount > 8) {
+                    //   this.fly_logo.visible = true;
+                    // }
+                    $(".ceng span").html(this.downCount + 1);
+                    house.y = this.lastHouse.y - house.height + reducH;
+
+                    // 吻合程度好的添加翅膀效果
+                    if (gap <= 10) {
+                      this.chiSprite.x = house.x - 75 + this.downContainer.x;
+                      this.chiSprite.y = house.y + 30;
+                      this.chiSprite.y = this.downContainer.y + house.y + 30;
+                      this.chiSprite.visible = true;
+                    }
+
+                    if (this.downCount > 2) {
+                      this.rotateSpeed = 3;
+                    }
+
+                    if (this.downCount > 6) {
+                      this.rotateSpeed = 3.5;
+                    }
+
+                    if (this.downCount > 9) {
+                      this.rotateSpeed = 4;
+                    }
+
+                    // 难点 ： 房子大于4的时候背景滑动高一点
+                    if (this.downCount >= 3) {
+                      cjs.Tween.get(this.downContainer)
+                        .to(
+                          {
+                            y: (house.height - reducH) * (this.downCount + 2),
+                          },
+                          500
+                        )
+                        .to(
+                          { x: canvas.width / 2 - house.width / 2 - house.x },
+                          2000
+                        );
+                      cjs.Tween.get(this.gameBg)
+                        .to(
+                          {
+                            y:
+                              (house.height - reducH) * (this.downCount + 2) +
+                              this.bottomDir,
+                          },
+                          500
+                        )
+                        .call((e) => {
+                          this.chiSprite.visible = false;
+                        });
+
+                      //突然升高时要进行调整
+                      if (this.downCount === 5) {
+                        cjs.Tween.get(this.chiSprite).to(
+                          { y: this.chiSprite.y + house.height * 2 },
+                          500
+                        );
+                      } else {
+                        cjs.Tween.get(this.chiSprite).to(
+                          { y: this.chiSprite.y + house.height },
+                          500
+                        );
+                      }
+                    } else {
+                      cjs.Tween.get(this.downContainer)
+                        .to(
+                          {
+                            y: (house.height - reducH) * (this.downCount + 2),
+                          },
+                          500
+                        )
+                        .call((e) => {
+                          this.chiSprite.visible = false;
+                        });
+                      cjs.Tween.get(this.chiSprite).to(
+                        { y: this.chiSprite.y + house.height },
+                        500
+                      );
+                      cjs.Tween.get(this.gameBg).to(
+                        {
+                          y:
+                            (house.height - reducH) * (this.downCount + 2) +
+                            this.bottomDir,
+                        },
+                        500
+                      );
+                    }
+                    this.downContainer.addChild(house);
+                    this.lastHouse = house;
+                    this.drawHouse();
+                  }
+                  if (this.gameStart) {
+                    this.showFunHandle(house);
+                    if (gap <= 10) {
+                      cjs.Sound.play("chi");
+                    } else {
+                      cjs.Sound.play("sound");
+                    }
+                    this.score += house.addScore;
+                    if (this.score <= 0) this.score = 0;
+                    $("#score").html(this.score);
+                  }
+                }
+              }
+            }
+          });
+
+          // //click
+          $(canvas)
+            .off()
+            .on("touchstart", (e) => {
+              this.stage.removeAllEventListeners();
+              house.isDown = true;
+              this.pliers.gotoAndPlay("open");
+            });
+        }
+
+        // 显示加分的值
+        showFunHandle(house) {
+          let last = {};
+          if (this.lastHouse) {
+            last = this.lastHouse;
+          } else {
+            last = house;
+          }
+          if (this.tipsArr.length < 1) {
+            let addScoreTips;
+            if (house.addScore < 0) {
+              addScoreTips = new cjs.Text(
+                `${
+                  house.addScore > 0 ? "+" + house.addScore : house.addScore
+                } `,
+                "60px Arial",
+                "#0000ff"
+              );
+            } else {
+              addScoreTips = new cjs.Text(
+                `${
+                  house.addScore > 0 ? "+" + house.addScore : house.addScore
+                } `,
+                "60px Arial",
+                "#ffffff"
+              );
+            }
+
+            addScoreTips.y = this.downContainer.y + last.y;
+            addScoreTips.x =
+              last.x + house.width / 2 - 50 + this.downContainer.x;
+            addScoreTips.alpha = 1;
+            cjs.Tween.get(addScoreTips)
+              .to({ regY: 20, alpha: 0 }, 500)
+              .call((e) => {
+                addScoreTips.regY = 0;
+                this.tipsArr.push(addScoreTips);
+              });
+            this.stage.addChild(addScoreTips);
+          } else {
+            const addScoreTips = this.tipsArr.shift();
+            if (house.addScore < 0) {
+              addScoreTips.color = "#0000ff";
+            } else {
+              addScoreTips.color = "#ffffff";
+            }
+            addScoreTips.text = `${
+              house.addScore > 0 ? "+" + house.addScore : house.addScore
+            } `;
+            addScoreTips.y = this.downContainer.y + last.y;
+            addScoreTips.x =
+              last.x + house.width / 2 - 50 + this.downContainer.x;
+            addScoreTips.alpha = 1;
+            cjs.Tween.get(addScoreTips)
+              .to({ regY: 20, alpha: 0 }, 500)
+              .call((e) => {
+                addScoreTips.regY = 0;
+                this.tipsArr.push(addScoreTips);
+              });
+          }
+        }
+
+        //没盖好
+        houseTopple(house, dir_left) {
+          house.removeAllEventListeners();
+
+          house.regY = house.height / 2;
+          house.regX = house.width / 2;
+          house.y += house.height / 2;
+          house.x += house.width / 2;
+          let offset = 0;
+          let rotation = 0;
+          if (dir_left) {
+            offset = house.x - 60;
+            rotation = -450;
+          } else {
+            offset = house.x + 200;
+            rotation = 450;
+          }
+          cjs.Tween.get(house)
+            .wait(100)
+            .to(
+              {
+                y: 1500,
+                x: offset,
+                rotation: rotation,
+              },
+              500
+            )
+            .call((e) => {
+              console.log(this.houseContainer);
+              this.houseContainer.removeChild(house);
+              console.log(this.houseContainer);
+              // if (this.hp <= 0) {
+              //   this.gameOver();
+              //   clearInterval(this.timer);
+              // } else {
+              //   this.hp--;
+              //   this.hpContainer.removeChildAt(this.hp);
+              // }
+              this.drawHouse();
+            });
+        }
+
+        //注册音乐事件
+        registerBgm(e) {
+          console.log(e);
+        }
+
+        //获得一个随机值
+        static random(n) {
+          return Math.floor(Math.random() * n);
+        }
+      }
+      //   更新游戏积分
+      function func_set_game_fun(id, fun) {
+        func_axios({
+          url: `${pub_root_app}xweb/act/z_api_001/play`,
+          method: "post",
+          data: {
+            id: id,
+            fun: fun,
+          },
+          success(res) {
+            setInitData["game_adata_id"] = res.data.entity_play.adata_id;
+            console.log(res);
+          },
+        });
+      }
+
+      window.Game = Game;
+    })();
+    // const game = new Game();
+    // game.preload();
+    // game.start();
+  </script>
+  <script src="{root_static_file_cdn}app/act/t_002/snow.js?{v}=1223"></script>
+</html>
+
+
+          $('.down-text').hide()
+          $('.down-time-t').hide()
+          // 已抽奖
+          if (setInitData.is_chou_max) {
+            $('.status-text').html('已开启')
+            $('.is_chou_caned').show()
+            $('.down-time').css({
+              'background-image':
+                'url({root_static_file_cdn}app/act/t_002/img/down-time-open.png)',
+            })
+          } else {
+            $('.status-text').html('已获得')
+            $('.can-chou-big').show()
+          }
+        } else {
+          $('.status-text').html('未获得')
+          $('.down-text').html(bigTextDown[2]).css({
+            width: '3.5rem',
+            'text-align': 'center',
+          })
+        }
+      }
+    }
+
+    //   普通 抽奖
+    function fun_chou_normal(fun_key) {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_001/chou`,
+        method: 'post',
+        data: {
+          fun_key,
+        },
+        success(res) {
+          console.log('请求==', res.data)
+          if (res.data.errcode == 0) {
+            setTimeout(() => {
+              $('.prize-box-onpen').removeClass('active')
+              $('.normal-prize-tips').hide()
+              $(
+                '.normal-prize-tips,.btn-reset-prize,.btn-get-prize,.finger'
+              ).hide()
+              $('.prize-wrap').show()
+
+              if (res.data.entity_prize) {
+                $('.prize-tips').html('恭喜你中奖啦')
+                $('.prize-img').attr(
+                  'src',
+                  pub_root_file + res.data.entity_prize.prize_pic
+                )
+                $('.btn-get-prize').css({
+                  display: 'flex',
+                })
+              } else {
+                $('.prize-tips').html(
+                  '就差一点点～<br><br>离中奖就差一念距离，再接再厉'
+                )
+                $('.btn-reset-prize').css({
+                  display: 'flex',
+                })
+                $('.prize-img').attr(
+                  'src',
+                  '{root_static_file_cdn}app/act/t_002/img/min-no-prize.png'
+                )
+              }
+            }, 1000)
+          } else {
+            $_alert('系统繁忙，请联系客服')
+          }
+        },
+      })
+    }
+
+    //   大奖 抽奖
+    function fun_chou_big() {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_001/chou_max`,
+        success(res) {
+          console.log('请求==', res.data)
+          if (res.data.errcode == 0) {
+            setTimeout(() => {
+              $('.big-no-prize-box').removeClass('active')
+              $('.big-no-prize').hide()
+              $('.big-result-prize').show()
+              $('.big-btn-reset-prize,.big-btn-get-prize').removeClass('active')
+
+              if (res.data.entity_prize) {
+                $('.big-result-tips').show()
+                $('.big-btn-get-prize').addClass('active')
+                $('.prize-big-img').attr(
+                  'src',
+                  pub_root_file + res.data.entity_prize.prize_pic
+                )
+              } else {
+                $('.big-btn-reset-prize').addClass('active')
+                $('.big-result-no').show()
+                $('.prize-big-img').attr(
+                  'src',
+                  '{root_static_file_cdn}app/act/t_002/img/prize-big-no.png'
+                )
+              }
+            }, 1000)
+          } else {
+            $_alert('系统繁忙，请联系客服')
+          }
+        },
+      })
+    }
+
+    //抽奖列表
+    function func_prize_list() {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_prize/list`,
+        success(res) {
+          console.log('请求==', res.data)
+          if (res.data.list.length === 0) {
+            $('.prize-list-empty').show()
+            $('.prize-list-cont').hide()
+          } else {
+            $('.prize-list-empty').hide()
+            $('.prize-list-cont').show()
+          }
+
+          $('.prize-list-cont').html('')
+          for (let i = 0; i < res.data.list.length; i++) {
+            let item = res.data.list[i]
+            let cell = `<div class="prize-list-item ${
+              item.prize_use === 1 ? 'verification-yes' : 'verification-no'
+            }">
+                             <img class="prize-item-img" src="${pub_root_file}${
+              item.prize_pic
+            }" alt="">
+                             <div class="list-item-info">
+                                 <div class="prize-name">${
+                                   item.prize_name
+                                 }</div>
+                                 <div class="expire-time">过期时间：${getTiemeFormat(
+                                   item.prize_end_date
+                                 )}</div>
+                                 <div class="detail">
+                                   <div class="flex toggle-detal">
+                                     <i class="detail-icon"></i>
+                                     奖品详情
+                                   </div>
+                                   ${
+                                     item.prize_use === 1
+                                       ? ''
+                                       : `<div class="btn-verify flex c-center" data-prize_id='${item.prize_id}'>密码核销</div>`
+                                   }
+
+                                 </div>
+                                 <div class="detial-cont">${
+                                   item.prize_desc
+                                 }</div>
+                             </div>
+                           </div>`
+            $('.prize-list-cont').append(cell)
+          }
+        },
+      })
+    }
+
+    //核销
+    function func_prize_use(id, txt) {
+      func_axios({
+        url: `${pub_root_app}xweb/act/z_api_prize/use`,
+        method: 'post',
+        data: {
+          id,
+          txt,
+        },
+        success(res) {
+          console.log('请求==', res.data)
+          if (res.data.errcode !== 0) {
+            $_alert(res.data.errmsg)
+          } else {
+            $_alert('核销成功')
+            $('.check-wrap').hide()
+            func_prize_list()
+          }
+        },
+      })
+    }
+
+    // 时间格式
+    function getTiemeFormat(val) {
+      let date = new Date(val.replace(/-/g, '/'))
+      let year = date.getFullYear()
+      let month = date.getMonth() + 1
+      let day = date.getDate()
+      return `${year}年${month}月${day}日`
+    }
+    // 倒计时
+    function getleftTimer(downs) {
+      let timer = null
+      function leftTimer() {
+        var leftTime = new Date(downs) - new Date() //计算剩余的毫秒数
+        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10) //计算剩余的天数
+        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10) //计算剩余的小时
+        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10) //计算剩余的分钟
+        var seconds = parseInt((leftTime / 1000) % 60, 10) //计算剩余的秒数
+        days = checkTime(days)
+        hours = checkTime(hours)
+        if (seconds > 0 && minutes <= 0) {
+          minutes = 1
+        }
+        minutes = checkTime(minutes)
+        seconds = checkTime(seconds)
+        if (days > 0 || hours > 0 || minutes > 0 || seconds > 0) {
+          $('.down-time-t').html(`获取倒计时
+             <span class="down-day">${days.substring(0, 1)}</span>
+             <span>${days.substring(1, 2)}</span>
+             <i>天</i>
+             <span>${hours.substring(0, 1)}</span>
+             <span>${hours.substring(1, 2)}</span>
+             <i>时</i>
+             <span>${minutes.substring(0, 1)}</span>
+             <span>${minutes.substring(1, 2)}</span>
+             <i>分</i>`)
+
+          setTimeout(leftTimer, 1000)
+        } else {
+          isTimeEnd = true
+          big_chou_status()
+          // if (isGetMaxFun) {
+          //   // $('.down-text').html(bigTextDown[3])
+          //   // $('.down-time-t').html(bigTextDown[3])
+          // } else {
+          //   $('.down-text').html(bigTextDown[2])
+          // }
+          // $(".down-time-t").html(`获取倒计时
+          // <span class="down-day">0</span>
+          // <span>0</span>
+          // <i>天</i>
+          // <span>0</span>
+          // <span>0</span>
+          // <i>时</i>
+          // <span>0</span>
+          // <span>0</span>
+          // <i>分</i>`);
+        }
+      }
+      leftTimer()
+    }
+    function checkTime(i) {
+      //将0-9的数字前面加上0，例1变为01
+      if (i < 10) {
+        i = '0' + i
+      }
+      return i + ''
+    }
+
+    // 海报
+    function drawPoster(p_name, p_url, headPic, p_bg) {
+      var can = null,
+        pen = null
+      // var total_sca = window.innerWidth / 320,
+      var total_sca = 1,
+        head_w = 80 * total_sca,
+        head_h = 80 * total_sca,
+        qr_w = 130 * total_sca,
+        qr_h = 130 * total_sca,
+        wx_openid = '',
+        wx_name = ''
+
+      let headX = 164,
+        headY = 303,
+        qrX = 562,
+        qrY = 1151
+      can = document.getElementById('poster')
+      pen = can.getContext('2d')
+      can.width = 750 * total_sca
+      can.height = 1334 * total_sca
+
+      console.log('开始绘制海报')
+      var poster_bg = new Image()
+      // 仙峰寺
+      let bgPic = p_bg
+      // if (posterId == 2) bgPic = `${pub_root_file}app/act/t_001/img/p9_poster.png?v=1`
+      poster_bg.crossOrigin = 'Anonymous'
+      poster_bg.src = bgPic
+
+      poster_bg.onload = function () {
+        pen.drawImage(poster_bg, 0, 0, can.width, can.height)
+        console.log('绘制底图完成')
+
+        var headUrl = new Image()
+        headUrl.crossOrigin = 'Anonymous'
+        headUrl.src = headPic
+        headUrl.onload = function () {
+          var can2 = document.createElement('canvas')
+          pen2 = can2.getContext('2d')
+          can2.width = can.width
+          can2.height = can.height
+          pen2.drawImage(
+            headUrl,
+            headX * total_sca - head_w / 2,
+            headY * total_sca,
+            head_w,
+            head_h
+          )
+          console.log('绘制头像完成')
+
+          // 创建图片纹理
+          var pattern = pen.createPattern(can2, 'repeat')
+          // 如果要绘制一个圆，使用下面代码
+          pen.arc(
+            headX * total_sca,
+            headY * total_sca + head_w / 2,
+            Math.max(head_w, head_h) / 2,
+            0,
+            2 * Math.PI
+          )
+          // 填充绘制的圆o
+          pen.fillStyle = pattern
+          pen.fill()
+
+          var qrUrl = new Image()
+          qrUrl.crossOrigin = 'Anonymous'
+          console.log('传入的二维码', p_url)
+          qrUrl.src = p_url
+          qrUrl.onload = function () {
+            // pen.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h);
+            console.log('绘制二维码完成')
+            let can2 = document.createElement('canvas')
+            pen2 = can2.getContext('2d')
+            can2.width = can.width
+            can2.height = can.height
+            console.log(can2.width)
+            pen2.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h)
+            // 创建图片纹理
+            var pattern = pen.createPattern(can2, 'repeat')
+            // 如果要绘制一个圆，使用下面代码
+            // pen.arc(obj.width / 2, obj.height / 2, Math.max(obj.width, obj.height) / 2, 0, 2 * Math.PI);
+            // 这里使用圆角矩形
+            pen.roundRect(
+              qrX * total_sca,
+              qrY * total_sca,
+              qr_w,
+              qr_h,
+              10 * 1 || 0
+            )
+            pen.x = 100
+            // 填充绘制的圆
+            pen.fillStyle = pattern
+            pen.fill()
+
+            var result = can.toDataURL('image/png')
+            $('.poster-load').hide()
+            $('.poster-img').attr('src', result)
+          }
+        }
+      }
+    }
+    //圆角矩形
+    CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
+      var min_size = Math.min(w, h)
+      if (r > min_size / 2) r = min_size / 2
+      // 开始绘制
+      this.beginPath()
+      this.moveTo(x + r, y)
+      this.arcTo(x + w, y, x + w, y + h, r)
+      this.arcTo(x + w, y + h, x, y + h, r)
+      this.arcTo(x, y + h, x, y, r)
+      this.arcTo(x, y, x + w, y, r)
+      this.closePath()
+      return this
+    }
+    // 预加载 home
+    function preLoadImg() {
+      var elevideo = document.getElementById('video')
+      let homeImgArr = $('.home img')
+      let homeImgArrLenth = homeImgArr.length + 1
+      let index = 0
+      let video_ready = false
+      for (let i = 0; i < homeImgArr.length; i++) {
+        let image = new Image()
+        let originalImage = $(homeImgArr[i])
+
+        image.src = $(homeImgArr[i]).data().original || $(homeImgArr[i]).src
+
+        image.onload = function () {
+          //图片下载完毕时异步调用callback函数。
+          index++
+          originalImage.attr('src', image.src)
+          $('.loading-tips').html(
+            Number((index / homeImgArrLenth) * 100).toFixed(0) + '%'
+          )
+
+          if (index === homeImgArrLenth - 1 && !video_ready) {
+            // 获取数据
+            func_get_init_data()
+            setTimeout(function () {
+              $('.loading-tips').html('100%')
+              $('.loading-rule').html('礼物已打包完成，随时出发')
+              $('.btn-go-now').addClass('active')
+            }, 10000)
+          } else if (index === homeImgArrLenth) {
+            $('.loading-rule').html('礼物已打包完成，随时出发')
+            $('.btn-go-now').addClass('active')
+            // 获取数据
+            func_get_init_data()
+          }
+        }
+      }
+      func_video()
+      // elevideo.addEventListener('loadedmetadata', function () {
+      //   //加载数据
+      //   //视频的总长度
+      //   console.log(elevideo.duration)
+      // })
+
+      // $('.btn-video-pay').click(function () {
+      //   elevideo.play()
+      // })
+      elevideo.addEventListener('canplaythrough', function () {
+        index++
+        video_ready = true
+        $('.loading-tips').html(
+          Number((index / homeImgArrLenth) * 100).toFixed(0) + '%'
+        )
+        if (index === homeImgArrLenth) {
+          $('.loading-rule').html('礼物已打包完成，随时出发')
+          $('.btn-go-now').addClass('active')
+        }
+      })
+      // let u = navigator.userAgent
+      // let ios = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+      // elevideo.addEventListener('ended', function () {
+      //   $('.video-wrap').hide()
+      //   $('.home').show()
+      // })
+      // if (ios) {
+      // elevideo.addEventListener('ended', function () {
+      //   $('.video-wrap').hide()
+      //   $('.home').show()
+      // })
+      // } else {
+      //安卓的情况
+      // $('#video').on('timeupdate', function () {
+      //   console.log('安卓的情况')
+      //   if (this.currentTime > 68 - 0.3) {
+      //   }
+      // })
+      // }
+    }
+
+    //视频控制
+    function func_video() {
+      var elevideo = document.getElementById('video')
+      elevideo.addEventListener('loadedmetadata', function () {
+        //加载数据
+        //视频的总长度
+        console.log(elevideo.duration)
+      })
+      // elevideo.addEventListener('canplaythrough', function () {
+      //   //SomeJavaScriptCode
+      //   //监听视频的加载
+      //   //一般采用oncanplaythrough,即readystate状态为3时，就可以顺畅播放，不会轻易造成卡顿，
+      //   console.log('顺畅播放')
+      //   elevideo.play()
+      // })
+
+      elevideo.addEventListener('play', function () {
+        //播放开始执行的函数
+        console.log('开始播放')
+      })
+      //使用事件监听方式捕捉事件
+      elevideo.addEventListener(
+        'timeupdate',
+        function () {
+          var timeDisplay
+          //用秒数来显示当前播放进度
+          timeDisplay = Math.floor(video.currentTime)
+
+          var popCut = 10.5 //视频弹出时间
+          //当视频播放到 maxpopCut的时候做处理
+          if (timeDisplay >= popCut) {
+            pauseVideo()
+          }
+        },
+        false
+      )
+      elevideo.addEventListener('playing', function () {
+        //播放中
+        console.log('播放中')
+      })
+      elevideo.addEventListener('waiting', function () {
+        //加载
+        console.log('加载中')
+      })
+      elevideo.addEventListener('pause', function () {
+        //暂停开始执行的函数
+        console.log('暂停播放')
+      })
+      elevideo.addEventListener(
+        'ended',
+        function () {
+          //结束
+          pauseVideo()
+          // 获取数据
+          // func_get_init_data()
+        },
+        false
+      )
+    }
+
+    // alert
+    function $_alert(msg) {
+      $('.alert-mask').show()
+      $('.alert-tips-cont').html(msg)
+      $('.alert-mask-cont').removeClass('out').addClass('in')
+      $('.btn-mask-close')
+        .off()
+        .click(function () {
+          $('.alert-mask-cont').removeClass('in').addClass('out')
+          setTimeout(function () {
+            $('.alert-mask').hide()
+          }, 800)
+        })
+    }
+
+    $(function () {
+      document.title = '“筑”力湾心'
+      var elevideo = document.getElementById('video')
+
+      // 预加载
+      preLoadImg()
+
+      let elData = ''
+      $('.progress-wrap').click(function (e) {
+        let el = $(e.target).data()
+        elData = el
+        console.log(el)
+        if (el.isChou === 1) {
+          $('.normal-prize-main').show()
+        } else if (el.fun_key) {
+          if (el.isChou === 0) {
+            $_alert('已经抽过了')
+          } else {
+            $_alert('积分不够，加油哦！')
+          }
+        }
+      })
+
+      // 开始旅程
+      $('.btn-go-now').click(function () {
+        $('.loading-wrap').hide()
+
+        elevideo.play()
+        // $('.video-wrap').hide()
+        // $('.home').show()
+      })
+
+      // 跳过广告
+      $('.btn-skip').click(function () {
+        pauseVideo()
+      })
+
+      // 分享
+      $('.get_btn-ka')
+        .off()
+        .click(function () {
+          $('.poster-wrap').show()
+          $('.poster-cont').removeClass('out').addClass('in')
+          let p_url =
+            '{root_app}app/z_common/app_api/wx_qr?x=jie01&word=' +
+            setInitData.help_word
+          let headPic = setInitData.common.user.wxuser_headimgurl
+
+          let p_bg =
+            'http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg?v=1'
+
+          if (!$('.poster-img').attr('src')) {
+            drawPoster('sf', p_url, headPic, p_bg)
+          }
+        })
+      $('.poster-wrap').click(function () {
+        $('.poster-cont').removeClass('in').addClass('out')
+        setTimeout(function () {
+          $('.poster-wrap').hide()
+        }, 800)
+      })
+
+      // 抽大奖
+      $('.down-time').click(function () {
+        if (isGetMaxFun && isTimeEnd) {
+          if (setInitData.is_chou_max) {
+            $_alert('已抽过，明年再来')
+          } else {
+            $('.big-prize-main').show()
+          }
+        } else {
+          $_alert('还没获得，或者还没开启')
+        }
+      })
+
+      // 抽大奖 宝箱
+      $('.big-no-prize-box').click(function () {
+        $(this).addClass('active')
+        fun_chou_big()
+      })
+
+      // 明年再来
+      $('.big-btn-reset-prize').click(function () {
+        $('.big-prize-main').hide()
+        func_get_init_data()
+      })
+
+      // 大奖 我的奖品
+      $('.big-btn-get-prize').click(function () {
+        $('.big-prize-main').hide()
+        $('.prize-list-empty').hide()
+        $('.my-prize-list').fadeIn('slow')
+        func_prize_list()
+        func_get_init_data()
+      })
+      // 打开宝箱
+      $('.prize-box-onpen')
+        .off()
+        .click(function () {
+          $(this).addClass('active')
+
+          fun_chou_normal(elData.fun_key)
+        })
+
+      // 我的奖品 列表
+      $('.prize-my').click(function () {
+        $('.prize-list-empty').hide()
+        $('.my-prize-list').show()
+        $('.my-prize-list-cont').removeClass('out').addClass('in')
+        func_prize_list()
+      })
+      // 关闭 我的奖品 列表
+      $('.back-home-prize').click(function () {
+        $('.my-prize-list-cont').removeClass('in').addClass('out')
+        setTimeout(function () {
+          $('.my-prize-list').hide()
+        }, 800)
+      })
+
+      // 活动说明
+      $('.rule-btn').click(function () {
+        $('.rule-wrap').show()
+        $('.rule-cont').removeClass('out').addClass('in')
+      })
+      // 关闭 活动
+      $('.rule-btn-close,.rule-mask').click(function () {
+        $('.rule-cont').removeClass('in').addClass('out')
+        setTimeout(function () {
+          $('.rule-wrap').hide()
+        }, 800)
+      })
+
+      // 奖品一览
+      $('.prize-preview-icon').click(function () {
+        $('.prize-preview-wrap').show()
+        $('.prize-preview-img').removeClass('out').addClass('in')
+      })
+      // 关闭 奖品一览
+      $('.prize-preview-wrap').click(function () {
+        $('.prize-preview-img').removeClass('in').addClass('out')
+        setTimeout(function () {
+          $('.prize-preview-wrap').hide()
+        }, 800)
+      })
+
+      // 核销
+      let prize_id = ''
+      $('.prize-list-cont').click(function (e) {
+        let el = $(e.target)
+        prize_id = el.data().prize_id
+        if (el.hasClass('btn-verify')) {
+          $('.check-wrap').show()
+        } else if (el.hasClass('toggle-detal') || el.hasClass('detail-icon')) {
+          $(el).parents('.list-item-info').find('.detial-cont').toggle()
+        }
+      })
+      $('.password-text').click(function () {
+        console.log('password-text=====')
+        $('#password-input').focus()
+        $('#password-input').click()
+      })
+      $('#password-input').bind('input propertychange', function (event) {
+        let value = $('#password-input').val()
+        let html = `<span>${value.substr(0, 1)}</span>
+               <span>${value.substr(1, 1)}</span>
+               <span>${value.substr(2, 1)}</span>
+               <span>${value.substr(3, 1)}</span>
+               <span>${value.substr(4, 1)}</span>
+               <span>${value.substr(5, 1)}</span>`
+        $('.password-text').html(html)
+      })
+      // $('#password-input').change(function(val){
+
+      // });
+      // 核销按钮
+      $('.btn-password').click(function () {
+        let password = $('#password-input').val().substr(0, 6)
+        if (password.length < 6) {
+          $_alert('请输入密码')
+          return
+        }
+        func_prize_use(prize_id, password)
+      })
+      $('.check-wrap-mask').click(function () {
+        $('.check-wrap').fadeOut()
+      })
+      // 普通 我的奖品 按钮
+      $('.btn-get-prize').click(function () {
+        reset_normal_status()
+      })
+      // 返回首页
+      $('.btn-reset-prize').click(function () {
+        reset_normal_status()
+      })
+
+      function reset_normal_status() {
+        $('.normal-prize-main').hide()
+        $('.prize-wrap').hide()
+        $('.finger').show()
+        $('.normal-prize-tips').show()
+        $('.btn-reset-prize,.btn-get-prize').hide()
+        func_get_init_data()
+      }
+
+      // 关闭音乐
+      $('.music_icon').click(function () {
+        if ($(this).hasClass('active')) {
+          pauseMusic()
+        } else {
+          playMusic()
+        }
+      })
+    })
+    function pauseMusic() {
+      bgm.pause()
+      $('.music_icon').removeClass('active')
+    }
+    function playMusic() {
+      bgm.play()
+      $('.music_icon').addClass('active')
+    }
+    function pauseVideo() {
+      var video = document.getElementById('video')
+      video.pause() //视频暂停  play();视频播放
+      $('.video-wrap').fadeOut('slow')
+      $('.home').fadeIn('slow')
+      $('.music_icon').show()
+      // 播放音乐
+      playMusic()
+    }
+  </script>
+  <script>
+    var game = null
+
+    //游戏
+    ;(function () {
+      const canvas = document.getElementById('game')
+      const gameBg = document.getElementById('gameBg')
+      const clientWidth = window.innerWidth * 2
+      const clientHeight = window.innerHeight * 2
+      // canvas.width = clientWidth;
+      canvas.height = clientHeight
+      canvas.addEventListener('touchstart', function (e) {
+        e.preventDefault()
+      })
+      const cjs = createjs
+      class Game {
+        //预加载
+        preload() {
+          this.queue = new cjs.LoadQueue(false, '', true)
+
+          let manifestHouse = [
+            {
+              id: 'chi',
+              src: '{root_static_file_cdn}app/act/t_002/img/game/chi.png',
+            },
+            {
+              id: 'gameBg2',
+              src:
+                '{root_static_file_cdn}app/act/t_002/img/game/game-bg_02.jpg',
+            },
+            {
+              id: 'jiazi',
+              src: '{root_static_file_cdn}app/act/t_002/img/game/jiazi.png',
+            },
+
+            {
+              src: '{root_static_file_cdn}app/act/t_002/img/game/game-snow.png',
+              id: 'gameSnow',
+            },
+            {
+              src:
+                '{root_static_file_cdn}app/act/t_002/img/game/game-snow-flower.png',
+              id: 'gameSnowFlower',
+            },
+            {
+              src: '{root_static_file_cdn}app/act/t_002/img/snow.png',
+              id: 'snow1',
+            },
+            {
+              src: '{root_static_file_cdn}app/act/t_002/img/snow-dian.png',
+              id: 'snow2',
+            },
+          ]
+          for (let i = 1; i <= 32; i++) {
+            manifestHouse.push({
+              src:
+                '{root_static_file_cdn}app/act/t_002/img/game/house' +
+                i +
+                '.png',
+              id: 'house' + i,
+            })
+          }
+          this.queue.loadManifest(manifestHouse)
+          // this.queue.loadManifest(manifest);
+          this.queue.on('complete', (e) => {
+            this.init()
+            $('.game-load').hide()
+
+            if (typeof WeixinJSBridge === 'object') {
+              WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                playMusic()
+              })
+            }
+          })
+          let progressIndex = 0
+          this.queue.on(
+            'progress',
+            (res) => {
+              progressIndex++
+              console.log('progress===' + progressIndex)
+              let progressNum = Number(
+                (progressIndex / manifestHouse.length) * 100
+              ).toFixed()
+              $('.game-load-pro').html(progressNum + '%')
+            },
+            this
+          )
+        }
+
+        init() {
+          this.stage = new cjs.Stage('game')
+          cjs.Touch.enable(this.stage)
+          this.houseContainer = new cjs.Container()
+          cjs.Ticker.timingMode = cjs.Ticker.RAF
+
+          //背景图
+          this.gameBg = new cjs.Container()
+          const bg = new cjs.Bitmap(this.queue.getResult('gameBg2'))
+          this.bottomDir = canvas.height - bg.image.naturalHeight
+          this.gameBg.addChild(bg)
+          this.stage.addChild(this.gameBg)
+
+          const chiData = {
+            images: [this.queue.getResult('chi')],
+            framerate: 5,
+            frames: [
+              [1, 1, 429, 52, 0, 0, 0],
+              [1, 55, 429, 49, 0, 0, 0],
+            ],
+
+            animations: {
+              run: {
+                frames: [1, 0],
+                speed: 0.08,
+              },
+            },
+          }
+          const chiSheet = new createjs.SpriteSheet(chiData)
+          this.chiSprite = new createjs.Sprite(chiSheet, 'run')
+          this.chiSprite.visible = false
+          console.log(canvas.height)
+          this.stage.addChild(this.chiSprite)
+
+          // 雪
+          this.snowFlower()
+
+          // //注册音乐
+          createjs.Sound.alternateExtensions = ['mp3']
+          createjs.Sound.registerSounds([
+            {
+              src: '{root_static_file_cdn}app/act/t_002/mp3/click.mp3',
+              id: 'sound',
+            },
+            {
+              src: '{root_static_file_cdn}app/act/t_002/mp3/gameover.mp3',
+              id: 'gameover',
+            },
+            {
+              src: '{root_static_file_cdn}app/act/t_002/mp3/shibai.mp3',
+              id: 'shibai',
+            },
+            {
+              src: '{root_static_file_cdn}app/act/t_002/mp3/success.mp3',
+              id: 'success',
+            },
+            {
+              src: '{root_static_file_cdn}app/act/t_002/mp3/chi.mp3',
+              id: 'chi',
+            },
+          ])
+          // cjs.Sound.on("fileload",this.registerBgm,this);
+
+          this.tipsArr = []
+
+          //创建房子的容器
+          this.downContainer = new cjs.Container()
+          this.stage.addChild(this.downContainer)
+          this.stage.addChild(this.houseContainer)
+          this.drawPliers()
+          this.hpContainer = new cjs.Container()
+          this.stage.addChild(this.hpContainer)
+
+          // 开始游戏
+          this.start()
+          cjs.Ticker.addEventListener('tick', (e) => {
+            this.stage.update()
+          })
+        }
+
+        // 雪花
+        snowFlower() {
+          //后雪景容器
+          this.snowContainer = new createjs.Container()
+          this.stage.addChild(this.snowContainer)
+
+          //雪花数组 用作回收
+          this._snow1List = []
+
+          let i
+          let snow
+          let scale
+          for (i = 0; i < 50; i++) {
+            //后景雪
+            snow = this.getSnow()
+            scale = 0.2 + Math.random() * 1
+            snow.scaleX = scale
+            snow.scaleY = scale
+            snow.x = Math.random() * canvas.width
+            snow.y = -Math.random() * canvas.height
+            snow.speed = 0.8 + Math.random() * 1
+            snow.rotation = 360 * Math.random()
+            this._snow1List.push(snow)
+            this.snowContainer.addChild(snow)
+          }
+          this.snowContainer.addEventListener('tick', (e) => {
+            this.snowFrameHandler()
+          })
+        }
+
+        // 创建 雪花
+        getSnow() {
+          let random = Math.random() * 10
+          let snow
+          if (random > 8) {
+            snow = new createjs.Bitmap(this.queue.getResult('snow1'))
+            snow.flower = true
+          } else {
+            snow = new createjs.Bitmap(this.queue.getResult('snow2'))
+          }
+          return snow
+        }
+        //雪花飘
+        snowFrameHandler() {
+          let i
+          let snow
+          let scale
+          for (i = 0; i < this.snowContainer.numChildren; i++) {
+            let mc = this.snowContainer.getChildAt(i)
+
+            // mc.x -= 0.1;
+            mc.y += mc.speed
+            // mc.alpha -= 0.001;
+            if (mc.flower) {
+              mc.rotation += 1
+            }
+            if (mc.y > canvas.height + 100) {
+              // mc.alpha = 1;
+              scale = 0.2 + Math.random() * 1
+              mc.scaleX = scale
+              mc.scaleY = scale
+
+              mc.x = Math.random() * canvas.width
+              mc.y = -Math.random() * canvas.height
+            }
+          }
+        }
+
+        //重置游戏，重新开始
+        start() {
+          this.pliersContainer.visible = true
+          this.houseContainer.visible = true
+          this.gameBg.y = this.bottomDir
+          this.rotateSpeed = 2
+          this.downCount = 0
+          this.score = 0
+          this.gameStart = false
+          this.time = 60
+          this.hp = 1
+          this.lastHouse = null
+          this.downContainer.removeAllChildren()
+          this.downContainer.x = 0
+          this.downContainer.y = 0
+          this.lastGap = 20
+          cjs.Tween.removeTweens(this.downContainer)
+          // this.drawHp();
+          $('#second').html(this.time)
+          $('#score').html(this.score)
+          $('.ceng span').html(this.downCount)
+          setInitData['game_adata_id'] = null
+          func_set_game_fun(null, null)
+        }
+
+        drawHp() {
+          this.hpContainer.x = 27
+          this.hpContainer.y = 140
+          for (let i = 0; i < this.hp; i++) {
+            const hp = new cjs.Bitmap(this.queue.getResult('hp'))
+            hp.x = i * 60
+            this.hpContainer.addChild(hp)
+          }
+        }
+
+        drawPliers() {
+          //钳子容器
+          this.pliersContainer = new cjs.Container()
+          //钳子图片
+          const data = {
+            images: [this.queue.getResult('machine_hand')],
+
+            framerate: 1,
+            frames: [
+              [1, 1, 397, 504, 0, -178, -68],
+              [400, 1, 382, 516, 0, -184, -68],
+              [400, 1, 382, 516, 0, -184, -68],
+              [784, 1, 381, 526, 0, -184, -68],
+              [1167, 1, 381, 523, 0, -184, -71],
+              [1550, 1, 375, 528, 0, -187, -68],
+            ],
+            animations: {
+              close: { frames: [5] },
+              open: {
+                frames: [5, 3, 2, 0, 1, 4],
+                next: 'close',
+                speed: 0.5,
+              },
+            },
+          }
+          //钳子图片
+          const data2 = {
+            images: [this.queue.getResult('jiazi')],
+
+            framerate: 1,
+            frames: [
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [1, 1, 371, 389, 0, -178, -68],
+              [374, 1, 343, 385, 0, -178, -68],
+            ],
+            animations: {
+              close: { frames: [5] },
+              open: {
+                frames: [5, 1, 2, 3, 4, 0],
+                next: 'close',
+                speed: 0.5,
+              },
+            },
+          }
+          const spriteSheet = new createjs.SpriteSheet(data2)
+          this.pliers = new createjs.Sprite(spriteSheet, 'close')
+          // this.pliers = new cjs.Bitmap(this.queue.getResult('pliers'));
+          // //创建房子的容器
+          this.pliersContainer.addChild(this.pliers)
+          this.stage.addChild(this.pliersContainer)
+          this.pliersContainer.deg = 0
+          this.pliersContainer.addEventListener('tick', (e) => {
+            this.pliersContainer.deg += this.rotateSpeed
+            this.pliersContainer.x =
+              260 * Math.cos(((this.pliersContainer.deg % 360) * Math.PI) / 180)
+            this.pliersContainer.y =
+              60 *
+                Math.sin(((this.pliersContainer.deg % 360) * Math.PI) / 180) -
+              150
+          })
+          this.drawHouse()
+        }
+
+        timeDown() {
+          this.timer = setInterval((e) => {
+            if (this.time > 1) {
+              this.time--
+            } else {
+              this.time = 0
+              clearInterval(this.timer)
+              this.gameOver()
+            }
+            $('#second').html(this.time)
+          }, 1000)
+        }
+
+        gameOver() {
+          this.gameStart = false
+          this.pliersContainer.visible = false
+          this.houseContainer.visible = false
+          setInitData.launch.play_count--
+          $('.game-end').show()
+          $('.surplus-num span').html(setInitData.launch.play_count)
+          $('.game-get-score').html(this.score)
+          cjs.Sound.play('gameover')
+          // pauseMusic();
+          //
+          func_set_game_fun(setInitData.game_adata_id, this.score)
+          //
+          $('.btn-restart-game')
+            .off()
+            .click(function () {
+              console.log(game)
+              if (setInitData.launch.play_count > 0) {
+                game.start()
+
+                $('.game-end').hide()
+              } else {
+                $_alert('没有游戏次数了')
+              }
+            })
+
+          $('.back-home')
+            .off()
+            .click(function () {
+              $('.game-end').hide()
+              $('.page_game').hide()
+              $('.home').show()
+              func_get_init_data()
+            })
+        }
+
+        //绘制楼层
+        drawHouse() {
+          const rmd = Math.ceil(Math.random() * 32)
+          //创建的时候，把坐标设置画布之外，避免图片在0，0，位置闪烁一下
+          const house = new cjs.Bitmap(
+            this.queue.getResult('house' + rmd)
+          ).set({ x: -1000, y: -1000 })
+
+          this.houseContainer.addChild(house)
+          //房子的角度要和钳子的同步，要不然会出现错位
+          house.isDown = false
+
+          house.height = house.image.naturalHeight
+          house.width = house.image.naturalWidth
+
+          house.addEventListener('tick', (e) => {
+            if (!house.isDown) {
+              house.deg = this.pliersContainer.deg
+              house.x =
+                260 * Math.cos(((house.deg % 360) * Math.PI) / 180) + 198
+              if (rmd === 8) {
+                house.x += 20
+              }
+              house.y = 60 * Math.sin(((house.deg % 360) * Math.PI) / 180) + 190
+            } else {
+              house.y += 20
+              house.addScore = 100
+              if (!this.lastHouse) {
+                if (!this.gameStart) {
+                  // 如果是主人
+                  //   if (prop_is_master) {
+                  //     //   func_insert_game_key();
+                  //   }
+                  this.timeDown()
+                  this.gameStart = true
+                }
+
+                /**
+                 * 375 是画布底部距离第一次停留的位置
+                 * house.image.naturalHeight  源图片的高度
+                 * 350
+                 */
+                if (house.y >= canvas.height - house.height - 400) {
+                  house.y = canvas.height - house.height - 400
+                  cjs.Sound.play('sound')
+                  console.log(house.x, 375, house.width)
+                  if (house.x < 375 - house.width || house.x > 375) {
+                    this.houseTopple(house, house.x < 375 - house.width / 2)
+                  } else {
+                    house.removeAllEventListeners()
+                    console.log(`length=${this.tipsArr.length}`)
+
+                    this.showFunHandle(house)
+                    $('.ceng span').html(this.downCount + 1)
+                    this.score += house.addScore
+                    if (this.score <= 0) this.score = 0
+                    $('#score').html(this.score)
+                    this.downContainer.addChild(house)
+                    this.drawHouse()
+                    //把当前的房设置为最后的房子
+                    this.lastHouse = house
+                  }
+                }
+              } else {
+                /**
+                 * reducH 表示 两个箱子重叠部分
+                 */
+                let reducH = 173
+                /**
+                 * 房子下落的y轴的位置 - 已经下落的房子容器的y轴 如果大于最后一个房子的y轴加上他的高度表示已经碰撞
+                 */
+                if (
+                  house.y - this.downContainer.y >=
+                  this.lastHouse.y - house.height + reducH
+                ) {
+                  //获取两个房子的x轴的绝对值差距
+                  console.log(
+                    this.lastHouse.getTransformedBounds().x,
+                    house.getTransformedBounds().x,
+                    this.downContainer.x
+                  )
+                  house.offset =
+                    this.lastHouse.getTransformedBounds().x -
+                    house.getTransformedBounds().x +
+                    this.downContainer.x
+                  const gap = Math.abs(house.offset)
+                  console.log(gap)
+                  // 判断吻合程度进行加分
+                  if (gap <= 10) {
+                    house.x = this.lastHouse.x + this.downContainer.x
+                    // 连续两次以上吻合的加双倍分数
+                    if (this.lastGap <= 10) {
+                      house.addScore = 100
+                    } else {
+                      house.addScore = 80
+                    }
+                  } else if (gap <= 60) {
+                    console.log('加200分')
+                    house.addScore = 30
+                  } else if (gap <= house.width * 0.4) {
+                    console.log('加100分')
+                    house.addScore = 10
+                  } else {
+                    console.log('没得分')
+                    console.log(house.offset)
+                    house.addScore = -90
+                  }
+                  // 记录上一次吻合程度
+                  this.lastGap = gap
+                  // 不加分（房子掉下去了）
+                  if (house.addScore <= 0) {
+                    this.houseTopple(house, house.offset > 0)
+                  } else {
+                    house.x -= this.downContainer.x
+                    house.removeAllEventListeners()
+                    // 记录已经盖了多少层
+                    this.downCount++
+                    // if (this.downCount > 7) {
+                    //   this.balloon.visible = false;
+                    // }
+                    // if (this.downCount > 8) {
+                    //   this.fly_logo.visible = true;
+                    // }
+                    $('.ceng span').html(this.downCount + 1)
+                    house.y = this.lastHouse.y - house.height + reducH
+
+                    // 吻合程度好的添加翅膀效果
+                    if (gap <= 10) {
+                      this.chiSprite.x = house.x - 75 + this.downContainer.x
+                      this.chiSprite.y = house.y + 30
+                      this.chiSprite.y = this.downContainer.y + house.y + 30
+                      this.chiSprite.visible = true
+                    }
+
+                    if (this.downCount > 2) {
+                      this.rotateSpeed = 3
+                    }
+
+                    if (this.downCount > 6) {
+                      this.rotateSpeed = 3.5
+                    }
+
+                    if (this.downCount > 9) {
+                      this.rotateSpeed = 4
+                    }
+
+                    // 难点 ： 房子大于4的时候背景滑动高一点
+                    if (this.downCount >= 3) {
+                      cjs.Tween.get(this.downContainer)
+                        .to(
+                          {
+                            y: (house.height - reducH) * (this.downCount + 2),
+                          },
+                          500
+                        )
+                        .to(
+                          { x: canvas.width / 2 - house.width / 2 - house.x },
+                          2000
+                        )
+                      cjs.Tween.get(this.gameBg)
+                        .to(
+                          {
+                            y:
+                              (house.height - reducH) * (this.downCount + 2) +
+                              this.bottomDir,
+                          },
+                          500
+                        )
+                        .call((e) => {
+                          this.chiSprite.visible = false
+                        })
+
+                      //突然升高时要进行调整
+                      if (this.downCount === 5) {
+                        cjs.Tween.get(this.chiSprite).to(
+                          { y: this.chiSprite.y + house.height * 2 },
+                          500
+                        )
+                      } else {
+                        cjs.Tween.get(this.chiSprite).to(
+                          { y: this.chiSprite.y + house.height },
+                          500
+                        )
+                      }
+                    } else {
+                      cjs.Tween.get(this.downContainer)
+                        .to(
+                          {
+                            y: (house.height - reducH) * (this.downCount + 2),
+                          },
+                          500
+                        )
+                        .call((e) => {
+                          this.chiSprite.visible = false
+                        })
+                      cjs.Tween.get(this.chiSprite).to(
+                        { y: this.chiSprite.y + house.height },
+                        500
+                      )
+                      cjs.Tween.get(this.gameBg).to(
+                        {
+                          y:
+                            (house.height - reducH) * (this.downCount + 2) +
+                            this.bottomDir,
+                        },
+                        500
+                      )
+                    }
+                    this.downContainer.addChild(house)
+                    this.lastHouse = house
+                    this.drawHouse()
+                  }
+                  if (this.gameStart) {
+                    this.showFunHandle(house)
+                    if (gap <= 10) {
+                      cjs.Sound.play('chi')
+                    } else {
+                      cjs.Sound.play('sound')
+                    }
+                    this.score += house.addScore
+                    if (this.score <= 0) this.score = 0
+                    $('#score').html(this.score)
+                  }
+                }
+              }
+            }
+          })
+
+          // //click
+          $(canvas)
+            .off()
+            .on('touchstart', (e) => {
+              this.stage.removeAllEventListeners()
+              house.isDown = true
+              this.pliers.gotoAndPlay('open')
+            })
+        }
+
+        // 显示加分的值
+        showFunHandle(house) {
+          let last = {}
+          if (this.lastHouse) {
+            last = this.lastHouse
+          } else {
+            last = house
+          }
+          if (this.tipsArr.length < 1) {
+            let addScoreTips
+            if (house.addScore < 0) {
+              addScoreTips = new cjs.Text(
+                `${
+                  house.addScore > 0 ? '+' + house.addScore : house.addScore
+                } `,
+                '60px Arial',
+                '#0000ff'
+              )
+            } else {
+              addScoreTips = new cjs.Text(
+                `${
+                  house.addScore > 0 ? '+' + house.addScore : house.addScore
+                } `,
+                '60px Arial',
+                '#ffffff'
+              )
+            }
+
+            addScoreTips.y = this.downContainer.y + last.y
+            addScoreTips.x =
+              last.x + house.width / 2 - 50 + this.downContainer.x
+            addScoreTips.alpha = 1
+            cjs.Tween.get(addScoreTips)
+              .to({ regY: 20, alpha: 0 }, 500)
+              .call((e) => {
+                addScoreTips.regY = 0
+                this.tipsArr.push(addScoreTips)
+              })
+            this.stage.addChild(addScoreTips)
+          } else {
+            const addScoreTips = this.tipsArr.shift()
+            if (house.addScore < 0) {
+              addScoreTips.color = '#0000ff'
+            } else {
+              addScoreTips.color = '#ffffff'
+            }
+            addScoreTips.text = `${
+              house.addScore > 0 ? '+' + house.addScore : house.addScore
+            } `
+            addScoreTips.y = this.downContainer.y + last.y
+            addScoreTips.x =
+              last.x + house.width / 2 - 50 + this.downContainer.x
+            addScoreTips.alpha = 1
+            cjs.Tween.get(addScoreTips)
+              .to({ regY: 20, alpha: 0 }, 500)
+              .call((e) => {
+                addScoreTips.regY = 0
+                this.tipsArr.push(addScoreTips)
+              })
+          }
+        }
+
+        //没盖好
+        houseTopple(house, dir_left) {
+          house.removeAllEventListeners()
+
+          house.regY = house.height / 2
+          house.regX = house.width / 2
+          house.y += house.height / 2
+          house.x += house.width / 2
+          let offset = 0
+          let rotation = 0
+          if (dir_left) {
+            offset = house.x - 60
+            rotation = -450
+          } else {
+            offset = house.x + 200
+            rotation = 450
+          }
+          cjs.Tween.get(house)
+            .wait(100)
+            .to(
+              {
+                y: 1500,
+                x: offset,
+                rotation: rotation,
+              },
+              500
+            )
+            .call((e) => {
+              console.log(this.houseContainer)
+              this.houseContainer.removeChild(house)
+              console.log(this.houseContainer)
+              // if (this.hp <= 0) {
+              //   this.gameOver();
+              //   clearInterval(this.timer);
+              // } else {
+              //   this.hp--;
+              //   this.hpContainer.removeChildAt(this.hp);
+              // }
+              this.drawHouse()
+            })
+        }
+
+        //注册音乐事件
+        registerBgm(e) {
+          console.log(e)
+        }
+
+        //获得一个随机值
+        static random(n) {
+          return Math.floor(Math.random() * n)
+        }
+      }
+      //   更新游戏积分
+      function func_set_game_fun(id, fun) {
+        func_axios({
+          url: `${pub_root_app}xweb/act/z_api_001/play`,
+          method: 'post',
+          data: {
+            id: id,
+            fun: fun,
+          },
+          success(res) {
+            setInitData['game_adata_id'] = res.data.entity_play.adata_id
+            console.log(res)
+          },
+        })
+      }
+
+      window.Game = Game
+    })()
+    // const game = new Game();
+    // game.preload();
+    // game.start();
+  </script>
+  <script src="{root_static_file_cdn}app/act/t_002/snow.js?{v}=1223"></script>
+</html>

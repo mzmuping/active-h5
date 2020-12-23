@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>“筑”力湾心</title>
     <script>
-      (function (doc, win) {
+      ;(function (doc, win) {
         var docEl = doc.documentElement,
           resizeEvt =
-            "orientationchange" in window ? "orientationchange" : "resize",
+            'orientationchange' in window ? 'orientationchange' : 'resize',
           recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + "px";
+            var clientWidth = docEl.clientWidth
+            if (!clientWidth) return
+            docEl.style.fontSize = (100 * (clientWidth / 375)) / 2 + 'px'
             if (window.innerHeight / window.innerWidth > 1.8) {
-              document.body.className = "isIphone";
+              document.body.className = 'isIphone'
             } else {
-              document.body.className = "";
+              document.body.className = ''
             }
-          };
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener("DOMContentLoaded", recalc, false);
-      })(document, window);
+          }
+        if (!doc.addEventListener) return
+        win.addEventListener(resizeEvt, recalc, false)
+        doc.addEventListener('DOMContentLoaded', recalc, false)
+      })(document, window)
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -35,14 +35,14 @@
     <link rel="stylesheet" type="text/css" href="./index_animate.css" />
     <script>
       $(function () {
-        func_video();
+        func_video()
         function func_video() {
-          var elevideo = document.getElementById("video");
-          elevideo.addEventListener("loadedmetadata", function () {
+          var elevideo = document.getElementById('video')
+          elevideo.addEventListener('loadedmetadata', function () {
             //加载数据
             //视频的总长度
-            console.log(elevideo.duration);
-          });
+            console.log(elevideo.duration)
+          })
           // elevideo.addEventListener('canplaythrough', function () {
           //   //SomeJavaScriptCode
           //   //监听视频的加载
@@ -51,50 +51,50 @@
           //   elevideo.play()
           // })
 
-          elevideo.addEventListener("play", function () {
+          elevideo.addEventListener('play', function () {
             //播放开始执行的函数
-            console.log("开始播放");
-          });
+            console.log('开始播放')
+          })
           //使用事件监听方式捕捉事件
           elevideo.addEventListener(
-            "timeupdate",
+            'timeupdate',
             function () {
-              var timeDisplay;
+              var timeDisplay
               //用秒数来显示当前播放进度
-              timeDisplay = video.currentTime;
-              console.log(video.currentTime);
-              var popCut = 10.6; //视频弹出时间
+              timeDisplay = video.currentTime
+              console.log(video.currentTime)
+              var popCut = 10.6 //视频弹出时间
               //当视频播放到 maxpopCut的时候做处理
               if (timeDisplay >= popCut) {
-                video.pause(); //视频暂停  play();视频播放
-                $(".video-wrap").hide();
-                $(".home").show();
+                video.pause() //视频暂停  play();视频播放
+                $('.video-wrap').hide()
+                $('.home').show()
               }
             },
             false
-          );
-          elevideo.addEventListener("playing", function () {
+          )
+          elevideo.addEventListener('playing', function () {
             //播放中
-            console.log("播放中");
-          });
-          elevideo.addEventListener("waiting", function () {
+            console.log('播放中')
+          })
+          elevideo.addEventListener('waiting', function () {
             //加载
-            console.log("加载中");
-          });
-          elevideo.addEventListener("pause", function () {
+            console.log('加载中')
+          })
+          elevideo.addEventListener('pause', function () {
             //暂停开始执行的函数
-            console.log("暂停播放");
-          });
+            console.log('暂停播放')
+          })
           elevideo.addEventListener(
-            "ended",
+            'ended',
             function () {
               //结束
-              console.log("播放结束");
+              console.log('播放结束')
             },
             false
-          );
+          )
         }
-      });
+      })
     </script>
   </head>
   <body>
@@ -637,26 +637,37 @@
     <div class="rule-wrap fixed">
       <div class="rule-mask mask absolute"></div>
       <div class="rule-cont">
-        <p style="text-indent: 0.42rem">
-          本次活动是金湾华发商都双旦系列主题宣传活动，
-          活动奖品由金湾华发商都统一赞助提供。活动最终解释权归金湾华发尚都所有。
+        <div class="rule-cont-main">
+        <h4>活动玩法</h4>
+        <p>1.用户进入活动后，需要通过小游戏收集探索积分；</p>
+        <p>2.每个用户ID有2张初始游戏卡，每次玩游戏需要消耗1张；</p>
+        <p>3.游戏卡可以通过邀请小伙伴一起探索游戏获取；</p>
+        <p>4.探索积分累计达到指定数值后，可以开启对应的宝箱抽奖；</p>
+        <p>5.探索分数达到8000后解锁全部宝箱，并获得元旦锦鲤终极宝箱；</p>
+        <p>6.元旦锦鲤终极宝箱于2021年1月1日0点后方可开启；</p>
+        <h4></h4>
+        <p>*本次活动奖品以实际发放实物为准，奖品不设折现，不退不换</p>
+        <p>*请在活动限定兑奖时间内到指定地点兑换奖品，逾期无效</p>
+        <h4>解锁小宝箱奖品说明：</h4>
+        <p>1.奖品包含：小米手环、炊大皇保温壶、Miniso护手霜、文具套装等</p>
+        <p>2.兑奖地点：广东省珠海市金湾区华发中央公园1楼活动兑奖处;</p>
+        <p>3.兑奖时间：2020年12月24日-27日（10:00-22:00）</p>
+        <p>4.兑奖时请出示中奖凭证并交由工作人员输入密码核销凭证并兑换奖品；</p>
+        <h4></h4>元旦锦鲤终极宝箱奖品说明：</h4>
+        <p>1.奖品包含：戴森吸尘器、小米手环、炊大皇保温壶等;</p>
+        <p>2.兑奖地点：广东省珠海市金湾区金湾华发国际商务中心2楼招商中心;</p>
+        <p>3.兑奖时间：2021年1月31日前（周二-周五10:00-17:00）；</p>
+        <p>4.兑奖时请出示中奖凭证并交由工作人员输入密码核销凭证并兑换奖品；</p>
+        <p style="padding-top: 20px;">
+          *本次活动是金湾华发商都双旦系列主题宣传活动，活动奖品由金湾华发商都统一赞助提供
         </p>
-        <p>活动玩法</p>
-        <p>1、用户进入活动后，需要通过小游戏收集探索积分；</p>
-        <p>2、每个用户ID有2张初始游戏卡，每次玩游戏需要 消耗1张；</p>
-        <p>3、游戏卡可以通过邀请小伙伴一起探索游戏获取；</p>
-        <p>4、探索积分累计达到指定数值后，可以开启对应 的宝箱抽奖；</p>
-        <p>5、探索分数达到8000后解锁全部宝箱，并获得元 旦锦鲤终极宝箱；</p>
-        <p>6、元旦锦鲤终极宝箱于2021年1月1日0点后方可开 启；</p>
-        <p>奖品说明</p>
-        <p>1、本次活动奖品以实际发放实物为准，奖品不设折 现，不退不换；</p>
-        <p>2、请在活动限定兑奖时间内到指定地点兑换奖品， 逾期无效；</p>
-        <p>3、兑奖时间：2021年1月31日前；</p>
-        <p>4、兑奖地点：珠海市金湾华发商都...........</p>
-        <p>
-          5、兑奖时请出示中奖凭证并交由工作人员输入密码 核销凭证并兑换奖品；
-        </p>
-        <img class="rule-btn-close" src="./images/rule-btn-close.png" alt="" />
+        <p>*活动最终解释权归金湾华发商都所有</p>
+      </div>
+        <img
+          class="rule-btn-close"
+          src="./images/rule-btn-close.png"
+          alt=""
+        />
       </div>
     </div>
 
@@ -698,19 +709,19 @@
   </body>
   <script language="javascript" type="text/javascript">
     function getleftTimer(downs) {
-      let timer = null;
+      let timer = null
       function leftTimer() {
-        var leftTime = new Date(downs) - new Date(); //计算剩余的毫秒数
-        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
-        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10); //计算剩余的小时
-        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10); //计算剩余的分钟
-        var seconds = parseInt((leftTime / 1000) % 60, 10); //计算剩余的秒数
-        days = checkTime(days);
-        hours = checkTime(hours);
-        minutes = checkTime(minutes);
-        seconds = checkTime(seconds);
+        var leftTime = new Date(downs) - new Date() //计算剩余的毫秒数
+        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10) //计算剩余的天数
+        var hours = parseInt((leftTime / 1000 / 60 / 60) % 24, 10) //计算剩余的小时
+        var minutes = parseInt((leftTime / 1000 / 60) % 60, 10) //计算剩余的分钟
+        var seconds = parseInt((leftTime / 1000) % 60, 10) //计算剩余的秒数
+        days = checkTime(days)
+        hours = checkTime(hours)
+        minutes = checkTime(minutes)
+        seconds = checkTime(seconds)
         if (days > 0 || hours > 0 || minutes > 0 || seconds > 0) {
-          $(".down-time-t").html(`获取倒计时
+          $('.down-time-t').html(`获取倒计时
          <span class="down-day">${days.substring(0, 1)}</span>
          <span>${days.substring(1, 2)}</span>
          <i>天</i>
@@ -719,10 +730,10 @@
          <i>时</i>
          <span>${minutes.substring(0, 1)}</span>
          <span>${minutes.substring(1, 2)}</span>
-         <i>分</i>`);
-          setTimeout(leftTimer, 1000);
+         <i>分</i>`)
+          setTimeout(leftTimer, 1000)
         } else {
-          $(".down-time-t").html(`获取倒计时
+          $('.down-time-t').html(`获取倒计时
          <span class="down-day">0</span>
          <span>0</span>
          <i>天</i>
@@ -731,135 +742,135 @@
          <i>时</i>
          <span>0</span>
          <span>0</span>
-         <i>分</i>`);
-          console.log("结束了");
+         <i>分</i>`)
+          console.log('结束了')
         }
       }
-      leftTimer();
+      leftTimer()
     }
     function checkTime(i) {
       //将0-9的数字前面加上0，例1变为01
       if (i < 10) {
-        i = "0" + i;
+        i = '0' + i
       }
-      return i + "";
+      return i + ''
     }
-    getleftTimer(new Date().getTime() + 1314935 * 1000);
+    getleftTimer(new Date().getTime() + 1314935 * 1000)
     //
     // poster()
     function poster() {
-      const cjs = createjs;
-      const canvas = document.getElementById("poster");
-      canvas.height = 1624;
-      canvas.width = 750;
-      let queue = new cjs.LoadQueue(false, "", true);
+      const cjs = createjs
+      const canvas = document.getElementById('poster')
+      canvas.height = 1624
+      canvas.width = 750
+      let queue = new cjs.LoadQueue(false, '', true)
       const manifest = [
         {
           src:
-            "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132",
-          id: "wxuser_headimgurl",
+            'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132',
+          id: 'wxuser_headimgurl',
         },
         {
-          src: "http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg",
-          id: "poster",
+          src: 'http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg',
+          id: 'poster',
         },
         {
           src:
-            "https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=act1604155011",
-          id: "qrCode",
+            'https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=act1604155011',
+          id: 'qrCode',
         },
-      ];
+      ]
 
-      let stage;
-      queue.loadManifest(manifest);
-      queue.on("complete", (e) => {
-        console.log("complete");
-        stage = new cjs.Stage(canvas);
+      let stage
+      queue.loadManifest(manifest)
+      queue.on('complete', (e) => {
+        console.log('complete')
+        stage = new cjs.Stage(canvas)
 
         //背景图
-        let gameBg = new cjs.Container();
-        const bg = new cjs.Bitmap(queue.getResult("poster"));
-        console.log(bg);
-        let bottomDir = canvas.height - bg.image.naturalHeight;
+        let gameBg = new cjs.Container()
+        const bg = new cjs.Bitmap(queue.getResult('poster'))
+        console.log(bg)
+        let bottomDir = canvas.height - bg.image.naturalHeight
         // gameBg.addChild(bg)
         // stage.addChild(bg)
         //创建图形
-        var bitmap1 = new cjs.Bitmap(queue.getResult("qrCode"));
-        console.log(bitmap1);
+        var bitmap1 = new cjs.Bitmap(queue.getResult('qrCode'))
+        console.log(bitmap1)
         //可进行图片位移
-        bitmap1.x = 80;
-        bitmap1.y = 80;
+        bitmap1.x = 80
+        bitmap1.y = 80
         //创建圆形
-        var circle = new cjs.Shape();
-        circle.graphics.beginFill().drawCircle(100, 100, 100);
-        stage.addChild(bitmap1);
+        var circle = new cjs.Shape()
+        circle.graphics.beginFill().drawCircle(100, 100, 100)
+        stage.addChild(bitmap1)
         // stage.addChild(circle)
         //进行遮罩处理
         // bitmap1.mask = circle
-        cjs.Ticker.addEventListener("tick", (e) => {
-          stage.update();
-        });
-      });
+        cjs.Ticker.addEventListener('tick', (e) => {
+          stage.update()
+        })
+      })
     }
     let p_url =
-      "https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=act1604155011";
+      'https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=jie01&word=act1604155011'
     let headPic =
-      "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132";
-    let p_bg = "http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg";
+      'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132'
+    let p_bg = 'http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg'
     // drawPoster('sf', p_url, headPic, p_bg)
     // 海报
     function drawPoster(p_name, p_url, headPic, p_bg) {
       var can = null,
-        pen = null;
+        pen = null
       // var total_sca = window.innerWidth / 320,
       var total_sca = 1,
         head_w = 80 * total_sca,
         head_h = 80 * total_sca,
         qr_w = 130 * total_sca,
         qr_h = 130 * total_sca,
-        wx_openid = "",
-        wx_name = "";
+        wx_openid = '',
+        wx_name = ''
 
       let headX = 164,
         headY = 303,
         qrX = 562,
-        qrY = 1151;
-      can = document.getElementById("poster");
-      pen = can.getContext("2d");
-      can.width = 750 * total_sca;
-      can.height = 1334 * total_sca;
+        qrY = 1151
+      can = document.getElementById('poster')
+      pen = can.getContext('2d')
+      can.width = 750 * total_sca
+      can.height = 1334 * total_sca
 
-      console.log("开始绘制海报");
-      var poster_bg = new Image();
+      console.log('开始绘制海报')
+      var poster_bg = new Image()
       // 仙峰寺
-      let bgPic = p_bg;
+      let bgPic = p_bg
       // if (posterId == 2) bgPic = `${pub_root_file}app/act/t_001/img/p9_poster.png?v=1`
-      poster_bg.crossOrigin = "Anonymous";
-      poster_bg.src = bgPic;
+      poster_bg.crossOrigin = 'Anonymous'
+      poster_bg.src = bgPic
 
       poster_bg.onload = function () {
-        pen.drawImage(poster_bg, 0, 0, can.width, can.height);
-        console.log("绘制底图完成");
+        pen.drawImage(poster_bg, 0, 0, can.width, can.height)
+        console.log('绘制底图完成')
 
-        var headUrl = new Image();
-        headUrl.crossOrigin = "Anonymous";
-        headUrl.src = headPic;
+        var headUrl = new Image()
+        headUrl.crossOrigin = 'Anonymous'
+        headUrl.src = headPic
         headUrl.onload = function () {
-          var can2 = document.createElement("canvas");
-          pen2 = can2.getContext("2d");
-          can2.width = can.width;
-          can2.height = can.height;
+          var can2 = document.createElement('canvas')
+          pen2 = can2.getContext('2d')
+          can2.width = can.width
+          can2.height = can.height
           pen2.drawImage(
             headUrl,
             headX * total_sca - head_w / 2,
             headY * total_sca,
             head_w,
             head_h
-          );
-          console.log("绘制头像完成");
+          )
+          console.log('绘制头像完成')
 
           // 创建图片纹理
-          var pattern = pen.createPattern(can2, "repeat");
+          var pattern = pen.createPattern(can2, 'repeat')
           // 如果要绘制一个圆，使用下面代码
           pen.arc(
             headX * total_sca,
@@ -867,10 +878,10 @@
             Math.max(head_w, head_h) / 2,
             0,
             2 * Math.PI
-          );
+          )
           // 填充绘制的圆o
-          pen.fillStyle = pattern;
-          pen.fill();
+          pen.fillStyle = pattern
+          pen.fill()
 
           // pen.arc(
           //   headX * total_sca,
@@ -883,21 +894,21 @@
           // pen.lineWidth = 2
           // pen.stroke()
 
-          var qrUrl = new Image();
-          qrUrl.crossOrigin = "Anonymous";
-          console.log("传入的二维码", p_url);
-          qrUrl.src = p_url;
+          var qrUrl = new Image()
+          qrUrl.crossOrigin = 'Anonymous'
+          console.log('传入的二维码', p_url)
+          qrUrl.src = p_url
           qrUrl.onload = function () {
             // pen.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h);
-            console.log("绘制二维码完成");
-            let can2 = document.createElement("canvas");
-            pen2 = can2.getContext("2d");
-            can2.width = can.width;
-            can2.height = can.height;
-            console.log(can2.width);
-            pen2.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h);
+            console.log('绘制二维码完成')
+            let can2 = document.createElement('canvas')
+            pen2 = can2.getContext('2d')
+            can2.width = can.width
+            can2.height = can.height
+            console.log(can2.width)
+            pen2.drawImage(qrUrl, qrX * total_sca, qrY * total_sca, qr_w, qr_h)
             // 创建图片纹理
-            var pattern = pen.createPattern(can2, "repeat");
+            var pattern = pen.createPattern(can2, 'repeat')
             // 如果要绘制一个圆，使用下面代码
             // pen.arc(obj.width / 2, obj.height / 2, Math.max(obj.width, obj.height) / 2, 0, 2 * Math.PI);
             // 这里使用圆角矩形
@@ -907,11 +918,11 @@
               qr_w,
               qr_h,
               10 * 1 || 0
-            );
-            pen.x = 100;
+            )
+            pen.x = 100
             // 填充绘制的圆
-            pen.fillStyle = pattern;
-            pen.fill();
+            pen.fillStyle = pattern
+            pen.fill()
             // pen.font = 28 * total_sca + "px '微软雅黑'"
 
             // console.log('文本' + pen.measureText(p_name).width)
@@ -937,155 +948,155 @@
             // pen.fillText(tips3, 220 * total_sca, 1050 * total_sca, 750)
             //
 
-            var result = can.toDataURL("image/png");
-            $(".poster-load").hide();
-            $(".poster-img").attr("src", result);
-          };
-        };
-      };
+            var result = can.toDataURL('image/png')
+            $('.poster-load').hide()
+            $('.poster-img').attr('src', result)
+          }
+        }
+      }
     }
     //圆角矩形
     CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
-      var min_size = Math.min(w, h);
-      if (r > min_size / 2) r = min_size / 2;
+      var min_size = Math.min(w, h)
+      if (r > min_size / 2) r = min_size / 2
       // 开始绘制
-      this.beginPath();
-      this.moveTo(x + r, y);
-      this.arcTo(x + w, y, x + w, y + h, r);
-      this.arcTo(x + w, y + h, x, y + h, r);
-      this.arcTo(x, y + h, x, y, r);
-      this.arcTo(x, y, x + w, y, r);
-      this.closePath();
-      return this;
-    };
+      this.beginPath()
+      this.moveTo(x + r, y)
+      this.arcTo(x + w, y, x + w, y + h, r)
+      this.arcTo(x + w, y + h, x, y + h, r)
+      this.arcTo(x, y + h, x, y, r)
+      this.arcTo(x, y, x + w, y, r)
+      this.closePath()
+      return this
+    }
 
     // alert
     function $_alert(msg) {
-      $(".alert-mask").show();
-      $(".alert-tips-cont").html(msg);
-      $(".alert-tips-cont").removeClass("out").addClass("in");
-      $(".btn-mask-close")
+      $('.alert-mask').show()
+      $('.alert-tips-cont').html(msg)
+      $('.alert-tips-cont').removeClass('out').addClass('in')
+      $('.btn-mask-close')
         .off()
         .click(function () {
-          $(".alert-tips-cont").removeClass("in").addClass("out");
+          $('.alert-tips-cont').removeClass('in').addClass('out')
           setTimeout(function () {
-            $(".alert-mask").hide();
-          }, 800);
-        });
+            $('.alert-mask').hide()
+          }, 800)
+        })
     }
     $(function () {
-      var elevideo = document.getElementById("video");
+      var elevideo = document.getElementById('video')
       // 跳过广告
-      $(".btn-skip").click(function () {
-        elevideo.pause(); //视频暂停  play();视频播放
-        $(".video-wrap").fadeOut("slow");
-        $(".home").fadeIn("slow");
-      });
+      $('.btn-skip').click(function () {
+        elevideo.pause() //视频暂停  play();视频播放
+        $('.video-wrap').fadeOut('slow')
+        $('.home').fadeIn('slow')
+      })
       // 活动说明
-      $(".rule-btn").click(function () {
-        $(".rule-wrap").show();
-        $(".rule-cont").removeClass("out").addClass("in");
-      });
-      $(".rule-btn-close,.rule-mask").click(function () {
-        $(".rule-cont").removeClass("in").addClass("out");
+      $('.rule-btn').click(function () {
+        $('.rule-wrap').show()
+        $('.rule-cont').removeClass('out').addClass('in')
+      })
+      $('.rule-btn-close,.rule-mask').click(function () {
+        $('.rule-cont').removeClass('in').addClass('out')
         setTimeout(function () {
-          $(".rule-wrap").hide();
-        }, 800);
-      });
+          $('.rule-wrap').hide()
+        }, 800)
+      })
 
       // 我的奖品 列表
-      $(".prize-my").click(function () {
-        $(".prize-list-empty").hide();
-        $(".my-prize-list").show();
-        $(".my-prize-list-cont").removeClass("out").addClass("in");
+      $('.prize-my').click(function () {
+        $('.prize-list-empty').hide()
+        $('.my-prize-list').show()
+        $('.my-prize-list-cont').removeClass('out').addClass('in')
         // func_prize_list()
-      });
+      })
       // 关闭 我的奖品 列表
-      $(".back-home-prize").click(function () {
-        $(".my-prize-list-cont").removeClass("in").addClass("out");
+      $('.back-home-prize').click(function () {
+        $('.my-prize-list-cont').removeClass('in').addClass('out')
         setTimeout(function () {
-          $(".my-prize-list").hide();
-        }, 800);
-      });
+          $('.my-prize-list').hide()
+        }, 800)
+      })
 
       // 奖品一览
-      $(".prize-preview-icon").click(function () {
-        $(".prize-preview-wrap").show();
-        $(".prize-preview-img").removeClass("out").addClass("in");
-      });
+      $('.prize-preview-icon').click(function () {
+        $('.prize-preview-wrap').show()
+        $('.prize-preview-img').removeClass('out').addClass('in')
+      })
       // 关闭 奖品一览
-      $(".prize-preview-wrap").click(function () {
-        $(".prize-preview-img").removeClass("in").addClass("out");
+      $('.prize-preview-wrap').click(function () {
+        $('.prize-preview-img').removeClass('in').addClass('out')
         setTimeout(function () {
-          $(".prize-preview-wrap").hide();
-        }, 800);
-      });
+          $('.prize-preview-wrap').hide()
+        }, 800)
+      })
 
       // 分享
-      $(".get_btn-ka")
+      $('.get_btn-ka')
         .off()
         .click(function () {
-          $(".poster-wrap").show();
+          $('.poster-wrap').show()
           let p_url =
-            "https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=x&word=act1607656877";
+            'https://app.siyoumi.com/app/z_common/app_api/wx_qr?x=x&word=act1607656877'
           let headPic =
-            "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132";
+            'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLkfrWjzsjjscJn9tNrforvBQgYlG1vtY7kl0FI1u11KRVeAyI6ictwFbnDibRRfMshfuYriaO4cHC9g/132'
 
           let p_bg =
-            "http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg?1";
-          if (!$(".poster-img").attr("src")) {
-            drawPoster("sf", p_url, headPic, p_bg);
+            'http://file.weixin.siyoumi.com/app/act/t_002/img/poster.jpg?1'
+          if (!$('.poster-img').attr('src')) {
+            drawPoster('sf', p_url, headPic, p_bg)
           }
-        });
-      $(".poster-img").click(function () {
-        $(".poster-wrap").hide();
-      });
+        })
+      $('.poster-img').click(function () {
+        $('.poster-wrap').hide()
+      })
 
-      preLoadImg();
-    });
+      preLoadImg()
+    })
     // 预加载 home
     function preLoadImg() {
-      var elevideo = document.getElementById("video");
-      let homeImgArr = $(".home img");
-      let homeImgArrLenth = homeImgArr.length;
-      let index = 0;
+      var elevideo = document.getElementById('video')
+      let homeImgArr = $('.home img')
+      let homeImgArrLenth = homeImgArr.length
+      let index = 0
       for (let i = 0; i < homeImgArr.length; i++) {
-        let image = new Image();
-        let originalImage = $($(".home img")[i]);
-        image.src = $($(".home img")[i]).data().original;
+        let image = new Image()
+        let originalImage = $($('.home img')[i])
+        image.src = $($('.home img')[i]).data().original
 
         image.onload = function () {
           //图片下载完毕时异步调用callback函数。
-          index++;
-          originalImage.attr("src", image.src);
-          $(".loading-tips").html(
-            Number((index / homeImgArrLenth) * 100).toFixed(0) + "%"
-          );
+          index++
+          originalImage.attr('src', image.src)
+          $('.loading-tips').html(
+            Number((index / homeImgArrLenth) * 100).toFixed(0) + '%'
+          )
           if (index === homeImgArrLenth) {
-            $(".loading-wrap").hide();
+            $('.loading-wrap').hide()
           }
-        };
+        }
       }
-      elevideo.addEventListener("loadedmetadata", function () {
+      elevideo.addEventListener('loadedmetadata', function () {
         //加载数据
         //视频的总长度
-        console.log(elevideo.duration);
-      });
-      elevideo.addEventListener("canplaythrough", function () {
-        index++;
-        $(".loading-tips").html(
-          Number((index / homeImgArrLenth) * 100).toFixed(0) + "%"
-        );
+        console.log(elevideo.duration)
+      })
+      elevideo.addEventListener('canplaythrough', function () {
+        index++
+        $('.loading-tips').html(
+          Number((index / homeImgArrLenth) * 100).toFixed(0) + '%'
+        )
         if (index === homeImgArrLenth) {
-          $(".loading-wrap").hide();
+          $('.loading-wrap').hide()
           // $('.video-wrap').hide()
         }
         //SomeJavaScriptCode
         //监听视频的加载
         //一般采用oncanplaythrough,即readystate状态为3时，就可以顺畅播放，不会轻易造成卡顿，
-        console.log("顺畅播放");
-        elevideo.play();
-      });
+        console.log('顺畅播放')
+        elevideo.play()
+      })
     }
   </script>
   <script src="./snow.js"></script>
