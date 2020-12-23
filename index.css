@@ -48,6 +48,10 @@ img {
   align-items: center;
   justify-content: center;
 }
+.weui-toast {
+  width: 15em;
+  margin-left: -7.8em;
+}
 /* 视频 */
 .video-wrap {
   position: fixed;
@@ -95,17 +99,21 @@ img {
   margin: 0 auto 10.2rem;
   padding-top: 1rem;
 }
-.snow_flow {
-  width: 100%;
-  top: 1.11rem;
-  -webkit-animation: fadeIn 2s linear infinite alternate both;
-  animation: fadeIn 2s linear infinite alternate both;
+.finger-arrow {
+  width: 0.61rem;
+  left: 50%;
+  top: 78vh;
+  margin-left: 0.2rem;
+  z-index: 4;
+  -webkit-animation: fadeInUp 2s linear infinite both;
+  animation: fadeInUp 2s linear infinite both;
 }
-.snow_luo {
-  width: 100%;
-  top: 0rem;
-  -webkit-animation: fadeInDown 3s linear infinite both;
-  animation: fadeInDown 3s linear infinite both;
+.arrow-icon {
+  width: 0.5rem;
+  left: 50%;
+  top: 79vh;
+  margin-left: -0.25rem;
+  z-index: 4;
 }
 .flash_light {
   width: 7.33rem;
@@ -508,29 +516,53 @@ img {
   top: -0.68rem;
   left: 92%;
 }
+.prize_box_can_open {
+  display: none;
+  top: -1.1rem;
+  width: 0.69rem;
+  height: 0.38rem;
+  background: url("https://filex.wx.siyoumi.com/app/act/t_002/img/prize_box_can_open.png")
+    center center no-repeat;
+  background-size: contain;
+}
+.prize_fun_01_can_open {
+  left: 0.75rem;
+}
+.prize_fun_02_can_open {
+  left: 2.15rem;
+}
+.prize_fun_03_can_open {
+  left: 3.5rem;
+}
+.prize_fun_04_can_open {
+  left: 4.85rem;
+}
+.prize_fun_05_can_open {
+  left: 6.23rem;
+}
 .box-number {
   display: inline-block;
   top: 0.5rem;
-  font-size: 0.2rem;
+  font-size: 0.26rem;
   font-family: SourceHanSansCN Medium, SourceHanSansCN Medium-Medium;
   font-weight: 500;
   text-align: left;
   color: #fdde90;
 }
-.box-number:nth-of-type(6) {
-  left: 13%;
+.box-fun1 {
+  left: 12.5%;
 }
-.box-number:nth-of-type(7) {
-  left: 33%;
+.box-fun2 {
+  left: 31.5%;
 }
-.box-number:nth-of-type(8) {
-  left: 53%;
+.box-fun3 {
+  left: 51.5%;
 }
-.box-number:nth-of-type(9) {
-  left: 73%;
+.box-fun4 {
+  left: 71.5%;
 }
-.box-number:nth-of-type(10) {
-  left: 93%;
+.box-fun5 {
+  left: 91%;
 }
 .exploration-score {
   margin-top: 0.8rem;
@@ -540,7 +572,9 @@ img {
   text-align: left;
   color: #fdde90;
 }
-
+.exploration-score span {
+  font-size: 0.35rem;
+}
 .down-time {
   position: relative;
   width: 7.31rem;
@@ -1188,7 +1222,7 @@ img {
   height: 8.1rem;
   overflow: auto;
 }
-.prize-list-cont::before {
+.prize-list-cont.active::before {
   content: "";
   border: 7px solid;
   border-color: #b56cd6 transparent transparent;
@@ -1207,7 +1241,8 @@ img {
   display: -webkit-box;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  /* align-items: center; */
   padding: 0.2rem;
   box-sizing: border-box;
   overflow: hidden;
@@ -1407,6 +1442,10 @@ img {
   box-sizing: border-box;
   padding: 1rem 0.23rem 0 0.43rem;
 }
+.rule-cont-main {
+  height: 10.5rem;
+  overflow: auto;
+}
 .rule-btn-close {
   width: 0.8rem;
   height: 0.8rem;
@@ -1552,6 +1591,10 @@ img {
   padding: 1.5rem 0 0.5rem;
 }
 .btn-mask-close {
+  position: absolute;
+  left: 50%;
   width: 3.34rem;
   margin: 0 auto;
+  margin-left: -1.67rem;
+  top: 2.4rem;
 }
